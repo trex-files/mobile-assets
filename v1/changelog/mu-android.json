@@ -8,8 +8,36 @@
       "title": "Release 1.0.8",
       "entries": [
         {
+          "category": "correccion",
+          "text": "La descarga de recursos ya no se traba si se corta la conexión: reintenta sola y podés retomar sin reiniciar el juego."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregidos varios cierres inesperados del juego (al entrar al mundo con ciertos personajes y al equipar objetos)."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los tooltips de objetos ahora muestran colores según su tipo (excellent, ancient, opciones, etc.), igual que en PC."
+        },
+        {
+          "category": "interfaz",
+          "text": "Botones de habilidades más grandes para no errarles al lanzar."
+        },
+        {
+          "category": "interfaz",
+          "text": "Nuevo botón \"Events\" en el menú con los horarios de eventos e invasiones."
+        },
+        {
+          "category": "interfaz",
+          "text": "El nombre del mapa y las coordenadas ahora se ven en dos líneas, más claros."
+        },
+        {
+          "category": "rendimiento",
+          "text": "La pantalla de comprobación de archivos al iniciar es mucho más rápida."
+        },
+        {
           "category": "nuevo",
-          "text": "Actualización del cliente Android a la versión pública 0.1 (build 49)."
+          "text": "Reconexión rápida: si el juego pierde conexión al minimizarlo, podés volver a entrar con un toque."
         }
       ],
       "download_bytes": 5400307,
