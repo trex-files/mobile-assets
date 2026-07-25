@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.9",
+      "date": "2026-07-25",
+      "title": "Release 1.0.9",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "El juego ya no se cierra al mover, equipar o desequipar los objetos del paquete de bienvenida (los que se reciben al crear el personaje). Era el problema reportado por la gran mayoría de jugadores en Android."
+        },
+        {
+          "category": "correccion",
+          "text": "La fecha de expiración de esos objetos ahora se muestra correctamente en el tooltip; antes aparecía un texto inválido."
+        },
+        {
+          "category": "correccion",
+          "text": "La etiqueta \"Ítem expirado\" ahora se ve; antes quedaba tapada y nunca llegaba a mostrarse."
+        }
+      ],
+      "download_bytes": 4326839,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.8",
       "date": "2026-07-24",
       "title": "Release 1.0.8",
