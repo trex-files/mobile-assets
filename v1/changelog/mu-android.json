@@ -3,6 +3,71 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.10",
+      "date": "2026-07-26",
+      "title": "Release 1.0.10",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Sonido y música: el cliente de Android ya reproduce los efectos de sonido y la música del juego."
+        },
+        {
+          "category": "nuevo",
+          "text": "Auto-poción configurable: podés elegir a partir de qué porcentaje de vida o de maná se toma la poción, y cuál poción usar."
+        },
+        {
+          "category": "nuevo",
+          "text": "Menú de acciones sobre otros jugadores: manteniendo el dedo sobre un jugador se abre su menú (comerciar, invitar al grupo, agregar, bloquear, etc.)."
+        },
+        {
+          "category": "nuevo",
+          "text": "Bloqueo de jugadores: podés bloquear a alguien desde ese menú y desbloquearlo después uno por uno desde Opciones."
+        },
+        {
+          "category": "interfaz",
+          "text": "HUD nuevo con el estilo del cliente de PC (orbes de vida y maná, arcos y barra de experiencia). Se puede elegir entre el HUD nuevo y el anterior desde Opciones."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los tamaños del HUD ahora se pueden ajustar a gusto (de la mitad a una vez y media)."
+        },
+        {
+          "category": "interfaz",
+          "text": "El tamaño del texto del chat, de los globos de diálogo y de la interfaz ahora es configurable desde Opciones."
+        },
+        {
+          "category": "interfaz",
+          "text": "Opciones rehecho como una lista que se desplaza: entran todas las opciones y se llega a las de abajo sin problemas."
+        },
+        {
+          "category": "interfaz",
+          "text": "MU Helper renovado por completo con la estética nueva, botones -/+ en lugar del teclado para cada valor, y un texto explicativo al tocar cada opción."
+        },
+        {
+          "category": "correccion",
+          "text": "Mantener el dedo sobre otro jugador ya abre su menú. Antes el jugador se marcaba pero el menú nunca aparecía."
+        },
+        {
+          "category": "correccion",
+          "text": "El selector de habilidades del MU Helper ya se abre al tocarlo."
+        },
+        {
+          "category": "correccion",
+          "text": "La pantalla de crear cuenta ya se puede usar: los campos quedaban fuera del área que responde al toque."
+        },
+        {
+          "category": "correccion",
+          "text": "Arreglados recortes de dibujado en varios paneles de la interfaz."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregido un fallo de conexión al entrar al servidor de juego que podía dejar el primer intento sin respuesta."
+        }
+      ],
+      "download_bytes": 5898605,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.9",
       "date": "2026-07-25",
       "title": "Release 1.0.9",
