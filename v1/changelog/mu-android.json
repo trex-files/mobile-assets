@@ -3,6 +3,71 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.11",
+      "date": "2026-07-27",
+      "title": "Release 1.0.11",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Filtro de lo que se ve tirado en el piso: podés elegir qué ítems aparecen, con su propia pestaña y un indicador en el HUD. Los conjuntos se guardan por mapa."
+        },
+        {
+          "category": "nuevo",
+          "text": "Arrastrar las piezas equipadas: en el inventario, las piezas que tenés puestas ahora se pueden arrastrar con el dedo igual que las de la bolsa. Un toque sigue mostrando las estadísticas y dos toques las sacan."
+        },
+        {
+          "category": "interfaz",
+          "text": "Vida y maná se actualizan en vivo, y la barra de experiencia usa los datos del servidor con el nivel al lado."
+        },
+        {
+          "category": "interfaz",
+          "text": "Slots de poción rehechos: la poción se ve en el slot, con la placa del skin y el contador en una chapita."
+        },
+        {
+          "category": "interfaz",
+          "text": "Mercader: botón COMPRAR dentro de la ficha del ítem, botón VENDER para los ítems propios, y las casillas del muñeco con el arte del inventario."
+        },
+        {
+          "category": "interfaz",
+          "text": "Inventario: fuera las siluetas del MU viejo y fuera el botón de personaje de la cabecera."
+        },
+        {
+          "category": "interfaz",
+          "text": "Teclado: se ancla al borde que no tapa lo que estás escribiendo y funciona en todos los campos."
+        },
+        {
+          "category": "interfaz",
+          "text": "Modo edición del HUD: slider de zoom de cámara, contador de ocultos que se puede mover, y el contador de FPS más chico y ajustable."
+        },
+        {
+          "category": "correccion",
+          "text": "El texto ya no sale cortado ni duplicado en pantallas de mucha definición. Afectaba al menú, a los nombres sobre las cabezas, al chat y al campo de la cuenta."
+        },
+        {
+          "category": "correccion",
+          "text": "El líder del grupo ya puede salirse del grupo."
+        },
+        {
+          "category": "correccion",
+          "text": "Con el MU Helper corriendo ya se puede hablar con los NPC."
+        },
+        {
+          "category": "correccion",
+          "text": "El tamaño estándar del texto se calibró: había quedado al doble."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El cliente ya no corre sin límite calculando cuadros que la pantalla descarta: eso era calor puro sin ganancia visible, y en equipos de gama baja terminaba dando menos cuadros sostenidos. Ahora arranca con vsync y un tope de 120 cuadros por segundo (60 en modo ultra rendimiento). Si ya elegiste un valor en Opciones, ese valor manda."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Perfil térmico adaptativo: cuando el teléfono se calienta, el cliente baja calidad de a poco por su cuenta antes de que el sistema recorte el rendimiento de golpe."
+        }
+      ],
+      "download_bytes": 6050034,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.10",
       "date": "2026-07-26",
       "title": "Release 1.0.10",
