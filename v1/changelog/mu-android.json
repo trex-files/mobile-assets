@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.12",
+      "date": "2026-07-28",
+      "title": "Release 1.0.12",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Los textos que faltaban en la interfaz ya se ven. En una instalación nueva varios formularios aparecían con los rótulos en blanco —Opciones era el más notorio: se veían los botones pero ninguna etiqueta de fila ni de pestaña— porque el archivo de idioma que se bajaba era anterior a esas entradas. Afecta a español, inglés y portugués."
+        },
+        {
+          "category": "interfaz",
+          "text": "Banderas de idioma para el selector: español, inglés, portugués, ruso y vietnamita."
+        },
+        {
+          "category": "interfaz",
+          "text": "Arte del inventario actualizado."
+        }
+      ],
+      "download_bytes": 1292042,
+      "files_changed": 18
+    },
+    {
       "version": "1.0.11",
       "date": "2026-07-27",
       "title": "Release 1.0.11",
