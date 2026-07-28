@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.13",
+      "date": "2026-07-28",
+      "title": "Release 1.0.13",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "El juego ya deja iniciar sesión. La pantalla se quedaba en \"conectando\" para siempre, y a quien lograba pasar le quedaba la selección de personaje en negro. La causa estaba en el catálogo de objetos que baja el cliente: venía incompleto y eso corrompía las claves con las que el cliente le habla al servidor, así que el servidor descartaba el intento de entrada sin decir nada."
+        },
+        {
+          "category": "correccion",
+          "text": "Las alas Wing55 y Hallow_wing vuelven a mostrar su modelo. El catálogo traía la numeración vieja y el cliente no las encontraba."
+        },
+        {
+          "category": "correccion",
+          "text": "Las monturas vuelven a verse en el inventario. Su catálogo llegaba vacío."
+        }
+      ],
+      "download_bytes": 140264,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.12",
       "date": "2026-07-28",
       "title": "Release 1.0.12",
