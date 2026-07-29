@@ -1,0 +1,3296 @@
+{
+  "version": 1,
+  "_readme": [
+    "Los articulos de la Ayuda del cliente movil. Se publican por el updater a",
+    "Data/Interface/MobileHUD/onb_help.json y se hornean con",
+    "tools/gen_onboard_fallback.py.",
+    "",
+    "ALIAS: es lo que hace o rompe el buscador. NO es el titulo: es lo que la",
+    "gente ESCRIBE. Lista PLANA y mezclada entre idiomas a proposito — alguien",
+    "que juega en espanol igual escribe 'potion'. Mas alias = mas recall.",
+    "",
+    "DEEP: iface=<INTERFACE>&tab=<x> | action=<x>. Lo resuelve NewUIHelpWindow.",
+    "BODY: array de parrafos por idioma. Cada parrafo, 2-4 renglones en pantalla."
+  ],
+  "categories": [
+    {
+      "id": "basics",
+      "name": {
+        "es": "Primeros pasos",
+        "en": "First steps",
+        "pt": "Primeiros passos"
+      }
+    },
+    {
+      "id": "items",
+      "name": {
+        "es": "Items y equipo",
+        "en": "Items and gear",
+        "pt": "Itens e equipamento"
+      }
+    },
+    {
+      "id": "screen",
+      "name": {
+        "es": "Pantalla y controles",
+        "en": "Screen and controls",
+        "pt": "Tela e controles"
+      }
+    },
+    {
+      "id": "floor",
+      "name": {
+        "es": "Suelo, drops y filtros",
+        "en": "Ground, drops and filters",
+        "pt": "Chao, drops e filtros"
+      }
+    },
+    {
+      "id": "helper",
+      "name": {
+        "es": "MU Helper",
+        "en": "MU Helper",
+        "pt": "MU Helper"
+      }
+    },
+    {
+      "id": "social",
+      "name": {
+        "es": "Gente y seguridad",
+        "en": "People and safety",
+        "pt": "Pessoas e seguranca"
+      }
+    },
+    {
+      "id": "world",
+      "name": {
+        "es": "Mundo y progresion",
+        "en": "World and progression",
+        "pt": "Mundo e progressao"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "id": "mover",
+      "cat": "basics",
+      "title": {
+        "es": "Como moverme",
+        "en": "How to move",
+        "pt": "Como me mover"
+      },
+      "alias": [
+        "mover",
+        "moverme",
+        "caminar",
+        "correr",
+        "joystick",
+        "palanca",
+        "control",
+        "andar",
+        "move",
+        "walk"
+      ],
+      "body": {
+        "es": [
+          "Usa la palanca de la izquierda: desliza el dedo en la direccion a la que quieras ir. Cuanto mas lejos del centro, mas rapido caminas.",
+          "Tambien podes tocar el piso y tu personaje camina solo hasta ahi. Es comodo para moverse por el pueblo sin sostener el dedo.",
+          "Con dos dedos pellizcas para acercar o alejar la camara."
+        ],
+        "en": [
+          "Use the stick on the left: slide your finger in the direction you want to go. The further from the centre, the faster you walk.",
+          "You can also tap the ground and your character walks there on its own. Handy for getting around town without holding your finger down.",
+          "Pinch with two fingers to zoom the camera in or out."
+        ],
+        "pt": [
+          "Use a alavanca da esquerda: deslize o dedo na direcao que quiser ir. Quanto mais longe do centro, mais rapido voce anda.",
+          "Voce tambem pode tocar o chao e o personagem caminha sozinho ate la. Comodo para andar pela cidade sem segurar o dedo.",
+          "Belisque com dois dedos para aproximar ou afastar a camera."
+        ]
+      },
+      "also": [
+        "tapwalk",
+        "minimapa",
+        "viajar"
+      ]
+    },
+    {
+      "id": "atacar",
+      "cat": "basics",
+      "title": {
+        "es": "Como atacar",
+        "en": "How to attack",
+        "pt": "Como atacar"
+      },
+      "alias": [
+        "atacar",
+        "pegar",
+        "matar",
+        "pelear",
+        "golpear",
+        "danar",
+        "attack",
+        "hit"
+      ],
+      "body": {
+        "es": [
+          "Toca un monstruo para atacarlo. Si tenes el auto-ataque prendido, tu personaje sigue pegando solo mientras haya algo cerca.",
+          "Arriba del monstruo aparece su barra de vida. Cuando llega a cero, muere y suelta lo que tenga.",
+          "Un monstruo con el nombre en ROJO es mucho mas fuerte de lo normal: no lo pelees solo."
+        ],
+        "en": [
+          "Tap a monster to attack it. With auto-attack on, your character keeps hitting by itself while something is nearby.",
+          "The monster's health bar appears above it. At zero it dies and drops whatever it was carrying.",
+          "A monster with a RED name is far stronger than normal: do not fight it alone."
+        ],
+        "pt": [
+          "Toque num monstro para atacar. Com o ataque automatico ligado, o personagem continua batendo sozinho enquanto tiver algo perto.",
+          "A barra de vida do monstro aparece em cima dele. No zero ele morre e solta o que tiver.",
+          "Um monstro com nome VERMELHO e muito mais forte que o normal: nao lute sozinho."
+        ]
+      },
+      "also": [
+        "habilidades",
+        "vida_mana",
+        "autoaim"
+      ]
+    },
+    {
+      "id": "zen",
+      "cat": "basics",
+      "title": {
+        "es": "Que es el Zen",
+        "en": "What Zen is",
+        "pt": "O que e o Zen"
+      },
+      "alias": [
+        "zen",
+        "oro",
+        "plata",
+        "dinero",
+        "moneda",
+        "money",
+        "gold",
+        "guita"
+      ],
+      "body": {
+        "es": [
+          "El Zen es la moneda del juego. Lo sueltan los monstruos y lo consegus vendiendo objetos que no uses.",
+          "Con Zen comprás pociones, equipo y viajes a otros mapas. Tambien lo pide la Maquina del Caos para combinar objetos.",
+          "Podes guardarlo en el baul para que no lo pierdas si te matan en una zona peligrosa."
+        ],
+        "en": [
+          "Zen is the game's currency. Monsters drop it and you get more by selling items you don't use.",
+          "Zen buys potions, gear and trips to other maps. The Chaos Machine also asks for it when combining items.",
+          "You can store it in the vault so you don't lose it in a dangerous zone."
+        ],
+        "pt": [
+          "O Zen e a moeda do jogo. Os monstros soltam e voce consegue mais vendendo itens que nao usa.",
+          "Com Zen se compra pocoes, equipamento e viagens para outros mapas. A Maquina do Caos tambem pede Zen para combinar itens.",
+          "Da para guardar no bau para nao perder se te matarem numa zona perigosa."
+        ]
+      },
+      "also": [
+        "comprar_vender",
+        "baul",
+        "viajar"
+      ]
+    },
+    {
+      "id": "vida_mana",
+      "cat": "basics",
+      "title": {
+        "es": "Vida, mana y SD",
+        "en": "Health, mana and SD",
+        "pt": "Vida, mana e SD"
+      },
+      "alias": [
+        "vida",
+        "hp",
+        "mana",
+        "mp",
+        "sd",
+        "escudo",
+        "azul",
+        "rojo",
+        "barra",
+        "salud",
+        "life"
+      ],
+      "body": {
+        "es": [
+          "El orbe rojo es tu vida. Si llega a cero, moris. El azul es el mana: lo gastan las habilidades, y sin mana solo podes pegar normal.",
+          "El SD es un escudo que se recarga solo y absorbe el dano ANTES que tu vida. Por eso a veces te pegan y la barra roja no baja.",
+          "Subir Vitalidad te da mas vida; subir Energia, mas mana."
+        ],
+        "en": [
+          "The red orb is your health. At zero you die. The blue one is mana: skills spend it, and without mana you can only hit normally.",
+          "SD is a shield that refills on its own and absorbs damage BEFORE your health. That is why sometimes you get hit and the red bar doesn't move.",
+          "Raising Vitality gives more health; raising Energy, more mana."
+        ],
+        "pt": [
+          "O orbe vermelho e sua vida. No zero voce morre. O azul e a mana: as habilidades gastam, e sem mana so da para bater normal.",
+          "O SD e um escudo que recarrega sozinho e absorve o dano ANTES da sua vida. Por isso as vezes te batem e a barra vermelha nao baixa.",
+          "Subir Vitalidade da mais vida; subir Energia, mais mana."
+        ]
+      },
+      "also": [
+        "pociones",
+        "morir",
+        "estadisticas"
+      ]
+    },
+    {
+      "id": "pociones",
+      "cat": "basics",
+      "title": {
+        "es": "Como usar pociones",
+        "en": "How to use potions",
+        "pt": "Como usar pocoes"
+      },
+      "alias": [
+        "pocion",
+        "pociones",
+        "tomar",
+        "curar",
+        "curarme",
+        "botella",
+        "frasco",
+        "potion",
+        "heal"
+      ],
+      "body": {
+        "es": [
+          "Las pociones estan en el HUD, cerca de la palanca. Toca la roja para recuperar vida y la azul para mana.",
+          "Compra siempre de mas antes de salir del pueblo: volver a comprar cuesta tiempo y Zen.",
+          "Podes hacer que se tomen SOLAS: en MU Helper -> Pociones elegis a que porcentaje de vida se toman. 50% esta bien para empezar."
+        ],
+        "en": [
+          "Potions sit in the HUD, near the stick. Tap the red one for health and the blue one for mana.",
+          "Always buy spares before leaving town: buying again costs time and zen.",
+          "You can make them drink THEMSELVES: in MU Helper > Potions you pick the health percentage that triggers one. 50% is a fine start."
+        ],
+        "pt": [
+          "As pocoes ficam no HUD, perto da alavanca. Toque a vermelha para vida e a azul para mana.",
+          "Compre sempre de sobra antes de sair da cidade: comprar de novo custa tempo e zen.",
+          "Da para faze-las se tomarem SOZINHAS: em MU Helper > Pocoes voce escolhe em que porcentagem de vida isso acontece. 50% ja serve."
+        ]
+      },
+      "howto": {
+        "es": "MU Helper > Pociones",
+        "en": "MU Helper > Potions",
+        "pt": "MU Helper > Pocoes"
+      },
+      "deep": "iface=MuHelper&tab=pot",
+      "deep_label": {
+        "es": "Configurar las pociones automaticas",
+        "en": "Set up automatic potions",
+        "pt": "Configurar as pocoes automaticas"
+      },
+      "also": [
+        "autopot",
+        "morir",
+        "comprar_vender"
+      ]
+    },
+    {
+      "id": "morir",
+      "cat": "basics",
+      "title": {
+        "es": "Mori, que pasa?",
+        "en": "I died, what now?",
+        "pt": "Morri, e agora?"
+      },
+      "alias": [
+        "morir",
+        "muerte",
+        "me mataron",
+        "revivir",
+        "perdi",
+        "died",
+        "death"
+      ],
+      "body": {
+        "es": [
+          "Revivis en el pueblo del mapa donde estabas. No perdes los objetos que tenias puestos ni los de la bolsa.",
+          "Lo que si baja es la durabilidad del equipo, asi que conviene pasar por el herrero.",
+          "Si te estan matando seguido, no es que pegues poco: probablemente el mapa sea de nivel mas alto que el tuyo. Baja a uno mas facil."
+        ],
+        "en": [
+          "You respawn in the town of the map you were on. You lose neither what you were wearing nor what was in your bag.",
+          "What does drop is your gear's durability, so it's worth stopping by the blacksmith.",
+          "If you keep dying it is not that you hit softly: the map is probably above your level. Drop to an easier one."
+        ],
+        "pt": [
+          "Voce renasce na cidade do mapa onde estava. Nao perde o que estava usando nem o que estava na bolsa.",
+          "O que cai e a durabilidade do equipamento, entao vale passar no ferreiro.",
+          "Se voce morre sempre nao e que bate fraco: o mapa provavelmente esta acima do seu nivel. Desca para um mais facil."
+        ]
+      },
+      "also": [
+        "reparar",
+        "donde_entrenar",
+        "autopot"
+      ]
+    },
+    {
+      "id": "subir_nivel",
+      "cat": "basics",
+      "title": {
+        "es": "Subir de nivel y repartir puntos",
+        "en": "Levelling up and spending points",
+        "pt": "Subir de nivel e distribuir pontos"
+      },
+      "alias": [
+        "nivel",
+        "level",
+        "subir",
+        "puntos",
+        "stats",
+        "atributos",
+        "exp",
+        "experiencia",
+        "levelup"
+      ],
+      "body": {
+        "es": [
+          "Matando monstruos ganas experiencia. Al llenar la barra subis de nivel y recibis puntos para repartir.",
+          "Los puntos se reparten en la ficha de Personaje, con los botones +. No se reparten solos: si no entras, se acumulan sin hacer nada.",
+          "Monstruos de tu nivel o un poco arriba dan la mejor experiencia. Matar cosas muy debiles casi no suma."
+        ],
+        "en": [
+          "Killing monsters earns experience. Fill the bar and you level up and receive points to spend.",
+          "Points are spent on the Character sheet, with the + buttons. They do NOT spend themselves: if you never go in, they just pile up doing nothing.",
+          "Monsters at your level or slightly above give the best experience. Killing very weak things adds almost nothing."
+        ],
+        "pt": [
+          "Matando monstros voce ganha experiencia. Enchendo a barra sobe de nivel e recebe pontos para distribuir.",
+          "Os pontos se distribuem na ficha de Personagem, com os botoes +. Eles NAO se distribuem sozinhos: se voce nunca entra, ficam acumulados sem fazer nada.",
+          "Monstros do seu nivel ou pouco acima dao a melhor experiencia. Matar coisas muito fracas quase nao soma."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Personaje",
+        "en": "Menu > Character",
+        "pt": "Menu > Personagem"
+      },
+      "deep": "iface=CHARACTER",
+      "deep_label": {
+        "es": "Abrir Personaje",
+        "en": "Open Character",
+        "pt": "Abrir Personagem"
+      },
+      "also": [
+        "estadisticas",
+        "clases",
+        "donde_entrenar"
+      ]
+    },
+    {
+      "id": "estadisticas",
+      "cat": "basics",
+      "title": {
+        "es": "Que hace cada estadistica",
+        "en": "What each stat does",
+        "pt": "O que cada atributo faz"
+      },
+      "alias": [
+        "fuerza",
+        "agilidad",
+        "vitalidad",
+        "energia",
+        "comando",
+        "str",
+        "agi",
+        "vit",
+        "ene",
+        "estadistica",
+        "atributo"
+      ],
+      "body": {
+        "es": [
+          "FUERZA: sube el dano de las armas cuerpo a cuerpo y es requisito de casi todo el equipo pesado.",
+          "AGILIDAD: sube el dano de arco, la defensa y la velocidad de ataque.",
+          "VITALIDAD: sube la vida. ENERGIA: sube el mana y el dano de las habilidades magicas. COMANDO: solo del Dark Lord, mejora a su mascota y al grupo."
+        ],
+        "en": [
+          "STRENGTH: raises melee weapon damage and is a requirement for almost all heavy gear.",
+          "AGILITY: raises bow damage, defence and attack speed.",
+          "VITALITY: raises health. ENERGY: raises mana and magic skill damage. COMMAND: Dark Lord only, improves its pet and the party."
+        ],
+        "pt": [
+          "FORCA: sobe o dano das armas corpo a corpo e e requisito de quase todo equipamento pesado.",
+          "AGILIDADE: sobe o dano de arco, a defesa e a velocidade de ataque.",
+          "VITALIDADE: sobe a vida. ENERGIA: sobe a mana e o dano das habilidades magicas. COMANDO: so do Dark Lord, melhora o pet e o grupo."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Personaje",
+        "en": "Menu > Character",
+        "pt": "Menu > Personagem"
+      },
+      "deep": "iface=CHARACTER",
+      "deep_label": {
+        "es": "Abrir Personaje",
+        "en": "Open Character",
+        "pt": "Abrir Personagem"
+      },
+      "also": [
+        "clases",
+        "subir_nivel"
+      ]
+    },
+    {
+      "id": "clases",
+      "cat": "basics",
+      "title": {
+        "es": "Que clase elegir",
+        "en": "Which class to pick",
+        "pt": "Que classe escolher"
+      },
+      "alias": [
+        "clase",
+        "personaje",
+        "knight",
+        "wizard",
+        "elf",
+        "gladiator",
+        "lord",
+        "summoner",
+        "class",
+        "que elegir"
+      ],
+      "body": {
+        "es": [
+          "DARK KNIGHT: aguanta y pega de cerca. La mas facil para empezar — sube Fuerza y algo de Vitalidad.",
+          "DARK WIZARD: mucho dano magico pero poca vida. Sube Energia. FAIRY ELF: arco a distancia y curacion; sube Agilidad.",
+          "MAGIC GLADIATOR y DARK LORD son mixtas y piden mas experiencia previa. Si es tu primera vez, empeza con Dark Knight."
+        ],
+        "en": [
+          "DARK KNIGHT: takes hits and fights up close. The easiest to start with - raise Strength and some Vitality.",
+          "DARK WIZARD: heavy magic damage but little health. Raise Energy. FAIRY ELF: ranged bow and healing; raise Agility.",
+          "MAGIC GLADIATOR and DARK LORD are hybrids and ask for more experience. If this is your first time, start with Dark Knight."
+        ],
+        "pt": [
+          "DARK KNIGHT: aguenta e bate de perto. A mais facil para comecar - suba Forca e um pouco de Vitalidade.",
+          "DARK WIZARD: muito dano magico mas pouca vida. Suba Energia. FAIRY ELF: arco a distancia e cura; suba Agilidade.",
+          "MAGIC GLADIATOR e DARK LORD sao mistas e pedem mais experiencia. Se e sua primeira vez, comece com Dark Knight."
+        ]
+      },
+      "also": [
+        "estadisticas",
+        "subir_nivel"
+      ]
+    },
+    {
+      "id": "equipar",
+      "cat": "items",
+      "title": {
+        "es": "Como equipar",
+        "en": "How to equip",
+        "pt": "Como equipar"
+      },
+      "alias": [
+        "equipar",
+        "ponerme",
+        "vestir",
+        "usar arma",
+        "armadura",
+        "equip",
+        "wear"
+      ],
+      "body": {
+        "es": [
+          "Abri la bolsa y MANTENE APRETADO el objeto: se abre un menu con lo que podes hacer con el.",
+          "Elegi Equipar y el objeto pasa al muneco de la izquierda, donde ves todo lo que llevas puesto.",
+          "El equipo se gasta al pelear. Cuando su numero se pone rojo, hay que repararlo en el pueblo."
+        ],
+        "en": [
+          "Open the bag and HOLD the item: a menu opens with everything you can do with it.",
+          "Pick Equip and the item moves to the doll on the left, where you see everything you are wearing.",
+          "Gear wears down as you fight. When its number turns red, repair it in town."
+        ],
+        "pt": [
+          "Abra a bolsa e SEGURE o item: abre um menu com tudo o que da para fazer com ele.",
+          "Escolha Equipar e o item vai para o boneco da esquerda, onde voce ve tudo o que esta usando.",
+          "O equipamento gasta ao lutar. Quando o numero ficar vermelho, conserte na cidade."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Inventario > manten apretado",
+        "en": "Menu > Inventory > hold",
+        "pt": "Menu > Inventario > segure"
+      },
+      "deep": "iface=INVENTORY",
+      "deep_label": {
+        "es": "Abrir la bolsa",
+        "en": "Open the bag",
+        "pt": "Abrir a bolsa"
+      },
+      "also": [
+        "no_puedo_equipar",
+        "reparar",
+        "sets"
+      ]
+    },
+    {
+      "id": "no_puedo_equipar",
+      "cat": "items",
+      "title": {
+        "es": "No puedo equipar esto",
+        "en": "I cannot equip this",
+        "pt": "Nao consigo equipar isto"
+      },
+      "alias": [
+        "no puedo equipar",
+        "requisito",
+        "rojo",
+        "me falta",
+        "nivel del arma",
+        "no me deja",
+        "cannot equip"
+      ],
+      "body": {
+        "es": [
+          "Cada pieza pide un nivel y una cantidad minima de Fuerza o Agilidad. Si no llegas, el requisito sale en ROJO en su descripcion.",
+          "La solucion es subir esa estadistica en Personaje, o usar una pieza mas baja hasta llegar.",
+          "Ojo: algunas piezas son exclusivas de una clase. Si dice el nombre de otra clase, no la vas a poder usar nunca."
+        ],
+        "en": [
+          "Every piece asks for a level and a minimum amount of Strength or Agility. If you fall short, the requirement shows in RED in its description.",
+          "The fix is raising that stat on the Character sheet, or using a lower piece until you get there.",
+          "Careful: some pieces belong to one class only. If it names another class, you will never be able to use it."
+        ],
+        "pt": [
+          "Cada peca pede um nivel e uma quantidade minima de Forca ou Agilidade. Se voce nao chega, o requisito aparece em VERMELHO na descricao.",
+          "A solucao e subir esse atributo em Personagem, ou usar uma peca mais baixa ate chegar la.",
+          "Atencao: algumas pecas sao exclusivas de uma classe. Se diz o nome de outra classe, voce nunca vai poder usar."
+        ]
+      },
+      "also": [
+        "equipar",
+        "estadisticas"
+      ]
+    },
+    {
+      "id": "bolsa_llena",
+      "cat": "items",
+      "title": {
+        "es": "La bolsa esta llena",
+        "en": "The bag is full",
+        "pt": "A bolsa esta cheia"
+      },
+      "alias": [
+        "lleno",
+        "llena",
+        "espacio",
+        "bolsa",
+        "mochila",
+        "no entra",
+        "tirar",
+        "inventario",
+        "full"
+      ],
+      "body": {
+        "es": [
+          "Cada objeto ocupa lugar segun su tamano. Cuando no entra nada mas, no podes levantar del piso.",
+          "Vende en el NPC lo que no uses, guarda lo importante en el baul, y tira lo que no valga nada (manten apretado > Tirar).",
+          "Un filtro del piso ayuda a no levantar basura de entrada."
+        ],
+        "en": [
+          "Each item takes space according to its size. When nothing else fits, you cannot pick up from the ground.",
+          "Sell what you don't use at an NPC, keep the important things in the vault, and drop what is worthless (hold > Drop).",
+          "A ground filter helps you not pick up junk in the first place."
+        ],
+        "pt": [
+          "Cada item ocupa espaco conforme o tamanho. Quando nao cabe mais nada, voce nao consegue pegar do chao.",
+          "Venda no NPC o que nao usa, guarde o importante no bau, e jogue fora o que nao vale nada (segure > Jogar fora).",
+          "Um filtro do chao ajuda a nem pegar lixo."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Inventario",
+        "en": "Menu > Inventory",
+        "pt": "Menu > Inventario"
+      },
+      "deep": "iface=INVENTORY",
+      "deep_label": {
+        "es": "Abrir la bolsa",
+        "en": "Open the bag",
+        "pt": "Abrir a bolsa"
+      },
+      "also": [
+        "baul",
+        "comprar_vender",
+        "filtro_piso"
+      ]
+    },
+    {
+      "id": "reparar",
+      "cat": "items",
+      "title": {
+        "es": "Reparar el equipo",
+        "en": "Repairing gear",
+        "pt": "Consertar o equipamento"
+      },
+      "alias": [
+        "reparar",
+        "roto",
+        "gastado",
+        "durabilidad",
+        "herrero",
+        "arreglar",
+        "repair"
+      ],
+      "body": {
+        "es": [
+          "El equipo pierde durabilidad al pelear. Cuando llega a cero deja de darte sus bonus, aunque lo sigas viendo puesto.",
+          "Cualquier herrero del pueblo lo repara por Zen. Es MUCHO mas barato que morir por pelear con el equipo roto.",
+          "El MU Helper puede repararlo solo mientras juega por vos."
+        ],
+        "en": [
+          "Gear loses durability as you fight. At zero it stops giving you its bonuses, even though you still see it equipped.",
+          "Any town blacksmith repairs it for zen. It is MUCH cheaper than dying because you fought with broken gear.",
+          "MU Helper can repair it on its own while it plays for you."
+        ],
+        "pt": [
+          "O equipamento perde durabilidade ao lutar. No zero para de dar os bonus, mesmo que voce continue vendo ele equipado.",
+          "Qualquer ferreiro da cidade conserta por zen. E MUITO mais barato que morrer por lutar com o equipamento quebrado.",
+          "O MU Helper consegue consertar sozinho enquanto joga por voce."
+        ]
+      },
+      "also": [
+        "equipar",
+        "helper_que_es"
+      ]
+    },
+    {
+      "id": "comprar_vender",
+      "cat": "items",
+      "title": {
+        "es": "Comprar y vender",
+        "en": "Buying and selling",
+        "pt": "Comprar e vender"
+      },
+      "alias": [
+        "vender",
+        "comprar",
+        "tienda",
+        "npc",
+        "shop",
+        "precio",
+        "mercader",
+        "sell",
+        "buy"
+      ],
+      "body": {
+        "es": [
+          "Toca un NPC mercader para abrir su tienda. Manten apretado un objeto de la tienda para comprarlo.",
+          "Para vender, arrastra el objeto desde tu bolsa hacia la ventana de la tienda.",
+          "No vendas al NPC los objetos EXCELLENT ni las joyas: valen mucho mas vendiendoselos a otro jugador."
+        ],
+        "en": [
+          "Tap a merchant NPC to open his shop. Hold an item in the shop to buy it.",
+          "To sell, drag the item from your bag into the shop window.",
+          "Do not sell EXCELLENT items or jewels to the NPC: they are worth far more sold to another player."
+        ],
+        "pt": [
+          "Toque num NPC mercador para abrir a loja. Segure um item da loja para comprar.",
+          "Para vender, arraste o item da sua bolsa para a janela da loja.",
+          "Nao venda para o NPC os itens EXCELLENT nem as joias: valem muito mais vendidos para outro jogador."
+        ]
+      },
+      "also": [
+        "zen",
+        "excellent",
+        "joyas"
+      ]
+    },
+    {
+      "id": "baul",
+      "cat": "items",
+      "title": {
+        "es": "El baul",
+        "en": "The vault",
+        "pt": "O bau"
+      },
+      "alias": [
+        "baul",
+        "banco",
+        "guardar",
+        "almacen",
+        "storage",
+        "boveda",
+        "vault"
+      ],
+      "body": {
+        "es": [
+          "El baul guarda objetos y Zen, y lo comparten TODOS los personajes de tu cuenta. Es la forma de pasarle cosas a otro personaje tuyo.",
+          "Tambien sirve como seguro: lo que esta en el baul no lo perdes pase lo que pase.",
+          "Se abre hablando con el NPC del baul en cualquier pueblo."
+        ],
+        "en": [
+          "The vault stores items and zen, and ALL the characters on your account share it. That is how you pass things to another character of yours.",
+          "It also works as insurance: what is in the vault you never lose, whatever happens.",
+          "It opens by talking to the vault NPC in any town."
+        ],
+        "pt": [
+          "O bau guarda itens e zen, e TODOS os personagens da sua conta compartilham. E assim que voce passa coisas para outro personagem seu.",
+          "Tambem serve como seguro: o que esta no bau voce nao perde aconteca o que acontecer.",
+          "Abre falando com o NPC do bau em qualquer cidade."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Baul",
+        "en": "Menu > Vault",
+        "pt": "Menu > Bau"
+      },
+      "deep": "iface=STORAGE",
+      "deep_label": {
+        "es": "Abrir el baul",
+        "en": "Open the vault",
+        "pt": "Abrir o bau"
+      },
+      "also": [
+        "zen",
+        "bolsa_llena"
+      ]
+    },
+    {
+      "id": "bloquear_item",
+      "cat": "items",
+      "title": {
+        "es": "Bloquear un objeto",
+        "en": "Locking an item",
+        "pt": "Trancar um item"
+      },
+      "alias": [
+        "bloquear",
+        "candado",
+        "no tirar",
+        "proteger objeto",
+        "lock",
+        "trabar"
+      ],
+      "body": {
+        "es": [
+          "Un objeto bloqueado no se puede tirar, vender ni comerciar por accidente.",
+          "Manten apretado el objeto en la bolsa y busca la opcion del candado.",
+          "Vale la pena bloquear las alas, el arma principal y cualquier cosa que te haya costado conseguir."
+        ],
+        "en": [
+          "A locked item cannot be dropped, sold or traded by accident.",
+          "Hold the item in the bag and look for the padlock option.",
+          "It is worth locking your wings, your main weapon and anything that took effort to get."
+        ],
+        "pt": [
+          "Um item trancado nao pode ser jogado fora, vendido nem negociado sem querer.",
+          "Segure o item na bolsa e procure a opcao do cadeado.",
+          "Vale trancar as asas, a arma principal e qualquer coisa que tenha custado para conseguir."
+        ]
+      },
+      "also": [
+        "equipar",
+        "bolsa_llena"
+      ]
+    },
+    {
+      "id": "excellent",
+      "cat": "items",
+      "title": {
+        "es": "Objetos excellent",
+        "en": "Excellent items",
+        "pt": "Itens excellent"
+      },
+      "alias": [
+        "excellent",
+        "exc",
+        "celeste",
+        "azul",
+        "bueno",
+        "opciones del arma",
+        "raro"
+      ],
+      "body": {
+        "es": [
+          "Los objetos con el nombre en CELESTE son excellent: ademas de sus estadisticas normales traen opciones extra (robo de vida, mas dano, mas velocidad...).",
+          "Valen mucho mas que uno comun. Nunca los vendas al NPC.",
+          "Los sueltan los monstruos de nivel alto y salen de algunos eventos."
+        ],
+        "en": [
+          "Items with a LIGHT BLUE name are excellent: on top of their normal stats they carry extra options (life steal, more damage, more speed...).",
+          "They are worth far more than a plain one. Never sell them to the NPC.",
+          "They drop from high level monsters and come out of some events."
+        ],
+        "pt": [
+          "Itens com nome AZUL CLARO sao excellent: alem dos atributos normais trazem opcoes extras (roubo de vida, mais dano, mais velocidade...).",
+          "Valem muito mais que um comum. Nunca venda para o NPC.",
+          "Sao soltos por monstros de nivel alto e saem de alguns eventos."
+        ]
+      },
+      "also": [
+        "comprar_vender",
+        "joyas",
+        "sets"
+      ]
+    },
+    {
+      "id": "joyas",
+      "cat": "items",
+      "title": {
+        "es": "Joyas y para que sirven",
+        "en": "Jewels and what they are for",
+        "pt": "Joias e para que servem"
+      },
+      "alias": [
+        "joya",
+        "joyas",
+        "jewel",
+        "bless",
+        "soul",
+        "chaos",
+        "life",
+        "creation",
+        "harmony",
+        "gema"
+      ],
+      "body": {
+        "es": [
+          "Las joyas NO se usan solas. Son el material para mejorar equipo en la Maquina del Caos.",
+          "Jewel of Bless y Jewel of Soul suben el nivel de una pieza (+1, +2, +3...). Jewel of Life sube su opcion adicional.",
+          "Jewel of Chaos es la que se usa para combinar y para fabricar alas. Guardalas: siempre hacen falta."
+        ],
+        "en": [
+          "Jewels are NOT used on their own. They are the material for upgrading gear at the Chaos Machine.",
+          "Jewel of Bless and Jewel of Soul raise a piece's level (+1, +2, +3...). Jewel of Life raises its additional option.",
+          "Jewel of Chaos is the one used to combine and to craft wings. Keep them: they are always needed."
+        ],
+        "pt": [
+          "As joias NAO se usam sozinhas. Sao o material para melhorar equipamento na Maquina do Caos.",
+          "Jewel of Bless e Jewel of Soul sobem o nivel de uma peca (+1, +2, +3...). Jewel of Life sobe a opcao adicional.",
+          "Jewel of Chaos e a usada para combinar e para fabricar asas. Guarde: sempre fazem falta."
+        ]
+      },
+      "also": [
+        "chaos_machine",
+        "alas",
+        "excellent"
+      ]
+    },
+    {
+      "id": "chaos_machine",
+      "cat": "items",
+      "title": {
+        "es": "La Maquina del Caos",
+        "en": "The Chaos Machine",
+        "pt": "A Maquina do Caos"
+      },
+      "alias": [
+        "chaos",
+        "maquina",
+        "combinar",
+        "mezclar",
+        "mix",
+        "goblin",
+        "chaos machine"
+      ],
+      "body": {
+        "es": [
+          "La maneja el Goblin de Noria. Ahi se combinan objetos y joyas para fabricar cosas mejores.",
+          "Cada combinacion pide materiales concretos y una cantidad de Zen, y tiene un PORCENTAJE de exito: si falla, podes perder los materiales.",
+          "Es donde se hacen las alas, que son el salto mas grande de poder del juego."
+        ],
+        "en": [
+          "The Goblin in Noria runs it. There you combine items and jewels to craft better things.",
+          "Each combination asks for specific materials and an amount of zen, and has a SUCCESS RATE: if it fails, you can lose the materials.",
+          "It is where wings are made, the single biggest power jump in the game."
+        ],
+        "pt": [
+          "Quem opera e o Goblin de Noria. Ali se combinam itens e joias para fabricar coisas melhores.",
+          "Cada combinacao pede materiais especificos e uma quantidade de zen, e tem uma PORCENTAGEM de sucesso: se falhar, voce pode perder os materiais.",
+          "E onde se fazem as asas, o maior salto de poder do jogo."
+        ]
+      },
+      "also": [
+        "joyas",
+        "alas"
+      ]
+    },
+    {
+      "id": "alas",
+      "cat": "items",
+      "title": {
+        "es": "Las alas",
+        "en": "Wings",
+        "pt": "As asas"
+      },
+      "alias": [
+        "alas",
+        "wings",
+        "volar",
+        "ala",
+        "wing"
+      ],
+      "body": {
+        "es": [
+          "Las alas suben tu dano y bajan el que recibis. Son la mejora mas grande que vas a hacer.",
+          "Se fabrican en la Maquina del Caos con Jewel of Chaos y materiales que sueltan los monstruos de nivel alto.",
+          "Ademas te dejan entrar a mapas aereos como Icarus, a los que sin alas no se puede llegar."
+        ],
+        "en": [
+          "Wings raise your damage and lower what you take. They are the biggest upgrade you will make.",
+          "They are crafted at the Chaos Machine with Jewel of Chaos and materials dropped by high level monsters.",
+          "They also let you into aerial maps like Icarus, which you cannot reach without them."
+        ],
+        "pt": [
+          "As asas sobem seu dano e baixam o que voce recebe. Sao a maior melhoria que voce vai fazer.",
+          "Sao fabricadas na Maquina do Caos com Jewel of Chaos e materiais soltos por monstros de nivel alto.",
+          "Tambem te deixam entrar em mapas aereos como Icarus, aos quais sem asas nao da para chegar."
+        ]
+      },
+      "also": [
+        "chaos_machine",
+        "joyas",
+        "donde_entrenar"
+      ]
+    },
+    {
+      "id": "sets",
+      "cat": "items",
+      "title": {
+        "es": "Sets y conjuntos",
+        "en": "Sets",
+        "pt": "Sets e conjuntos"
+      },
+      "alias": [
+        "set",
+        "conjunto",
+        "bonus",
+        "completo",
+        "armadura completa",
+        "juego"
+      ],
+      "body": {
+        "es": [
+          "Usar todas las piezas del mismo set (casco, pechera, pantalon, guantes, botas) da un bonus extra ademas de sus estadisticas.",
+          "El bonus crece si ademas todas estan al mismo nivel de mejora.",
+          "Por eso conviene subir el set entero de a poco y no una sola pieza mucho."
+        ],
+        "en": [
+          "Wearing every piece of the same set (helm, armour, pants, gloves, boots) gives an extra bonus on top of their stats.",
+          "The bonus grows if they are all at the same upgrade level too.",
+          "That is why it is better to raise the whole set little by little than one piece a lot."
+        ],
+        "pt": [
+          "Usar todas as pecas do mesmo set (elmo, peitoral, calca, luvas, botas) da um bonus extra alem dos atributos.",
+          "O bonus cresce se todas estiverem no mesmo nivel de melhoria.",
+          "Por isso convem subir o set inteiro aos poucos e nao uma peca so muito."
+        ]
+      },
+      "also": [
+        "equipar",
+        "joyas",
+        "excellent"
+      ]
+    },
+    {
+      "id": "tooltip_item",
+      "cat": "items",
+      "title": {
+        "es": "Entender la descripcion de un objeto",
+        "en": "Reading an item's description",
+        "pt": "Entender a descricao de um item"
+      },
+      "alias": [
+        "descripcion",
+        "tooltip",
+        "que dice",
+        "numeros del arma",
+        "leer objeto"
+      ],
+      "body": {
+        "es": [
+          "Manten apretado un objeto para ver su ficha: dano o defensa, requisitos, durabilidad y opciones extra.",
+          "Los requisitos que no cumplis salen en rojo. Las opciones en celeste son las de excellent.",
+          "El +N del nombre es su nivel de mejora, conseguido con joyas en la Maquina del Caos."
+        ],
+        "en": [
+          "Hold an item to see its sheet: damage or defence, requirements, durability and extra options.",
+          "Requirements you do not meet show in red. Options in light blue are the excellent ones.",
+          "The +N in the name is its upgrade level, earned with jewels at the Chaos Machine."
+        ],
+        "pt": [
+          "Segure um item para ver a ficha: dano ou defesa, requisitos, durabilidade e opcoes extras.",
+          "Os requisitos que voce nao cumpre aparecem em vermelho. As opcoes em azul claro sao as de excellent.",
+          "O +N do nome e o nivel de melhoria, conseguido com joias na Maquina do Caos."
+        ]
+      },
+      "also": [
+        "no_puedo_equipar",
+        "excellent",
+        "joyas"
+      ]
+    },
+    {
+      "id": "hud_candado",
+      "cat": "screen",
+      "new": true,
+      "title": {
+        "es": "Mover y agrandar los botones",
+        "en": "Moving and resizing buttons",
+        "pt": "Mover e aumentar os botoes"
+      },
+      "alias": [
+        "candado",
+        "mover",
+        "acomodar",
+        "hud",
+        "botones",
+        "tamano",
+        "editar pantalla",
+        "lock",
+        "reacomodar"
+      ],
+      "body": {
+        "es": [
+          "Menu > Candado entra al modo edicion: todos los elementos del HUD quedan con un recuadro y los podes arrastrar a donde quieras.",
+          "Tocando un elemento aparecen los botones - y + para cambiarle el tamano.",
+          "Cuando termines, toca el candado de nuevo. La posicion queda guardada y no se pierde al cerrar el juego."
+        ],
+        "en": [
+          "Menu > Lock enters edit mode: every HUD element gets a frame and you can drag it wherever you want.",
+          "Tapping an element brings up - and + buttons to change its size.",
+          "When you are done, tap the lock again. The position is saved and does not get lost when you close the game."
+        ],
+        "pt": [
+          "Menu > Cadeado entra no modo edicao: todos os elementos do HUD ficam com uma moldura e voce pode arrastar para onde quiser.",
+          "Tocando um elemento aparecem os botoes - e + para mudar o tamanho.",
+          "Quando terminar, toque no cadeado de novo. A posicao fica salva e nao se perde ao fechar o jogo."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Candado",
+        "en": "Menu > Lock",
+        "pt": "Menu > Cadeado"
+      },
+      "deep": "action=hudedit",
+      "deep_label": {
+        "es": "Entrar al modo edicion",
+        "en": "Enter edit mode",
+        "pt": "Entrar no modo edicao"
+      },
+      "also": [
+        "hud_agregar",
+        "hud_ocultar",
+        "texto_tamano"
+      ]
+    },
+    {
+      "id": "hud_agregar",
+      "cat": "screen",
+      "new": true,
+      "title": {
+        "es": "Agregar botones al HUD",
+        "en": "Adding buttons to the HUD",
+        "pt": "Adicionar botoes ao HUD"
+      },
+      "alias": [
+        "agregar",
+        "boton nuevo",
+        "acceso directo",
+        "lanzador",
+        "atajo",
+        "add"
+      ],
+      "body": {
+        "es": [
+          "Dentro del modo candado, el boton Agregar abre una lista de todo lo que podes poner en pantalla: Inventario, Personaje, Misiones, Viajar, el MU Helper...",
+          "Tambien podes poner un FAVORITO DE VIAJE: un boton que te lleva directo a tu mapa de siempre, sin abrir el panel.",
+          "Un boton que ya no uses se saca desde el mismo lugar."
+        ],
+        "en": [
+          "Inside lock mode, the Add button opens a list of everything you can put on screen: Inventory, Character, Quests, Travel, MU Helper...",
+          "You can also add a TRAVEL FAVOURITE: a button that takes you straight to your usual map without opening the panel.",
+          "A button you no longer use is removed from the same place."
+        ],
+        "pt": [
+          "Dentro do modo cadeado, o botao Adicionar abre uma lista de tudo o que da para colocar na tela: Inventario, Personagem, Missoes, Viajar, MU Helper...",
+          "Voce tambem pode colocar um FAVORITO DE VIAGEM: um botao que te leva direto ao seu mapa de sempre, sem abrir o painel.",
+          "Um botao que voce nao usa mais se tira do mesmo lugar."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Candado > Agregar",
+        "en": "Menu > Lock > Add",
+        "pt": "Menu > Cadeado > Adicionar"
+      },
+      "deep": "action=hudedit",
+      "deep_label": {
+        "es": "Entrar al modo edicion",
+        "en": "Enter edit mode",
+        "pt": "Entrar no modo edicao"
+      },
+      "also": [
+        "hud_candado",
+        "favoritos",
+        "helper_encender"
+      ]
+    },
+    {
+      "id": "hud_ocultar",
+      "cat": "screen",
+      "title": {
+        "es": "Ocultar el HUD",
+        "en": "Hiding the HUD",
+        "pt": "Esconder o HUD"
+      },
+      "alias": [
+        "ocultar",
+        "esconder",
+        "limpiar pantalla",
+        "captura",
+        "screenshot",
+        "sin botones"
+      ],
+      "body": {
+        "es": [
+          "En el modo candado hay una opcion para ocultar el HUD entero.",
+          "Sirve para sacar capturas limpias del juego, sin botones encima.",
+          "Se vuelve a mostrar entrando otra vez al candado."
+        ],
+        "en": [
+          "Lock mode has an option to hide the whole HUD.",
+          "It is for taking clean screenshots of the game, without buttons on top.",
+          "It comes back by entering lock mode again."
+        ],
+        "pt": [
+          "No modo cadeado tem uma opcao para esconder o HUD inteiro.",
+          "Serve para tirar capturas limpas do jogo, sem botoes em cima.",
+          "Volta a aparecer entrando de novo no cadeado."
+        ]
+      },
+      "deep": "action=hudedit",
+      "deep_label": {
+        "es": "Entrar al modo edicion",
+        "en": "Enter edit mode",
+        "pt": "Entrar no modo edicao"
+      },
+      "also": [
+        "hud_candado"
+      ]
+    },
+    {
+      "id": "texto_tamano",
+      "cat": "screen",
+      "title": {
+        "es": "Tamano del texto",
+        "en": "Text size",
+        "pt": "Tamanho do texto"
+      },
+      "alias": [
+        "texto",
+        "letra",
+        "chico",
+        "grande",
+        "no leo",
+        "fuente",
+        "font",
+        "agrandar letra"
+      ],
+      "body": {
+        "es": [
+          "Opciones > HUD > Tamano del texto cambia la letra de TODO el juego: chat, nombres, paneles y menus.",
+          "Todo se reacomoda solo: los paneles crecen y las listas muestran menos filas, pero nada queda cortado.",
+          "Si te cuesta leer en el celular, es lo primero que conviene tocar."
+        ],
+        "en": [
+          "Settings > HUD > Text size changes the lettering across the WHOLE game: chat, names, panels and menus.",
+          "Everything re-flows on its own: panels grow and lists show fewer rows, but nothing gets cut off.",
+          "If reading on the phone is hard, this is the first thing to touch."
+        ],
+        "pt": [
+          "Opcoes > HUD > Tamanho do texto muda a letra de TODO o jogo: chat, nomes, paineis e menus.",
+          "Tudo se reorganiza sozinho: os paineis crescem e as listas mostram menos linhas, mas nada fica cortado.",
+          "Se esta dificil ler no celular, e a primeira coisa a mexer."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > HUD > Tamano del texto",
+        "en": "Settings > HUD > Text size",
+        "pt": "Opcoes > HUD > Tamanho do texto"
+      },
+      "deep": "iface=OPTION&tab=hud",
+      "deep_label": {
+        "es": "Abrir Opciones > HUD",
+        "en": "Open Settings > HUD",
+        "pt": "Abrir Opcoes > HUD"
+      },
+      "also": [
+        "hud_candado",
+        "juego_lento"
+      ]
+    },
+    {
+      "id": "juego_lento",
+      "cat": "screen",
+      "title": {
+        "es": "El juego va lento",
+        "en": "The game runs slow",
+        "pt": "O jogo esta lento"
+      },
+      "alias": [
+        "lento",
+        "lag",
+        "fps",
+        "tironea",
+        "se traba",
+        "rendimiento",
+        "calidad",
+        "slow",
+        "trabado"
+      ],
+      "body": {
+        "es": [
+          "Opciones > Video > Calidad: bajar un escalon suele arreglarlo enseguida. Es lo primero que hay que probar.",
+          "Apagar los efectos dinamicos y el brillo ayuda mucho en pueblos llenos de gente.",
+          "Prender el filtro del piso tambien: con menos carteles y menos objetos dibujados, el juego respira."
+        ],
+        "en": [
+          "Settings > Video > Quality: dropping one step usually fixes it right away. It is the first thing to try.",
+          "Turning off dynamic effects and glow helps a lot in towns full of people.",
+          "Turning on the ground filter helps too: with fewer labels and fewer items drawn, the game breathes."
+        ],
+        "pt": [
+          "Opcoes > Video > Qualidade: baixar um nivel costuma resolver na hora. E a primeira coisa a testar.",
+          "Desligar os efeitos dinamicos e o brilho ajuda muito em cidades cheias de gente.",
+          "Ligar o filtro do chao tambem: com menos etiquetas e menos itens desenhados, o jogo respira."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Video > Calidad",
+        "en": "Settings > Video > Quality",
+        "pt": "Opcoes > Video > Qualidade"
+      },
+      "deep": "iface=OPTION&tab=video",
+      "deep_label": {
+        "es": "Abrir Opciones > Video",
+        "en": "Open Settings > Video",
+        "pt": "Abrir Opcoes > Video"
+      },
+      "also": [
+        "celular_calienta",
+        "filtro_piso",
+        "afk_ocultar"
+      ]
+    },
+    {
+      "id": "celular_calienta",
+      "cat": "screen",
+      "title": {
+        "es": "Se calienta el celular",
+        "en": "The phone heats up",
+        "pt": "O celular esquenta"
+      },
+      "alias": [
+        "calienta",
+        "caliente",
+        "temperatura",
+        "bateria",
+        "se apaga",
+        "consume",
+        "hot"
+      ],
+      "body": {
+        "es": [
+          "El cliente detecta la temperatura y baja la carga solo cuando el aparato se calienta. Por eso a veces vas a ver que el juego se pone un poco mas simple: es a proposito.",
+          "Si pasa seguido, baja la calidad a mano en Opciones > Video y va a durar mucho mas la bateria.",
+          "Cerrar los paneles que no uses tambien ayuda."
+        ],
+        "en": [
+          "The client reads the temperature and eases off on its own when the device heats up. That is why the game sometimes looks a bit simpler: it is on purpose.",
+          "If it happens often, lower the quality by hand in Settings > Video and the battery will last much longer.",
+          "Closing panels you are not using helps too."
+        ],
+        "pt": [
+          "O cliente le a temperatura e alivia sozinho quando o aparelho esquenta. Por isso as vezes o jogo fica um pouco mais simples: e de proposito.",
+          "Se acontece sempre, baixe a qualidade na mao em Opcoes > Video e a bateria vai durar muito mais.",
+          "Fechar os paineis que nao usa tambem ajuda."
+        ]
+      },
+      "deep": "iface=OPTION&tab=video",
+      "deep_label": {
+        "es": "Abrir Opciones > Video",
+        "en": "Open Settings > Video",
+        "pt": "Abrir Opcoes > Video"
+      },
+      "also": [
+        "juego_lento"
+      ]
+    },
+    {
+      "id": "teclado",
+      "cat": "screen",
+      "title": {
+        "es": "El teclado del juego",
+        "en": "The in-game keyboard",
+        "pt": "O teclado do jogo"
+      },
+      "alias": [
+        "teclado",
+        "escribir",
+        "ime",
+        "letras",
+        "no puedo escribir",
+        "keyboard"
+      ],
+      "body": {
+        "es": [
+          "El juego trae su propio teclado, mas grande y comodo que el de Android para jugar en horizontal.",
+          "Si preferis el de Android, se cambia en Opciones > General.",
+          "El teclado del juego se puede mover y escalar desde el engranaje que aparece cuando esta abierto."
+        ],
+        "en": [
+          "The game carries its own keyboard, bigger and more comfortable than Android's for landscape play.",
+          "If you prefer Android's, switch it in Settings > General.",
+          "The in-game keyboard can be moved and scaled from the gear that appears while it is open."
+        ],
+        "pt": [
+          "O jogo traz o proprio teclado, maior e mais confortavel que o do Android para jogar na horizontal.",
+          "Se voce prefere o do Android, troque em Opcoes > Geral.",
+          "O teclado do jogo pode ser movido e redimensionado pela engrenagem que aparece quando ele esta aberto."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > General > Teclado del juego",
+        "en": "Settings > General > In-game keyboard",
+        "pt": "Opcoes > Geral > Teclado do jogo"
+      },
+      "deep": "iface=OPTION&tab=general",
+      "deep_label": {
+        "es": "Abrir Opciones > General",
+        "en": "Open Settings > General",
+        "pt": "Abrir Opcoes > Geral"
+      },
+      "also": [
+        "chat"
+      ]
+    },
+    {
+      "id": "minimapa",
+      "cat": "screen",
+      "title": {
+        "es": "El mapa y el minimapa",
+        "en": "The map and mini map",
+        "pt": "O mapa e o minimapa"
+      },
+      "alias": [
+        "mapa",
+        "minimapa",
+        "donde estoy",
+        "coordenadas",
+        "perdido",
+        "map"
+      ],
+      "body": {
+        "es": [
+          "Arriba a la derecha esta el minimapa con tu posicion. Tocalo y se abre el mapa grande del lugar.",
+          "En el mapa grande ves los NPC importantes y las salidas hacia otras zonas.",
+          "El nombre del mapa y tus coordenadas tambien se muestran en el HUD; se pueden mover con el candado."
+        ],
+        "en": [
+          "The mini map with your position sits at the top right. Tap it and the full map of the place opens.",
+          "On the full map you see the important NPCs and the exits to other zones.",
+          "The map name and your coordinates also show in the HUD; both can be moved with the lock."
+        ],
+        "pt": [
+          "No canto superior direito fica o minimapa com a sua posicao. Toque e abre o mapa grande do lugar.",
+          "No mapa grande voce ve os NPCs importantes e as saidas para outras zonas.",
+          "O nome do mapa e suas coordenadas tambem aparecem no HUD; da para mover com o cadeado."
+        ]
+      },
+      "also": [
+        "viajar",
+        "hud_candado"
+      ]
+    },
+    {
+      "id": "chat",
+      "cat": "screen",
+      "title": {
+        "es": "El chat",
+        "en": "Chat",
+        "pt": "O chat"
+      },
+      "alias": [
+        "chat",
+        "hablar",
+        "escribir",
+        "susurro",
+        "privado",
+        "mensaje",
+        "mp",
+        "chatear"
+      ],
+      "body": {
+        "es": [
+          "El chat esta abajo al centro. Tocalo para escribir y mandar.",
+          "Tocando el NOMBRE de alguien en el chat le respondes en privado (susurro).",
+          "Si te molesta, se puede mover, achicar o esconder desde el candado."
+        ],
+        "en": [
+          "Chat sits at the bottom centre. Tap it to type and send.",
+          "Tapping someone's NAME in chat answers them privately (whisper).",
+          "If it gets in the way, it can be moved, shrunk or hidden from lock mode."
+        ],
+        "pt": [
+          "O chat fica embaixo no centro. Toque para escrever e enviar.",
+          "Tocando no NOME de alguem no chat voce responde em particular (sussurro).",
+          "Se atrapalha, da para mover, diminuir ou esconder pelo cadeado."
+        ]
+      },
+      "also": [
+        "susurro",
+        "bloquear_jugador",
+        "hud_candado"
+      ]
+    },
+    {
+      "id": "tapwalk",
+      "cat": "screen",
+      "title": {
+        "es": "Caminar tocando el piso",
+        "en": "Walking by tapping the ground",
+        "pt": "Andar tocando o chao"
+      },
+      "alias": [
+        "tap walk",
+        "tocar el piso",
+        "ir solo",
+        "caminar tocando",
+        "click to move"
+      ],
+      "body": {
+        "es": [
+          "Ademas de la palanca, podes tocar el piso y el personaje camina solo hasta ese punto.",
+          "Es comodo para moverse por el pueblo sin sostener el dedo en la palanca.",
+          "Si te molesta —porque a veces caminas sin querer al tocar la pantalla— se apaga en Opciones > General."
+        ],
+        "en": [
+          "Besides the stick, you can tap the ground and your character walks there on its own.",
+          "It is comfortable for moving around town without holding a finger on the stick.",
+          "If it bothers you - because you sometimes walk by accident when touching the screen - turn it off in Settings > General."
+        ],
+        "pt": [
+          "Alem da alavanca, voce pode tocar o chao e o personagem caminha sozinho ate esse ponto.",
+          "E comodo para andar pela cidade sem segurar o dedo na alavanca.",
+          "Se atrapalha - porque as vezes voce anda sem querer ao tocar a tela - desligue em Opcoes > Geral."
+        ]
+      },
+      "deep": "iface=OPTION&tab=general",
+      "deep_label": {
+        "es": "Abrir Opciones > General",
+        "en": "Open Settings > General",
+        "pt": "Abrir Opcoes > Geral"
+      },
+      "also": [
+        "mover",
+        "autoaim"
+      ]
+    },
+    {
+      "id": "autoaim",
+      "cat": "screen",
+      "title": {
+        "es": "Auto-apuntado y auto-ataque",
+        "en": "Auto-aim and auto-attack",
+        "pt": "Mira e ataque automaticos"
+      },
+      "alias": [
+        "autoaim",
+        "apuntado",
+        "auto ataque",
+        "pegar solo",
+        "automatico",
+        "auto"
+      ],
+      "body": {
+        "es": [
+          "Con el auto-apuntado prendido, tu personaje elige solo al enemigo mas cercano cuando atacas.",
+          "Apagado, solo le pegas a lo que toques o a lo que apuntes arrastrando la habilidad.",
+          "Los dos se cambian en Opciones > General."
+        ],
+        "en": [
+          "With auto-aim on, your character picks the nearest enemy by itself when you attack.",
+          "Off, you only hit what you tap or what you aim at by dragging the skill.",
+          "Both are changed in Settings > General."
+        ],
+        "pt": [
+          "Com a mira automatica ligada, seu personagem escolhe sozinho o inimigo mais proximo quando voce ataca.",
+          "Desligada, voce so bate no que tocar ou no que mirar arrastando a habilidade.",
+          "Os dois se mudam em Opcoes > Geral."
+        ]
+      },
+      "deep": "iface=OPTION&tab=general",
+      "deep_label": {
+        "es": "Abrir Opciones > General",
+        "en": "Open Settings > General",
+        "pt": "Abrir Opcoes > Geral"
+      },
+      "also": [
+        "atacar",
+        "habilidades"
+      ]
+    },
+    {
+      "id": "habilidades",
+      "cat": "screen",
+      "title": {
+        "es": "Usar y cambiar habilidades",
+        "en": "Using and changing skills",
+        "pt": "Usar e trocar habilidades"
+      },
+      "alias": [
+        "habilidad",
+        "skill",
+        "magia",
+        "orbe",
+        "anillo",
+        "hechizo",
+        "spell"
+      ],
+      "body": {
+        "es": [
+          "El anillo de abajo a la derecha son tus habilidades. Tocas una y se usa sobre tu objetivo.",
+          "Si MANTENES APRETADO y arrastras, elegis exactamente donde cae — importante para las de area.",
+          "Con el boton EDITAR del anillo cambias que habilidad va en cada orbe."
+        ],
+        "en": [
+          "The ring at the bottom right holds your skills. Tap one and it is cast on your target.",
+          "If you HOLD and drag, you choose exactly where it lands - important for area skills.",
+          "The EDIT button on the ring changes which skill sits in each orb."
+        ],
+        "pt": [
+          "O anel embaixo a direita sao suas habilidades. Toque uma e ela e usada no seu alvo.",
+          "Se voce SEGURAR e arrastar, escolhe exatamente onde ela cai - importante nas de area.",
+          "Com o botao EDITAR do anel voce troca qual habilidade fica em cada orbe."
+        ]
+      },
+      "also": [
+        "atacar",
+        "vida_mana",
+        "autoaim"
+      ]
+    },
+    {
+      "id": "nombres_ocultar",
+      "cat": "screen",
+      "title": {
+        "es": "Esconder nombres y barras",
+        "en": "Hiding names and bars",
+        "pt": "Esconder nomes e barras"
+      },
+      "alias": [
+        "nombres",
+        "ocultar nombres",
+        "barras",
+        "tapan",
+        "no veo el piso",
+        "limpiar"
+      ],
+      "body": {
+        "es": [
+          "En Opciones > HUD podes apagar los nombres de los jugadores, las barras de vida de los monstruos y los titulos.",
+          "En pueblos llenos de gente esto cambia completamente lo que se ve.",
+          "Tambien se puede esconder solo a los jugadores AFK, que suelen ser la mayoria de los que tapan."
+        ],
+        "en": [
+          "In Settings > HUD you can turn off player names, monster health bars and titles.",
+          "In towns full of people this completely changes what you can see.",
+          "You can also hide only AFK players, who are usually the majority of those in the way."
+        ],
+        "pt": [
+          "Em Opcoes > HUD da para desligar os nomes dos jogadores, as barras de vida dos monstros e os titulos.",
+          "Em cidades cheias de gente isso muda completamente o que da para ver.",
+          "Tambem da para esconder so os jogadores AFK, que costumam ser a maioria dos que atrapalham."
+        ]
+      },
+      "deep": "iface=OPTION&tab=hud",
+      "deep_label": {
+        "es": "Abrir Opciones > HUD",
+        "en": "Open Settings > HUD",
+        "pt": "Abrir Opcoes > HUD"
+      },
+      "also": [
+        "afk_ocultar",
+        "juego_lento"
+      ]
+    },
+    {
+      "id": "filtro_piso",
+      "cat": "floor",
+      "new": true,
+      "title": {
+        "es": "Esconder items del piso",
+        "en": "Hiding items on the ground",
+        "pt": "Esconder itens do chao"
+      },
+      "alias": [
+        "filtro",
+        "ocultar items",
+        "no ver",
+        "basura",
+        "piso",
+        "suelo",
+        "tapado",
+        "limpiar piso",
+        "filter",
+        "esconder objetos"
+      ],
+      "body": {
+        "es": [
+          "En un servidor con drop alto el suelo se llena de cosas que no te sirven, y en el celular los carteles se apilan y tapan a los monstruos.",
+          "El filtro te deja decir QUE NO QUERES VER. Armas una lista de nombres y esos objetos dejan de dibujarse: ni el modelo, ni el cartel, ni el blanco de seleccion.",
+          "EL OBJETO SIGUE ESTANDO. Se puede levantar igual, a mano o con el MU Helper. Es puramente visual: el servidor no se entera de nada."
+        ],
+        "en": [
+          "On a high drop server the ground fills with things you don't need, and on a phone the labels stack up and hide the monsters.",
+          "The filter lets you say WHAT YOU DON'T WANT TO SEE. You build a list of names and those items stop being drawn: no model, no label, no selection highlight.",
+          "THE ITEM IS STILL THERE. It can be picked up all the same, by hand or with MU Helper. It is purely visual: the server never finds out."
+        ],
+        "pt": [
+          "Num servidor com drop alto o chao enche de coisas que nao servem, e no celular as etiquetas se empilham e escondem os monstros.",
+          "O filtro te deixa dizer O QUE VOCE NAO QUER VER. Voce monta uma lista de nomes e esses itens param de ser desenhados: nem o modelo, nem a etiqueta, nem o destaque de selecao.",
+          "O ITEM CONTINUA LA. Da para pegar do mesmo jeito, na mao ou com o MU Helper. E puramente visual: o servidor nem fica sabendo."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Items",
+        "en": "Settings > Items",
+        "pt": "Opcoes > Itens"
+      },
+      "deep": "iface=OPTION&tab=items",
+      "deep_label": {
+        "es": "Abrir el filtro ahora",
+        "en": "Open the filter now",
+        "pt": "Abrir o filtro agora"
+      },
+      "also": [
+        "filtro_conjunto",
+        "filtro_chip",
+        "droplist",
+        "levantar"
+      ]
+    },
+    {
+      "id": "filtro_conjunto",
+      "cat": "floor",
+      "new": true,
+      "title": {
+        "es": "Crear un conjunto de filtro",
+        "en": "Creating a filter set",
+        "pt": "Criar um conjunto de filtro"
+      },
+      "alias": [
+        "conjunto",
+        "lista",
+        "agregar al filtro",
+        "filtro por mapa",
+        "set de filtro"
+      ],
+      "body": {
+        "es": [
+          "Un conjunto es una lista de nombres. Podes tener hasta 8 conjuntos de 50 nombres cada uno.",
+          "Cada conjunto se puede ATAR A UN MAPA: se prende solo al entrar a ese mapa y se apaga al salir. Asi no tenes que acordarte de nada.",
+          "Se escriben igual que en la lista de recoleccion del MU Helper: el nombre del objeto, sin importar mayusculas ni acentos."
+        ],
+        "en": [
+          "A set is a list of names. You can have up to 8 sets of 50 names each.",
+          "Each set can be TIED TO A MAP: it turns itself on when you enter that map and off when you leave. That way you don't have to remember anything.",
+          "They are written the same way as in MU Helper's pick-up list: the item's name, regardless of case or accents."
+        ],
+        "pt": [
+          "Um conjunto e uma lista de nomes. Da para ter ate 8 conjuntos de 50 nomes cada.",
+          "Cada conjunto pode ser LIGADO A UM MAPA: liga sozinho ao entrar nesse mapa e desliga ao sair. Assim voce nao precisa lembrar de nada.",
+          "Se escrevem do mesmo jeito que na lista de coleta do MU Helper: o nome do item, sem se importar com maiusculas nem acentos."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Items > Nuevo conjunto",
+        "en": "Settings > Items > New set",
+        "pt": "Opcoes > Itens > Novo conjunto"
+      },
+      "deep": "iface=OPTION&tab=items",
+      "deep_label": {
+        "es": "Abrir el filtro",
+        "en": "Open the filter",
+        "pt": "Abrir o filtro"
+      },
+      "also": [
+        "filtro_piso",
+        "filtro_chip",
+        "helper_recoleccion"
+      ]
+    },
+    {
+      "id": "filtro_chip",
+      "cat": "floor",
+      "new": true,
+      "title": {
+        "es": "«N ocultos»: que significa",
+        "en": "'N hidden': what it means",
+        "pt": "'N ocultos': o que significa"
+      },
+      "alias": [
+        "ocultos",
+        "contador",
+        "chip",
+        "numero rojo",
+        "cuantos oculte",
+        "n ocultos"
+      ],
+      "body": {
+        "es": [
+          "Es el contador del HUD: te dice cuantos objetos te esta tapando el filtro AHORA MISMO.",
+          "Existe para que un filtro mal escrito no te haga desaparecer medio suelo sin que sepas que fuiste vos.",
+          "Tocandolo apagas el filtro de una, sin perder ningun conjunto. Volves a tocarlo y se prende otra vez."
+        ],
+        "en": [
+          "It is the HUD counter: it tells you how many items the filter is hiding RIGHT NOW.",
+          "It exists so a badly written filter doesn't make half the ground disappear without you knowing it was you.",
+          "Tapping it switches the filter off at once, without losing any set. Tap again and it comes back on."
+        ],
+        "pt": [
+          "E o contador do HUD: diz quantos itens o filtro esta escondendo AGORA.",
+          "Existe para que um filtro mal escrito nao faca meio chao sumir sem voce saber que foi voce.",
+          "Tocando nele o filtro desliga na hora, sem perder nenhum conjunto. Toque de novo e liga outra vez."
+        ]
+      },
+      "deep": "iface=OPTION&tab=items",
+      "deep_label": {
+        "es": "Abrir el filtro",
+        "en": "Open the filter",
+        "pt": "Abrir o filtro"
+      },
+      "also": [
+        "filtro_piso",
+        "objeto_desaparecio"
+      ]
+    },
+    {
+      "id": "droplist",
+      "cat": "floor",
+      "new": true,
+      "title": {
+        "es": "Lista de drops apilados",
+        "en": "Stacked drop list",
+        "pt": "Lista de drops empilhados"
+      },
+      "alias": [
+        "lista de items",
+        "apilado",
+        "carteles",
+        "se pisan",
+        "muchos drops",
+        "columna"
+      ],
+      "body": {
+        "es": [
+          "Cuando caen TRES objetos o mas juntos, los carteles del piso dejan de superponerse y se apilan en una columna ordenada por distancia.",
+          "Tocas una fila y tu personaje va y lo levanta, igual que si tocaras el objeto en el piso.",
+          "Se puede mover y escalar con el candado, y apagar en Opciones > Items."
+        ],
+        "en": [
+          "When THREE or more items drop together, the ground labels stop overlapping and stack into a column sorted by distance.",
+          "You tap a row and your character goes and picks it up, exactly as if you had tapped the item on the ground.",
+          "It can be moved and scaled with the lock, and turned off in Settings > Items."
+        ],
+        "pt": [
+          "Quando caem TRES ou mais itens juntos, as etiquetas do chao param de se sobrepor e se empilham numa coluna ordenada por distancia.",
+          "Voce toca numa linha e seu personagem vai e pega, igual a se tivesse tocado o item no chao.",
+          "Da para mover e redimensionar com o cadeado, e desligar em Opcoes > Itens."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Items > Lista de items del piso",
+        "en": "Settings > Items > Ground item list",
+        "pt": "Opcoes > Itens > Lista de itens do chao"
+      },
+      "deep": "iface=OPTION&tab=items",
+      "deep_label": {
+        "es": "Abrir Opciones > Items",
+        "en": "Open Settings > Items",
+        "pt": "Abrir Opcoes > Itens"
+      },
+      "also": [
+        "levantar",
+        "filtro_piso",
+        "hud_candado"
+      ]
+    },
+    {
+      "id": "levantar",
+      "cat": "floor",
+      "title": {
+        "es": "Levantar objetos",
+        "en": "Picking things up",
+        "pt": "Pegar itens"
+      },
+      "alias": [
+        "levantar",
+        "agarrar",
+        "recoger",
+        "tomar del piso",
+        "pick",
+        "juntar",
+        "loot"
+      ],
+      "body": {
+        "es": [
+          "Toca el cartel del objeto en el piso y tu personaje camina hasta el y lo levanta.",
+          "Si hay varios juntos, usa la lista apilada: es mucho mas preciso que tratar de acertarle al cartel correcto.",
+          "Si la bolsa esta llena no vas a poder levantar nada, aunque toques."
+        ],
+        "en": [
+          "Tap the item's label on the ground and your character walks over and picks it up.",
+          "If several are together, use the stacked list: it is far more precise than trying to hit the right label.",
+          "If the bag is full you will not pick anything up, no matter how much you tap."
+        ],
+        "pt": [
+          "Toque na etiqueta do item no chao e seu personagem caminha ate ele e pega.",
+          "Se tem varios juntos, use a lista empilhada: e muito mais preciso que tentar acertar a etiqueta certa.",
+          "Se a bolsa esta cheia voce nao vai pegar nada, por mais que toque."
+        ]
+      },
+      "also": [
+        "droplist",
+        "bolsa_llena",
+        "helper_recoleccion"
+      ]
+    },
+    {
+      "id": "objeto_desaparecio",
+      "cat": "floor",
+      "title": {
+        "es": "Desaparecio un objeto del piso",
+        "en": "An item vanished from the ground",
+        "pt": "Sumiu um item do chao"
+      },
+      "alias": [
+        "desaparecio",
+        "no veo",
+        "se fue",
+        "perdi el drop",
+        "no aparece",
+        "falta"
+      ],
+      "body": {
+        "es": [
+          "Lo mas probable es que lo este escondiendo TU FILTRO. Fijate en el contador «N ocultos» del HUD: si tiene un numero, hay cosas tapadas.",
+          "Tocando ese contador apagas el filtro y vuelven a verse todas.",
+          "Si el contador esta en cero, el objeto probablemente lo levanto otro jugador o expiro: los drops del piso no duran para siempre."
+        ],
+        "en": [
+          "Most likely YOUR FILTER is hiding it. Check the 'N hidden' counter in the HUD: if it shows a number, things are being hidden.",
+          "Tapping that counter switches the filter off and everything shows again.",
+          "If the counter is at zero, another player probably picked it up or it expired: ground drops do not last forever."
+        ],
+        "pt": [
+          "O mais provavel e que SEU FILTRO esteja escondendo. Olhe o contador 'N ocultos' do HUD: se tem um numero, tem coisa escondida.",
+          "Tocando nesse contador o filtro desliga e tudo volta a aparecer.",
+          "Se o contador esta em zero, outro jogador provavelmente pegou ou o item expirou: os drops do chao nao duram para sempre."
+        ]
+      },
+      "deep": "iface=OPTION&tab=items",
+      "deep_label": {
+        "es": "Revisar el filtro",
+        "en": "Check the filter",
+        "pt": "Conferir o filtro"
+      },
+      "also": [
+        "filtro_chip",
+        "filtro_piso"
+      ]
+    },
+    {
+      "id": "helper_que_es",
+      "cat": "helper",
+      "new": true,
+      "title": {
+        "es": "Que es el MU Helper",
+        "en": "What MU Helper is",
+        "pt": "O que e o MU Helper"
+      },
+      "alias": [
+        "helper",
+        "bot",
+        "auto",
+        "automatico",
+        "jugar solo",
+        "afk",
+        "mu helper",
+        "asistente"
+      ],
+      "body": {
+        "es": [
+          "Es el asistente que juega por vos: busca monstruos, los ataca, levanta lo que le digas y toma pociones cuando hace falta.",
+          "Sirve para subir de nivel mientras descansas la mano, y para no perder tiempo en las partes repetitivas.",
+          "Antes de dejarlo solo, prendelo un minuto y MIRA lo que hace: es la unica forma de darte cuenta si quedo mal configurado."
+        ],
+        "en": [
+          "It is the assistant that plays for you: it finds monsters, attacks them, picks up what you tell it to and drinks potions when needed.",
+          "It is for levelling while you rest your hand, and for not wasting time on the repetitive parts.",
+          "Before leaving it alone, switch it on for a minute and WATCH what it does: that is the only way to notice a bad setup."
+        ],
+        "pt": [
+          "E o assistente que joga por voce: procura monstros, ataca, pega o que voce mandar e toma pocoes quando precisa.",
+          "Serve para subir de nivel enquanto voce descansa a mao, e para nao perder tempo nas partes repetitivas.",
+          "Antes de deixar sozinho, ligue por um minuto e OLHE o que ele faz: e a unica forma de perceber se ficou mal configurado."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Candado > Agregar > Helper",
+        "en": "Menu > Lock > Add > Helper",
+        "pt": "Menu > Cadeado > Adicionar > Helper"
+      },
+      "deep": "iface=MuHelper",
+      "deep_label": {
+        "es": "Abrir el MU Helper",
+        "en": "Open MU Helper",
+        "pt": "Abrir o MU Helper"
+      },
+      "also": [
+        "helper_encender",
+        "helper_ataque",
+        "helper_recoleccion",
+        "autopot"
+      ]
+    },
+    {
+      "id": "helper_encender",
+      "cat": "helper",
+      "new": true,
+      "title": {
+        "es": "Encender y apagar el Helper",
+        "en": "Starting and stopping the Helper",
+        "pt": "Ligar e desligar o Helper"
+      },
+      "alias": [
+        "encender",
+        "prender",
+        "apagar",
+        "activar bot",
+        "play",
+        "start",
+        "empezar"
+      ],
+      "body": {
+        "es": [
+          "Hay DOS botones distintos: «Helper: opciones» abre la configuracion, y «Helper: encender» lo prende y lo apaga.",
+          "Si no los ves en pantalla, agregalos desde Menu > Candado > Agregar.",
+          "Se apaga solo si te mueves manualmente o si abris ciertos paneles: es a proposito, para que no pelee mientras vos estas haciendo otra cosa."
+        ],
+        "en": [
+          "There are TWO separate buttons: 'Helper: options' opens the settings, and 'Helper: start' turns it on and off.",
+          "If you don't see them on screen, add them from Menu > Lock > Add.",
+          "It stops on its own if you move manually or open certain panels: that is on purpose, so it doesn't fight while you are doing something else."
+        ],
+        "pt": [
+          "Sao DOIS botoes diferentes: 'Helper: opcoes' abre a configuracao, e 'Helper: ligar' liga e desliga.",
+          "Se voce nao ve na tela, adicione em Menu > Cadeado > Adicionar.",
+          "Ele desliga sozinho se voce se move manualmente ou abre certos paineis: e de proposito, para nao lutar enquanto voce esta fazendo outra coisa."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Candado > Agregar",
+        "en": "Menu > Lock > Add",
+        "pt": "Menu > Cadeado > Adicionar"
+      },
+      "deep": "action=hudedit",
+      "deep_label": {
+        "es": "Agregar los botones al HUD",
+        "en": "Add the buttons to the HUD",
+        "pt": "Adicionar os botoes ao HUD"
+      },
+      "also": [
+        "helper_que_es",
+        "hud_agregar"
+      ]
+    },
+    {
+      "id": "helper_ataque",
+      "cat": "helper",
+      "title": {
+        "es": "Configurar el ataque del Helper",
+        "en": "Setting up the Helper's attack",
+        "pt": "Configurar o ataque do Helper"
+      },
+      "alias": [
+        "ataque del bot",
+        "distancia",
+        "habilidad",
+        "skill del bot",
+        "combo",
+        "rango"
+      ],
+      "body": {
+        "es": [
+          "DISTANCIA es cuantas baldosas alrededor busca monstruos. Mas alto significa que se aleja mas.",
+          "Elegi la habilidad con la que quieras que pegue y cada cuantos segundos la usa. Si no elegis ninguna, pega normal.",
+          "Tambien podes configurar buffs automaticos para que se los tire solo cuando se le vencen."
+        ],
+        "en": [
+          "DISTANCE is how many tiles around it looks for monsters. Higher means it wanders further.",
+          "Pick the skill you want it to hit with and how often it uses it. If you pick none, it hits normally.",
+          "You can also set automatic buffs so it recasts them when they run out."
+        ],
+        "pt": [
+          "DISTANCIA e quantos quadrados ao redor ele procura monstros. Mais alto significa que se afasta mais.",
+          "Escolha a habilidade com que quer que ele bata e de quantos em quantos segundos usa. Se nao escolher nenhuma, bate normal.",
+          "Tambem da para configurar buffs automaticos para ele lancar sozinho quando vencem."
+        ]
+      },
+      "howto": {
+        "es": "MU Helper > Ataque",
+        "en": "MU Helper > Attack",
+        "pt": "MU Helper > Ataque"
+      },
+      "deep": "iface=MuHelper&tab=atk",
+      "deep_label": {
+        "es": "Abrir Helper > Ataque",
+        "en": "Open Helper > Attack",
+        "pt": "Abrir Helper > Ataque"
+      },
+      "also": [
+        "helper_posicion",
+        "helper_que_es"
+      ]
+    },
+    {
+      "id": "helper_recoleccion",
+      "cat": "helper",
+      "title": {
+        "es": "Que levanta el Helper",
+        "en": "What the Helper picks up",
+        "pt": "O que o Helper pega"
+      },
+      "alias": [
+        "recoleccion",
+        "levantar",
+        "pick",
+        "lista de items del bot",
+        "joyas",
+        "que junta"
+      ],
+      "body": {
+        "es": [
+          "Podes elegir por tipo —solo joyas, solo excellent, solo Zen, solo sets— o escribir tu propia lista de nombres.",
+          "Es un filtro al reves que el del piso: aquel decide que VES, este decide que LEVANTA.",
+          "Si el Helper no junta algo que esperabas, casi siempre es porque ese nombre no esta en la lista."
+        ],
+        "en": [
+          "You can choose by type - only jewels, only excellent, only zen, only sets - or write your own list of names.",
+          "It is the ground filter in reverse: that one decides what you SEE, this one decides what it PICKS UP.",
+          "If the Helper skips something you expected, it is almost always because that name is not on the list."
+        ],
+        "pt": [
+          "Da para escolher por tipo - so joias, so excellent, so zen, so sets - ou escrever sua propria lista de nomes.",
+          "E o filtro do chao ao contrario: aquele decide o que voce VE, este decide o que ele PEGA.",
+          "Se o Helper nao junta algo que voce esperava, quase sempre e porque esse nome nao esta na lista."
+        ]
+      },
+      "howto": {
+        "es": "MU Helper > Recoleccion",
+        "en": "MU Helper > Pick-up",
+        "pt": "MU Helper > Coleta"
+      },
+      "deep": "iface=MuHelper&tab=pick",
+      "deep_label": {
+        "es": "Abrir Helper > Recoleccion",
+        "en": "Open Helper > Pick-up",
+        "pt": "Abrir Helper > Coleta"
+      },
+      "also": [
+        "helper_no_anda",
+        "filtro_piso",
+        "bolsa_llena"
+      ]
+    },
+    {
+      "id": "autopot",
+      "cat": "helper",
+      "new": true,
+      "title": {
+        "es": "Pociones automaticas",
+        "en": "Automatic potions",
+        "pt": "Pocoes automaticas"
+      },
+      "alias": [
+        "autopot",
+        "pocion automatica",
+        "porcentaje",
+        "se cura solo",
+        "auto pot",
+        "curacion automatica"
+      ],
+      "body": {
+        "es": [
+          "Elegis a que porcentaje de vida se toma una pocion y cual usar. 50% es un buen punto de partida.",
+          "Lo mismo para el mana, si usas habilidades seguido.",
+          "Funciona tambien cuando estas jugando A MANO, no solo con el Helper prendido. Es de las cosas que mas muertes evita."
+        ],
+        "en": [
+          "You pick the health percentage that triggers a potion and which one to use. 50% is a good starting point.",
+          "Same for mana, if you use skills often.",
+          "It works while you are playing BY HAND too, not just with the Helper on. It is one of the things that prevents the most deaths."
+        ],
+        "pt": [
+          "Voce escolhe em que porcentagem de vida se toma uma pocao e qual usar. 50% e um bom ponto de partida.",
+          "O mesmo para a mana, se voce usa habilidades sempre.",
+          "Funciona tambem quando voce esta jogando NA MAO, nao so com o Helper ligado. E das coisas que mais evita mortes."
+        ]
+      },
+      "howto": {
+        "es": "MU Helper > Pociones",
+        "en": "MU Helper > Potions",
+        "pt": "MU Helper > Pocoes"
+      },
+      "deep": "iface=MuHelper&tab=pot",
+      "deep_label": {
+        "es": "Configurar las pociones",
+        "en": "Set up the potions",
+        "pt": "Configurar as pocoes"
+      },
+      "also": [
+        "pociones",
+        "morir",
+        "helper_que_es"
+      ]
+    },
+    {
+      "id": "helper_posicion",
+      "cat": "helper",
+      "title": {
+        "es": "«Volver a la posicion original»",
+        "en": "'Return to original position'",
+        "pt": "'Voltar a posicao original'"
+      },
+      "alias": [
+        "volver",
+        "posicion",
+        "no se aleje",
+        "quedarse quieto",
+        "roam",
+        "se va lejos"
+      ],
+      "body": {
+        "es": [
+          "Sirve para que el bot no se aleje del punto donde lo dejaste: si se pasa de la distancia configurada, vuelve caminando.",
+          "Solo tiene efecto si ademas esta prendida la opcion de perseguir. Con esa apagada, el bot ya queda atado a su baldosa siempre.",
+          "Es lo que evita que lo dejes en un lugar seguro y lo encuentres media hora despues en medio de monstruos de nivel 200."
+        ],
+        "en": [
+          "It keeps the bot from wandering off from where you left it: if it goes past the configured distance, it walks back.",
+          "It only takes effect if the chase option is also on. With that one off, the bot is already tied to its tile.",
+          "It is what stops you leaving it in a safe spot and finding it half an hour later in the middle of level 200 monsters."
+        ],
+        "pt": [
+          "Serve para o bot nao se afastar do ponto onde voce deixou: se passa da distancia configurada, volta caminhando.",
+          "So tem efeito se a opcao de perseguir tambem estiver ligada. Com aquela desligada, o bot ja fica preso ao quadrado dele.",
+          "E o que evita que voce deixe num lugar seguro e encontre meia hora depois no meio de monstros de nivel 200."
+        ]
+      },
+      "howto": {
+        "es": "MU Helper > Ataque",
+        "en": "MU Helper > Attack",
+        "pt": "MU Helper > Ataque"
+      },
+      "deep": "iface=MuHelper&tab=atk",
+      "deep_label": {
+        "es": "Abrir Helper > Ataque",
+        "en": "Open Helper > Attack",
+        "pt": "Abrir Helper > Ataque"
+      },
+      "also": [
+        "helper_ataque",
+        "helper_no_anda"
+      ]
+    },
+    {
+      "id": "helper_offline",
+      "cat": "helper",
+      "title": {
+        "es": "El modo offline",
+        "en": "Offline mode",
+        "pt": "O modo offline"
+      },
+      "alias": [
+        "offline",
+        "cerrar el juego",
+        "seguir jugando",
+        "off helper",
+        "sin conexion",
+        "desconectado"
+      ],
+      "body": {
+        "es": [
+          "En modo offline tu personaje se queda jugando en el servidor aunque cierres la aplicacion.",
+          "Toda la configuracion del Helper viaja al servidor cuando lo activas, asi que dejalo como querés ANTES de irte.",
+          "Es la forma de aprovechar el tiempo sin tener el celular prendido y gastando bateria."
+        ],
+        "en": [
+          "In offline mode your character stays playing on the server even if you close the app.",
+          "The Helper's whole configuration travels to the server when you enable it, so set it up the way you want BEFORE leaving.",
+          "It is how you make use of the time without the phone on and burning battery."
+        ],
+        "pt": [
+          "No modo offline seu personagem fica jogando no servidor mesmo que voce feche o aplicativo.",
+          "Toda a configuracao do Helper vai para o servidor quando voce ativa, entao deixe do jeito que quer ANTES de sair.",
+          "E a forma de aproveitar o tempo sem ter o celular ligado gastando bateria."
+        ]
+      },
+      "also": [
+        "helper_que_es",
+        "helper_recoleccion"
+      ]
+    },
+    {
+      "id": "helper_no_anda",
+      "cat": "helper",
+      "title": {
+        "es": "El Helper no hace nada",
+        "en": "The Helper does nothing",
+        "pt": "O Helper nao faz nada"
+      },
+      "alias": [
+        "no funciona",
+        "no pega",
+        "no levanta",
+        "no anda el bot",
+        "no ataca",
+        "roto"
+      ],
+      "body": {
+        "es": [
+          "Revisa tres cosas, en este orden: que este ENCENDIDO (el boton de play), que haya monstruos dentro de la DISTANCIA configurada, y que tengas mana si le pusiste una habilidad.",
+          "Si ataca pero no levanta, el problema esta en la lista de recoleccion.",
+          "Si se queda quieto en el lugar, probablemente tenga la distancia muy baja o la opcion de volver a la posicion original tirandolo para atras."
+        ],
+        "en": [
+          "Check three things, in this order: that it is ON (the play button), that there are monsters within the configured DISTANCE, and that you have mana if you gave it a skill.",
+          "If it attacks but doesn't pick up, the problem is in the pick-up list.",
+          "If it stands still, it probably has the distance too low or the return-to-original-position option pulling it back."
+        ],
+        "pt": [
+          "Confira tres coisas, nesta ordem: que esta LIGADO (o botao de play), que tem monstros dentro da DISTANCIA configurada, e que voce tem mana se colocou uma habilidade.",
+          "Se ataca mas nao pega, o problema esta na lista de coleta.",
+          "Se fica parado, provavelmente esta com a distancia muito baixa ou a opcao de voltar a posicao original puxando ele para tras."
+        ]
+      },
+      "deep": "iface=MuHelper",
+      "deep_label": {
+        "es": "Abrir el MU Helper",
+        "en": "Open MU Helper",
+        "pt": "Abrir o MU Helper"
+      },
+      "also": [
+        "helper_ataque",
+        "helper_recoleccion",
+        "helper_posicion"
+      ]
+    },
+    {
+      "id": "party",
+      "cat": "social",
+      "title": {
+        "es": "Formar grupo",
+        "en": "Forming a party",
+        "pt": "Formar grupo"
+      },
+      "alias": [
+        "party",
+        "grupo",
+        "invitar",
+        "jugar con amigos",
+        "equipo",
+        "team"
+      ],
+      "body": {
+        "es": [
+          "Manten apretado a otro jugador y elegi invitar al grupo.",
+          "En grupo la experiencia se reparte entre todos, pero se mata mucho mas rapido y se puede ir a zonas mas dificiles.",
+          "Algunos eventos directamente piden grupo para poder entrar."
+        ],
+        "en": [
+          "Hold another player and choose invite to party.",
+          "In a party experience is shared between everyone, but things die much faster and you can go to harder zones.",
+          "Some events flatly require a party to enter."
+        ],
+        "pt": [
+          "Segure outro jogador e escolha convidar para o grupo.",
+          "Em grupo a experiencia e dividida entre todos, mas se mata muito mais rapido e da para ir a zonas mais dificeis.",
+          "Alguns eventos exigem grupo para poder entrar."
+        ]
+      },
+      "howto": {
+        "es": "Manten apretado a un jugador",
+        "en": "Hold another player",
+        "pt": "Segure outro jogador"
+      },
+      "deep": "iface=PARTY",
+      "deep_label": {
+        "es": "Abrir el grupo",
+        "en": "Open the party",
+        "pt": "Abrir o grupo"
+      },
+      "also": [
+        "gremio",
+        "menu_jugador"
+      ]
+    },
+    {
+      "id": "menu_jugador",
+      "cat": "social",
+      "new": true,
+      "title": {
+        "es": "Menu de otro jugador",
+        "en": "Another player's menu",
+        "pt": "Menu de outro jogador"
+      },
+      "alias": [
+        "menu jugador",
+        "manten apretado",
+        "long press",
+        "opciones de jugador",
+        "que hago con otro"
+      ],
+      "body": {
+        "es": [
+          "Manteniendo apretado a otro jugador se abre un menu con todo lo que podes hacer con el: invitarlo al grupo, comerciar, susurrarle, verlo o bloquearlo.",
+          "Es un gesto que en el celular no se descubre solo, y es la puerta a casi todo lo social del juego.",
+          "Que opciones aparecen se puede configurar en Opciones > Players."
+        ],
+        "en": [
+          "Holding another player opens a menu with everything you can do with them: invite to party, trade, whisper, inspect or block.",
+          "It is a gesture you do not discover on a phone, and it is the door to almost everything social in the game.",
+          "Which options appear can be configured in Settings > Players."
+        ],
+        "pt": [
+          "Segurando outro jogador abre um menu com tudo o que da para fazer com ele: convidar para o grupo, negociar, sussurrar, ver ou bloquear.",
+          "E um gesto que no celular nao se descobre sozinho, e e a porta para quase tudo o que e social no jogo.",
+          "Quais opcoes aparecem se configura em Opcoes > Jogadores."
+        ]
+      },
+      "deep": "iface=OPTION&tab=players",
+      "deep_label": {
+        "es": "Abrir Opciones > Players",
+        "en": "Open Settings > Players",
+        "pt": "Abrir Opcoes > Jogadores"
+      },
+      "also": [
+        "party",
+        "trade",
+        "bloquear_jugador"
+      ]
+    },
+    {
+      "id": "gremio",
+      "cat": "social",
+      "title": {
+        "es": "Gremios",
+        "en": "Guilds",
+        "pt": "Guildas"
+      },
+      "alias": [
+        "guild",
+        "gremio",
+        "clan",
+        "unirse",
+        "crear guild",
+        "hermandad"
+      ],
+      "body": {
+        "es": [
+          "Un gremio es un grupo permanente de jugadores. Te da gente con quien jugar y acceso a los eventos grandes, que no se pueden hacer solo.",
+          "Para entrar a uno, hablalo por el chat general o por el Discord del servidor.",
+          "Crear uno propio pide un nivel minimo y algo de Zen."
+        ],
+        "en": [
+          "A guild is a permanent group of players. It gives you people to play with and access to the big events, which cannot be done alone.",
+          "To join one, ask in general chat or on the server's Discord.",
+          "Creating your own asks for a minimum level and some zen."
+        ],
+        "pt": [
+          "Uma guilda e um grupo permanente de jogadores. Te da gente para jogar junto e acesso aos eventos grandes, que nao da para fazer sozinho.",
+          "Para entrar numa, converse no chat geral ou no Discord do servidor.",
+          "Criar a sua pede um nivel minimo e um pouco de zen."
+        ]
+      },
+      "deep": "iface=GUILDINFO",
+      "deep_label": {
+        "es": "Abrir el gremio",
+        "en": "Open the guild",
+        "pt": "Abrir a guilda"
+      },
+      "also": [
+        "party",
+        "eventos"
+      ]
+    },
+    {
+      "id": "trade",
+      "cat": "social",
+      "title": {
+        "es": "Comerciar con otro jugador",
+        "en": "Trading with another player",
+        "pt": "Negociar com outro jogador"
+      },
+      "alias": [
+        "trade",
+        "comerciar",
+        "intercambio",
+        "cambiar",
+        "vender a alguien",
+        "canje"
+      ],
+      "body": {
+        "es": [
+          "Manten apretado al otro jugador y elegi comerciar. Se abre una ventana donde los dos ponen lo que ofrecen.",
+          "Nadie puede sacar nada de esa ventana sin que vos lo veas, y los dos tienen que confirmar. Es el UNICO comercio seguro.",
+          "Cualquiera que te pida que le des las cosas primero «y despues te paga» te esta por estafar."
+        ],
+        "en": [
+          "Hold the other player and choose trade. A window opens where you both put in what you are offering.",
+          "Nobody can take anything out of that window without you seeing it, and both have to confirm. It is the ONLY safe trade.",
+          "Anyone asking you to hand your things over first 'and I'll pay you after' is about to scam you."
+        ],
+        "pt": [
+          "Segure o outro jogador e escolha negociar. Abre uma janela onde os dois colocam o que estao oferecendo.",
+          "Ninguem consegue tirar nada dessa janela sem voce ver, e os dois tem que confirmar. E a UNICA negociacao segura.",
+          "Qualquer um que peca para voce entregar as coisas primeiro 'e depois eu pago' esta prestes a te dar um golpe."
+        ]
+      },
+      "also": [
+        "menu_jugador",
+        "estafas",
+        "comprar_vender"
+      ]
+    },
+    {
+      "id": "susurro",
+      "cat": "social",
+      "title": {
+        "es": "Susurrar / mensaje privado",
+        "en": "Whisper / private message",
+        "pt": "Sussurrar / mensagem privada"
+      },
+      "alias": [
+        "susurro",
+        "privado",
+        "whisper",
+        "mensaje",
+        "mp",
+        "hablar a alguien"
+      ],
+      "body": {
+        "es": [
+          "Tocando el nombre de alguien en el chat le respondes en privado.",
+          "Tambien podes hacerlo desde el menu de manten-apretado sobre el jugador.",
+          "Los susurros no los ve nadie mas."
+        ],
+        "en": [
+          "Tapping someone's name in chat answers them privately.",
+          "You can also do it from the hold menu on the player.",
+          "Whispers are not seen by anyone else."
+        ],
+        "pt": [
+          "Tocando no nome de alguem no chat voce responde em particular.",
+          "Tambem da para fazer pelo menu de segurar em cima do jogador.",
+          "Os sussurros ninguem mais ve."
+        ]
+      },
+      "also": [
+        "chat",
+        "menu_jugador"
+      ]
+    },
+    {
+      "id": "bloquear_jugador",
+      "cat": "social",
+      "title": {
+        "es": "Bloquear a alguien",
+        "en": "Blocking someone",
+        "pt": "Bloquear alguem"
+      },
+      "alias": [
+        "bloquear",
+        "ignorar",
+        "molesta",
+        "spam",
+        "insulta",
+        "block",
+        "silenciar"
+      ],
+      "body": {
+        "es": [
+          "En el menu de manten-apretado sobre el jugador hay una opcion para bloquearlo: deja de aparecerte lo que escribe.",
+          "La lista de bloqueados se administra en Opciones > Players, donde tambien podes desbloquear a todos de una.",
+          "Bloquear es local: el otro no se entera."
+        ],
+        "en": [
+          "The hold menu on the player has an option to block them: what they write stops reaching you.",
+          "The blocked list is managed in Settings > Players, where you can also unblock everyone at once.",
+          "Blocking is local: the other person never finds out."
+        ],
+        "pt": [
+          "No menu de segurar em cima do jogador tem uma opcao para bloquear: o que ele escreve para de chegar em voce.",
+          "A lista de bloqueados se administra em Opcoes > Jogadores, onde tambem da para desbloquear todos de uma vez.",
+          "Bloquear e local: o outro nao fica sabendo."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Players",
+        "en": "Settings > Players",
+        "pt": "Opcoes > Jogadores"
+      },
+      "deep": "iface=OPTION&tab=players",
+      "deep_label": {
+        "es": "Abrir Opciones > Players",
+        "en": "Open Settings > Players",
+        "pt": "Abrir Opcoes > Jogadores"
+      },
+      "also": [
+        "menu_jugador",
+        "estafas"
+      ]
+    },
+    {
+      "id": "afk_ocultar",
+      "cat": "social",
+      "title": {
+        "es": "Esconder jugadores AFK",
+        "en": "Hiding AFK players",
+        "pt": "Esconder jogadores AFK"
+      },
+      "alias": [
+        "afk",
+        "quietos",
+        "tapan",
+        "muchos jugadores",
+        "se traba el pueblo",
+        "gente parada"
+      ],
+      "body": {
+        "es": [
+          "En los pueblos hay decenas de personajes quietos con el bot offline. En una pantalla de celular tapan los NPC y hunden los FPS.",
+          "Opciones > Players te deja esconderlos, o marcarlos con un cartel «AFK» sobre la cabeza en vez de esconderlos.",
+          "Podes elegir a partir de cuantos minutos quietos cuenta como AFK."
+        ],
+        "en": [
+          "Towns hold dozens of characters standing still with the offline bot. On a phone screen they hide the NPCs and sink the FPS.",
+          "Settings > Players lets you hide them, or mark them with an 'AFK' label above their head instead of hiding them.",
+          "You can choose how many minutes standing still counts as AFK."
+        ],
+        "pt": [
+          "Nas cidades tem dezenas de personagens parados com o bot offline. Numa tela de celular eles escondem os NPCs e afundam os FPS.",
+          "Opcoes > Jogadores te deixa esconde-los, ou marca-los com uma etiqueta 'AFK' sobre a cabeca em vez de esconder.",
+          "Voce escolhe a partir de quantos minutos parado conta como AFK."
+        ]
+      },
+      "howto": {
+        "es": "Opciones > Players",
+        "en": "Settings > Players",
+        "pt": "Opcoes > Jogadores"
+      },
+      "deep": "iface=OPTION&tab=players",
+      "deep_label": {
+        "es": "Abrir Opciones > Players",
+        "en": "Open Settings > Players",
+        "pt": "Abrir Opcoes > Jogadores"
+      },
+      "also": [
+        "juego_lento",
+        "nombres_ocultar"
+      ]
+    },
+    {
+      "id": "pvp",
+      "cat": "social",
+      "title": {
+        "es": "PvP: pelear contra jugadores",
+        "en": "PvP: fighting other players",
+        "pt": "PvP: lutar contra jogadores"
+      },
+      "alias": [
+        "pvp",
+        "pelear con jugadores",
+        "matar gente",
+        "pk",
+        "duelo",
+        "player kill"
+      ],
+      "body": {
+        "es": [
+          "Con el modo PvP apagado NUNCA vas a atacar a otro jugador por accidente, ni aunque toques encima suyo. Viene apagado por defecto.",
+          "Prendido, podes atacar a otros fuera de las zonas seguras. Matar gente sin razon te deja marcado y con castigos.",
+          "Se cambia en Opciones > General."
+        ],
+        "en": [
+          "With PvP mode off you will NEVER attack another player by accident, not even if you tap right on them. It ships off by default.",
+          "On, you can attack others outside safe zones. Killing people for no reason leaves you marked and penalised.",
+          "It is changed in Settings > General."
+        ],
+        "pt": [
+          "Com o modo PvP desligado voce NUNCA vai atacar outro jogador sem querer, nem se tocar em cima dele. Vem desligado por padrao.",
+          "Ligado, voce pode atacar outros fora das zonas seguras. Matar gente sem motivo te deixa marcado e com punicoes.",
+          "Se muda em Opcoes > Geral."
+        ]
+      },
+      "deep": "iface=OPTION&tab=general",
+      "deep_label": {
+        "es": "Abrir Opciones > General",
+        "en": "Open Settings > General",
+        "pt": "Abrir Opcoes > Geral"
+      },
+      "also": [
+        "bloquear_jugador",
+        "morir"
+      ]
+    },
+    {
+      "id": "estafas",
+      "cat": "social",
+      "title": {
+        "es": "Estafas y contrasenas",
+        "en": "Scams and passwords",
+        "pt": "Golpes e senhas"
+      },
+      "alias": [
+        "estafa",
+        "robo",
+        "contrasena",
+        "password",
+        "hackeo",
+        "seguridad",
+        "me robaron",
+        "cuenta"
+      ],
+      "body": {
+        "es": [
+          "NUNCA des tu contrasena. Ningun administrador ni moderador te la va a pedir jamas: si alguien te la pide, es una estafa, sin excepcion.",
+          "No hagas comercios «de confianza» fuera de la ventana de intercambio. La ventana existe justamente para que nadie pueda no cumplir.",
+          "Desconfia de los links que te manden por susurro."
+        ],
+        "en": [
+          "NEVER give out your password. No admin or moderator will ever ask for it: if someone does, it is a scam, no exceptions.",
+          "Do not do 'trust' trades outside the exchange window. The window exists precisely so nobody can fail to deliver.",
+          "Be suspicious of links sent to you by whisper."
+        ],
+        "pt": [
+          "NUNCA de a sua senha. Nenhum administrador ou moderador vai pedir: se alguem pedir, e golpe, sem excecao.",
+          "Nao faca negociacoes 'de confianca' fora da janela de troca. A janela existe justamente para ninguem poder nao cumprir.",
+          "Desconfie dos links que te mandarem por sussurro."
+        ]
+      },
+      "also": [
+        "trade",
+        "bloquear_jugador"
+      ]
+    },
+    {
+      "id": "donde_entrenar",
+      "cat": "world",
+      "title": {
+        "es": "Donde entrenar segun mi nivel",
+        "en": "Where to train for my level",
+        "pt": "Onde treinar no meu nivel"
+      },
+      "alias": [
+        "donde entrenar",
+        "mapa",
+        "nivel",
+        "subir rapido",
+        "spot",
+        "farmear",
+        "que mapa",
+        "donde ir"
+      ],
+      "body": {
+        "es": [
+          "El panel Viajar ya te lo dice: los mapas de arriba son a los que PODES ir con tu nivel actual, y los de abajo estan bloqueados con el requisito que te falta.",
+          "La regla simple: busca monstruos de tu nivel o un poco por encima. Si te matan seguido, el mapa es muy alto; si los matas de un golpe, es muy bajo y estas perdiendo tiempo.",
+          "Los eventos (Blood Castle, Devil Square, Chaos Castle) suelen dar mas experiencia que cualquier mapa y tienen horario fijo."
+        ],
+        "en": [
+          "The Travel panel already tells you: the maps at the top are the ones you CAN reach at your current level, and the ones below are locked with the requirement you are missing.",
+          "The simple rule: find monsters at your level or slightly above. If you die often the map is too high; if you kill in one hit it is too low and you are wasting time.",
+          "Events (Blood Castle, Devil Square, Chaos Castle) usually give more experience than any map and run on a fixed schedule."
+        ],
+        "pt": [
+          "O painel Viajar ja te diz: os mapas de cima sao os que voce PODE alcancar com seu nivel atual, e os de baixo estao bloqueados com o requisito que falta.",
+          "A regra simples: procure monstros do seu nivel ou pouco acima. Se morre sempre, o mapa esta alto demais; se mata num golpe, esta baixo e voce esta perdendo tempo.",
+          "Os eventos (Blood Castle, Devil Square, Chaos Castle) costumam dar mais experiencia que qualquer mapa e tem horario fixo."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Viajar",
+        "en": "Menu > Travel",
+        "pt": "Menu > Viajar"
+      },
+      "deep": "iface=MOVEMAP",
+      "deep_label": {
+        "es": "Abrir Viajar",
+        "en": "Open Travel",
+        "pt": "Abrir Viajar"
+      },
+      "also": [
+        "viajar",
+        "eventos",
+        "morir"
+      ]
+    },
+    {
+      "id": "viajar",
+      "cat": "world",
+      "title": {
+        "es": "Como viajar",
+        "en": "How to travel",
+        "pt": "Como viajar"
+      },
+      "alias": [
+        "viajar",
+        "warp",
+        "mover mapa",
+        "ir a",
+        "teletransporte",
+        "travel",
+        "cambiar mapa"
+      ],
+      "body": {
+        "es": [
+          "Menu > Viajar abre la lista de mapas. Arriba los disponibles, abajo los bloqueados.",
+          "Cada viaje cuesta Zen y pide un nivel minimo. Tocando un mapa bloqueado te dice exactamente que te falta.",
+          "Algunos mapas piden ademas alas o una mascota voladora."
+        ],
+        "en": [
+          "Menu > Travel opens the map list. Available at the top, locked below.",
+          "Each trip costs zen and asks for a minimum level. Tapping a locked map tells you exactly what you are missing.",
+          "Some maps also ask for wings or a flying pet."
+        ],
+        "pt": [
+          "Menu > Viajar abre a lista de mapas. Disponiveis em cima, bloqueados embaixo.",
+          "Cada viagem custa zen e pede um nivel minimo. Tocando num mapa bloqueado ele diz exatamente o que falta.",
+          "Alguns mapas pedem tambem asas ou um pet voador."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Viajar",
+        "en": "Menu > Travel",
+        "pt": "Menu > Viajar"
+      },
+      "deep": "iface=MOVEMAP",
+      "deep_label": {
+        "es": "Abrir Viajar",
+        "en": "Open Travel",
+        "pt": "Abrir Viajar"
+      },
+      "also": [
+        "favoritos",
+        "donde_entrenar",
+        "alas"
+      ]
+    },
+    {
+      "id": "favoritos",
+      "cat": "world",
+      "new": true,
+      "title": {
+        "es": "Favoritos de viaje",
+        "en": "Travel favourites",
+        "pt": "Favoritos de viagem"
+      },
+      "alias": [
+        "favorito",
+        "estrella",
+        "atajo de mapa",
+        "viaje directo",
+        "favoritos"
+      ],
+      "body": {
+        "es": [
+          "Tocando la estrella de una fila, ese mapa queda marcado como favorito y sube al principio de la lista.",
+          "Ademas podes ponerlo como BOTON DIRECTO en el HUD desde el candado: un toque y viajas, sin abrir el panel.",
+          "Es lo mas comodo si siempre entrenas en el mismo lugar."
+        ],
+        "en": [
+          "Tapping the star on a row marks that map as a favourite and moves it to the top of the list.",
+          "You can also put it as a DIRECT BUTTON on the HUD from lock mode: one tap and you travel, without opening the panel.",
+          "It is the most comfortable setup if you always train in the same place."
+        ],
+        "pt": [
+          "Tocando a estrela de uma linha, esse mapa fica marcado como favorito e sobe para o inicio da lista.",
+          "Tambem da para colocar como BOTAO DIRETO no HUD pelo cadeado: um toque e voce viaja, sem abrir o painel.",
+          "E o mais comodo se voce sempre treina no mesmo lugar."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Viajar > estrella",
+        "en": "Menu > Travel > star",
+        "pt": "Menu > Viajar > estrela"
+      },
+      "deep": "iface=MOVEMAP",
+      "deep_label": {
+        "es": "Abrir Viajar",
+        "en": "Open Travel",
+        "pt": "Abrir Viajar"
+      },
+      "also": [
+        "viajar",
+        "hud_agregar"
+      ]
+    },
+    {
+      "id": "misiones",
+      "cat": "world",
+      "title": {
+        "es": "Las misiones",
+        "en": "Quests",
+        "pt": "As missoes"
+      },
+      "alias": [
+        "mision",
+        "quest",
+        "tarea",
+        "recompensa",
+        "hub",
+        "misiones"
+      ],
+      "body": {
+        "es": [
+          "Menu > Misiones es el hub: ahi ves las que podes aceptar, las que tenes en curso y las que ya podes cobrar.",
+          "Dan experiencia y objetos, y algunas desbloquean cosas importantes de tu clase.",
+          "La mision activa queda a la vista en pantalla con lo que te falta."
+        ],
+        "en": [
+          "Menu > Quests is the hub: there you see what you can accept, what you have in progress and what you can already claim.",
+          "They give experience and items, and some unlock important things for your class.",
+          "The active quest stays on screen with what you have left to do."
+        ],
+        "pt": [
+          "Menu > Missoes e o hub: ali voce ve as que pode aceitar, as que tem em andamento e as que ja pode receber.",
+          "Dao experiencia e itens, e algumas liberam coisas importantes da sua classe.",
+          "A missao ativa fica na tela com o que falta."
+        ]
+      },
+      "howto": {
+        "es": "Menu > Misiones",
+        "en": "Menu > Quests",
+        "pt": "Menu > Missoes"
+      },
+      "deep": "iface=MYQUEST",
+      "deep_label": {
+        "es": "Abrir Misiones",
+        "en": "Open Quests",
+        "pt": "Abrir Missoes"
+      },
+      "also": [
+        "donde_entrenar",
+        "subir_nivel"
+      ]
+    },
+    {
+      "id": "eventos",
+      "cat": "world",
+      "title": {
+        "es": "Eventos y horarios",
+        "en": "Events and schedules",
+        "pt": "Eventos e horarios"
+      },
+      "alias": [
+        "evento",
+        "horario",
+        "blood castle",
+        "devil square",
+        "chaos castle",
+        "hora",
+        "eventos"
+      ],
+      "body": {
+        "es": [
+          "Los eventos tienen horario fijo y son la forma mas rapida de subir. El reloj de eventos del menu te dice cuanto falta para el proximo.",
+          "BLOOD CASTLE: carrera contra reloj para rescatar un arma. DEVIL SQUARE: arena por oleadas, separada por franjas de nivel. CHAOS CASTLE: todos contra todos hasta que queda uno.",
+          "Los de nivel alto (Kanturu, Doppelganger, Castle Siege) se hacen en grupo o con gremio."
+        ],
+        "en": [
+          "Events run on a fixed schedule and are the fastest way to level. The event clock in the menu tells you how long until the next one.",
+          "BLOOD CASTLE: a race against the clock to rescue a weapon. DEVIL SQUARE: a wave arena split by level brackets. CHAOS CASTLE: everyone against everyone until one is left.",
+          "The high level ones (Kanturu, Doppelganger, Castle Siege) are done in a party or with a guild."
+        ],
+        "pt": [
+          "Os eventos tem horario fixo e sao a forma mais rapida de subir. O relogio de eventos do menu diz quanto falta para o proximo.",
+          "BLOOD CASTLE: corrida contra o relogio para resgatar uma arma. DEVIL SQUARE: arena por ondas, separada por faixas de nivel. CHAOS CASTLE: todos contra todos ate sobrar um.",
+          "Os de nivel alto (Kanturu, Doppelganger, Castle Siege) se fazem em grupo ou com guilda."
+        ]
+      },
+      "deep": "iface=EVENTS",
+      "deep_label": {
+        "es": "Ver el reloj de eventos",
+        "en": "See the event clock",
+        "pt": "Ver o relogio de eventos"
+      },
+      "also": [
+        "donde_entrenar",
+        "gremio"
+      ]
+    },
+    {
+      "id": "resets",
+      "cat": "world",
+      "title": {
+        "es": "Los resets",
+        "en": "Resets",
+        "pt": "Os resets"
+      },
+      "alias": [
+        "reset",
+        "resetear",
+        "volver a 1",
+        "nivel maximo",
+        "resets"
+      ],
+      "body": {
+        "es": [
+          "Al llegar al nivel maximo podes resetear: volves al nivel 1 pero conservas tu equipo y sumas un reset a tu contador.",
+          "Cada reset te deja mas fuerte a largo plazo, porque acumulas puntos de estadistica que no se pierden.",
+          "Es el ciclo largo del juego: la mayoria de los jugadores de arriba tienen cientos de resets."
+        ],
+        "en": [
+          "At max level you can reset: you go back to level 1 but keep your gear and add a reset to your counter.",
+          "Each reset leaves you stronger in the long run, because you accumulate stat points that are never lost.",
+          "It is the game's long cycle: most of the players at the top have hundreds of resets."
+        ],
+        "pt": [
+          "No nivel maximo voce pode resetar: volta ao nivel 1 mas conserva o equipamento e soma um reset no contador.",
+          "Cada reset te deixa mais forte no longo prazo, porque voce acumula pontos de atributo que nao se perdem.",
+          "E o ciclo longo do jogo: a maioria dos jogadores do topo tem centenas de resets."
+        ]
+      },
+      "also": [
+        "subir_nivel",
+        "master_level"
+      ]
+    },
+    {
+      "id": "master_level",
+      "cat": "world",
+      "title": {
+        "es": "El Master Level",
+        "en": "Master Level",
+        "pt": "O Master Level"
+      },
+      "alias": [
+        "master",
+        "ml",
+        "arbol",
+        "habilidades nuevas",
+        "400",
+        "master level"
+      ],
+      "body": {
+        "es": [
+          "Pasado cierto nivel se abre un segundo arbol de habilidades con puntos propios, separados de los normales.",
+          "Ahi estan las versiones mejoradas de tus habilidades y algunas nuevas exclusivas.",
+          "Los puntos de master se ganan mucho mas lento, asi que conviene pensar bien donde ponerlos."
+        ],
+        "en": [
+          "Past a certain level a second skill tree opens, with its own points, separate from the normal ones.",
+          "There you find the upgraded versions of your skills and some new exclusive ones.",
+          "Master points are earned much more slowly, so it is worth thinking carefully about where to put them."
+        ],
+        "pt": [
+          "Passado certo nivel abre uma segunda arvore de habilidades com pontos proprios, separados dos normais.",
+          "Ali estao as versoes melhoradas das suas habilidades e algumas novas exclusivas.",
+          "Os pontos de master se ganham muito mais devagar, entao vale pensar bem onde coloca-los."
+        ]
+      },
+      "also": [
+        "resets",
+        "habilidades"
+      ]
+    },
+    {
+      "id": "mascotas",
+      "cat": "world",
+      "title": {
+        "es": "Mascotas y alas de mascota",
+        "en": "Pets and pet wings",
+        "pt": "Pets e asas de pet"
+      },
+      "alias": [
+        "mascota",
+        "pet",
+        "muun",
+        "cuervo",
+        "raven",
+        "perro",
+        "guardian"
+      ],
+      "body": {
+        "es": [
+          "Algunas mascotas pelean con vos, otras te dan bonus y otras levantan el botin automaticamente.",
+          "Se equipan como cualquier otro objeto y suben de nivel usandolas.",
+          "Algunas ademas te dejan entrar a mapas aereos sin necesidad de alas."
+        ],
+        "en": [
+          "Some pets fight with you, others give you bonuses and others pick up loot automatically.",
+          "They are equipped like any other item and level up by using them.",
+          "Some also let you into aerial maps without needing wings."
+        ],
+        "pt": [
+          "Alguns pets lutam com voce, outros dao bonus e outros pegam o loot automaticamente.",
+          "Se equipam como qualquer outro item e sobem de nivel sendo usados.",
+          "Alguns tambem te deixam entrar em mapas aereos sem precisar de asas."
+        ]
+      },
+      "deep": "iface=PET",
+      "deep_label": {
+        "es": "Abrir Mascotas",
+        "en": "Open Pets",
+        "pt": "Abrir Pets"
+      },
+      "also": [
+        "alas",
+        "viajar"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "section": {
+        "es": "Moverse",
+        "en": "Moving",
+        "pt": "Mover-se"
+      },
+      "rows": [
+        {
+          "what": {
+            "es": "Caminar y correr",
+            "en": "Walk and run",
+            "pt": "Andar e correr"
+          },
+          "how": {
+            "es": "Palanca izquierda",
+            "en": "Left stick",
+            "pt": "Alavanca esquerda"
+          }
+        },
+        {
+          "what": {
+            "es": "Ir a un punto",
+            "en": "Go to a spot",
+            "pt": "Ir a um ponto"
+          },
+          "how": {
+            "es": "tocar el piso",
+            "en": "tap the ground",
+            "pt": "tocar o chao"
+          }
+        },
+        {
+          "what": {
+            "es": "Acercar la camara",
+            "en": "Zoom the camera",
+            "pt": "Aproximar a camera"
+          },
+          "how": {
+            "es": "pellizcar con 2 dedos",
+            "en": "pinch with 2 fingers",
+            "pt": "beliscar com 2 dedos"
+          }
+        }
+      ]
+    },
+    {
+      "section": {
+        "es": "Pelear",
+        "en": "Fighting",
+        "pt": "Lutar"
+      },
+      "rows": [
+        {
+          "what": {
+            "es": "Atacar",
+            "en": "Attack",
+            "pt": "Atacar"
+          },
+          "how": {
+            "es": "tocar el monstruo",
+            "en": "tap the monster",
+            "pt": "tocar o monstro"
+          }
+        },
+        {
+          "what": {
+            "es": "Usar una habilidad",
+            "en": "Cast a skill",
+            "pt": "Usar uma habilidade"
+          },
+          "how": {
+            "es": "tocar un orbe",
+            "en": "tap an orb",
+            "pt": "tocar um orbe"
+          }
+        },
+        {
+          "what": {
+            "es": "Apuntar la habilidad",
+            "en": "Aim the skill",
+            "pt": "Mirar a habilidade"
+          },
+          "how": {
+            "es": "mantener y arrastrar",
+            "en": "hold and drag",
+            "pt": "segurar e arrastar"
+          }
+        },
+        {
+          "what": {
+            "es": "Tomar pocion",
+            "en": "Drink a potion",
+            "pt": "Tomar pocao"
+          },
+          "how": {
+            "es": "tocar el frasco",
+            "en": "tap the flask",
+            "pt": "tocar o frasco"
+          }
+        }
+      ]
+    },
+    {
+      "section": {
+        "es": "Objetos y mundo",
+        "en": "Items and world",
+        "pt": "Itens e mundo"
+      },
+      "rows": [
+        {
+          "what": {
+            "es": "Levantar un objeto",
+            "en": "Pick something up",
+            "pt": "Pegar um item"
+          },
+          "how": {
+            "es": "tocar el cartel",
+            "en": "tap the label",
+            "pt": "tocar a etiqueta"
+          }
+        },
+        {
+          "what": {
+            "es": "Usar, equipar, vender, tirar",
+            "en": "Use, equip, sell, drop",
+            "pt": "Usar, equipar, vender, jogar"
+          },
+          "how": {
+            "es": "mantener apretado en la bolsa",
+            "en": "hold in the bag",
+            "pt": "segurar na bolsa"
+          }
+        },
+        {
+          "what": {
+            "es": "Hablar con un NPC",
+            "en": "Talk to an NPC",
+            "pt": "Falar com um NPC"
+          },
+          "how": {
+            "es": "tocar el personaje",
+            "en": "tap the character",
+            "pt": "tocar o personagem"
+          }
+        },
+        {
+          "what": {
+            "es": "Menu de otro jugador",
+            "en": "Another player's menu",
+            "pt": "Menu de outro jogador"
+          },
+          "how": {
+            "es": "mantener apretado encima",
+            "en": "hold on top of them",
+            "pt": "segurar em cima"
+          }
+        }
+      ]
+    },
+    {
+      "section": {
+        "es": "Pantalla",
+        "en": "Screen",
+        "pt": "Tela"
+      },
+      "rows": [
+        {
+          "what": {
+            "es": "Abrir un panel",
+            "en": "Open a panel",
+            "pt": "Abrir um painel"
+          },
+          "how": {
+            "es": "Menu, arriba a la izquierda",
+            "en": "Menu, top left",
+            "pt": "Menu, canto superior esquerdo"
+          }
+        },
+        {
+          "what": {
+            "es": "Mover y agrandar botones",
+            "en": "Move and resize buttons",
+            "pt": "Mover e aumentar botoes"
+          },
+          "how": {
+            "es": "Menu > Candado",
+            "en": "Menu > Lock",
+            "pt": "Menu > Cadeado"
+          }
+        },
+        {
+          "what": {
+            "es": "Mapa grande",
+            "en": "Full map",
+            "pt": "Mapa grande"
+          },
+          "how": {
+            "es": "tocar el minimapa",
+            "en": "tap the mini map",
+            "pt": "tocar o minimapa"
+          }
+        },
+        {
+          "what": {
+            "es": "Chat y susurro",
+            "en": "Chat and whisper",
+            "pt": "Chat e sussurro"
+          },
+          "how": {
+            "es": "abajo al centro",
+            "en": "bottom centre",
+            "pt": "embaixo no centro"
+          }
+        },
+        {
+          "what": {
+            "es": "Apagar el filtro del piso",
+            "en": "Switch off the ground filter",
+            "pt": "Desligar o filtro do chao"
+          },
+          "how": {
+            "es": "tocar el chip «N ocultos»",
+            "en": "tap the 'N hidden' chip",
+            "pt": "tocar o chip 'N ocultos'"
+          }
+        }
+      ]
+    }
+  ]
+}
