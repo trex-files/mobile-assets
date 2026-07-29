@@ -3,6 +3,35 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.15",
+      "date": "2026-07-29",
+      "title": "Release 1.0.15",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "El juego ya no se cierra al entrar con el personaje. Afectaba sobre todo a Dark Lord y Summoner, y dejaba a esos jugadores sin poder entrar desde la actualización anterior. La causa estaba en el dibujado del ítem de la espalda (alas y capas), que con un dato fuera de rango tumbaba el cliente entero; ahora esa pieza simplemente no se dibuja en vez de cerrar el juego."
+        },
+        {
+          "category": "correccion",
+          "text": "Los botones de skills ya no salen gigantes ni encimados unos sobre otros. El tamaño se calculaba de una forma que se pasaba de largo en cualquier teléfono moderno, así que todos terminaban en el máximo. Ahora se ajusta a la pantalla y se ve igual de proporcionado en equipos distintos."
+        },
+        {
+          "category": "correccion",
+          "text": "Al restablecer el HUD, los tamaños vuelven a un valor razonable."
+        },
+        {
+          "category": "correccion",
+          "text": "Se agrega el modelo de unos guantes que faltaba en los datos del juego."
+        },
+        {
+          "category": "interfaz",
+          "text": "Ya no aparecen tres botones sueltos en el medio de la pantalla, encima del personaje. Si querés tenerlos, se agregan desde Editar HUD y quedan donde vos los pongas."
+        }
+      ],
+      "download_bytes": 5621326,
+      "files_changed": 2
+    },
+    {
       "version": "1.0.14",
       "date": "2026-07-29",
       "title": "Release 1.0.14",
