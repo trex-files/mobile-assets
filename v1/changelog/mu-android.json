@@ -3,6 +3,123 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.14",
+      "date": "2026-07-29",
+      "title": "Release 1.0.14",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Aplicación nueva completa. Es la primera actualización del programa desde la beta 0.1.3: todo lo que sigue viene junto en ella."
+        },
+        {
+          "category": "nuevo",
+          "text": "Pantalla de entrada rehecha: la conexión ya no salta de pantalla en pantalla, la lista de servidores se pliega y despliega, dar de alta una cuenta es una ventanita en el momento y se puede cerrar sesión o cambiar de cuenta sin que el juego se cierre."
+        },
+        {
+          "category": "nuevo",
+          "text": "Viajar: formulario nuevo, con estrella de favoritos y botón de viaje directo."
+        },
+        {
+          "category": "nuevo",
+          "text": "Bloqueo de ítems entra al menú, y el Menú Especial viejo se reemplaza por Especial y Ayuda, así ninguna ventana queda sin forma de abrirse."
+        },
+        {
+          "category": "nuevo",
+          "text": "Modo \"sin main\": pantalla completa de verdad, con el candado que se desvanece solo."
+        },
+        {
+          "category": "nuevo",
+          "text": "Tres botones fijos en el centro del HUD: Inventario, Personaje y Viajar."
+        },
+        {
+          "category": "interfaz",
+          "text": "Toda la interfaz pasa al estilo nuevo: inventario, almacén, banco de joyas, Chaos Machine, mercader, coliseo, chat, tooltips, alertas, menús, creación de personaje y pantallas de carga."
+        },
+        {
+          "category": "interfaz",
+          "text": "La Chaos Machine se separa en tres franjas que no se pisan, el botón dice COMBINAR y aparece la receta."
+        },
+        {
+          "category": "interfaz",
+          "text": "Inventario más chico, arrastrable por su cabecera, con la fila de acciones al pie."
+        },
+        {
+          "category": "interfaz",
+          "text": "Creación de personaje: el nombre se escribe grande y centrado."
+        },
+        {
+          "category": "interfaz",
+          "text": "Selección de personaje: un toque selecciona, dos entran, y el nivel se ve siempre."
+        },
+        {
+          "category": "interfaz",
+          "text": "El teclado en pantalla aparece siempre que hace falta, tiene pad numérico tipo PIN, recuerda su tamaño y no tapa lo que estás escribiendo."
+        },
+        {
+          "category": "correccion",
+          "text": "Ya no se pierde un ítem al cancelar un arrastre a mitad de camino."
+        },
+        {
+          "category": "correccion",
+          "text": "En la Chaos Machine se pueden mover ítems entre casillas sin que se confunda con devolverlos a la bolsa."
+        },
+        {
+          "category": "correccion",
+          "text": "Las piezas equipadas se ven del tamaño que corresponde: estaban desproporcionadas al lado del mismo ítem suelto en la bolsa."
+        },
+        {
+          "category": "correccion",
+          "text": "En el mercader, el fondo de selección ya no tapa el ítem que estás mirando."
+        },
+        {
+          "category": "correccion",
+          "text": "Equipar desde el menú mandaba la orden de sacar, y con la casilla ocupada no hacía nada."
+        },
+        {
+          "category": "correccion",
+          "text": "Faltaban skills en el listado, entre ellas Swell Life. Ya aparecen todas."
+        },
+        {
+          "category": "correccion",
+          "text": "El selector del MU Helper repartía mal las skills entre pestañas: las de apoyo, como curar, caían en la de ataque."
+        },
+        {
+          "category": "correccion",
+          "text": "Dark Side pegaba treinta y seis veces de más."
+        },
+        {
+          "category": "correccion",
+          "text": "Las skills de Castle Siege se podían usar fuera del asedio, y el requisito de energía se ignoraba."
+        },
+        {
+          "category": "correccion",
+          "text": "Triple Shot de la elfa y las mini-alas fantasma."
+        },
+        {
+          "category": "correccion",
+          "text": "Poner el juego en segundo plano con HOME ya no desconecta, y sacar una captura ya no cierra el cliente."
+        },
+        {
+          "category": "correccion",
+          "text": "Si se cae la conexión al entrar al personaje ahora te avisa, en vez de dejar la pantalla en negro sin decir nada."
+        },
+        {
+          "category": "correccion",
+          "text": "El título de la pantalla de carga ya no dice \"No Found\"."
+        },
+        {
+          "category": "correccion",
+          "text": "Los sonidos de ambiente ya no se atropellan entre sí."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Los efectos de las alas se buscaban recorriendo cinco mil nodos por ítem y por cuadro. Se nota sobre todo en zonas con mucha gente."
+        }
+      ],
+      "download_bytes": 6319565,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.13",
       "date": "2026-07-28",
       "title": "Release 1.0.13",
