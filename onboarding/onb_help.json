@@ -727,16 +727,19 @@
         "es": [
           "El baul guarda objetos y Zen, y lo comparten TODOS los personajes de tu cuenta. Es la forma de pasarle cosas a otro personaje tuyo.",
           "Tambien sirve como seguro: lo que esta en el baul no lo perdes pase lo que pase.",
+          "Para mover cosas: manten apretado un objeto y salta al otro lado (de la bolsa al baul, o del baul a la bolsa). Un doble toque hace lo mismo. Arrastrar sirve para acomodarlo donde quieras.",
           "Se abre hablando con el NPC del baul en cualquier pueblo."
         ],
         "en": [
           "The vault stores items and zen, and ALL the characters on your account share it. That is how you pass things to another character of yours.",
           "It also works as insurance: what is in the vault you never lose, whatever happens.",
+          "To move things: press and hold an item and it jumps to the other side (bag to vault, or vault to bag). A double tap does the same. Dragging is for placing it exactly where you want.",
           "It opens by talking to the vault NPC in any town."
         ],
         "pt": [
           "O bau guarda itens e zen, e TODOS os personagens da sua conta compartilham. E assim que voce passa coisas para outro personagem seu.",
           "Tambem serve como seguro: o que esta no bau voce nao perde aconteca o que acontecer.",
+          "Para mover coisas: mantenha pressionado um item e ele salta para o outro lado (bolsa para bau, ou bau para bolsa). Um toque duplo faz o mesmo. Arrastar serve para colocar onde quiser.",
           "Abre falando com o NPC do bau em qualquer cidade."
         ]
       },
