@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.17",
+      "date": "2026-07-30",
+      "title": "Release 1.0.17",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "La tienda del juego vuelve a mostrar el catálogo correcto. Los precios estaban hasta 100 veces por encima de lo que cobra el servidor, y varios artículos aparecían con el nombre de otro: por eso al intentar comprar no pasaba nada."
+        },
+        {
+          "category": "correccion",
+          "text": "Las duraciones dejan de mostrarse como \"86400 Day(s)\": ahora dicen los días reales."
+        },
+        {
+          "category": "correccion",
+          "text": "Aparece la tienda de Goblin Points, con sus cinco secciones (Seals, Scrolls, Elixires, Mascotas y Especiales), que nunca se había llegado a publicar."
+        }
+      ],
+      "download_bytes": 4547,
+      "files_changed": 3
+    },
+    {
       "version": "1.0.16",
       "date": "2026-07-30",
       "title": "Release 1.0.16",
