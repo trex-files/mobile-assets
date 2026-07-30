@@ -3,6 +3,67 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.16",
+      "date": "2026-07-30",
+      "title": "Release 1.0.16",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Dark Side (Rage Fighter) vuelve a hacer daño. El servidor mandaba bien la lista de objetivos, pero la app la descartaba en silencio: no salía el efecto ni entraba un solo golpe. Ahora pega a los cinco objetivos como corresponde."
+        },
+        {
+          "category": "correccion",
+          "text": "Dragon Roar y Dragon Slasher aparecen en la pestaña de Ataque del Ayudante de MU, y no en la de Buffs."
+        },
+        {
+          "category": "correccion",
+          "text": "Charge (Rage Fighter) y Fire Blast (Dark Lord) dejan de ofrecerse fuera del Castillo y Land of Trials: son exclusivas de asedio, antes se podían tocar y no pasaba nada."
+        },
+        {
+          "category": "correccion",
+          "text": "Iron Defense vuelve a ser exclusiva de su clase."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregidos los niveles requeridos de Strike of Destruction, Expansion of Wizardry, Critical Damage Increase, Doppelganger y las tres Summoned Monster Strengthener, que mostraban valores erróneos."
+        },
+        {
+          "category": "correccion",
+          "text": "Dark Side y Slash Strengthener recuperan su alcance correcto en la ficha."
+        },
+        {
+          "category": "correccion",
+          "text": "El árbol de maestría vuelve a mostrar los últimos nodos del Summoner."
+        },
+        {
+          "category": "correccion",
+          "text": "El personaje ya no se teletransporta hacia el monstruo al atacar."
+        },
+        {
+          "category": "correccion",
+          "text": "La Máquina del Caos rechaza lo que no corresponde y dice el motivo, en vez de no hacer nada."
+        },
+        {
+          "category": "correccion",
+          "text": "En el Ayudante de MU la correa dejó de rebotar y respeta su interruptor."
+        },
+        {
+          "category": "interfaz",
+          "text": "Una habilidad que no se puede lanzar ahora se ve apagada en el anillo, en vez de parecer disponible."
+        },
+        {
+          "category": "interfaz",
+          "text": "El candado ya no tapa lo que resalta, y cada cosa muestra su nombre."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los carteles de objetos apilados se dibujan encima del chat y no pisan los mensajes."
+        }
+      ],
+      "download_bytes": 5755147,
+      "files_changed": 3
+    },
+    {
       "version": "1.0.15",
       "date": "2026-07-29",
       "title": "Release 1.0.15",
