@@ -1990,17 +1990,17 @@
         "es": [
           "Hay DOS botones distintos: «Helper: opciones» abre la configuracion, y «Helper: encender» lo prende y lo apaga.",
           "Si no los ves en pantalla, agregalos desde Menu > Candado > Agregar.",
-          "Se apaga solo si te mueves manualmente o si abris ciertos paneles: es a proposito, para que no pelee mientras vos estas haciendo otra cosa."
+          "Por defecto se apaga solo si te moves a mano —la palanca o un toque en el piso—, para que el helper y vos no peleen por el mismo personaje. Si preferis reposicionar la caza sin perderlo, apaga esa fila en Opciones > General."
         ],
         "en": [
           "There are TWO separate buttons: 'Helper: options' opens the settings, and 'Helper: start' turns it on and off.",
           "If you don't see them on screen, add them from Menu > Lock > Add.",
-          "It stops on its own if you move manually or open certain panels: that is on purpose, so it doesn't fight while you are doing something else."
+          "By default it stops on its own if you move by hand - the stick or a tap on the ground - so the helper and you don't fight over the same character. If you prefer to reposition your hunt without losing it, turn that row off in Settings > General."
         ],
         "pt": [
           "Sao DOIS botoes diferentes: 'Helper: opcoes' abre a configuracao, e 'Helper: ligar' liga e desliga.",
           "Se voce nao ve na tela, adicione em Menu > Cadeado > Adicionar.",
-          "Ele desliga sozinho se voce se move manualmente ou abre certos paineis: e de proposito, para nao lutar enquanto voce esta fazendo outra coisa."
+          "Por padrao ele desliga sozinho se voce se move na mao - a alavanca ou um toque no chao -, para que o helper e voce nao briguem pelo mesmo personagem. Se preferir reposicionar a cacada sem perde-lo, desligue essa linha em Opcoes > Geral."
         ]
       },
       "howto": {
