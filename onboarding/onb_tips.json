@@ -1,839 +1,1199 @@
 {
-  "version": 1,
-  "_readme": [
-    "Consejos rotativos del cliente. Se publican por el updater a",
-    "Data/Interface/MobileHUD/onb_tips.json y se hornean en la APK con",
-    "tools/gen_onboard_fallback.py (red de seguridad para la primera instalacion).",
-    "",
-    "CAMPOS",
-    "  id           unico y ESTABLE: se persiste el indice, no el id, pero el id",
-    "               es lo que usan el coach y el prop debug.mu.tips.",
-    "  cat          interfaz | items | combate | helper | gente | progresion | celular",
-    "  text         {es,en,pt} — el pie de la pantalla de carga. MAX 150 caracteres.",
-    "  title        {es,en,pt} — titular de la tarjeta 'Consejo del dia'. Opcional.",
-    "  deep         deep-link del boton 'Mostrame'. Vacio = sin boton.",
-    "  relevant_if  predicado de MobileTips::EvalRelevant. Si se cumple (= la",
-    "               funcion esta APAGADA) el consejo pesa el triple. Al que ya",
-    "               usa el filtro no se le ofrece el filtro.",
-    "  weight       peso base, 1 salvo que haya razon.",
-    "",
-    "IDIOMAS: por ahora solo 'es'. Pick() cae al primero que exista, asi que",
-    "hasta la fase de traduccion se ve espanol en los tres idiomas."
-  ],
-  "tips": [
-    {
-      "id": "hud_candado",
-      "cat": "interfaz",
-      "weight": 3,
-      "relevant_if": "hudedit.never",
-      "deep": "action=hudedit",
-      "title": {
-        "es": "La pantalla es tuya",
-        "en": "The screen is yours",
-        "pt": "A tela e sua"
-      },
-      "text": {
-        "es": "Menu -> Candado: move cualquier boton del HUD a donde te quede comodo, y cambiale el tamano.",
-        "en": "Menu > Lock: drag any HUD button wherever you want it, and resize it.",
-        "pt": "Menu > Cadeado: arraste qualquer botao do HUD para onde quiser, e mude o tamanho."
-      }
-    },
-    {
-      "id": "hud_escala",
-      "cat": "interfaz",
-      "relevant_if": "hudedit.never",
-      "deep": "action=hudedit",
-      "text": {
-        "es": "Botones muy chicos? En el candado, toca un elemento y usa - / + para agrandarlo.",
-        "en": "Buttons too small? In lock mode, tap an element and use - / + to grow it.",
-        "pt": "Botoes pequenos demais? No cadeado, toque um elemento e use - / + para aumentar."
-      }
-    },
-    {
-      "id": "hud_agregar",
-      "cat": "interfaz",
-      "weight": 2,
-      "relevant_if": "hudedit.never",
-      "deep": "action=hudedit",
-      "title": {
-        "es": "Podes agregar botones",
-        "en": "You can add buttons",
-        "pt": "Da para adicionar botoes"
-      },
-      "text": {
-        "es": "Desde el candado agregas botones nuevos al HUD con 'Agregar': paneles, el Helper o un viaje directo.",
-        "en": "From lock mode you can add new HUD buttons with 'Add': panels, the Helper, or a direct warp.",
-        "pt": "No cadeado voce adiciona botoes novos com 'Adicionar': paineis, o Helper, ou uma viagem direta."
-      }
-    },
-    {
-      "id": "hud_ocultar",
-      "cat": "interfaz",
-      "deep": "action=hudedit",
-      "text": {
-        "es": "En el candado tambien podes ocultar el HUD entero, para sacar capturas limpias.",
-        "en": "Lock mode can also hide the whole HUD, for clean screenshots.",
-        "pt": "No cadeado tambem da para esconder o HUD inteiro, para capturas limpas."
-      }
-    },
-    {
-      "id": "texto_tamano",
-      "cat": "interfaz",
-      "weight": 2,
-      "deep": "iface=OPTION&tab=hud",
-      "title": {
-        "es": "Si te cuesta leer, subilo",
-        "en": "Hard to read? Make it bigger",
-        "pt": "Dificil de ler? Aumente"
-      },
-      "text": {
-        "es": "Opciones -> HUD -> Tamano del texto. Todo el juego se reacomoda solo.",
-        "en": "Settings > HUD > Text size. The whole game re-flows on its own.",
-        "pt": "Opcoes > HUD > Tamanho do texto. O jogo inteiro se reorganiza sozinho."
-      }
-    },
-    {
-      "id": "calidad_video",
-      "cat": "interfaz",
-      "deep": "iface=OPTION&tab=video",
-      "text": {
-        "es": "Opciones -> Video -> Calidad: si el celu se calienta, baja un escalon y ganas bateria.",
-        "en": "Settings > Video > Quality: if the phone heats up, drop one step and save battery.",
-        "pt": "Opcoes > Video > Qualidade: se o celular esquenta, baixe um nivel e ganhe bateria."
-      }
-    },
-    {
-      "id": "fps_chip",
-      "cat": "interfaz",
-      "deep": "iface=OPTION&tab=hud",
-      "text": {
-        "es": "El numero de arriba a la derecha es tu FPS. Se puede apagar en Opciones -> HUD.",
-        "en": "The number at the top right is your FPS. You can turn it off in Settings > HUD.",
-        "pt": "O numero no canto superior direito e o seu FPS. Da para desligar em Opcoes > HUD."
-      }
-    },
-    {
-      "id": "minimapa",
-      "cat": "interfaz",
-      "text": {
-        "es": "Toca el minimapa para abrir el mapa grande del lugar donde estas.",
-        "en": "Tap the mini map to open the full map of where you are.",
-        "pt": "Toque no minimapa para abrir o mapa grande do lugar onde voce esta."
-      }
-    },
-    {
-      "id": "hud_pc",
-      "cat": "interfaz",
-      "deep": "iface=OPTION&tab=hud",
-      "text": {
-        "es": "Opciones -> HUD -> 'HUD estilo PC' te pone los orbes de vida y mana como en la computadora.",
-        "en": "Settings > HUD > 'PC-style HUD' gives you the desktop health and mana orbs.",
-        "pt": "Opcoes > HUD > 'HUD estilo PC' coloca os orbes de vida e mana como no computador."
-      }
-    },
-    {
-      "id": "teclado_propio",
-      "cat": "interfaz",
-      "relevant_if": "keyboard.off",
-      "deep": "iface=OPTION&tab=general",
-      "text": {
-        "es": "El juego tiene teclado propio, mas grande que el del sistema. Opciones -> General.",
-        "en": "The game has its own keyboard, bigger than the system one. Settings > General.",
-        "pt": "O jogo tem teclado proprio, maior que o do sistema. Opcoes > Geral."
-      }
-    },
-    {
-      "id": "chat_mover",
-      "cat": "interfaz",
-      "deep": "action=hudedit",
-      "text": {
-        "es": "Te molesta el chat? Movelo o achicalo desde el candado, como cualquier otro elemento.",
-        "en": "Chat in the way? Move or shrink it from lock mode, like anything else.",
-        "pt": "O chat atrapalha? Mova ou diminua pelo cadeado, como qualquer outra coisa."
-      }
-    },
-    {
-      "id": "nombres_off",
-      "cat": "interfaz",
-      "deep": "iface=OPTION&tab=hud",
-      "text": {
-        "es": "Opciones -> HUD: podes esconder los nombres de los jugadores y ver mejor el suelo.",
-        "en": "Settings > HUD: you can hide player names and see the ground better.",
-        "pt": "Opcoes > HUD: da para esconder os nomes dos jogadores e ver melhor o chao."
-      }
-    },
-    {
-      "id": "ayuda_buscador",
-      "cat": "interfaz",
-      "weight": 3,
-      "relevant_if": "help.never",
-      "deep": "iface=HELP&tab=search",
-      "title": {
-        "es": "La Ayuda tiene buscador",
-        "en": "Help has a search box",
-        "pt": "A Ajuda tem busca"
-      },
-      "text": {
-        "es": "Escribi una palabra —'alas', 'reset', 'no puedo equipar'— y te lleva a la explicacion.",
-        "en": "Type a word - 'wings', 'reset', 'cannot equip' - and it takes you to the answer.",
-        "pt": "Escreva uma palavra - 'asas', 'reset', 'nao consigo equipar' - e ele te leva a resposta."
-      }
-    },
-    {
-      "id": "paneles_arrastrar",
-      "cat": "interfaz",
-      "text": {
-        "es": "Todos los paneles se arrastran desde su barra de titulo.",
-        "en": "Every panel can be dragged by its title bar.",
-        "pt": "Todos os paineis se arrastam pela barra de titulo."
-      }
-    },
-    {
-      "id": "filtro_piso",
-      "cat": "items",
-      "weight": 4,
-      "relevant_if": "itemfilter.off",
-      "deep": "iface=OPTION&tab=items",
-      "title": {
-        "es": "El piso se puede limpiar",
-        "en": "The ground can be cleaned up",
-        "pt": "O chao pode ser limpo"
-      },
-      "text": {
-        "es": "El suelo lleno de basura? En Opciones -> Items armas un filtro y dejas de ver lo que no te sirve.",
-        "en": "Ground full of junk? In Settings > Items build a filter and stop seeing what you don't need.",
-        "pt": "Chao cheio de lixo? Em Opcoes > Itens monte um filtro e pare de ver o que nao serve."
-      }
-    },
-    {
-      "id": "filtro_conjuntos",
-      "cat": "items",
-      "weight": 2,
-      "relevant_if": "itemfilter.off",
-      "deep": "iface=OPTION&tab=items",
-      "text": {
-        "es": "El filtro de items admite hasta 8 conjuntos de 50 nombres cada uno.",
-        "en": "The item filter holds up to 8 sets of 50 names each.",
-        "pt": "O filtro de itens aceita ate 8 conjuntos de 50 nomes cada."
-      }
-    },
-    {
-      "id": "filtro_por_mapa",
-      "cat": "items",
-      "weight": 2,
-      "relevant_if": "itemfilter.off",
-      "deep": "iface=OPTION&tab=items",
-      "title": {
-        "es": "Un filtro por mapa",
-        "en": "One filter per map",
-        "pt": "Um filtro por mapa"
-      },
-      "text": {
-        "es": "Podes atar un conjunto de filtro a un mapa: se prende y se apaga solo al entrar y salir.",
-        "en": "A filter set can be tied to a map: it turns itself on and off as you come and go.",
-        "pt": "Um conjunto de filtro pode ser ligado a um mapa: liga e desliga sozinho ao entrar e sair."
-      }
-    },
-    {
-      "id": "filtro_chip",
-      "cat": "items",
-      "deep": "iface=OPTION&tab=items",
-      "text": {
-        "es": "El chip 'N ocultos' del HUD te dice cuantos objetos te tapa el filtro. Tocalo para apagarlo.",
-        "en": "The 'N hidden' chip counts what the filter is hiding. Tap it to switch the filter off.",
-        "pt": "O chip 'N ocultos' conta o que o filtro esta escondendo. Toque para desligar o filtro."
-      }
-    },
-    {
-      "id": "droplist",
-      "cat": "items",
-      "weight": 3,
-      "relevant_if": "droplist.off",
-      "deep": "iface=OPTION&tab=items",
-      "title": {
-        "es": "Los drops se apilan",
-        "en": "Drops stack up",
-        "pt": "Os drops se empilham"
-      },
-      "text": {
-        "es": "Cuando caen tres objetos o mas, los carteles se apilan en una lista. Toca una fila y vas a buscarlo.",
-        "en": "When three or more items drop together, the labels stack into a list. Tap a row to go get it.",
-        "pt": "Quando caem tres ou mais itens juntos, as etiquetas se empilham numa lista. Toque numa linha."
-      }
-    },
-    {
-      "id": "longpress_item",
-      "cat": "items",
-      "weight": 2,
-      "title": {
-        "es": "Manten apretado un objeto",
-        "en": "Hold an item",
-        "pt": "Segure um item"
-      },
-      "text": {
-        "es": "En la bolsa, manten apretado un objeto para usarlo, equiparlo, tirarlo o venderlo.",
-        "en": "In the bag, hold an item to use, equip, drop or sell it.",
-        "pt": "Na bolsa, segure um item para usar, equipar, jogar fora ou vender."
-      }
-    },
-    {
-      "id": "requisito_rojo",
-      "cat": "items",
-      "text": {
-        "es": "Un arma que no podes equipar te muestra el requisito en rojo en su descripcion.",
-        "en": "A weapon you cannot equip shows the missing requirement in red.",
-        "pt": "Uma arma que voce nao pode equipar mostra o requisito que falta em vermelho."
-      }
-    },
-    {
-      "id": "excellent",
-      "cat": "items",
-      "text": {
-        "es": "Los objetos con nombre celeste son excellent: valen mucho mas que uno comun. No los vendas al NPC.",
-        "en": "Items with a light blue name are excellent: worth far more than a plain one. Don't vendor them.",
-        "pt": "Itens com nome azul claro sao excellent: valem muito mais. Nao venda para o NPC."
-      }
-    },
-    {
-      "id": "joyas",
-      "cat": "items",
-      "text": {
-        "es": "Las joyas no se usan solas: van a la Maquina del Caos para mejorar tu equipo.",
-        "en": "Jewels are not used on their own: they upgrade your gear at the Chaos Machine.",
-        "pt": "Joias nao se usam sozinhas: servem para melhorar equipamento na Maquina do Caos."
-      }
-    },
-    {
-      "id": "reparar",
-      "cat": "items",
-      "text": {
-        "es": "Reparar cuesta menos que morir con el equipo roto. Cualquier herrero del pueblo lo hace.",
-        "en": "Repairing costs less than dying with broken gear. Any town blacksmith does it.",
-        "pt": "Consertar custa menos que morrer com o equipamento quebrado. Qualquer ferreiro faz."
-      }
-    },
-    {
-      "id": "baul",
-      "cat": "items",
-      "text": {
-        "es": "El baul guarda objetos y zen, y lo comparten todos los personajes de tu cuenta.",
-        "en": "The vault stores items and zen, and every character on your account shares it.",
-        "pt": "O bau guarda itens e zen, e todos os personagens da sua conta compartilham."
-      }
-    },
-    {
-      "id": "bloquear_item",
-      "cat": "items",
-      "text": {
-        "es": "Un objeto bloqueado no se puede tirar ni vender por accidente. Busca el candado en su menu.",
-        "en": "A locked item cannot be dropped or sold by accident. Look for the padlock in its menu.",
-        "pt": "Um item trancado nao pode ser jogado fora nem vendido sem querer. Procure o cadeado."
-      }
-    },
-    {
-      "id": "atacar",
-      "cat": "combate",
-      "text": {
-        "es": "Toca un monstruo para atacarlo. Con el auto-ataque prendido, seguis pegando solo.",
-        "en": "Tap a monster to attack it. With auto-attack on, you keep hitting by yourself.",
-        "pt": "Toque num monstro para atacar. Com o ataque automatico ligado, voce continua batendo sozinho."
-      }
-    },
-    {
-      "id": "apuntar_skill",
-      "cat": "combate",
-      "weight": 2,
-      "title": {
-        "es": "Las habilidades se apuntan",
-        "en": "Skills can be aimed",
-        "pt": "As habilidades se miram"
-      },
-      "text": {
-        "es": "Manten apretado un orbe de habilidad y arrastra para elegir donde cae.",
-        "en": "Hold a skill orb and drag to choose where it lands.",
-        "pt": "Segure um orbe de habilidade e arraste para escolher onde ela cai."
-      }
-    },
-    {
-      "id": "autopot",
-      "cat": "combate",
-      "weight": 3,
-      "relevant_if": "autopot.off",
-      "deep": "iface=MuHelper&tab=pot",
-      "title": {
-        "es": "Las pociones se toman solas",
-        "en": "Potions drink themselves",
-        "pt": "As pocoes se tomam sozinhas"
-      },
-      "text": {
-        "es": "En MU Helper -> Pociones elegis a que porcentaje de vida se toman. 50% esta bien para empezar.",
-        "en": "In MU Helper > Potions you pick the health percentage that triggers a potion. 50% is a fine start.",
-        "pt": "Em MU Helper > Pocoes voce escolhe em que porcentagem de vida toma pocao. 50% ja serve."
-      }
-    },
-    {
-      "id": "mapa_mas_facil",
-      "cat": "combate",
-      "deep": "iface=MOVEMAP",
-      "text": {
-        "es": "Si moris mucho no es que pegues poco: proba un mapa de nivel mas bajo.",
-        "en": "If you die a lot it is not that you hit softly: try a lower level map.",
-        "pt": "Se voce morre muito nao e que bate fraco: tente um mapa de nivel menor."
-      }
-    },
-    {
-      "id": "sd",
-      "cat": "combate",
-      "text": {
-        "es": "El escudo azul que se recarga es el SD: te come el dano antes que la vida.",
-        "en": "The blue shield that refills is SD: it eats damage before your health does.",
-        "pt": "O escudo azul que recarrega e o SD: ele come o dano antes da sua vida."
-      }
-    },
-    {
-      "id": "exp_nivel",
-      "cat": "combate",
-      "text": {
-        "es": "Correr sin pelear no da experiencia. Busca monstruos de tu nivel o un poco arriba.",
-        "en": "Running without fighting gives no experience. Find monsters near your level or slightly above.",
-        "pt": "Correr sem lutar nao da experiencia. Procure monstros do seu nivel ou um pouco acima."
-      }
-    },
-    {
-      "id": "puntos",
-      "cat": "combate",
-      "weight": 2,
-      "deep": "iface=CHARACTER",
-      "title": {
-        "es": "Tenes puntos para repartir",
-        "en": "You have points to spend",
-        "pt": "Voce tem pontos para gastar"
-      },
-      "text": {
-        "es": "Cada vez que subis de nivel ganas puntos. Repartilos en Personaje y pegas mas fuerte.",
-        "en": "Every level gives you points. Spend them in Character and you hit harder.",
-        "pt": "Cada nivel te da pontos. Distribua em Personagem e voce bate mais forte."
-      }
-    },
-    {
-      "id": "pociones_stock",
-      "cat": "combate",
-      "text": {
-        "es": "Compra pociones de sobra antes de salir del pueblo: volver cuesta tiempo y zen.",
-        "en": "Buy spare potions before leaving town: coming back costs time and zen.",
-        "pt": "Compre pocoes de sobra antes de sair da cidade: voltar custa tempo e zen."
-      }
-    },
-    {
-      "id": "alas",
-      "cat": "combate",
-      "text": {
-        "es": "Las alas cambian todo: suben tu dano y bajan el que recibis. Se hacen en la Maquina del Caos.",
-        "en": "Wings change everything: more damage dealt, less taken. They are made at the Chaos Machine.",
-        "pt": "As asas mudam tudo: mais dano dado, menos recebido. Sao feitas na Maquina do Caos."
-      }
-    },
-    {
-      "id": "monstruo_rojo",
-      "cat": "combate",
-      "text": {
-        "es": "Un monstruo con el nombre en rojo es mucho mas fuerte de lo normal. No lo pelees solo.",
-        "en": "A monster with a red name is far stronger than usual. Do not fight it alone.",
-        "pt": "Um monstro com nome vermelho e muito mais forte que o normal. Nao lute sozinho."
-      }
-    },
-    {
-      "id": "party_exp",
-      "cat": "combate",
-      "text": {
-        "es": "En grupo la experiencia se reparte, pero se mata mucho mas rapido.",
-        "en": "In a party experience is shared, but things die much faster.",
-        "pt": "Em grupo a experiencia e dividida, mas se mata muito mais rapido."
-      }
-    },
-    {
-      "id": "mana",
-      "cat": "combate",
-      "text": {
-        "es": "Sin mana no podes usar habilidades: lleva pociones azules tambien.",
-        "en": "Without mana you cannot cast skills: carry blue potions too.",
-        "pt": "Sem mana voce nao usa habilidades: leve pocoes azuis tambem."
-      }
-    },
-    {
-      "id": "helper_que_es",
-      "cat": "helper",
-      "weight": 4,
-      "relevant_if": "helper.never",
-      "deep": "iface=MuHelper",
-      "title": {
-        "es": "El juego puede jugar solo",
-        "en": "The game can play itself",
-        "pt": "O jogo pode jogar sozinho"
-      },
-      "text": {
-        "es": "El MU Helper pelea, levanta objetos y toma pociones por vos mientras descansas.",
-        "en": "MU Helper fights, picks things up and drinks potions for you while you rest.",
-        "pt": "O MU Helper luta, pega itens e toma pocoes por voce enquanto descansa."
-      }
-    },
-    {
-      "id": "helper_botones",
-      "cat": "helper",
-      "weight": 2,
-      "relevant_if": "helper.never",
-      "deep": "action=hudedit",
-      "text": {
-        "es": "Agrega los dos botones del Helper al HUD desde el candado: 'opciones' y 'encender'.",
-        "en": "Add both Helper buttons to the HUD from lock mode: 'options' and 'start'.",
-        "pt": "Adicione os dois botoes do Helper ao HUD pelo cadeado: 'opcoes' e 'ligar'."
-      }
-    },
-    {
-      "id": "helper_recoleccion",
-      "cat": "helper",
-      "deep": "iface=MuHelper&tab=pick",
-      "text": {
-        "es": "En el Helper podes elegir QUE levantar: solo joyas, solo excellent, solo zen, o tu propia lista.",
-        "en": "In the Helper you choose WHAT it picks up: only jewels, only excellent, only zen, or your own list.",
-        "pt": "No Helper voce escolhe O QUE ele pega: so joias, so excellent, so zen, ou sua propria lista."
-      }
-    },
-    {
-      "id": "helper_posicion",
-      "cat": "helper",
-      "deep": "iface=MuHelper&tab=atk",
-      "text": {
-        "es": "'Volver a la posicion original' hace que el bot no se aleje del punto donde lo dejaste.",
-        "en": "'Return to original position' keeps the bot from wandering off from where you left it.",
-        "pt": "'Voltar a posicao original' impede que o bot se afaste de onde voce deixou."
-      }
-    },
-    {
-      "id": "helper_reparar",
-      "cat": "helper",
-      "deep": "iface=MuHelper",
-      "text": {
-        "es": "El Helper puede reparar tu equipo solo cuando se gasta.",
-        "en": "The Helper can repair your gear on its own as it wears down.",
-        "pt": "O Helper consegue consertar seu equipamento sozinho conforme ele gasta."
-      }
-    },
-    {
-      "id": "helper_skill",
-      "cat": "helper",
-      "deep": "iface=MuHelper&tab=atk",
-      "text": {
-        "es": "Podes asignarle al Helper que habilidad usar y cada cuantos segundos.",
-        "en": "You can tell the Helper which skill to use and how often.",
-        "pt": "Da para dizer ao Helper qual habilidade usar e de quantos em quantos segundos."
-      }
-    },
-    {
-      "id": "helper_offline",
-      "cat": "helper",
-      "weight": 2,
-      "title": {
-        "es": "Sigue jugando sin vos",
-        "en": "It keeps playing without you",
-        "pt": "Continua jogando sem voce"
-      },
-      "text": {
-        "es": "Con el modo offline tu personaje sigue jugando aunque cierres la aplicacion.",
-        "en": "In offline mode your character keeps playing even if you close the app.",
-        "pt": "No modo offline seu personagem continua jogando mesmo se voce fechar o aplicativo."
-      }
-    },
-    {
-      "id": "helper_party",
-      "cat": "helper",
-      "deep": "iface=MuHelper&tab=atk",
-      "text": {
-        "es": "El Helper tambien acepta grupo y curacion automatica si jugas acompanado.",
-        "en": "The Helper also accepts parties and heals automatically if you play with others.",
-        "pt": "O Helper tambem aceita grupo e cura automatica se voce joga acompanhado."
-      }
-    },
-    {
-      "id": "helper_probar",
-      "cat": "helper",
-      "text": {
-        "es": "Antes de dejar el Helper solo, probalo un minuto mirando: es la forma de ver si esta bien puesto.",
-        "en": "Before leaving the Helper alone, watch it for a minute: that is how you spot a bad setup.",
-        "pt": "Antes de deixar o Helper sozinho, olhe um minuto: e assim que se percebe uma config errada."
-      }
-    },
-    {
-      "id": "helper_lista",
-      "cat": "helper",
-      "deep": "iface=MuHelper&tab=pick",
-      "text": {
-        "es": "Si el Helper no levanta algo, revisa que ese nombre este en su lista de recoleccion.",
-        "en": "If the Helper skips something, check that its name is in the pick-up list.",
-        "pt": "Se o Helper nao pega algo, confira se esse nome esta na lista de coleta."
-      }
-    },
-    {
-      "id": "longpress_jugador",
-      "cat": "gente",
-      "weight": 2,
-      "title": {
-        "es": "Manten apretado a un jugador",
-        "en": "Hold another player",
-        "pt": "Segure outro jogador"
-      },
-      "text": {
-        "es": "Manten apretado a otro jugador para invitarlo al grupo, comerciar o susurrarle.",
-        "en": "Hold another player to invite them to a party, trade, or whisper.",
-        "pt": "Segure outro jogador para convidar para o grupo, negociar ou sussurrar."
-      }
-    },
-    {
-      "id": "bloquear_jugador",
-      "cat": "gente",
-      "deep": "iface=OPTION&tab=players",
-      "text": {
-        "es": "Alguien molesta? En ese mismo menu lo bloqueas y no lo lees mas.",
-        "en": "Someone bothering you? In that same menu you block them and stop reading them.",
-        "pt": "Alguem incomodando? Nesse mesmo menu voce bloqueia e para de ler."
-      }
-    },
-    {
-      "id": "gremio",
-      "cat": "gente",
-      "text": {
-        "es": "Un gremio te da gente con quien jugar y acceso a los eventos grandes.",
-        "en": "A guild gives you people to play with and access to the big events.",
-        "pt": "Uma guilda te da gente para jogar junto e acesso aos eventos grandes."
-      }
-    },
-    {
-      "id": "afk_ocultar",
-      "cat": "gente",
-      "relevant_if": "afk.off",
-      "deep": "iface=OPTION&tab=players",
-      "text": {
-        "es": "Opciones -> Players: podes esconder a los jugadores que estan AFK y ver mejor el pueblo.",
-        "en": "Settings > Players: you can hide AFK players and see the town properly.",
-        "pt": "Opcoes > Jogadores: da para esconder quem esta AFK e ver a cidade direito."
-      }
-    },
-    {
-      "id": "trade_seguro",
-      "cat": "gente",
-      "text": {
-        "es": "El comercio seguro es el de la ventana de intercambio. Ahi nadie te puede sacar nada.",
-        "en": "The safe trade is the exchange window. Nobody can take anything from you there.",
-        "pt": "A negociacao segura e a janela de troca. Ali ninguem consegue tirar nada de voce."
-      }
-    },
-    {
-      "id": "password",
-      "cat": "gente",
-      "weight": 2,
-      "title": {
-        "es": "Nunca des tu contrasena",
-        "en": "Never give out your password",
-        "pt": "Nunca de a sua senha"
-      },
-      "text": {
-        "es": "Ningun administrador te la va a pedir. Si alguien te la pide, es una estafa.",
-        "en": "No admin will ever ask for it. If someone does, it is a scam.",
-        "pt": "Nenhum administrador vai pedir. Se alguem pedir, e golpe."
-      }
-    },
-    {
-      "id": "susurro",
-      "cat": "gente",
-      "text": {
-        "es": "En el chat, toca el nombre de alguien para responderle en privado.",
-        "en": "In chat, tap someone's name to answer them privately.",
-        "pt": "No chat, toque no nome de alguem para responder em particular."
-      }
-    },
-    {
-      "id": "pvp_modo",
-      "cat": "gente",
-      "relevant_if": "pvp.off",
-      "deep": "iface=OPTION&tab=general",
-      "text": {
-        "es": "El modo PvP se prende y se apaga en Opciones -> General.",
-        "en": "PvP mode is turned on and off in Settings > General.",
-        "pt": "O modo PvP liga e desliga em Opcoes > Geral."
-      }
-    },
-    {
-      "id": "viajar_requisitos",
-      "cat": "progresion",
-      "weight": 2,
-      "deep": "iface=MOVEMAP",
-      "title": {
-        "es": "El panel Viajar te lo dice todo",
-        "en": "Travel tells you everything",
-        "pt": "Viajar te diz tudo"
-      },
-      "text": {
-        "es": "Cada mapa muestra el nivel y el zen que necesitas. Toca uno bloqueado y te dice cuanto falta.",
-        "en": "Each map shows the level and zen you need. Tap a locked one and it tells you what is missing.",
-        "pt": "Cada mapa mostra o nivel e o zen que voce precisa. Toque num bloqueado e ele diz o que falta."
-      }
-    },
-    {
-      "id": "favoritos_viaje",
-      "cat": "progresion",
-      "weight": 2,
-      "relevant_if": "favorites.none",
-      "deep": "iface=MOVEMAP",
-      "title": {
-        "es": "Marca tus mapas con la estrella",
-        "en": "Star your maps",
-        "pt": "Marque seus mapas"
-      },
-      "text": {
-        "es": "Los favoritos quedan primeros en la lista de viaje, y podes ponerlos como boton en el HUD.",
-        "en": "Favourites stay at the top of the travel list, and can become a HUD button.",
-        "pt": "Os favoritos ficam no topo da lista de viagem, e podem virar um botao do HUD."
-      }
-    },
-    {
-      "id": "favoritos_hud",
-      "cat": "progresion",
-      "relevant_if": "favorites.none",
-      "deep": "action=hudedit",
-      "text": {
-        "es": "Un favorito de viaje se puede poner como boton directo en el HUD, desde el candado.",
-        "en": "A travel favourite can become a direct HUD button, from lock mode.",
-        "pt": "Um favorito de viagem pode virar botao direto no HUD, pelo cadeado."
-      }
-    },
-    {
-      "id": "misiones",
-      "cat": "progresion",
-      "deep": "iface=MYQUEST",
-      "text": {
-        "es": "Las misiones dan experiencia y objetos: mira el hub antes de salir a matar.",
-        "en": "Quests give experience and items: check the hub before heading out.",
-        "pt": "As missoes dao experiencia e itens: olhe o hub antes de sair."
-      }
-    },
-    {
-      "id": "clase_puntos",
-      "cat": "progresion",
-      "deep": "iface=CHARACTER",
-      "text": {
-        "es": "Cada clase sube distinto: no repartas los puntos igual en todas.",
-        "en": "Every class levels differently: do not spend points the same way on all of them.",
-        "pt": "Cada classe sobe diferente: nao distribua os pontos igual em todas."
-      }
-    },
-    {
-      "id": "evolucion",
-      "cat": "progresion",
-      "text": {
-        "es": "A cierto nivel podes evolucionar tu clase y desbloquear habilidades nuevas.",
-        "en": "At a certain level you can evolve your class and unlock new skills.",
-        "pt": "Em certo nivel voce pode evoluir sua classe e liberar habilidades novas."
-      }
-    },
-    {
-      "id": "resets",
-      "cat": "progresion",
-      "text": {
-        "es": "Los resets te devuelven al nivel 1 pero te dejan mas fuerte a largo plazo.",
-        "en": "Resets send you back to level 1 but leave you stronger in the long run.",
-        "pt": "Os resets te devolvem ao nivel 1 mas te deixam mais forte no longo prazo."
-      }
-    },
-    {
-      "id": "eventos_horario",
-      "cat": "progresion",
-      "deep": "iface=EVENTS",
-      "text": {
-        "es": "Los eventos tienen horario fijo. Mira el reloj de eventos en el menu.",
-        "en": "Events run on a fixed schedule. Check the event clock in the menu.",
-        "pt": "Os eventos tem horario fixo. Olhe o relogio de eventos no menu."
-      }
-    },
-    {
-      "id": "eventos_subir",
-      "cat": "progresion",
-      "text": {
-        "es": "Blood Castle, Devil Square y Chaos Castle son las tres formas mas rapidas de subir.",
-        "en": "Blood Castle, Devil Square and Chaos Castle are the three fastest ways to level.",
-        "pt": "Blood Castle, Devil Square e Chaos Castle sao as tres formas mais rapidas de subir."
-      }
-    },
-    {
-      "id": "chaos_machine",
-      "cat": "progresion",
-      "text": {
-        "es": "La Maquina del Caos combina objetos y joyas: ahi se hacen las alas.",
-        "en": "The Chaos Machine combines items and jewels: that is where wings are made.",
-        "pt": "A Maquina do Caos combina itens e joias: e ali que se fazem as asas."
-      }
-    },
-    {
-      "id": "master_level",
-      "cat": "progresion",
-      "text": {
-        "es": "Despues de cierto nivel se abre el Master Level, con un arbol de habilidades nuevo.",
-        "en": "Past a certain level Master Level opens, with a whole new skill tree.",
-        "pt": "Depois de certo nivel abre o Master Level, com uma arvore de habilidades nova."
-      }
-    },
-    {
-      "id": "mascotas",
-      "cat": "progresion",
-      "text": {
-        "es": "Las mascotas pelean con vos y algunas te cargan el botin.",
-        "en": "Pets fight alongside you and some of them carry your loot.",
-        "pt": "Os pets lutam com voce e alguns carregam o seu loot."
-      }
-    },
-    {
-      "id": "perf_calidad",
-      "cat": "celular",
-      "weight": 2,
-      "deep": "iface=OPTION&tab=video",
-      "title": {
-        "es": "Si va lento, empeza por aca",
-        "en": "Running slow? Start here",
-        "pt": "Lento? Comece por aqui"
-      },
-      "text": {
-        "es": "Opciones -> Video -> Calidad: bajar un escalon suele arreglarlo enseguida.",
-        "en": "Settings > Video > Quality: dropping one step usually fixes it right away.",
-        "pt": "Opcoes > Video > Qualidade: baixar um nivel costuma resolver na hora."
-      }
-    },
-    {
-      "id": "perf_termico",
-      "cat": "celular",
-      "text": {
-        "es": "El cliente baja la carga solo cuando el celu se calienta. Si pasa seguido, baja la calidad a mano.",
-        "en": "The client eases off on its own when the phone heats up. If it happens often, lower quality by hand.",
-        "pt": "O cliente alivia sozinho quando o celular esquenta. Se acontece sempre, baixe a qualidade."
-      }
-    },
-    {
-      "id": "perf_filtro",
-      "cat": "celular",
-      "relevant_if": "itemfilter.off",
-      "deep": "iface=OPTION&tab=items",
-      "text": {
-        "es": "Con el filtro de items prendido el juego dibuja menos y va mas fluido.",
-        "en": "With the item filter on the game draws less and runs smoother.",
-        "pt": "Com o filtro de itens ligado o jogo desenha menos e fica mais fluido."
-      }
-    },
-    {
-      "id": "perf_paneles",
-      "cat": "celular",
-      "text": {
-        "es": "Cerra los paneles que no uses: cada uno consume bateria.",
-        "en": "Close the panels you are not using: each one costs battery.",
-        "pt": "Feche os paineis que nao usa: cada um gasta bateria."
-      }
-    }
-  ]
+ "version": 1,
+ "_readme": [
+  "Consejos rotativos del cliente. Se publican por el updater a",
+  "Data/Interface/MobileHUD/onb_tips.json y se hornean en la APK con",
+  "tools/gen_onboard_fallback.py (red de seguridad para la primera instalacion).",
+  "",
+  "CAMPOS",
+  "  id           unico y ESTABLE: se persiste el indice, no el id, pero el id",
+  "               es lo que usan el coach y el prop debug.mu.tips.",
+  "  cat          interfaz | items | combate | helper | gente | progresion | celular",
+  "  text         {es,en,pt} — el pie de la pantalla de carga. MAX 150 caracteres.",
+  "  title        {es,en,pt} — titular de la tarjeta 'Consejo del dia'. Opcional.",
+  "  deep         deep-link del boton 'Mostrame'. Vacio = sin boton.",
+  "  relevant_if  predicado de MobileTips::EvalRelevant. Si se cumple (= la",
+  "               funcion esta APAGADA) el consejo pesa el triple. Al que ya",
+  "               usa el filtro no se le ofrece el filtro.",
+  "  weight       peso base, 1 salvo que haya razon.",
+  "",
+  "IDIOMAS: por ahora solo 'es'. Pick() cae al primero que exista, asi que",
+  "hasta la fase de traduccion se ve espanol en los tres idiomas."
+ ],
+ "tips": [
+  {
+   "id": "hud_candado",
+   "cat": "interfaz",
+   "weight": 3,
+   "relevant_if": "hudedit.never",
+   "deep": "action=hudedit",
+   "title": {
+    "es": "La pantalla es tuya",
+    "en": "The screen is yours",
+    "pt": "A tela e sua",
+    "vi": "Màn hình là của bạn",
+    "th": "หน้าจอเป็นของคุณ",
+    "zh": "屏幕由你做主",
+    "ja": "画面はあなたのもの"
+   },
+   "text": {
+    "es": "Menu -> Candado: move cualquier boton del HUD a donde te quede comodo, y cambiale el tamano.",
+    "en": "Menu > Lock: drag any HUD button wherever you want it, and resize it.",
+    "pt": "Menu > Cadeado: arraste qualquer botao do HUD para onde quiser, e mude o tamanho.",
+    "vi": "Menu > Ổ khóa: kéo bất kỳ nút HUD nào tới chỗ bạn thích, và đổi kích thước.",
+    "th": "เมนู > แม่กุญแจ: ลากปุ่ม HUD ปุ่มไหนก็ได้ไปไว้ตรงที่ถนัด แล้วปรับขนาดได้",
+    "zh": "菜单 > 锁：把任意 HUD 按钮拖到你顺手的位置，还能改大小。",
+    "ja": "メニュー > 錠前: HUDのボタンを好きな場所へドラッグでき、大きさも変えられます。"
+   }
+  },
+  {
+   "id": "hud_escala",
+   "cat": "interfaz",
+   "relevant_if": "hudedit.never",
+   "deep": "action=hudedit",
+   "text": {
+    "es": "Botones muy chicos? En el candado, toca un elemento y usa - / + para agrandarlo.",
+    "en": "Buttons too small? In lock mode, tap an element and use - / + to grow it.",
+    "pt": "Botoes pequenos demais? No cadeado, toque um elemento e use - / + para aumentar.",
+    "vi": "Nút quá nhỏ? Ở chế độ khóa, chạm vào một thành phần rồi dùng - / + để phóng to.",
+    "th": "ปุ่มเล็กไป? ในโหมดแม่กุญแจ แตะที่องค์ประกอบแล้วใช้ - / + เพื่อขยาย",
+    "zh": "按钮太小？在锁定模式下点一下元素，再用 - / + 放大。",
+    "ja": "ボタンが小さい？ロックモードで要素をタップし、- / + で大きくできます。"
+   }
+  },
+  {
+   "id": "hud_agregar",
+   "cat": "interfaz",
+   "weight": 2,
+   "relevant_if": "hudedit.never",
+   "deep": "action=hudedit",
+   "title": {
+    "es": "Podes agregar botones",
+    "en": "You can add buttons",
+    "pt": "Da para adicionar botoes",
+    "vi": "Bạn có thể thêm nút",
+    "th": "เพิ่มปุ่มเองได้",
+    "zh": "你可以自己加按钮",
+    "ja": "ボタンは追加できます"
+   },
+   "text": {
+    "es": "Desde el candado agregas botones nuevos al HUD con 'Agregar': paneles, el Helper o un viaje directo.",
+    "en": "From lock mode you can add new HUD buttons with 'Add': panels, the Helper, or a direct warp.",
+    "pt": "No cadeado voce adiciona botoes novos com 'Adicionar': paineis, o Helper, ou uma viagem direta.",
+    "vi": "Từ chế độ khóa bạn có thể thêm nút HUD mới bằng 'Thêm': bảng chức năng, Helper, hoặc một lệnh dịch chuyển thẳng.",
+    "th": "จากโหมดแม่กุญแจ เพิ่มปุ่ม HUD ใหม่ได้ด้วย 'เพิ่ม': หน้าต่างต่างๆ, Helper หรือวาร์ปตรงไปเลย",
+    "zh": "在锁定模式下可以用“添加”新增 HUD 按钮：各种面板、助手，或者一个直达传送。",
+    "ja": "ロックモードから「追加」で新しいHUDボタンを足せます: 各種パネル、ヘルパー、直接ワープなど。"
+   }
+  },
+  {
+   "id": "hud_ocultar",
+   "cat": "interfaz",
+   "deep": "action=hudedit",
+   "text": {
+    "es": "En el candado tambien podes ocultar el HUD entero, para sacar capturas limpias.",
+    "en": "Lock mode can also hide the whole HUD, for clean screenshots.",
+    "pt": "No cadeado tambem da para esconder o HUD inteiro, para capturas limpas.",
+    "vi": "Chế độ khóa còn ẩn được toàn bộ HUD, để chụp ảnh cho sạch.",
+    "th": "โหมดแม่กุญแจยังซ่อน HUD ทั้งหมดได้ ไว้ถ่ายภาพหน้าจอให้สะอาดตา",
+    "zh": "锁定模式还能把整个 HUD 藏起来，方便截干净的图。",
+    "ja": "ロックモードではHUD全体を隠せます。きれいなスクリーンショット向けです。"
+   }
+  },
+  {
+   "id": "texto_tamano",
+   "cat": "interfaz",
+   "weight": 2,
+   "deep": "iface=OPTION&tab=hud",
+   "title": {
+    "es": "Si te cuesta leer, subilo",
+    "en": "Hard to read? Make it bigger",
+    "pt": "Dificil de ler? Aumente",
+    "vi": "Khó đọc? Phóng to lên",
+    "th": "อ่านยาก? ขยายให้ใหญ่ขึ้น",
+    "zh": "看不清？调大一点",
+    "ja": "読みにくい？大きくしましょう"
+   },
+   "text": {
+    "es": "Opciones -> HUD -> Tamano del texto. Todo el juego se reacomoda solo.",
+    "en": "Settings > HUD > Text size. The whole game re-flows on its own.",
+    "pt": "Opcoes > HUD > Tamanho do texto. O jogo inteiro se reorganiza sozinho.",
+    "vi": "Cài đặt > HUD > Cỡ chữ. Toàn bộ game sẽ tự bố trí lại.",
+    "th": "ตั้งค่า > HUD > ขนาดตัวอักษร ทั้งเกมจะจัดวางใหม่ให้เอง",
+    "zh": "设置 > HUD > 文字大小。整个游戏会自动重新排版。",
+    "ja": "設定 > HUD > 文字サイズ。ゲーム全体が自動でレイアウトし直します。"
+   }
+  },
+  {
+   "id": "calidad_video",
+   "cat": "interfaz",
+   "deep": "iface=OPTION&tab=video",
+   "text": {
+    "es": "Opciones -> Video -> Calidad: si el celu se calienta, baja un escalon y ganas bateria.",
+    "en": "Settings > Video > Quality: if the phone heats up, drop one step and save battery.",
+    "pt": "Opcoes > Video > Qualidade: se o celular esquenta, baixe um nivel e ganhe bateria.",
+    "vi": "Cài đặt > Hình ảnh > Chất lượng: nếu máy nóng, hạ một nấc là mát và đỡ tốn pin.",
+    "th": "ตั้งค่า > ภาพ > คุณภาพ: ถ้าเครื่องร้อน ลดลงหนึ่งขั้น เย็นลงและประหยัดแบต",
+    "zh": "设置 > 画面 > 画质：手机发烫就降一档，凉快也省电。",
+    "ja": "設定 > 映像 > 画質: 端末が熱くなるなら一段下げると、涼しくなり電池も持ちます。"
+   }
+  },
+  {
+   "id": "fps_chip",
+   "cat": "interfaz",
+   "deep": "iface=OPTION&tab=hud",
+   "text": {
+    "es": "El numero de arriba a la derecha es tu FPS. Se puede apagar en Opciones -> HUD.",
+    "en": "The number at the top right is your FPS. You can turn it off in Settings > HUD.",
+    "pt": "O numero no canto superior direito e o seu FPS. Da para desligar em Opcoes > HUD.",
+    "vi": "Con số ở góc trên bên phải là FPS. Có thể tắt ở Cài đặt > HUD.",
+    "th": "ตัวเลขมุมขวาบนคือ FPS ปิดได้ที่ ตั้งค่า > HUD",
+    "zh": "右上角那个数字是 FPS。可以在 设置 > HUD 里关掉。",
+    "ja": "右上の数字はFPSです。設定 > HUD でオフにできます。"
+   }
+  },
+  {
+   "id": "minimapa",
+   "cat": "interfaz",
+   "text": {
+    "es": "Toca el minimapa para abrir el mapa grande del lugar donde estas.",
+    "en": "Tap the mini map to open the full map of where you are.",
+    "pt": "Toque no minimapa para abrir o mapa grande do lugar onde voce esta.",
+    "vi": "Chạm vào bản đồ nhỏ để mở bản đồ đầy đủ của nơi bạn đang đứng.",
+    "th": "แตะแผนที่เล็กเพื่อเปิดแผนที่เต็มของที่ที่คุณอยู่",
+    "zh": "点一下小地图，就能打开当前所在地的完整地图。",
+    "ja": "ミニマップをタップすると、今いる場所の全体マップが開きます。"
+   }
+  },
+  {
+   "id": "hud_pc",
+   "cat": "interfaz",
+   "deep": "iface=OPTION&tab=hud",
+   "text": {
+    "es": "Opciones -> HUD -> 'HUD estilo PC' te pone los orbes de vida y mana como en la computadora.",
+    "en": "Settings > HUD > 'PC-style HUD' gives you the desktop health and mana orbs.",
+    "pt": "Opcoes > HUD > 'HUD estilo PC' coloca os orbes de vida e mana como no computador.",
+    "vi": "Cài đặt > HUD > 'HUD kiểu PC' cho bạn hai quả cầu máu và mana như bản máy tính.",
+    "th": "ตั้งค่า > HUD > 'HUD แบบพีซี' จะได้ลูกแก้วเลือดกับมานาแบบเวอร์ชันคอม",
+    "zh": "设置 > HUD > “PC 版 HUD”，可以换成电脑版的血球和蓝球。",
+    "ja": "設定 > HUD > 「PC風HUD」で、PC版と同じ体力とマナのオーブになります。"
+   }
+  },
+  {
+   "id": "teclado_propio",
+   "cat": "interfaz",
+   "relevant_if": "keyboard.off",
+   "deep": "iface=OPTION&tab=general",
+   "text": {
+    "es": "El juego tiene teclado propio, mas grande que el del sistema. Opciones -> General.",
+    "en": "The game has its own keyboard, bigger than the system one. Settings > General.",
+    "pt": "O jogo tem teclado proprio, maior que o do sistema. Opcoes > Geral.",
+    "vi": "Game có bàn phím riêng, to hơn bàn phím hệ thống. Cài đặt > Chung.",
+    "th": "เกมมีคีย์บอร์ดของตัวเอง ใหญ่กว่าของระบบ ตั้งค่า > ทั่วไป",
+    "zh": "游戏自带键盘，比系统键盘更大。设置 > 通用。",
+    "ja": "ゲームには独自のキーボードがあり、システムのものより大きめです。設定 > 一般。"
+   }
+  },
+  {
+   "id": "chat_mover",
+   "cat": "interfaz",
+   "deep": "action=hudedit",
+   "text": {
+    "es": "Te molesta el chat? Movelo o achicalo desde el candado, como cualquier otro elemento.",
+    "en": "Chat in the way? Move or shrink it from lock mode, like anything else.",
+    "pt": "O chat atrapalha? Mova ou diminua pelo cadeado, como qualquer outra coisa.",
+    "vi": "Khung chat vướng? Di chuyển hoặc thu nhỏ nó từ chế độ khóa, như mọi thứ khác.",
+    "th": "แชทเกะกะ? ย้ายหรือย่อมันจากโหมดแม่กุญแจ เหมือนอย่างอื่น",
+    "zh": "聊天框碍事？和其他元素一样，在锁定模式里挪走或缩小。",
+    "ja": "チャットが邪魔？他の要素と同じく、ロックモードで移動も縮小もできます。"
+   }
+  },
+  {
+   "id": "nombres_off",
+   "cat": "interfaz",
+   "deep": "iface=OPTION&tab=hud",
+   "text": {
+    "es": "Opciones -> HUD: podes esconder los nombres de los jugadores y ver mejor el suelo.",
+    "en": "Settings > HUD: you can hide player names and see the ground better.",
+    "pt": "Opcoes > HUD: da para esconder os nomes dos jogadores e ver melhor o chao.",
+    "vi": "Cài đặt > HUD: bạn có thể ẩn tên người chơi để nhìn mặt đất rõ hơn.",
+    "th": "ตั้งค่า > HUD: ซ่อนชื่อผู้เล่นได้ จะเห็นพื้นชัดขึ้น",
+    "zh": "设置 > HUD：可以隐藏玩家名字，地面会看得更清楚。",
+    "ja": "設定 > HUD: プレイヤー名を隠すと、地面が見やすくなります。"
+   }
+  },
+  {
+   "id": "ayuda_buscador",
+   "cat": "interfaz",
+   "weight": 3,
+   "relevant_if": "help.never",
+   "deep": "iface=HELP&tab=search",
+   "title": {
+    "es": "La Ayuda tiene buscador",
+    "en": "Help has a search box",
+    "pt": "A Ajuda tem busca",
+    "vi": "Trợ giúp có ô tìm kiếm",
+    "th": "หน้าช่วยเหลือมีช่องค้นหา",
+    "zh": "帮助里有搜索框",
+    "ja": "ヘルプには検索欄があります"
+   },
+   "text": {
+    "es": "Escribi una palabra —'alas', 'reset', 'no puedo equipar'— y te lleva a la explicacion.",
+    "en": "Type a word - 'wings', 'reset', 'cannot equip' - and it takes you to the answer.",
+    "pt": "Escreva uma palavra - 'asas', 'reset', 'nao consigo equipar' - e ele te leva a resposta.",
+    "vi": "Gõ một từ - 'cánh', 'reset', 'không mặc được' - là nó dẫn bạn tới câu trả lời.",
+    "th": "พิมพ์คำเดียว — 'ปีก', 'รีเซ็ต', 'สวมไม่ได้' — แล้วมันจะพาไปที่คำตอบ",
+    "zh": "输入一个词——“翅膀”“重置”“装备不了”——它就会带你找到答案。",
+    "ja": "単語を打つだけ——「翼」「リセット」「装備できない」——で答えまで案内します。"
+   }
+  },
+  {
+   "id": "paneles_arrastrar",
+   "cat": "interfaz",
+   "text": {
+    "es": "Todos los paneles se arrastran desde su barra de titulo.",
+    "en": "Every panel can be dragged by its title bar.",
+    "pt": "Todos os paineis se arrastam pela barra de titulo.",
+    "vi": "Mọi bảng đều kéo được bằng thanh tiêu đề của nó.",
+    "th": "ทุกหน้าต่างลากได้ที่แถบหัวเรื่องของมัน",
+    "zh": "每个面板都能拖住标题栏拖动。",
+    "ja": "どのパネルもタイトルバーをつかんで動かせます。"
+   }
+  },
+  {
+   "id": "filtro_piso",
+   "cat": "items",
+   "weight": 4,
+   "relevant_if": "itemfilter.off",
+   "deep": "iface=OPTION&tab=items",
+   "title": {
+    "es": "El piso se puede limpiar",
+    "en": "The ground can be cleaned up",
+    "pt": "O chao pode ser limpo",
+    "vi": "Mặt đất dọn được",
+    "th": "พื้นเก็บกวาดได้",
+    "zh": "地上可以清干净",
+    "ja": "地面は片づけられます"
+   },
+   "text": {
+    "es": "El suelo lleno de basura? En Opciones -> Items armas un filtro y dejas de ver lo que no te sirve.",
+    "en": "Ground full of junk? In Settings > Items build a filter and stop seeing what you don't need.",
+    "pt": "Chao cheio de lixo? Em Opcoes > Itens monte um filtro e pare de ver o que nao serve.",
+    "vi": "Đất đầy đồ rác? Vào Cài đặt > Vật phẩm lập một bộ lọc và khỏi phải thấy thứ bạn không cần.",
+    "th": "พื้นเต็มไปด้วยของไม่จำเป็น? ไปตั้งค่า > ไอเทม สร้างตัวกรอง แล้วจะไม่เห็นของที่ไม่ต้องการ",
+    "zh": "地上全是没用的东西？到 设置 > 物品 建一个筛选，就不会再看到不需要的。",
+    "ja": "地面がゴミだらけ？設定 > アイテムでフィルターを作れば、いらない物は目に入りません。"
+   }
+  },
+  {
+   "id": "filtro_conjuntos",
+   "cat": "items",
+   "weight": 2,
+   "relevant_if": "itemfilter.off",
+   "deep": "iface=OPTION&tab=items",
+   "text": {
+    "es": "El filtro de items admite hasta 8 conjuntos de 50 nombres cada uno.",
+    "en": "The item filter holds up to 8 sets of 50 names each.",
+    "pt": "O filtro de itens aceita ate 8 conjuntos de 50 nomes cada.",
+    "vi": "Bộ lọc vật phẩm chứa được tối đa 8 bộ, mỗi bộ 50 tên.",
+    "th": "ตัวกรองไอเทมเก็บได้สูงสุด 8 ชุด ชุดละ 50 ชื่อ",
+    "zh": "物品筛选最多可存 8 组，每组 50 个名字。",
+    "ja": "アイテムフィルターは最大8セット、1セット50件まで持てます。"
+   }
+  },
+  {
+   "id": "filtro_por_mapa",
+   "cat": "items",
+   "weight": 2,
+   "relevant_if": "itemfilter.off",
+   "deep": "iface=OPTION&tab=items",
+   "title": {
+    "es": "Un filtro por mapa",
+    "en": "One filter per map",
+    "pt": "Um filtro por mapa",
+    "vi": "Mỗi bản đồ một bộ lọc",
+    "th": "ตัวกรองหนึ่งชุดต่อหนึ่งแผนที่",
+    "zh": "一张地图配一个筛选",
+    "ja": "マップごとに1つのフィルター"
+   },
+   "text": {
+    "es": "Podes atar un conjunto de filtro a un mapa: se prende y se apaga solo al entrar y salir.",
+    "en": "A filter set can be tied to a map: it turns itself on and off as you come and go.",
+    "pt": "Um conjunto de filtro pode ser ligado a um mapa: liga e desliga sozinho ao entrar e sair.",
+    "vi": "Một bộ lọc có thể gắn với một bản đồ: nó tự bật tự tắt khi bạn ra vào.",
+    "th": "ตัวกรองชุดหนึ่งผูกกับแผนที่ได้: มันจะเปิดปิดเองตอนคุณเข้าออก",
+    "zh": "一组筛选可以绑定到某张地图：进出时它会自己开关。",
+    "ja": "フィルターセットはマップに紐づけられます: 出入りに合わせて自動でオンオフします。"
+   }
+  },
+  {
+   "id": "filtro_chip",
+   "cat": "items",
+   "deep": "iface=OPTION&tab=items",
+   "text": {
+    "es": "El chip 'N ocultos' del HUD te dice cuantos objetos te tapa el filtro. Tocalo para apagarlo.",
+    "en": "The 'N hidden' chip counts what the filter is hiding. Tap it to switch the filter off.",
+    "pt": "O chip 'N ocultos' conta o que o filtro esta escondendo. Toque para desligar o filtro.",
+    "vi": "Nhãn 'ẩn N' đếm số thứ bộ lọc đang giấu. Chạm vào để tắt bộ lọc.",
+    "th": "ป้าย 'ซ่อน N' นับของที่ตัวกรองซ่อนอยู่ แตะเพื่อปิดตัวกรอง",
+    "zh": "“已隐藏 N”那个标记数的是筛选藏起来的东西。点一下就关掉筛选。",
+    "ja": "「N件非表示」のチップはフィルターが隠している数です。タップでフィルターを解除できます。"
+   }
+  },
+  {
+   "id": "droplist",
+   "cat": "items",
+   "weight": 3,
+   "relevant_if": "droplist.off",
+   "deep": "iface=OPTION&tab=items",
+   "title": {
+    "es": "Los drops se apilan",
+    "en": "Drops stack up",
+    "pt": "Os drops se empilham",
+    "vi": "Đồ rơi xếp chồng lên",
+    "th": "ของที่ตกซ้อนกัน",
+    "zh": "掉落会叠成一摞",
+    "ja": "ドロップは積み重なります"
+   },
+   "text": {
+    "es": "Cuando caen tres objetos o mas, los carteles se apilan en una lista. Toca una fila y vas a buscarlo.",
+    "en": "When three or more items drop together, the labels stack into a list. Tap a row to go get it.",
+    "pt": "Quando caem tres ou mais itens juntos, as etiquetas se empilham numa lista. Toque numa linha.",
+    "vi": "Khi ba món trở lên rơi cùng lúc, các nhãn xếp thành danh sách. Chạm một dòng để đi nhặt.",
+    "th": "เมื่อของตกพร้อมกันตั้งแต่สามชิ้น ป้ายจะซ้อนเป็นรายการ แตะแถวเพื่อไปเก็บ",
+    "zh": "同时掉三件以上时，标签会叠成一个列表。点某一行就去捡它。",
+    "ja": "3つ以上まとめて落ちると、ラベルがリストになります。行をタップすると拾いに行きます。"
+   }
+  },
+  {
+   "id": "longpress_item",
+   "cat": "items",
+   "weight": 2,
+   "title": {
+    "es": "Manten apretado un objeto",
+    "en": "Hold an item",
+    "pt": "Segure um item",
+    "vi": "Giữ vào vật phẩm",
+    "th": "กดค้างที่ไอเทม",
+    "zh": "长按物品",
+    "ja": "アイテムを長押し"
+   },
+   "text": {
+    "es": "En la bolsa, manten apretado un objeto para usarlo, equiparlo, tirarlo o venderlo.",
+    "en": "In the bag, hold an item to use, equip, drop or sell it.",
+    "pt": "Na bolsa, segure um item para usar, equipar, jogar fora ou vender.",
+    "vi": "Trong túi, giữ vào một món để dùng, mặc, vứt hoặc bán.",
+    "th": "ในกระเป๋า กดค้างที่ของเพื่อใช้ สวม ทิ้ง หรือขาย",
+    "zh": "在背包里长按一件东西，就能使用、装备、丢弃或出售。",
+    "ja": "バッグ内でアイテムを長押しすると、使用・装備・破棄・売却ができます。"
+   }
+  },
+  {
+   "id": "requisito_rojo",
+   "cat": "items",
+   "text": {
+    "es": "Un arma que no podes equipar te muestra el requisito en rojo en su descripcion.",
+    "en": "A weapon you cannot equip shows the missing requirement in red.",
+    "pt": "Uma arma que voce nao pode equipar mostra o requisito que falta em vermelho.",
+    "vi": "Vũ khí bạn chưa mặc được sẽ hiện điều kiện còn thiếu bằng màu đỏ.",
+    "th": "อาวุธที่ยังสวมไม่ได้จะแสดงเงื่อนไขที่ขาดเป็นสีแดง",
+    "zh": "装备不了的武器，会用红色标出缺的条件。",
+    "ja": "装備できない武器は、足りない条件が赤で表示されます。"
+   }
+  },
+  {
+   "id": "excellent",
+   "cat": "items",
+   "text": {
+    "es": "Los objetos con nombre celeste son excellent: valen mucho mas que uno comun. No los vendas al NPC.",
+    "en": "Items with a light blue name are excellent: worth far more than a plain one. Don't vendor them.",
+    "pt": "Itens com nome azul claro sao excellent: valem muito mais. Nao venda para o NPC.",
+    "vi": "Vật phẩm tên màu xanh nhạt là excellent: giá trị hơn hẳn đồ thường. Đừng bán cho NPC.",
+    "th": "ไอเทมที่ชื่อเป็นสีฟ้าอ่อนคือเอ็กเซลเลนต์ มีค่ากว่าของธรรมดามาก อย่าเอาไปขาย NPC",
+    "zh": "名字是浅蓝色的是卓越装备：比普通的值钱得多。别卖给 NPC。",
+    "ja": "名前が水色のアイテムはエクセレントです。普通の物よりずっと価値があります。NPCに売らないこと。"
+   }
+  },
+  {
+   "id": "joyas",
+   "cat": "items",
+   "text": {
+    "es": "Las joyas no se usan solas: van a la Maquina del Caos para mejorar tu equipo.",
+    "en": "Jewels are not used on their own: they upgrade your gear at the Chaos Machine.",
+    "pt": "Joias nao se usam sozinhas: servem para melhorar equipamento na Maquina do Caos.",
+    "vi": "Ngọc không dùng riêng lẻ: chúng nâng cấp trang bị của bạn ở Chaos Machine.",
+    "th": "อัญมณีใช้เดี่ยวๆ ไม่ได้ มันเอาไว้อัปเกรดของที่เครื่องเคออส",
+    "zh": "宝石不能单独用：它们是在混沌机器上强化装备的。",
+    "ja": "宝石は単体では使いません。カオスマシンで装備を強化するのに使います。"
+   }
+  },
+  {
+   "id": "reparar",
+   "cat": "items",
+   "text": {
+    "es": "Reparar cuesta menos que morir con el equipo roto. Cualquier herrero del pueblo lo hace.",
+    "en": "Repairing costs less than dying with broken gear. Any town blacksmith does it.",
+    "pt": "Consertar custa menos que morrer com o equipamento quebrado. Qualquer ferreiro faz.",
+    "vi": "Sửa đồ rẻ hơn là chết với trang bị hỏng. Thợ rèn ở bất kỳ thị trấn nào cũng sửa được.",
+    "th": "ซ่อมของถูกกว่าตายทั้งที่ของพัง ช่างตีเหล็กในเมืองไหนก็ซ่อมให้",
+    "zh": "修装备比穿着坏装备去送命便宜。任何城镇的铁匠都能修。",
+    "ja": "修理は、壊れた装備で死ぬより安上がりです。どの町の鍛冶屋でもやってくれます。"
+   }
+  },
+  {
+   "id": "baul",
+   "cat": "items",
+   "text": {
+    "es": "El baul guarda objetos y zen, y lo comparten todos los personajes de tu cuenta.",
+    "en": "The vault stores items and zen, and every character on your account shares it.",
+    "pt": "O bau guarda itens e zen, e todos os personagens da sua conta compartilham.",
+    "vi": "Kho chứa vật phẩm và zen, và mọi nhân vật trong tài khoản đều dùng chung.",
+    "th": "คลังเก็บได้ทั้งไอเทมและเซน และตัวละครทุกตัวในบัญชีใช้ร่วมกัน",
+    "zh": "仓库能存物品和金币，账号下所有角色共用。",
+    "ja": "倉庫にはアイテムとゼンを預けられ、アカウント内の全キャラクターで共有します。"
+   }
+  },
+  {
+   "id": "bloquear_item",
+   "cat": "items",
+   "text": {
+    "es": "Un objeto bloqueado no se puede tirar ni vender por accidente. Busca el candado en su menu.",
+    "en": "A locked item cannot be dropped or sold by accident. Look for the padlock in its menu.",
+    "pt": "Um item trancado nao pode ser jogado fora nem vendido sem querer. Procure o cadeado.",
+    "vi": "Vật phẩm đã khóa thì không lỡ tay vứt hay bán được. Tìm biểu tượng ổ khóa trong menu của nó.",
+    "th": "ไอเทมที่ล็อกไว้จะเผลอทิ้งหรือขายไม่ได้ มองหารูปแม่กุญแจในเมนูของมัน",
+    "zh": "锁住的物品不会被误丢或误卖。在它的菜单里找那个小锁。",
+    "ja": "ロックしたアイテムは、うっかり捨てたり売ったりできません。メニューの錠前マークを探してください。"
+   }
+  },
+  {
+   "id": "atacar",
+   "cat": "combate",
+   "text": {
+    "es": "Toca un monstruo para atacarlo. Con el auto-ataque prendido, seguis pegando solo.",
+    "en": "Tap a monster to attack it. With auto-attack on, you keep hitting by yourself.",
+    "pt": "Toque num monstro para atacar. Com o ataque automatico ligado, voce continua batendo sozinho.",
+    "vi": "Chạm vào quái để đánh nó. Bật tự động tấn công thì bạn sẽ đánh liên tục.",
+    "th": "แตะมอนสเตอร์เพื่อโจมตี ถ้าเปิดโจมตีอัตโนมัติไว้ จะตีต่อเนื่องเอง",
+    "zh": "点一下怪物就会攻击。开了自动攻击，就会自己一直打。",
+    "ja": "モンスターをタップすると攻撃します。オート攻撃をオンにすれば、自分で殴り続けます。"
+   }
+  },
+  {
+   "id": "apuntar_skill",
+   "cat": "combate",
+   "weight": 2,
+   "title": {
+    "es": "Las habilidades se apuntan",
+    "en": "Skills can be aimed",
+    "pt": "As habilidades se miram",
+    "vi": "Kỹ năng ngắm được",
+    "th": "สกิลเล็งได้",
+    "zh": "技能可以瞄准",
+    "ja": "スキルは狙えます"
+   },
+   "text": {
+    "es": "Manten apretado un orbe de habilidad y arrastra para elegir donde cae.",
+    "en": "Hold a skill orb and drag to choose where it lands.",
+    "pt": "Segure um orbe de habilidade e arraste para escolher onde ela cai.",
+    "vi": "Giữ quả cầu kỹ năng rồi kéo để chọn chỗ nó rơi xuống.",
+    "th": "กดค้างที่ลูกแก้วสกิลแล้วลากเพื่อเลือกจุดที่จะลง",
+    "zh": "按住技能球再拖动，就能选它落在哪里。",
+    "ja": "スキルのオーブを長押ししてドラッグすると、着弾点を選べます。"
+   }
+  },
+  {
+   "id": "autopot",
+   "cat": "combate",
+   "weight": 3,
+   "relevant_if": "autopot.off",
+   "deep": "iface=MuHelper&tab=pot",
+   "title": {
+    "es": "Las pociones se toman solas",
+    "en": "Potions drink themselves",
+    "pt": "As pocoes se tomam sozinhas",
+    "vi": "Bình thuốc tự uống",
+    "th": "ยากินเอง",
+    "zh": "药水会自己喝",
+    "ja": "ポーションは勝手に飲まれます"
+   },
+   "text": {
+    "es": "En MU Helper -> Pociones elegis a que porcentaje de vida se toman. 50% esta bien para empezar.",
+    "en": "In MU Helper > Potions you pick the health percentage that triggers a potion. 50% is a fine start.",
+    "pt": "Em MU Helper > Pocoes voce escolhe em que porcentagem de vida toma pocao. 50% ja serve.",
+    "vi": "Trong MU Helper > Bình thuốc bạn chọn mức máu sẽ kích hoạt uống thuốc. 50% là mức khởi đầu tốt.",
+    "th": "ใน MU Helper > ยา เลือกเปอร์เซ็นต์เลือดที่จะให้กินยา เริ่มที่ 50% ก็กำลังดี",
+    "zh": "在 MU Helper > 药水 里，你可以设定血量到多少就自动喝药。从 50% 开始就不错。",
+    "ja": "MUヘルパー > ポーションで、体力が何%になったら飲むかを決められます。まずは50%が無難です。"
+   }
+  },
+  {
+   "id": "mapa_mas_facil",
+   "cat": "combate",
+   "deep": "iface=MOVEMAP",
+   "text": {
+    "es": "Si moris mucho no es que pegues poco: proba un mapa de nivel mas bajo.",
+    "en": "If you die a lot it is not that you hit softly: try a lower level map.",
+    "pt": "Se voce morre muito nao e que bate fraco: tente um mapa de nivel menor.",
+    "vi": "Nếu bạn chết liên tục thì không phải vì đánh yếu: hãy thử bản đồ cấp thấp hơn.",
+    "th": "ถ้าตายบ่อย ไม่ใช่เพราะตีเบา ลองไปแผนที่ที่เลเวลต่ำกว่าดู",
+    "zh": "老是死不一定是你打得轻：换一张等级低点的地图试试。",
+    "ja": "よく死ぬのは火力不足とは限りません。もっと低レベルのマップを試しましょう。"
+   }
+  },
+  {
+   "id": "sd",
+   "cat": "combate",
+   "text": {
+    "es": "El escudo azul que se recarga es el SD: te come el dano antes que la vida.",
+    "en": "The blue shield that refills is SD: it eats damage before your health does.",
+    "pt": "O escudo azul que recarrega e o SD: ele come o dano antes da sua vida.",
+    "vi": "Lá chắn xanh tự hồi là SD: nó chịu sát thương trước khi tới máu của bạn.",
+    "th": "โล่สีฟ้าที่เติมเองคือ SD มันกินความเสียหายก่อนถึงเลือดของคุณ",
+    "zh": "那个会自动回的蓝色护盾是 SD：它会先替你的血扛伤害。",
+    "ja": "自動で回復する青いシールドがSDです。体力より先にダメージを受け止めます。"
+   }
+  },
+  {
+   "id": "exp_nivel",
+   "cat": "combate",
+   "text": {
+    "es": "Correr sin pelear no da experiencia. Busca monstruos de tu nivel o un poco arriba.",
+    "en": "Running without fighting gives no experience. Find monsters near your level or slightly above.",
+    "pt": "Correr sem lutar nao da experiencia. Procure monstros do seu nivel ou um pouco acima.",
+    "vi": "Chạy mà không đánh thì không có kinh nghiệm. Hãy tìm quái ngang cấp hoặc cao hơn một chút.",
+    "th": "วิ่งเฉยๆ ไม่สู้ก็ไม่ได้ค่าประสบการณ์ หามอนสเตอร์ที่เลเวลใกล้ๆ หรือสูงกว่านิดหน่อย",
+    "zh": "光跑不打是没有经验的。找和你等级相当或略高的怪。",
+    "ja": "走り回るだけでは経験値になりません。同じくらいか少し上のレベルの魔物を探しましょう。"
+   }
+  },
+  {
+   "id": "puntos",
+   "cat": "combate",
+   "weight": 2,
+   "deep": "iface=CHARACTER",
+   "title": {
+    "es": "Tenes puntos para repartir",
+    "en": "You have points to spend",
+    "pt": "Voce tem pontos para gastar",
+    "vi": "Bạn có điểm để phân bổ",
+    "th": "คุณมีแต้มให้ลง",
+    "zh": "你有点数可以加",
+    "ja": "振れるポイントがあります"
+   },
+   "text": {
+    "es": "Cada vez que subis de nivel ganas puntos. Repartilos en Personaje y pegas mas fuerte.",
+    "en": "Every level gives you points. Spend them in Character and you hit harder.",
+    "pt": "Cada nivel te da pontos. Distribua em Personagem e voce bate mais forte.",
+    "vi": "Mỗi cấp cho bạn điểm. Tiêu chúng ở mục Nhân vật là bạn đánh mạnh hơn.",
+    "th": "ทุกเลเวลจะได้แต้ม เอาไปลงที่หน้าตัวละคร แล้วจะตีแรงขึ้น",
+    "zh": "每升一级都会给点数。到“角色”里加上去，你就打得更痛。",
+    "ja": "レベルが上がるたびにポイントがもらえます。キャラクター画面で振れば火力が上がります。"
+   }
+  },
+  {
+   "id": "pociones_stock",
+   "cat": "combate",
+   "text": {
+    "es": "Compra pociones de sobra antes de salir del pueblo: volver cuesta tiempo y zen.",
+    "en": "Buy spare potions before leaving town: coming back costs time and zen.",
+    "pt": "Compre pocoes de sobra antes de sair da cidade: voltar custa tempo e zen.",
+    "vi": "Mua sẵn thuốc dự phòng trước khi rời thị trấn: quay lại tốn thời gian và zen.",
+    "th": "ซื้อยาสำรองก่อนออกจากเมือง กลับมาทีเสียทั้งเวลาและเซน",
+    "zh": "出城前先买好备用药水：回来一趟又费时间又费钱。",
+    "ja": "町を出る前に予備のポーションを買っておきましょう。戻るのは時間もゼンも食います。"
+   }
+  },
+  {
+   "id": "alas",
+   "cat": "combate",
+   "text": {
+    "es": "Las alas cambian todo: suben tu dano y bajan el que recibis. Se hacen en la Maquina del Caos.",
+    "en": "Wings change everything: more damage dealt, less taken. They are made at the Chaos Machine.",
+    "pt": "As asas mudam tudo: mais dano dado, menos recebido. Sao feitas na Maquina do Caos.",
+    "vi": "Cánh thay đổi mọi thứ: gây nhiều sát thương hơn, nhận ít hơn. Chúng được chế ở Chaos Machine.",
+    "th": "ปีกเปลี่ยนทุกอย่าง: ตีแรงขึ้น เจ็บน้อยลง สร้างได้ที่เครื่องเคออส",
+    "zh": "翅膀改变一切：打得更痛，挨得更轻。它们在混沌机器上制作。",
+    "ja": "翼はすべてを変えます: 与えるダメージが増え、受けるダメージが減ります。カオスマシンで作ります。"
+   }
+  },
+  {
+   "id": "monstruo_rojo",
+   "cat": "combate",
+   "text": {
+    "es": "Un monstruo con el nombre en rojo es mucho mas fuerte de lo normal. No lo pelees solo.",
+    "en": "A monster with a red name is far stronger than usual. Do not fight it alone.",
+    "pt": "Um monstro com nome vermelho e muito mais forte que o normal. Nao lute sozinho.",
+    "vi": "Quái có tên màu đỏ mạnh hơn bình thường rất nhiều. Đừng đánh một mình.",
+    "th": "มอนสเตอร์ชื่อสีแดงแรงกว่าปกติมาก อย่าสู้คนเดียว",
+    "zh": "名字是红色的怪比平常强得多。别一个人打。",
+    "ja": "名前が赤いモンスターは通常よりはるかに強敵です。一人で挑まないこと。"
+   }
+  },
+  {
+   "id": "party_exp",
+   "cat": "combate",
+   "text": {
+    "es": "En grupo la experiencia se reparte, pero se mata mucho mas rapido.",
+    "en": "In a party experience is shared, but things die much faster.",
+    "pt": "Em grupo a experiencia e dividida, mas se mata muito mais rapido.",
+    "vi": "Trong tổ đội kinh nghiệm được chia, nhưng mọi thứ chết nhanh hơn hẳn.",
+    "th": "ในปาร์ตี้ค่าประสบการณ์ถูกแบ่ง แต่ทุกอย่างตายเร็วขึ้นมาก",
+    "zh": "组队时经验要分，但东西死得快多了。",
+    "ja": "パーティでは経験値を分け合いますが、敵の倒れる速さが段違いです。"
+   }
+  },
+  {
+   "id": "mana",
+   "cat": "combate",
+   "text": {
+    "es": "Sin mana no podes usar habilidades: lleva pociones azules tambien.",
+    "en": "Without mana you cannot cast skills: carry blue potions too.",
+    "pt": "Sem mana voce nao usa habilidades: leve pocoes azuis tambem.",
+    "vi": "Không có mana thì không dùng được kỹ năng: hãy mang theo cả bình xanh.",
+    "th": "ไม่มีมานาก็ร่ายสกิลไม่ได้ พกยาน้ำเงินไปด้วย",
+    "zh": "没有魔力就放不出技能：蓝药也要带。",
+    "ja": "マナがないとスキルは撃てません。青いポーションも持ちましょう。"
+   }
+  },
+  {
+   "id": "helper_que_es",
+   "cat": "helper",
+   "weight": 4,
+   "relevant_if": "helper.never",
+   "deep": "iface=MuHelper",
+   "title": {
+    "es": "El juego puede jugar solo",
+    "en": "The game can play itself",
+    "pt": "O jogo pode jogar sozinho",
+    "vi": "Game tự chơi được",
+    "th": "เกมเล่นเองได้",
+    "zh": "游戏能自己玩",
+    "ja": "ゲームは自分で遊んでくれます"
+   },
+   "text": {
+    "es": "El MU Helper pelea, levanta objetos y toma pociones por vos mientras descansas.",
+    "en": "MU Helper fights, picks things up and drinks potions for you while you rest.",
+    "pt": "O MU Helper luta, pega itens e toma pocoes por voce enquanto descansa.",
+    "vi": "MU Helper đánh, nhặt đồ và uống thuốc thay bạn trong lúc bạn nghỉ.",
+    "th": "MU Helper สู้ เก็บของ และกินยาแทนคุณตอนคุณพัก",
+    "zh": "MU 助手会替你打怪、捡东西、喝药，你可以歇着。",
+    "ja": "MUヘルパーが、あなたが休んでいる間に戦い、拾い、ポーションを飲んでくれます。"
+   }
+  },
+  {
+   "id": "helper_botones",
+   "cat": "helper",
+   "weight": 2,
+   "relevant_if": "helper.never",
+   "deep": "action=hudedit",
+   "text": {
+    "es": "Agrega los dos botones del Helper al HUD desde el candado: 'opciones' y 'encender'.",
+    "en": "Add both Helper buttons to the HUD from lock mode: 'options' and 'start'.",
+    "pt": "Adicione os dois botoes do Helper ao HUD pelo cadeado: 'opcoes' e 'ligar'.",
+    "vi": "Thêm cả hai nút Helper vào HUD từ chế độ khóa: 'tùy chọn' và 'bắt đầu'.",
+    "th": "เพิ่มปุ่ม Helper ทั้งสองลงใน HUD จากโหมดแม่กุญแจ: 'ตัวเลือก' กับ 'เริ่ม'",
+    "zh": "在锁定模式下把助手的两个按钮都加到 HUD：“选项”和“开始”。",
+    "ja": "ロックモードからヘルパーの2つのボタンをHUDに追加できます: 「設定」と「開始」。"
+   }
+  },
+  {
+   "id": "helper_recoleccion",
+   "cat": "helper",
+   "deep": "iface=MuHelper&tab=pick",
+   "text": {
+    "es": "En el Helper podes elegir QUE levantar: solo joyas, solo excellent, solo zen, o tu propia lista.",
+    "en": "In the Helper you choose WHAT it picks up: only jewels, only excellent, only zen, or your own list.",
+    "pt": "No Helper voce escolhe O QUE ele pega: so joias, so excellent, so zen, ou sua propria lista.",
+    "vi": "Trong Helper bạn chọn NHẶT GÌ: chỉ ngọc, chỉ excellent, chỉ zen, hoặc danh sách riêng của bạn.",
+    "th": "ใน Helper คุณเลือกว่าจะเก็บอะไร: เฉพาะอัญมณี เฉพาะเอ็กเซลเลนต์ เฉพาะเซน หรือรายการของคุณเอง",
+    "zh": "在助手里你决定捡什么：只捡宝石、只捡卓越、只捡金币，或者你自己的清单。",
+    "ja": "ヘルパーでは何を拾うかを選べます: 宝石だけ、エクセレントだけ、ゼンだけ、あるいは自分のリスト。"
+   }
+  },
+  {
+   "id": "helper_posicion",
+   "cat": "helper",
+   "deep": "iface=MuHelper&tab=atk",
+   "text": {
+    "es": "'Volver a la posicion original' hace que el bot no se aleje del punto donde lo dejaste.",
+    "en": "'Return to original position' keeps the bot from wandering off from where you left it.",
+    "pt": "'Voltar a posicao original' impede que o bot se afaste de onde voce deixou.",
+    "vi": "'Quay về vị trí ban đầu' giữ cho bot khỏi đi lạc khỏi chỗ bạn để nó.",
+    "th": "'กลับไปตำแหน่งเดิม' กันไม่ให้บอทเดินหลุดไปจากจุดที่คุณวางไว้",
+    "zh": "“返回原始位置”能让机器人不至于跑离你放它的地方。",
+    "ja": "「元の位置に戻る」を使うと、置いた場所からボットが離れていきません。"
+   }
+  },
+  {
+   "id": "helper_reparar",
+   "cat": "helper",
+   "deep": "iface=MuHelper",
+   "text": {
+    "es": "El Helper puede reparar tu equipo solo cuando se gasta.",
+    "en": "The Helper can repair your gear on its own as it wears down.",
+    "pt": "O Helper consegue consertar seu equipamento sozinho conforme ele gasta.",
+    "vi": "Helper có thể tự sửa trang bị khi chúng hao mòn.",
+    "th": "Helper ซ่อมของให้เองได้ตอนความทนทานลด",
+    "zh": "助手可以在装备磨损时自己修理。",
+    "ja": "ヘルパーは装備が消耗すると自分で修理できます。"
+   }
+  },
+  {
+   "id": "helper_skill",
+   "cat": "helper",
+   "deep": "iface=MuHelper&tab=atk",
+   "text": {
+    "es": "Podes asignarle al Helper que habilidad usar y cada cuantos segundos.",
+    "en": "You can tell the Helper which skill to use and how often.",
+    "pt": "Da para dizer ao Helper qual habilidade usar e de quantos em quantos segundos.",
+    "vi": "Bạn có thể bảo Helper dùng kỹ năng nào và bao lâu một lần.",
+    "th": "คุณบอก Helper ได้ว่าจะใช้สกิลไหนและบ่อยแค่ไหน",
+    "zh": "你可以告诉助手用哪个技能、多久用一次。",
+    "ja": "どのスキルをどのくらいの頻度で使うかをヘルパーに指定できます。"
+   }
+  },
+  {
+   "id": "helper_offline",
+   "cat": "helper",
+   "weight": 2,
+   "title": {
+    "es": "Sigue jugando sin vos",
+    "en": "It keeps playing without you",
+    "pt": "Continua jogando sem voce",
+    "vi": "Nó chơi tiếp khi bạn không có mặt",
+    "th": "มันเล่นต่อโดยไม่มีคุณ",
+    "zh": "你不在它也照玩",
+    "ja": "あなたがいなくても続けます"
+   },
+   "text": {
+    "es": "Con el modo offline tu personaje sigue jugando aunque cierres la aplicacion.",
+    "en": "In offline mode your character keeps playing even if you close the app.",
+    "pt": "No modo offline seu personagem continua jogando mesmo se voce fechar o aplicativo.",
+    "vi": "Ở chế độ offline nhân vật của bạn vẫn chơi tiếp dù bạn đã đóng ứng dụng.",
+    "th": "ในโหมดออฟไลน์ ตัวละครของคุณเล่นต่อแม้คุณปิดแอปไปแล้ว",
+    "zh": "离线模式下，就算你关掉应用，角色也会继续玩。",
+    "ja": "オフラインモードでは、アプリを閉じてもキャラクターは遊び続けます。"
+   }
+  },
+  {
+   "id": "helper_party",
+   "cat": "helper",
+   "deep": "iface=MuHelper&tab=atk",
+   "text": {
+    "es": "El Helper tambien acepta grupo y curacion automatica si jugas acompanado.",
+    "en": "The Helper also accepts parties and heals automatically if you play with others.",
+    "pt": "O Helper tambem aceita grupo e cura automatica se voce joga acompanhado.",
+    "vi": "Helper cũng nhận tổ đội và tự hồi máu nếu bạn chơi cùng người khác.",
+    "th": "Helper รับปาร์ตี้และรักษาให้อัตโนมัติด้วย ถ้าคุณเล่นกับคนอื่น",
+    "zh": "如果你和别人一起玩，助手也会接受组队并自动治疗。",
+    "ja": "他の人と遊ぶなら、ヘルパーはパーティも受け、自動で回復もします。"
+   }
+  },
+  {
+   "id": "helper_probar",
+   "cat": "helper",
+   "text": {
+    "es": "Antes de dejar el Helper solo, probalo un minuto mirando: es la forma de ver si esta bien puesto.",
+    "en": "Before leaving the Helper alone, watch it for a minute: that is how you spot a bad setup.",
+    "pt": "Antes de deixar o Helper sozinho, olhe um minuto: e assim que se percebe uma config errada.",
+    "vi": "Trước khi để Helper một mình, hãy nhìn nó chạy một phút: đó là cách phát hiện cấu hình sai.",
+    "th": "ก่อนปล่อย Helper ไว้คนเดียว ดูมันสักนาที นั่นแหละที่จะเห็นว่าตั้งค่าผิดตรงไหน",
+    "zh": "把助手单独丢着之前，先看它跑一分钟：设错了一眼就看得出来。",
+    "ja": "ヘルパーを任せきりにする前に1分だけ様子を見ましょう。設定ミスはそこで分かります。"
+   }
+  },
+  {
+   "id": "helper_lista",
+   "cat": "helper",
+   "deep": "iface=MuHelper&tab=pick",
+   "text": {
+    "es": "Si el Helper no levanta algo, revisa que ese nombre este en su lista de recoleccion.",
+    "en": "If the Helper skips something, check that its name is in the pick-up list.",
+    "pt": "Se o Helper nao pega algo, confira se esse nome esta na lista de coleta.",
+    "vi": "Nếu Helper bỏ qua thứ gì, hãy kiểm tra xem tên nó có trong danh sách nhặt chưa.",
+    "th": "ถ้า Helper ข้ามของบางอย่าง เช็กว่าชื่อมันอยู่ในรายการเก็บของหรือยัง",
+    "zh": "如果助手漏了什么，检查一下它的名字在不在拾取清单里。",
+    "ja": "ヘルパーが何かを無視するときは、その名前が拾得リストにあるか確認してください。"
+   }
+  },
+  {
+   "id": "longpress_jugador",
+   "cat": "gente",
+   "weight": 2,
+   "title": {
+    "es": "Manten apretado a un jugador",
+    "en": "Hold another player",
+    "pt": "Segure outro jogador",
+    "vi": "Giữ vào người chơi khác",
+    "th": "กดค้างที่ผู้เล่นคนอื่น",
+    "zh": "长按其他玩家",
+    "ja": "他のプレイヤーを長押し"
+   },
+   "text": {
+    "es": "Manten apretado a otro jugador para invitarlo al grupo, comerciar o susurrarle.",
+    "en": "Hold another player to invite them to a party, trade, or whisper.",
+    "pt": "Segure outro jogador para convidar para o grupo, negociar ou sussurrar.",
+    "vi": "Giữ vào người chơi khác để mời vào tổ đội, giao dịch, hoặc nhắn riêng.",
+    "th": "กดค้างที่ผู้เล่นคนอื่นเพื่อชวนเข้าปาร์ตี้ แลกเปลี่ยน หรือกระซิบ",
+    "zh": "长按其他玩家，可以邀请组队、交易或私聊。",
+    "ja": "他のプレイヤーを長押しすると、パーティに誘う・取引する・ささやくができます。"
+   }
+  },
+  {
+   "id": "bloquear_jugador",
+   "cat": "gente",
+   "deep": "iface=OPTION&tab=players",
+   "text": {
+    "es": "Alguien molesta? En ese mismo menu lo bloqueas y no lo lees mas.",
+    "en": "Someone bothering you? In that same menu you block them and stop reading them.",
+    "pt": "Alguem incomodando? Nesse mesmo menu voce bloqueia e para de ler.",
+    "vi": "Có ai làm phiền? Cũng trong menu đó bạn chặn họ và không đọc họ nữa.",
+    "th": "มีคนกวน? ในเมนูเดียวกันนั้นบล็อกเขาได้ แล้วจะไม่เห็นข้อความเขาอีก",
+    "zh": "有人烦你？在同一个菜单里就能把他屏蔽，从此看不到。",
+    "ja": "迷惑な相手がいる？同じメニューからブロックすれば、その人の発言は届かなくなります。"
+   }
+  },
+  {
+   "id": "gremio",
+   "cat": "gente",
+   "text": {
+    "es": "Un gremio te da gente con quien jugar y acceso a los eventos grandes.",
+    "en": "A guild gives you people to play with and access to the big events.",
+    "pt": "Uma guilda te da gente para jogar junto e acesso aos eventos grandes.",
+    "vi": "Bang hội cho bạn bạn chơi cùng và quyền tham gia các sự kiện lớn.",
+    "th": "กิลด์ให้ทั้งเพื่อนร่วมเล่นและสิทธิ์เข้าอีเวนต์ใหญ่ๆ",
+    "zh": "公会能给你一起玩的人，也是参加大型活动的门票。",
+    "ja": "ギルドに入ると一緒に遊ぶ仲間ができ、大型イベントにも参加できます。"
+   }
+  },
+  {
+   "id": "afk_ocultar",
+   "cat": "gente",
+   "relevant_if": "afk.off",
+   "deep": "iface=OPTION&tab=players",
+   "text": {
+    "es": "Opciones -> Players: podes esconder a los jugadores que estan AFK y ver mejor el pueblo.",
+    "en": "Settings > Players: you can hide AFK players and see the town properly.",
+    "pt": "Opcoes > Jogadores: da para esconder quem esta AFK e ver a cidade direito.",
+    "vi": "Cài đặt > Người chơi: bạn có thể ẩn người AFK để nhìn thị trấn cho rõ.",
+    "th": "ตั้งค่า > ผู้เล่น: ซ่อนคนที่ AFK ได้ จะเห็นเมืองชัดขึ้น",
+    "zh": "设置 > 玩家：可以隐藏挂机的人，城里能看清楚些。",
+    "ja": "設定 > プレイヤー: AFKの人を隠すと、町がすっきり見えます。"
+   }
+  },
+  {
+   "id": "trade_seguro",
+   "cat": "gente",
+   "text": {
+    "es": "El comercio seguro es el de la ventana de intercambio. Ahi nadie te puede sacar nada.",
+    "en": "The safe trade is the exchange window. Nobody can take anything from you there.",
+    "pt": "A negociacao segura e a janela de troca. Ali ninguem consegue tirar nada de voce.",
+    "vi": "Cách giao dịch an toàn là cửa sổ trao đổi. Ở đó không ai lấy được gì của bạn.",
+    "th": "การแลกเปลี่ยนที่ปลอดภัยคือหน้าต่างเทรด ที่นั่นไม่มีใครเอาอะไรจากคุณไปได้",
+    "zh": "安全的交易方式是交易窗口。在那里没人能拿走你的东西。",
+    "ja": "安全な取引は交易ウィンドウです。そこなら誰にも何も取られません。"
+   }
+  },
+  {
+   "id": "password",
+   "cat": "gente",
+   "weight": 2,
+   "title": {
+    "es": "Nunca des tu contrasena",
+    "en": "Never give out your password",
+    "pt": "Nunca de a sua senha",
+    "vi": "Đừng bao giờ cho ai mật khẩu",
+    "th": "อย่าบอกรหัสผ่านกับใครเด็ดขาด",
+    "zh": "千万别把密码给别人",
+    "ja": "パスワードは絶対に教えないこと"
+   },
+   "text": {
+    "es": "Ningun administrador te la va a pedir. Si alguien te la pide, es una estafa.",
+    "en": "No admin will ever ask for it. If someone does, it is a scam.",
+    "pt": "Nenhum administrador vai pedir. Se alguem pedir, e golpe.",
+    "vi": "Không admin nào hỏi mật khẩu cả. Ai hỏi thì đó là lừa đảo.",
+    "th": "ไม่มีแอดมินคนไหนถามรหัสผ่าน ถ้ามีคนถาม นั่นคือมิจฉาชีพ",
+    "zh": "没有任何管理员会问密码。有人问，那就是骗子。",
+    "ja": "管理者がパスワードを尋ねることはありません。聞いてくる相手は詐欺です。"
+   }
+  },
+  {
+   "id": "susurro",
+   "cat": "gente",
+   "text": {
+    "es": "En el chat, toca el nombre de alguien para responderle en privado.",
+    "en": "In chat, tap someone's name to answer them privately.",
+    "pt": "No chat, toque no nome de alguem para responder em particular.",
+    "vi": "Trong khung chat, chạm vào tên ai đó để trả lời riêng người ấy.",
+    "th": "ในแชท แตะที่ชื่อคนไหนเพื่อตอบเขาแบบส่วนตัว",
+    "zh": "在聊天里点某人的名字，就能私下回他。",
+    "ja": "チャットで相手の名前をタップすると、個別に返信できます。"
+   }
+  },
+  {
+   "id": "pvp_modo",
+   "cat": "gente",
+   "relevant_if": "pvp.off",
+   "deep": "iface=OPTION&tab=general",
+   "text": {
+    "es": "El modo PvP se prende y se apaga en Opciones -> General.",
+    "en": "PvP mode is turned on and off in Settings > General.",
+    "pt": "O modo PvP liga e desliga em Opcoes > Geral.",
+    "vi": "Chế độ PvP bật tắt ở Cài đặt > Chung.",
+    "th": "โหมด PvP เปิดปิดที่ ตั้งค่า > ทั่วไป",
+    "zh": "PvP 模式在 设置 > 通用 里开关。",
+    "ja": "PvPモードは設定 > 一般でオン・オフします。"
+   }
+  },
+  {
+   "id": "viajar_requisitos",
+   "cat": "progresion",
+   "weight": 2,
+   "deep": "iface=MOVEMAP",
+   "title": {
+    "es": "El panel Viajar te lo dice todo",
+    "en": "Travel tells you everything",
+    "pt": "Viajar te diz tudo",
+    "vi": "Mục Di chuyển nói cho bạn mọi thứ",
+    "th": "หน้าเดินทางบอกทุกอย่าง",
+    "zh": "“旅行”会把话说明白",
+    "ja": "移動画面がすべて教えてくれます"
+   },
+   "text": {
+    "es": "Cada mapa muestra el nivel y el zen que necesitas. Toca uno bloqueado y te dice cuanto falta.",
+    "en": "Each map shows the level and zen you need. Tap a locked one and it tells you what is missing.",
+    "pt": "Cada mapa mostra o nivel e o zen que voce precisa. Toque num bloqueado e ele diz o que falta.",
+    "vi": "Mỗi bản đồ hiện cấp độ và zen cần có. Chạm vào cái đang khóa là nó nói cho bạn còn thiếu gì.",
+    "th": "แต่ละแผนที่บอกเลเวลและเซนที่ต้องมี แตะอันที่ล็อกอยู่ แล้วมันจะบอกว่าขาดอะไร",
+    "zh": "每张地图都写着需要的等级和金币。点一下锁着的，它会告诉你还差什么。",
+    "ja": "各マップに必要なレベルとゼンが出ています。ロックされたものをタップすると、何が足りないか教えてくれます。"
+   }
+  },
+  {
+   "id": "favoritos_viaje",
+   "cat": "progresion",
+   "weight": 2,
+   "relevant_if": "favorites.none",
+   "deep": "iface=MOVEMAP",
+   "title": {
+    "es": "Marca tus mapas con la estrella",
+    "en": "Star your maps",
+    "pt": "Marque seus mapas",
+    "vi": "Đánh dấu sao cho bản đồ",
+    "th": "ติดดาวให้แผนที่",
+    "zh": "给地图加个星",
+    "ja": "マップに星をつけましょう"
+   },
+   "text": {
+    "es": "Los favoritos quedan primeros en la lista de viaje, y podes ponerlos como boton en el HUD.",
+    "en": "Favourites stay at the top of the travel list, and can become a HUD button.",
+    "pt": "Os favoritos ficam no topo da lista de viagem, e podem virar um botao do HUD.",
+    "vi": "Mục yêu thích nằm trên đầu danh sách di chuyển, và có thể thành một nút HUD.",
+    "th": "รายการโปรดจะอยู่บนสุดของรายการเดินทาง และทำเป็นปุ่ม HUD ได้",
+    "zh": "收藏会排在旅行列表最上面，还能做成一个 HUD 按钮。",
+    "ja": "お気に入りは移動リストの先頭に並び、HUDボタンにもできます。"
+   }
+  },
+  {
+   "id": "favoritos_hud",
+   "cat": "progresion",
+   "relevant_if": "favorites.none",
+   "deep": "action=hudedit",
+   "text": {
+    "es": "Un favorito de viaje se puede poner como boton directo en el HUD, desde el candado.",
+    "en": "A travel favourite can become a direct HUD button, from lock mode.",
+    "pt": "Um favorito de viagem pode virar botao direto no HUD, pelo cadeado.",
+    "vi": "Một bản đồ yêu thích có thể thành nút HUD đi thẳng, làm từ chế độ khóa.",
+    "th": "แผนที่โปรดทำเป็นปุ่ม HUD ไปตรงได้ ทำจากโหมดแม่กุญแจ",
+    "zh": "收藏的地图可以在锁定模式下做成一个直达的 HUD 按钮。",
+    "ja": "お気に入りのマップは、ロックモードから直行のHUDボタンにできます。"
+   }
+  },
+  {
+   "id": "misiones",
+   "cat": "progresion",
+   "deep": "iface=MYQUEST",
+   "text": {
+    "es": "Las misiones dan experiencia y objetos: mira el hub antes de salir a matar.",
+    "en": "Quests give experience and items: check the hub before heading out.",
+    "pt": "As missoes dao experiencia e itens: olhe o hub antes de sair.",
+    "vi": "Nhiệm vụ cho kinh nghiệm và vật phẩm: ghé trung tâm nhiệm vụ trước khi lên đường.",
+    "th": "ภารกิจให้ทั้งค่าประสบการณ์และไอเทม แวะดูศูนย์ภารกิจก่อนออกเดินทาง",
+    "zh": "任务给经验也给物品：出发前先去任务中心看看。",
+    "ja": "クエストは経験値もアイテムももらえます。出かける前にクエストハブを覗きましょう。"
+   }
+  },
+  {
+   "id": "clase_puntos",
+   "cat": "progresion",
+   "deep": "iface=CHARACTER",
+   "text": {
+    "es": "Cada clase sube distinto: no repartas los puntos igual en todas.",
+    "en": "Every class levels differently: do not spend points the same way on all of them.",
+    "pt": "Cada classe sobe diferente: nao distribua os pontos igual em todas.",
+    "vi": "Mỗi lớp lên cấp một kiểu: đừng cộng điểm giống nhau cho tất cả.",
+    "th": "แต่ละคลาสขึ้นเลเวลไม่เหมือนกัน อย่าลงแต้มแบบเดียวกันหมด",
+    "zh": "每个职业的成长都不一样：别所有职业都按同一种加点。",
+    "ja": "クラスごとに育ち方が違います。どれも同じ振り方をしないこと。"
+   }
+  },
+  {
+   "id": "evolucion",
+   "cat": "progresion",
+   "text": {
+    "es": "A cierto nivel podes evolucionar tu clase y desbloquear habilidades nuevas.",
+    "en": "At a certain level you can evolve your class and unlock new skills.",
+    "pt": "Em certo nivel voce pode evoluir sua classe e liberar habilidades novas.",
+    "vi": "Tới một cấp nhất định bạn có thể tiến hóa lớp nhân vật và mở khóa kỹ năng mới.",
+    "th": "พอถึงเลเวลหนึ่ง คุณจะเปลี่ยนคลาสได้และปลดล็อกสกิลใหม่",
+    "zh": "到一定等级就能转职，解锁新技能。",
+    "ja": "一定のレベルに達するとクラスチェンジでき、新しいスキルが解放されます。"
+   }
+  },
+  {
+   "id": "resets",
+   "cat": "progresion",
+   "text": {
+    "es": "Los resets te devuelven al nivel 1 pero te dejan mas fuerte a largo plazo.",
+    "en": "Resets send you back to level 1 but leave you stronger in the long run.",
+    "pt": "Os resets te devolvem ao nivel 1 mas te deixam mais forte no longo prazo.",
+    "vi": "Reset đưa bạn về cấp 1 nhưng về lâu dài bạn mạnh hơn.",
+    "th": "รีเซ็ตจะพาคุณกลับไปเลเวล 1 แต่ระยะยาวแล้วแข็งแกร่งขึ้น",
+    "zh": "重置会把你打回 1 级，但长远来看你会更强。",
+    "ja": "リセットするとレベル1に戻りますが、長い目で見れば強くなります。"
+   }
+  },
+  {
+   "id": "eventos_horario",
+   "cat": "progresion",
+   "deep": "iface=EVENTS",
+   "text": {
+    "es": "Los eventos tienen horario fijo. Mira el reloj de eventos en el menu.",
+    "en": "Events run on a fixed schedule. Check the event clock in the menu.",
+    "pt": "Os eventos tem horario fixo. Olhe o relogio de eventos no menu.",
+    "vi": "Sự kiện chạy theo lịch cố định. Xem đồng hồ sự kiện trong menu.",
+    "th": "อีเวนต์มีตารางเวลาแน่นอน ดูนาฬิกาอีเวนต์ได้ในเมนู",
+    "zh": "活动按固定时间表开。在菜单里看活动时钟。",
+    "ja": "イベントは決まった時刻に開かれます。メニューのイベント時計で確認できます。"
+   }
+  },
+  {
+   "id": "eventos_subir",
+   "cat": "progresion",
+   "text": {
+    "es": "Blood Castle, Devil Square y Chaos Castle son las tres formas mas rapidas de subir.",
+    "en": "Blood Castle, Devil Square and Chaos Castle are the three fastest ways to level.",
+    "pt": "Blood Castle, Devil Square e Chaos Castle sao as tres formas mais rapidas de subir.",
+    "vi": "Blood Castle, Devil Square và Chaos Castle là ba cách lên cấp nhanh nhất.",
+    "th": "บลัดคาสเซิล เดวิลสแควร์ และเคออสคาสเซิล คือสามทางขึ้นเลเวลที่เร็วที่สุด",
+    "zh": "血色城堡、恶魔广场和混沌城堡，是升级最快的三条路。",
+    "ja": "ブラッドキャッスル、デビルスクエア、カオスキャッスルがレベル上げの最短ルート3つです。"
+   }
+  },
+  {
+   "id": "chaos_machine",
+   "cat": "progresion",
+   "text": {
+    "es": "La Maquina del Caos combina objetos y joyas: ahi se hacen las alas.",
+    "en": "The Chaos Machine combines items and jewels: that is where wings are made.",
+    "pt": "A Maquina do Caos combina itens e joias: e ali que se fazem as asas.",
+    "vi": "Chaos Machine ghép vật phẩm và ngọc: đó là nơi làm ra cánh.",
+    "th": "เครื่องเคออสผสมไอเทมกับอัญมณี ที่นั่นแหละที่สร้างปีก",
+    "zh": "混沌机器把物品和宝石合在一起：翅膀就是在那儿做的。",
+    "ja": "カオスマシンはアイテムと宝石を合成します。翼もそこで作ります。"
+   }
+  },
+  {
+   "id": "master_level",
+   "cat": "progresion",
+   "text": {
+    "es": "Despues de cierto nivel se abre el Master Level, con un arbol de habilidades nuevo.",
+    "en": "Past a certain level Master Level opens, with a whole new skill tree.",
+    "pt": "Depois de certo nivel abre o Master Level, com uma arvore de habilidades nova.",
+    "vi": "Qua một cấp nhất định Master Level mở ra, với cả một cây kỹ năng mới.",
+    "th": "พ้นเลเวลหนึ่งไปแล้ว มาสเตอร์เลเวลจะเปิด พร้อมผังสกิลใหม่ทั้งผัง",
+    "zh": "过了某个等级，大师等级会开放，还带一整棵新的技能树。",
+    "ja": "一定レベルを超えるとマスターレベルが開き、まったく新しいスキルツリーが使えます。"
+   }
+  },
+  {
+   "id": "mascotas",
+   "cat": "progresion",
+   "text": {
+    "es": "Las mascotas pelean con vos y algunas te cargan el botin.",
+    "en": "Pets fight alongside you and some of them carry your loot.",
+    "pt": "Os pets lutam com voce e alguns carregam o seu loot.",
+    "vi": "Thú cưng đánh cùng bạn và một số con còn mang đồ giúp bạn.",
+    "th": "สัตว์เลี้ยงสู้เคียงข้างคุณ และบางตัวยังช่วยแบกของด้วย",
+    "zh": "宠物会和你一起打，有些还能帮你背战利品。",
+    "ja": "ペットは一緒に戦い、中には戦利品を運んでくれるものもいます。"
+   }
+  },
+  {
+   "id": "perf_calidad",
+   "cat": "celular",
+   "weight": 2,
+   "deep": "iface=OPTION&tab=video",
+   "title": {
+    "es": "Si va lento, empeza por aca",
+    "en": "Running slow? Start here",
+    "pt": "Lento? Comece por aqui",
+    "vi": "Máy chạy chậm? Bắt đầu từ đây",
+    "th": "เครื่องอืด? เริ่มตรงนี้",
+    "zh": "卡顿？从这里开始",
+    "ja": "重い？まずはここから"
+   },
+   "text": {
+    "es": "Opciones -> Video -> Calidad: bajar un escalon suele arreglarlo enseguida.",
+    "en": "Settings > Video > Quality: dropping one step usually fixes it right away.",
+    "pt": "Opcoes > Video > Qualidade: baixar um nivel costuma resolver na hora.",
+    "vi": "Cài đặt > Hình ảnh > Chất lượng: hạ một nấc thường là xong ngay.",
+    "th": "ตั้งค่า > ภาพ > คุณภาพ: ลดลงหนึ่งขั้น ส่วนใหญ่หายเลย",
+    "zh": "设置 > 画面 > 画质：降一档通常立刻就好。",
+    "ja": "設定 > 映像 > 画質: 一段下げれば、たいていすぐ直ります。"
+   }
+  },
+  {
+   "id": "perf_termico",
+   "cat": "celular",
+   "text": {
+    "es": "El cliente baja la carga solo cuando el celu se calienta. Si pasa seguido, baja la calidad a mano.",
+    "en": "The client eases off on its own when the phone heats up. If it happens often, lower quality by hand.",
+    "pt": "O cliente alivia sozinho quando o celular esquenta. Se acontece sempre, baixe a qualidade.",
+    "vi": "Client tự giảm tải khi máy nóng lên. Nếu xảy ra thường xuyên, hãy hạ chất lượng bằng tay.",
+    "th": "ไคลเอนต์จะผ่อนงานให้เองตอนเครื่องร้อน ถ้าเกิดบ่อย ลดคุณภาพเองเลย",
+    "zh": "手机发烫时客户端会自己减负。要是经常这样，就手动把画质调低。",
+    "ja": "端末が熱くなるとクライアントが自動で負荷を抑えます。頻繁なら手動で画質を下げましょう。"
+   }
+  },
+  {
+   "id": "perf_filtro",
+   "cat": "celular",
+   "relevant_if": "itemfilter.off",
+   "deep": "iface=OPTION&tab=items",
+   "text": {
+    "es": "Con el filtro de items prendido el juego dibuja menos y va mas fluido.",
+    "en": "With the item filter on the game draws less and runs smoother.",
+    "pt": "Com o filtro de itens ligado o jogo desenha menos e fica mais fluido.",
+    "vi": "Bật bộ lọc vật phẩm thì game vẽ ít hơn và chạy mượt hơn.",
+    "th": "เปิดตัวกรองไอเทมแล้วเกมวาดน้อยลง ลื่นขึ้น",
+    "zh": "开着物品筛选，游戏要画的东西少了，就更流畅。",
+    "ja": "アイテムフィルターを使うと描画が減り、動作が軽くなります。"
+   }
+  },
+  {
+   "id": "perf_paneles",
+   "cat": "celular",
+   "text": {
+    "es": "Cerra los paneles que no uses: cada uno consume bateria.",
+    "en": "Close the panels you are not using: each one costs battery.",
+    "pt": "Feche os paineis que nao usa: cada um gasta bateria.",
+    "vi": "Đóng những bảng bạn không dùng: mỗi cái đều tốn pin.",
+    "th": "ปิดหน้าต่างที่ไม่ได้ใช้ แต่ละอันกินแบตทั้งนั้น",
+    "zh": "用不到的面板就关掉：每开一个都费电。",
+    "ja": "使っていないパネルは閉じましょう。1つずつ電池を食います。"
+   }
+  }
+ ]
 }

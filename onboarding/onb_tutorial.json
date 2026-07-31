@@ -1,1186 +1,1554 @@
 {
-  "version": 1,
-  "_readme": [
-    "Guion del tutorial guiado. Se publica por el updater a",
-    "Data/Interface/MobileHUD/onb_tutorial.json y se hornea con",
-    "tools/gen_onboard_fallback.py.",
-    "",
-    "ANCLAS (anchor) — el motor las resuelve contra la geometria VIVA del frame.",
-    "Si una no resuelve, el paso se muestra SIN recorte: nunca un marco vacio.",
-    "  ID_*              elementos del HUD (MobileHudLayout::GetRect). Siguen al",
-    "                    boton aunque el jugador lo haya movido con el candado.",
-    "                    VALIDOS: ID_PANEL ID_POTIONS ID_FPS ID_MINIMAP ID_SKILLS",
-    "                    ID_PCHUD ID_CHATBTN ID_ITEMFILTER ID_INVBTN ID_PARTYHUD",
-    "                    ID_PETS ID_AFKCHIP ID_PVPCHIP ID_DROPLIST.",
-    "                    ID_PING NO sirve: no registra rect propio.",
-    "  lock              boton candado de la barra superior.",
-    "  bar:menu|cog|play botones de la barra superior (PublishAnchor).",
-    "  launcher:<X>      boton lanzador del HUD: MuHelper OPTION INVENTORY",
-    "                    CHARACTER MOVEMAP MYQUEST HELP favorite.",
-    "  world:monster|drop|npc  objeto del mundo proyectado a pantalla.",
-    "  \"\"                sin foco: solo la tarjeta.",
-    "",
-    "GATE — que hace avanzar el paso:",
-    "  {type:manual}                 el boton Siguiente.",
-    "  {type:time} + timeout_ms      solo, para pasos de lectura.",
-    "  {type:event, ev:...}          el jugador HIZO la accion. Con timeout_ms,",
-    "                                si no la hace en ese tiempo se sigue igual:",
-    "                                un paso que exige algo imposible (no hay",
-    "                                monstruos cerca) traba el tutorial entero.",
-    "",
-    "TRAMOS: 1 = obligatorio (se ofrece al primer ingreso), 2 = el mundo,",
-    "3 = lo nuestro (se ofrece a nivel 15 o a los 30 min). El motor CORTA al",
-    "cambiar de tramo.",
-    "",
-    "IDIOMAS: por ahora solo 'es'. Pick() cae al primero que exista."
-  ],
-  "chapters": [
+ "version": 1,
+ "_readme": [
+  "Guion del tutorial guiado. Se publica por el updater a",
+  "Data/Interface/MobileHUD/onb_tutorial.json y se hornea con",
+  "tools/gen_onboard_fallback.py.",
+  "",
+  "ANCLAS (anchor) — el motor las resuelve contra la geometria VIVA del frame.",
+  "Si una no resuelve, el paso se muestra SIN recorte: nunca un marco vacio.",
+  "  ID_*              elementos del HUD (MobileHudLayout::GetRect). Siguen al",
+  "                    boton aunque el jugador lo haya movido con el candado.",
+  "                    VALIDOS: ID_PANEL ID_POTIONS ID_FPS ID_MINIMAP ID_SKILLS",
+  "                    ID_PCHUD ID_CHATBTN ID_ITEMFILTER ID_INVBTN ID_PARTYHUD",
+  "                    ID_PETS ID_AFKCHIP ID_PVPCHIP ID_DROPLIST.",
+  "                    ID_PING NO sirve: no registra rect propio.",
+  "  lock              boton candado de la barra superior.",
+  "  bar:menu|cog|play botones de la barra superior (PublishAnchor).",
+  "  launcher:<X>      boton lanzador del HUD: MuHelper OPTION INVENTORY",
+  "                    CHARACTER MOVEMAP MYQUEST HELP favorite.",
+  "  world:monster|drop|npc  objeto del mundo proyectado a pantalla.",
+  "  \"\"                sin foco: solo la tarjeta.",
+  "",
+  "GATE — que hace avanzar el paso:",
+  "  {type:manual}                 el boton Siguiente.",
+  "  {type:time} + timeout_ms      solo, para pasos de lectura.",
+  "  {type:event, ev:...}          el jugador HIZO la accion. Con timeout_ms,",
+  "                                si no la hace en ese tiempo se sigue igual:",
+  "                                un paso que exige algo imposible (no hay",
+  "                                monstruos cerca) traba el tutorial entero.",
+  "",
+  "TRAMOS: 1 = obligatorio (se ofrece al primer ingreso), 2 = el mundo,",
+  "3 = lo nuestro (se ofrece a nivel 15 o a los 30 min). El motor CORTA al",
+  "cambiar de tramo.",
+  "",
+  "IDIOMAS: por ahora solo 'es'. Pick() cae al primero que exista."
+ ],
+ "chapters": [
+  {
+   "id": "c1",
+   "tramo": 1,
+   "title": {
+    "es": "Moverse",
+    "en": "Moving",
+    "pt": "Mover-se",
+    "vi": "Di chuyển",
+    "th": "การเคลื่อนที่",
+    "zh": "移动",
+    "ja": "移動"
+   },
+   "steps": [
     {
-      "id": "c1",
-      "tramo": 1,
-      "title": {
-        "es": "Moverse",
-        "en": "Moving",
-        "pt": "Mover-se"
-      },
-      "steps": [
-        {
-          "id": "c1_s1",
-          "anchor": "",
-          "text": {
-            "es": "Empecemos por lo basico. Usa la palanca de la izquierda para caminar: desliza el dedo hacia donde quieras ir.",
-            "en": "Let's start with the basics. Use the stick on the left to walk: slide your finger where you want to go.",
-            "pt": "Vamos ao basico. Use a alavanca da esquerda para andar: deslize o dedo para onde quiser ir."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "hero_moved"
-          },
-          "timeout_ms": 20000
-        },
-        {
-          "id": "c1_s2",
-          "anchor": "",
-          "text": {
-            "es": "Tambien podes tocar el piso y tu personaje camina solo hasta ahi. Comodo para el pueblo.",
-            "en": "You can also tap the ground and your character walks there on its own. Handy in town.",
-            "pt": "Voce tambem pode tocar o chao e o personagem caminha sozinho ate la. Comodo na cidade."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 5000
-        },
-        {
-          "id": "c1_s3",
-          "anchor": "ID_MINIMAP",
-          "text": {
-            "es": "Arriba a la derecha esta el mapa. Tocalo cuando quieras verlo en grande.",
-            "en": "The map is at the top right. Tap it whenever you want to see it full size.",
-            "pt": "O mapa fica no canto superior direito. Toque quando quiser ver grande."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c1_s4",
-          "anchor": "",
-          "text": {
-            "es": "Con dos dedos pellizcas para acercar o alejar la camara.",
-            "en": "Pinch with two fingers to zoom the camera in or out.",
-            "pt": "Belisque com dois dedos para aproximar ou afastar a camera."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
+     "id": "c1_s1",
+     "anchor": "",
+     "text": {
+      "es": "Empecemos por lo basico. Usa la palanca de la izquierda para caminar: desliza el dedo hacia donde quieras ir.",
+      "en": "Let's start with the basics. Use the stick on the left to walk: slide your finger where you want to go.",
+      "pt": "Vamos ao basico. Use a alavanca da esquerda para andar: deslize o dedo para onde quiser ir.",
+      "vi": "Bắt đầu từ những thứ cơ bản. Dùng cần điều khiển bên trái để đi: trượt ngón tay về hướng bạn muốn.",
+      "th": "เริ่มจากพื้นฐานก่อน ใช้จอยด้านซ้ายเพื่อเดิน: เลื่อนนิ้วไปทางที่อยากไป",
+      "zh": "先从基础开始。用左边的摇杆走路：手指往你想去的方向滑。",
+      "ja": "まずは基本から。左のスティックで歩きます: 行きたい方向へ指を滑らせてください。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "hero_moved"
+     },
+     "timeout_ms": 20000
     },
     {
-      "id": "c2",
-      "tramo": 1,
-      "title": {
-        "es": "Pelear",
-        "en": "Fighting",
-        "pt": "Lutar"
-      },
-      "steps": [
-        {
-          "id": "c2_s1",
-          "anchor": "world:monster",
-          "text": {
-            "es": "Eso es un monstruo. Tocalo para atacarlo.",
-            "en": "That is a monster. Tap it to attack.",
-            "pt": "Isso e um monstro. Toque para atacar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "monster_hit"
-          },
-          "timeout_ms": 30000
-        },
-        {
-          "id": "c2_s2",
-          "anchor": "",
-          "text": {
-            "es": "Arriba del monstruo esta su barra de vida. Cuando llega a cero, muere y suelta lo que tenga.",
-            "en": "Its health bar is above it. At zero it dies and drops whatever it carries.",
-            "pt": "A barra de vida dele fica em cima. No zero ele morre e solta o que tiver."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c2_s3",
-          "anchor": "",
-          "text": {
-            "es": "Segui pegando hasta matarlo.",
-            "en": "Keep hitting until it dies.",
-            "pt": "Continue batendo ate matar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "monster_killed"
-          },
-          "timeout_ms": 45000
-        },
-        {
-          "id": "c2_s4",
-          "anchor": "ID_PANEL",
-          "text": {
-            "es": "Ganaste experiencia. Cuando se llena la barra, subis de nivel.",
-            "en": "You earned experience. Fill the bar and you level up.",
-            "pt": "Voce ganhou experiencia. Enchendo a barra, sobe de nivel."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c2_s5",
-          "anchor": "",
-          "text": {
-            "es": "Con el auto-ataque prendido seguis pegando solo mientras haya algo cerca.",
-            "en": "With auto-attack on you keep hitting by yourself while something is nearby.",
-            "pt": "Com o ataque automatico ligado voce continua batendo sozinho enquanto tiver algo perto."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
+     "id": "c1_s2",
+     "anchor": "",
+     "text": {
+      "es": "Tambien podes tocar el piso y tu personaje camina solo hasta ahi. Comodo para el pueblo.",
+      "en": "You can also tap the ground and your character walks there on its own. Handy in town.",
+      "pt": "Voce tambem pode tocar o chao e o personagem caminha sozinho ate la. Comodo na cidade.",
+      "vi": "Bạn cũng có thể chạm xuống đất và nhân vật tự đi tới đó. Rất tiện trong thị trấn.",
+      "th": "แตะพื้นก็ได้ แล้วตัวละครจะเดินไปเอง สะดวกตอนอยู่ในเมือง",
+      "zh": "你也可以点一下地面，角色会自己走过去。在城里很方便。",
+      "ja": "地面をタップすれば、キャラクターが自分でそこまで歩きます。町では便利です。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 5000
     },
     {
-      "id": "c3",
-      "tramo": 1,
-      "title": {
-        "es": "Vida y pociones",
-        "en": "Health and potions",
-        "pt": "Vida e pocoes"
-      },
-      "steps": [
-        {
-          "id": "c3_s1",
-          "anchor": "ID_PANEL",
-          "text": {
-            "es": "El orbe rojo es tu vida y el azul tu mana. Si el rojo llega a cero, moris.",
-            "en": "The red orb is your health and the blue one your mana. If red hits zero, you die.",
-            "pt": "O orbe vermelho e sua vida e o azul sua mana. Se o vermelho zerar, voce morre."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 5000
-        },
-        {
-          "id": "c3_s2",
-          "anchor": "ID_POTIONS",
-          "text": {
-            "es": "Estas son tus pociones. Toca la roja para recuperar vida.",
-            "en": "These are your potions. Tap the red one to heal.",
-            "pt": "Estas sao suas pocoes. Toque a vermelha para recuperar vida."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "potion_used"
-          },
-          "timeout_ms": 20000
-        },
-        {
-          "id": "c3_s3",
-          "anchor": "ID_POTIONS",
-          "text": {
-            "es": "Compra siempre de mas antes de salir del pueblo: volver cuesta tiempo y zen.",
-            "en": "Always buy spares before leaving town: coming back costs time and zen.",
-            "pt": "Compre sempre de sobra antes de sair da cidade: voltar custa tempo e zen."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c3_s4",
-          "anchor": "",
-          "text": {
-            "es": "Mas adelante te muestro como hacer que se tomen solas.",
-            "en": "Later on I'll show you how to make them drink themselves.",
-            "pt": "Mais para frente mostro como fazer com que se tomem sozinhas."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
+     "id": "c1_s3",
+     "anchor": "ID_MINIMAP",
+     "text": {
+      "es": "Arriba a la derecha esta el mapa. Tocalo cuando quieras verlo en grande.",
+      "en": "The map is at the top right. Tap it whenever you want to see it full size.",
+      "pt": "O mapa fica no canto superior direito. Toque quando quiser ver grande.",
+      "vi": "Bản đồ ở góc trên bên phải. Chạm vào bất cứ lúc nào để xem toàn màn hình.",
+      "th": "แผนที่อยู่มุมขวาบน แตะเมื่อไหร่ก็ได้เพื่อดูแบบเต็มจอ",
+      "zh": "地图在右上角。想看大图随时点它。",
+      "ja": "マップは右上にあります。いつでもタップすれば全画面で見られます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
     },
     {
-      "id": "c4",
-      "tramo": 1,
-      "title": {
-        "es": "El botin",
-        "en": "Loot",
-        "pt": "Loot"
-      },
-      "steps": [
-        {
-          "id": "c4_s1",
-          "anchor": "world:drop",
-          "text": {
-            "es": "Los monstruos sueltan cosas. Toca el cartel del piso para levantarlo.",
-            "en": "Monsters drop things. Tap the label on the ground to pick it up.",
-            "pt": "Os monstros soltam coisas. Toque a etiqueta no chao para pegar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "item_picked"
-          },
-          "timeout_ms": 30000
-        },
-        {
-          "id": "c4_s2",
-          "anchor": "ID_DROPLIST",
-          "text": {
-            "es": "Si caen varios juntos se apilan en esta lista. Toca una fila y vas a buscarlo.",
-            "en": "If several drop together they stack in this list. Tap a row and off you go.",
-            "pt": "Se cairem varias juntas, se empilham nesta lista. Toque numa linha e voce vai buscar."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c4_s3",
-          "anchor": "",
-          "text": {
-            "es": "El Zen es la moneda del juego: con eso compras pociones y equipo.",
-            "en": "Zen is the game's currency: that is what buys potions and gear.",
-            "pt": "O Zen e a moeda do jogo: e com ele que se compra pocao e equipamento."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c4_s4",
-          "anchor": "ID_INVBTN",
-          "text": {
-            "es": "Todo lo que levantas va a tu bolsa. Abrila.",
-            "en": "Everything you pick up goes to your bag. Open it.",
-            "pt": "Tudo o que voce pega vai para a bolsa. Abra."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:INVENTORY"
-          },
-          "timeout_ms": 20000
-        },
-        {
-          "id": "c4_s5",
-          "anchor": "",
-          "text": {
-            "es": "Cada objeto ocupa lugar. Cuando se llena hay que vender o guardar en el baul.",
-            "en": "Each item takes space. When it fills up you have to sell or use the vault.",
-            "pt": "Cada item ocupa espaco. Quando enche, tem que vender ou guardar no bau."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c5",
-      "tramo": 1,
-      "title": {
-        "es": "Equiparse",
-        "en": "Gearing up",
-        "pt": "Equipar-se"
-      },
-      "steps": [
-        {
-          "id": "c5_s1",
-          "anchor": "",
-          "text": {
-            "es": "Manten apretado un objeto de la bolsa para ver que podes hacer con el.",
-            "en": "Hold an item in the bag to see what you can do with it.",
-            "pt": "Segure um item da bolsa para ver o que da para fazer com ele."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "item_menu_opened"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c5_s2",
-          "anchor": "",
-          "text": {
-            "es": "Equipar lo pone en tu personaje y te sube las estadisticas.",
-            "en": "Equipping puts it on your character and raises your stats.",
-            "pt": "Equipar coloca no personagem e sobe seus atributos."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "item_equipped"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c5_s3",
-          "anchor": "",
-          "text": {
-            "es": "En el muneco de la izquierda ves todo lo que llevas puesto.",
-            "en": "The doll on the left shows everything you are wearing.",
-            "pt": "No boneco da esquerda voce ve tudo o que esta usando."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c5_s4",
-          "anchor": "",
-          "text": {
-            "es": "Si un objeto pide mas nivel o mas fuerza del que tenes, el requisito sale en rojo.",
-            "en": "If an item needs more level or strength than you have, the requirement shows in red.",
-            "pt": "Se um item pede mais nivel ou forca do que voce tem, o requisito aparece em vermelho."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c5_s5",
-          "anchor": "",
-          "text": {
-            "es": "El equipo se gasta al pelear. Cuando este en rojo, reparalo en el pueblo.",
-            "en": "Gear wears down as you fight. When it turns red, repair it in town.",
-            "pt": "O equipamento gasta ao lutar. Quando ficar vermelho, conserte na cidade."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c6",
-      "tramo": 1,
-      "title": {
-        "es": "Subir de nivel",
-        "en": "Levelling up",
-        "pt": "Subir de nivel"
-      },
-      "steps": [
-        {
-          "id": "c6_s1",
-          "anchor": "bar:menu",
-          "text": {
-            "es": "Abri tu ficha de personaje desde el Menu.",
-            "en": "Open your character sheet from the Menu.",
-            "pt": "Abra sua ficha de personagem pelo Menu."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:CHARACTER"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c6_s2",
-          "anchor": "",
-          "text": {
-            "es": "Cada nivel te da puntos para repartir. No se reparten solos.",
-            "en": "Every level gives you points to spend. They do not spend themselves.",
-            "pt": "Cada nivel te da pontos para distribuir. Eles nao se distribuem sozinhos."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c6_s3",
-          "anchor": "",
-          "text": {
-            "es": "Fuerza y Agilidad pegan, Vitalidad aguanta, Energia alimenta las habilidades.",
-            "en": "Strength and Agility hit, Vitality takes hits, Energy feeds your skills.",
-            "pt": "Forca e Agilidade batem, Vitalidade aguenta, Energia alimenta as habilidades."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 6000
-        },
-        {
-          "id": "c6_s4",
-          "anchor": "",
-          "text": {
-            "es": "Poné un punto donde quieras, con el boton +.",
-            "en": "Put a point wherever you like, with the + button.",
-            "pt": "Coloque um ponto onde quiser, com o botao +."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "point_spent"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c6_s5",
-          "anchor": "",
-          "text": {
-            "es": "Consejo: subi lo que tu clase usa para pegar, y algo de Vitalidad para aguantar.",
-            "en": "Tip: raise what your class hits with, plus some Vitality to survive.",
-            "pt": "Dica: suba o que sua classe usa para bater, e um pouco de Vitalidade para aguentar."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c7",
-      "tramo": 2,
-      "title": {
-        "es": "Habilidades",
-        "en": "Skills",
-        "pt": "Habilidades"
-      },
-      "steps": [
-        {
-          "id": "c7_s1",
-          "anchor": "ID_SKILLS",
-          "text": {
-            "es": "Este anillo son tus habilidades. Toca una para usarla.",
-            "en": "This ring holds your skills. Tap one to cast it.",
-            "pt": "Este anel sao suas habilidades. Toque uma para usar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "skill_used"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c7_s2",
-          "anchor": "ID_SKILLS",
-          "text": {
-            "es": "Manten apretada y arrastra para elegir donde cae. Importante para las de area.",
-            "en": "Hold and drag to choose where it lands. Important for area skills.",
-            "pt": "Segure e arraste para escolher onde ela cai. Importante nas de area."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c7_s3",
-          "anchor": "ID_SKILLS",
-          "text": {
-            "es": "Con el boton EDITAR del anillo cambias que habilidad va en cada orbe.",
-            "en": "The EDIT button on the ring changes which skill sits in each orb.",
-            "pt": "Com o botao EDITAR do anel voce troca qual habilidade fica em cada orbe."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c7_s4",
-          "anchor": "",
-          "text": {
-            "es": "Las habilidades gastan mana. Sin mana, solo pegas normal.",
-            "en": "Skills cost mana. Without mana you only hit normally.",
-            "pt": "As habilidades gastam mana. Sem mana, so o ataque normal."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c8",
-      "tramo": 2,
-      "title": {
-        "es": "El pueblo",
-        "en": "Town",
-        "pt": "A cidade"
-      },
-      "steps": [
-        {
-          "id": "c8_s1",
-          "anchor": "world:npc",
-          "text": {
-            "es": "Toca a este personaje: te vende pociones y equipo.",
-            "en": "Tap this character: he sells potions and gear.",
-            "pt": "Toque neste personagem: ele vende pocoes e equipamento."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "shop_opened"
-          },
-          "timeout_ms": 30000
-        },
-        {
-          "id": "c8_s2",
-          "anchor": "",
-          "text": {
-            "es": "Manten apretado para comprar. Para vender, arrastra desde tu bolsa.",
-            "en": "Hold to buy. To sell, drag from your bag.",
-            "pt": "Segure para comprar. Para vender, arraste da sua bolsa."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c8_s3",
-          "anchor": "",
-          "text": {
-            "es": "El herrero repara tu equipo gastado. Sale mucho mas barato que morir con el roto.",
-            "en": "The blacksmith repairs worn gear. Far cheaper than dying with it broken.",
-            "pt": "O ferreiro conserta equipamento gasto. Sai muito mais barato que morrer com ele quebrado."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c8_s4",
-          "anchor": "",
-          "text": {
-            "es": "El baul guarda objetos y zen, y lo comparten todos tus personajes.",
-            "en": "The vault stores items and zen, shared by all your characters.",
-            "pt": "O bau guarda itens e zen, e todos os seus personagens compartilham."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c8_s5",
-          "anchor": "",
-          "text": {
-            "es": "En la Maquina del Caos se combinan objetos y joyas. Volve cuando tengas joyas.",
-            "en": "The Chaos Machine combines items and jewels. Come back when you have jewels.",
-            "pt": "Na Maquina do Caos se combinam itens e joias. Volte quando tiver joias."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c8_s6",
-          "anchor": "",
-          "text": {
-            "es": "En Ayuda tenes la lista completa de que hace cada personaje del pueblo.",
-            "en": "Help has the full list of what each town character does.",
-            "pt": "Na Ajuda tem a lista completa do que cada personagem da cidade faz."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c9",
-      "tramo": 2,
-      "title": {
-        "es": "Misiones",
-        "en": "Quests",
-        "pt": "Missoes"
-      },
-      "steps": [
-        {
-          "id": "c9_s1",
-          "anchor": "bar:menu",
-          "text": {
-            "es": "Abri Misiones desde el Menu. Dan experiencia y objetos.",
-            "en": "Open Quests from the Menu. They give experience and items.",
-            "pt": "Abra Missoes pelo Menu. Elas dao experiencia e itens."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:MYQUEST"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c9_s2",
-          "anchor": "",
-          "text": {
-            "es": "Toca una mision disponible para aceptarla.",
-            "en": "Tap an available quest to accept it.",
-            "pt": "Toque numa missao disponivel para aceitar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "quest_accepted"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c9_s3",
-          "anchor": "",
-          "text": {
-            "es": "Tu mision activa queda a la vista con lo que te falta.",
-            "en": "Your active quest stays on screen with what is left to do.",
-            "pt": "Sua missao ativa fica na tela com o que falta."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c9_s4",
-          "anchor": "",
-          "text": {
-            "es": "Cuando la completes, volve al hub a cobrar la recompensa.",
-            "en": "When you finish it, go back to the hub to claim the reward.",
-            "pt": "Quando completar, volte ao hub para receber a recompensa."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c10",
-      "tramo": 2,
-      "title": {
-        "es": "Viajar",
-        "en": "Travel",
-        "pt": "Viajar"
-      },
-      "steps": [
-        {
-          "id": "c10_s1",
-          "anchor": "bar:menu",
-          "text": {
-            "es": "Abri Viajar. Desde ahi vas a cualquier mapa que tengas desbloqueado.",
-            "en": "Open Travel. From here you reach any map you have unlocked.",
-            "pt": "Abra Viajar. Dali voce vai a qualquer mapa que tenha liberado."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:MOVEMAP"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c10_s2",
-          "anchor": "",
-          "text": {
-            "es": "Arriba estan los mapas a los que ya podes ir.",
-            "en": "The ones at the top are where you can already go.",
-            "pt": "Em cima estao os mapas aos quais voce ja pode ir."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 4000
-        },
-        {
-          "id": "c10_s3",
-          "anchor": "",
-          "text": {
-            "es": "Los de abajo piden mas nivel o mas zen. Toca uno y te dice cuanto te falta.",
-            "en": "The ones below need more level or more zen. Tap one and it tells you what is missing.",
-            "pt": "Os de baixo pedem mais nivel ou mais zen. Toque num e ele diz o que falta."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 6000
-        },
-        {
-          "id": "c10_s4",
-          "anchor": "",
-          "text": {
-            "es": "Marca con la estrella los que uses siempre: quedan primeros en la lista.",
-            "en": "Star the ones you always use: they stay at the top of the list.",
-            "pt": "Marque com a estrela os que voce sempre usa: ficam no topo da lista."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c10_s5",
-          "anchor": "",
-          "text": {
-            "es": "Regla simple: busca monstruos de tu nivel o un poco arriba. Si te matan seguido, baja de mapa.",
-            "en": "Simple rule: find monsters near your level or slightly above. Dying a lot means drop a map.",
-            "pt": "Regra simples: procure monstros do seu nivel ou pouco acima. Se morre muito, baixe de mapa."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c11",
-      "tramo": 3,
-      "title": {
-        "es": "MU Helper",
-        "en": "MU Helper",
-        "pt": "MU Helper"
-      },
-      "steps": [
-        {
-          "id": "c11_s1",
-          "anchor": "",
-          "text": {
-            "es": "El MU Helper pelea, levanta cosas y toma pociones por vos. Te dejo los botones en la pantalla.",
-            "en": "MU Helper fights, picks things up and drinks potions for you. I'll put the buttons on screen.",
-            "pt": "O MU Helper luta, pega coisas e toma pocoes por voce. Vou deixar os botoes na tela."
-          },
-          "gate": {
-            "type": "manual"
-          },
-          "action": "add_helper_launchers"
-        },
-        {
-          "id": "c11_s2",
-          "anchor": "launcher:MuHelper",
-          "text": {
-            "es": "Listo. Este abre su configuracion; el otro lo prende y lo apaga.",
-            "en": "There. This one opens its settings; the other starts and stops it.",
-            "pt": "Pronto. Este abre a configuracao; o outro liga e desliga."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 5000
-        },
-        {
-          "id": "c11_s3",
-          "anchor": "launcher:MuHelper",
-          "text": {
-            "es": "Abrilo. Vamos a dejarlo listo antes de encenderlo.",
-            "en": "Open it. Let's set it up before switching it on.",
-            "pt": "Abra. Vamos deixar tudo pronto antes de ligar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:MuHelper"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c11_s4",
-          "anchor": "",
-          "text": {
-            "es": "En Ataque: Distancia es que tan lejos persigue, y elegis con que habilidad pega.",
-            "en": "Under Attack: Distance is how far it chases, and you pick the skill it hits with.",
-            "pt": "Em Ataque: Distancia e o quanto ele persegue, e voce escolhe com que habilidade bate."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c11_s5",
-          "anchor": "",
-          "text": {
-            "es": "En Recoleccion elegis QUE levanta: solo joyas, solo excellent, solo zen, o tu lista.",
-            "en": "Under Pick-up you choose WHAT it collects: only jewels, only excellent, only zen, or your list.",
-            "pt": "Em Coleta voce escolhe O QUE ele pega: so joias, so excellent, so zen, ou sua lista."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c11_s6",
-          "anchor": "",
-          "text": {
-            "es": "En Pociones pone a que porcentaje de vida se cura solo. 50% esta bien para empezar.",
-            "en": "Under Potions set the health percentage that makes it heal. 50% is a fine start.",
-            "pt": "Em Pocoes defina em que porcentagem de vida ele se cura. 50% ja serve para comecar."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c11_s7",
-          "anchor": "",
-          "text": {
-            "es": "Encendelo y mira un minuto antes de dejarlo solo: es la forma de ver si quedo bien puesto.",
-            "en": "Switch it on and watch for a minute before leaving it alone.",
-            "pt": "Ligue e olhe um minuto antes de deixar sozinho."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c12",
-      "tramo": 3,
-      "title": {
-        "es": "Filtro del piso",
-        "en": "Ground filter",
-        "pt": "Filtro do chao"
-      },
-      "steps": [
-        {
-          "id": "c12_s1",
-          "anchor": "",
-          "text": {
-            "es": "El piso lleno de cosas que no te sirven? Se pueden esconder.",
-            "en": "Ground full of stuff you don't need? It can be hidden.",
-            "pt": "Chao cheio de coisa que nao serve? Da para esconder."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c12_s2",
-          "anchor": "bar:cog",
-          "text": {
-            "es": "Abri Opciones y anda a la pestana Items. Todo esto vive ahi.",
-            "en": "Open Settings and go to the Items tab. All of this lives there.",
-            "pt": "Abra Opcoes e va na aba Itens. Tudo isso mora ali."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "panel_opened:OPTION"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c12_s3",
-          "anchor": "",
-          "text": {
-            "es": "Un conjunto es una lista de cosas que no queres ver. Crea uno.",
-            "en": "A set is a list of things you don't want to see. Create one.",
-            "pt": "Um conjunto e uma lista do que voce nao quer ver. Crie um."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "filter_set_added"
-          },
-          "timeout_ms": 30000
-        },
-        {
-          "id": "c12_s4",
-          "anchor": "",
-          "text": {
-            "es": "Escribi 'Zen' y agregalo. Ya no vas a ver los carteles de zen en el piso.",
-            "en": "Type 'Zen' and add it. You won't see zen labels on the ground any more.",
-            "pt": "Escreva 'Zen' e adicione. Voce nao vai mais ver as etiquetas de zen no chao."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "filter_entry_added"
-          },
-          "timeout_ms": 40000
-        },
-        {
-          "id": "c12_s5",
-          "anchor": "",
-          "text": {
-            "es": "Podes atar el conjunto a un mapa: se prende solo al entrar y se apaga al salir.",
-            "en": "You can tie the set to a map: it turns itself on as you enter and off as you leave.",
-            "pt": "Da para ligar o conjunto a um mapa: liga sozinho ao entrar e desliga ao sair."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c12_s6",
-          "anchor": "ID_ITEMFILTER",
-          "text": {
-            "es": "Este chip te dice cuantas cosas te tapa el filtro. Tocalo para apagarlo.\nEl objeto sigue ahi: solo dejas de verlo.",
-            "en": "This chip counts what the filter is hiding. Tap it to switch it off.\nThe item is still there: you just stop seeing it.",
-            "pt": "Este chip conta o que o filtro esta escondendo. Toque para desligar.\nO item continua la: voce so deixa de ver."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c13",
-      "tramo": 3,
-      "title": {
-        "es": "Acomoda tu pantalla",
-        "en": "Arrange your screen",
-        "pt": "Arrume sua tela"
-      },
-      "steps": [
-        {
-          "id": "c13_s1",
-          "anchor": "lock",
-          "text": {
-            "es": "Con el candado moves todo el HUD a tu gusto.",
-            "en": "With the lock you move the whole HUD to your taste.",
-            "pt": "Com o cadeado voce move o HUD inteiro do seu jeito."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "hudedit_on"
-          },
-          "timeout_ms": 25000,
-          "action": "mark_used_hudedit"
-        },
-        {
-          "id": "c13_s2",
-          "anchor": "",
-          "text": {
-            "es": "Arrastra lo que quieras a donde te quede comodo.",
-            "en": "Drag whatever you like wherever it feels right.",
-            "pt": "Arraste o que quiser para onde ficar comodo."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c13_s3",
-          "anchor": "",
-          "text": {
-            "es": "Con los botones - y + le cambias el tamano.",
-            "en": "The - and + buttons change its size.",
-            "pt": "Com os botoes - e + voce muda o tamanho."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c13_s4",
-          "anchor": "",
-          "text": {
-            "es": "Con Agregar sumas botones nuevos: paneles, el Helper, o un viaje directo a tu mapa favorito.",
-            "en": "With Add you get new buttons: panels, the Helper, or a direct warp to your favourite map.",
-            "pt": "Com Adicionar voce ganha botoes novos: paineis, o Helper, ou viagem direta ao mapa favorito."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c13_s5",
-          "anchor": "lock",
-          "text": {
-            "es": "Cuando termines, toca el candado de nuevo para guardar.",
-            "en": "When you're done, tap the lock again to save.",
-            "pt": "Quando terminar, toque no cadeado de novo para salvar."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "hudedit_off"
-          },
-          "timeout_ms": 30000
-        }
-      ]
-    },
-    {
-      "id": "c14",
-      "tramo": 3,
-      "title": {
-        "es": "Gente",
-        "en": "People",
-        "pt": "Pessoas"
-      },
-      "steps": [
-        {
-          "id": "c14_s1",
-          "anchor": "",
-          "text": {
-            "es": "Manten apretado a otro jugador para ver que podes hacer con el.",
-            "en": "Hold another player to see what you can do with them.",
-            "pt": "Segure outro jogador para ver o que da para fazer com ele."
-          },
-          "gate": {
-            "type": "event",
-            "ev": "player_menu_opened"
-          },
-          "timeout_ms": 25000
-        },
-        {
-          "id": "c14_s2",
-          "anchor": "",
-          "text": {
-            "es": "Invitar al grupo, comerciar, susurrar, o bloquear si molesta.",
-            "en": "Invite to party, trade, whisper, or block if they bother you.",
-            "pt": "Convidar para o grupo, negociar, sussurrar, ou bloquear se incomodar."
-          },
-          "gate": {
-            "type": "time"
-          },
-          "timeout_ms": 5000
-        },
-        {
-          "id": "c14_s3",
-          "anchor": "ID_CHATBTN",
-          "text": {
-            "es": "Este es el chat. Toca el nombre de alguien para responderle en privado.",
-            "en": "This is the chat. Tap someone's name to answer privately.",
-            "pt": "Este e o chat. Toque no nome de alguem para responder em particular."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c14_s4",
-          "anchor": "",
-          "text": {
-            "es": "En grupo la experiencia se reparte, pero se mata mucho mas rapido.",
-            "en": "In a party experience is shared, but things die much faster.",
-            "pt": "Em grupo a experiencia e dividida, mas se mata muito mais rapido."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c14_s5",
-          "anchor": "",
-          "text": {
-            "es": "Un gremio te da gente para los eventos grandes. Busca uno cuando te sientas comodo.",
-            "en": "A guild gives you people for the big events. Find one when you feel ready.",
-            "pt": "Uma guilda te da gente para os eventos grandes. Procure uma quando se sentir a vontade."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c15",
-      "tramo": 3,
-      "title": {
-        "es": "Que viene despues",
-        "en": "What comes next",
-        "pt": "O que vem depois"
-      },
-      "steps": [
-        {
-          "id": "c15_s1",
-          "anchor": "",
-          "text": {
-            "es": "Las joyas mejoran tu equipo en la Maquina del Caos, y ahi tambien se hacen las alas.",
-            "en": "Jewels upgrade your gear at the Chaos Machine, and that is where wings are made.",
-            "pt": "As joias melhoram seu equipamento na Maquina do Caos, e e la que se fazem as asas."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c15_s2",
-          "anchor": "",
-          "text": {
-            "es": "Blood Castle, Devil Square y Chaos Castle tienen horario fijo y son lo mas rapido para subir.",
-            "en": "Blood Castle, Devil Square and Chaos Castle run on a schedule and are the fastest way to level.",
-            "pt": "Blood Castle, Devil Square e Chaos Castle tem horario fixo e sao o jeito mais rapido de subir."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c15_s3",
-          "anchor": "",
-          "text": {
-            "es": "Al llegar al nivel maximo podes resetear: volves al 1 pero quedas mas fuerte.",
-            "en": "At max level you can reset: back to 1, but stronger.",
-            "pt": "No nivel maximo voce pode resetar: volta ao 1, mas fica mais forte."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c15_s4",
-          "anchor": "",
-          "text": {
-            "es": "Mas adelante se abre el Master Level, con un arbol de habilidades nuevo.",
-            "en": "Later on Master Level opens, with a whole new skill tree.",
-            "pt": "Mais adiante abre o Master Level, com uma arvore de habilidades nova."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        }
-      ]
-    },
-    {
-      "id": "c16",
-      "tramo": 3,
-      "title": {
-        "es": "Listo",
-        "en": "Done",
-        "pt": "Pronto"
-      },
-      "steps": [
-        {
-          "id": "c16_s1",
-          "anchor": "bar:menu",
-          "text": {
-            "es": "Cualquier cosa que no te acuerdes esta en Ayuda. Tiene buscador: escribi una palabra y te la explica.",
-            "en": "Anything you forget is in Help. It has a search box: type a word and it explains it.",
-            "pt": "Qualquer coisa que esquecer esta na Ajuda. Tem busca: escreva uma palavra e ela explica."
-          },
-          "gate": {
-            "type": "manual"
-          }
-        },
-        {
-          "id": "c16_s2",
-          "anchor": "",
-          "text": {
-            "es": "Eso es todo. Suerte alla afuera.",
-            "en": "That's everything. Good luck out there.",
-            "pt": "E isso. Boa sorte por ai."
-          },
-          "gate": {
-            "type": "manual"
-          },
-          "skippable": false
-        }
-      ]
+     "id": "c1_s4",
+     "anchor": "",
+     "text": {
+      "es": "Con dos dedos pellizcas para acercar o alejar la camara.",
+      "en": "Pinch with two fingers to zoom the camera in or out.",
+      "pt": "Belisque com dois dedos para aproximar ou afastar a camera.",
+      "vi": "Chụm hai ngón tay để phóng to hoặc thu nhỏ góc nhìn.",
+      "th": "ใช้สองนิ้วหนีบเพื่อซูมกล้องเข้าออก",
+      "zh": "用两根手指捏合，就能拉近或推远镜头。",
+      "ja": "二本指でピンチすると、カメラを寄せたり引いたりできます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
     }
-  ]
+   ]
+  },
+  {
+   "id": "c2",
+   "tramo": 1,
+   "title": {
+    "es": "Pelear",
+    "en": "Fighting",
+    "pt": "Lutar",
+    "vi": "Chiến đấu",
+    "th": "การต่อสู้",
+    "zh": "战斗",
+    "ja": "戦闘"
+   },
+   "steps": [
+    {
+     "id": "c2_s1",
+     "anchor": "world:monster",
+     "text": {
+      "es": "Eso es un monstruo. Tocalo para atacarlo.",
+      "en": "That is a monster. Tap it to attack.",
+      "pt": "Isso e um monstro. Toque para atacar.",
+      "vi": "Kia là một con quái. Chạm vào để tấn công.",
+      "th": "นั่นคือมอนสเตอร์ แตะเพื่อโจมตี",
+      "zh": "那是一只怪物。点它就打。",
+      "ja": "あれがモンスターです。タップで攻撃します。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "monster_hit"
+     },
+     "timeout_ms": 30000
+    },
+    {
+     "id": "c2_s2",
+     "anchor": "",
+     "text": {
+      "es": "Arriba del monstruo esta su barra de vida. Cuando llega a cero, muere y suelta lo que tenga.",
+      "en": "Its health bar is above it. At zero it dies and drops whatever it carries.",
+      "pt": "A barra de vida dele fica em cima. No zero ele morre e solta o que tiver.",
+      "vi": "Thanh máu của nó nằm phía trên. Về 0 là nó chết và rơi ra thứ nó mang theo.",
+      "th": "แถบเลือดของมันอยู่ข้างบน พอเป็นศูนย์ก็ตายแล้วดรอปของที่มันถือ",
+      "zh": "它的血条在头顶。归零它就死，会掉出身上带的东西。",
+      "ja": "体力バーは頭上にあります。ゼロになると倒れ、持っていた物を落とします。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c2_s3",
+     "anchor": "",
+     "text": {
+      "es": "Segui pegando hasta matarlo.",
+      "en": "Keep hitting until it dies.",
+      "pt": "Continue batendo ate matar.",
+      "vi": "Cứ đánh cho tới khi nó chết.",
+      "th": "ตีต่อไปจนกว่ามันจะตาย",
+      "zh": "一直打到它死。",
+      "ja": "倒れるまで殴り続けましょう。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "monster_killed"
+     },
+     "timeout_ms": 45000
+    },
+    {
+     "id": "c2_s4",
+     "anchor": "ID_PANEL",
+     "text": {
+      "es": "Ganaste experiencia. Cuando se llena la barra, subis de nivel.",
+      "en": "You earned experience. Fill the bar and you level up.",
+      "pt": "Voce ganhou experiencia. Enchendo a barra, sobe de nivel.",
+      "vi": "Bạn vừa nhận kinh nghiệm. Đầy thanh là lên cấp.",
+      "th": "คุณได้ค่าประสบการณ์แล้ว เติมแถบให้เต็มก็ขึ้นเลเวล",
+      "zh": "你拿到经验了。把条填满就升级。",
+      "ja": "経験値が入りました。バーが満タンになるとレベルアップです。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c2_s5",
+     "anchor": "",
+     "text": {
+      "es": "Con el auto-ataque prendido seguis pegando solo mientras haya algo cerca.",
+      "en": "With auto-attack on you keep hitting by yourself while something is nearby.",
+      "pt": "Com o ataque automatico ligado voce continua batendo sozinho enquanto tiver algo perto.",
+      "vi": "Bật tự động tấn công thì bạn cứ đánh liên tục khi có gì đó ở gần.",
+      "th": "เปิดโจมตีอัตโนมัติแล้วจะตีต่อเนื่องเองเมื่อมีอะไรอยู่ใกล้ๆ",
+      "zh": "开了自动攻击，只要旁边有东西你就会一直打。",
+      "ja": "オート攻撃をオンにすると、近くに敵がいる限り自動で殴り続けます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "tramo": 1,
+   "title": {
+    "es": "Vida y pociones",
+    "en": "Health and potions",
+    "pt": "Vida e pocoes",
+    "vi": "Máu và bình thuốc",
+    "th": "เลือดกับยา",
+    "zh": "血量与药水",
+    "ja": "体力とポーション"
+   },
+   "steps": [
+    {
+     "id": "c3_s1",
+     "anchor": "ID_PANEL",
+     "text": {
+      "es": "El orbe rojo es tu vida y el azul tu mana. Si el rojo llega a cero, moris.",
+      "en": "The red orb is your health and the blue one your mana. If red hits zero, you die.",
+      "pt": "O orbe vermelho e sua vida e o azul sua mana. Se o vermelho zerar, voce morre.",
+      "vi": "Quả cầu đỏ là máu, quả xanh là mana. Đỏ về 0 là bạn chết.",
+      "th": "ลูกแก้วสีแดงคือเลือด สีน้ำเงินคือมานา ถ้าแดงหมดคุณตาย",
+      "zh": "红球是血，蓝球是魔力。红的归零你就死了。",
+      "ja": "赤いオーブが体力、青がマナです。赤がゼロになると死にます。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 5000
+    },
+    {
+     "id": "c3_s2",
+     "anchor": "ID_POTIONS",
+     "text": {
+      "es": "Estas son tus pociones. Toca la roja para recuperar vida.",
+      "en": "These are your potions. Tap the red one to heal.",
+      "pt": "Estas sao suas pocoes. Toque a vermelha para recuperar vida.",
+      "vi": "Đây là bình thuốc của bạn. Chạm vào bình đỏ để hồi máu.",
+      "th": "นี่คือยาของคุณ แตะขวดแดงเพื่อฟื้นเลือด",
+      "zh": "这是你的药水。点红色那瓶回血。",
+      "ja": "これがポーションです。赤いほうをタップすると回復します。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "potion_used"
+     },
+     "timeout_ms": 20000
+    },
+    {
+     "id": "c3_s3",
+     "anchor": "ID_POTIONS",
+     "text": {
+      "es": "Compra siempre de mas antes de salir del pueblo: volver cuesta tiempo y zen.",
+      "en": "Always buy spares before leaving town: coming back costs time and zen.",
+      "pt": "Compre sempre de sobra antes de sair da cidade: voltar custa tempo e zen.",
+      "vi": "Luôn mua sẵn dự phòng trước khi rời thị trấn: quay lại tốn thời gian và zen.",
+      "th": "ซื้อสำรองไว้ก่อนออกจากเมืองเสมอ กลับมาทีเสียทั้งเวลาและเซน",
+      "zh": "出城前一定备够：回来一趟又费时间又费钱。",
+      "ja": "町を出る前に必ず予備を買いましょう。戻るのは時間もゼンも食います。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c3_s4",
+     "anchor": "",
+     "text": {
+      "es": "Mas adelante te muestro como hacer que se tomen solas.",
+      "en": "Later on I'll show you how to make them drink themselves.",
+      "pt": "Mais para frente mostro como fazer com que se tomem sozinhas.",
+      "vi": "Lát nữa tôi sẽ chỉ bạn cách để chúng tự uống.",
+      "th": "เดี๋ยวจะบอกวิธีทำให้มันกินเองด้วย",
+      "zh": "待会儿我教你怎么让它们自己喝。",
+      "ja": "あとで、勝手に飲ませる方法も教えます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "tramo": 1,
+   "title": {
+    "es": "El botin",
+    "en": "Loot",
+    "pt": "Loot",
+    "vi": "Chiến lợi phẩm",
+    "th": "ของที่ได้",
+    "zh": "战利品",
+    "ja": "戦利品"
+   },
+   "steps": [
+    {
+     "id": "c4_s1",
+     "anchor": "world:drop",
+     "text": {
+      "es": "Los monstruos sueltan cosas. Toca el cartel del piso para levantarlo.",
+      "en": "Monsters drop things. Tap the label on the ground to pick it up.",
+      "pt": "Os monstros soltam coisas. Toque a etiqueta no chao para pegar.",
+      "vi": "Quái vật rơi đồ. Chạm vào nhãn dưới đất để nhặt.",
+      "th": "มอนสเตอร์ดรอปของ แตะป้ายที่พื้นเพื่อเก็บ",
+      "zh": "怪物会掉东西。点地上的标签就捡起来。",
+      "ja": "モンスターは物を落とします。地面のラベルをタップすると拾えます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "item_picked"
+     },
+     "timeout_ms": 30000
+    },
+    {
+     "id": "c4_s2",
+     "anchor": "ID_DROPLIST",
+     "text": {
+      "es": "Si caen varios juntos se apilan en esta lista. Toca una fila y vas a buscarlo.",
+      "en": "If several drop together they stack in this list. Tap a row and off you go.",
+      "pt": "Se cairem varias juntas, se empilham nesta lista. Toque numa linha e voce vai buscar.",
+      "vi": "Nếu rơi nhiều món cùng lúc, chúng xếp vào danh sách này. Chạm một dòng là đi luôn.",
+      "th": "ถ้าตกพร้อมกันหลายชิ้น มันจะเรียงเป็นรายการนี้ แตะแถวแล้วไปเลย",
+      "zh": "同时掉好几件时，会排成这个列表。点一行就过去了。",
+      "ja": "複数まとめて落ちると、このリストに並びます。行をタップすれば取りに行きます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c4_s3",
+     "anchor": "",
+     "text": {
+      "es": "El Zen es la moneda del juego: con eso compras pociones y equipo.",
+      "en": "Zen is the game's currency: that is what buys potions and gear.",
+      "pt": "O Zen e a moeda do jogo: e com ele que se compra pocao e equipamento.",
+      "vi": "Zen là tiền của game: dùng để mua thuốc và trang bị.",
+      "th": "เซนคือเงินของเกม เอาไว้ซื้อยากับของสวมใส่",
+      "zh": "金币是游戏里的钱：药水和装备都靠它买。",
+      "ja": "ゼンはゲーム内のお金です。ポーションも装備もこれで買います。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c4_s4",
+     "anchor": "ID_INVBTN",
+     "text": {
+      "es": "Todo lo que levantas va a tu bolsa. Abrila.",
+      "en": "Everything you pick up goes to your bag. Open it.",
+      "pt": "Tudo o que voce pega vai para a bolsa. Abra.",
+      "vi": "Mọi thứ bạn nhặt đều vào túi. Mở nó ra.",
+      "th": "ทุกอย่างที่เก็บจะเข้ากระเป๋า เปิดดูสิ",
+      "zh": "你捡的东西都会进背包。打开看看。",
+      "ja": "拾った物はすべてバッグに入ります。開いてみましょう。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:INVENTORY"
+     },
+     "timeout_ms": 20000
+    },
+    {
+     "id": "c4_s5",
+     "anchor": "",
+     "text": {
+      "es": "Cada objeto ocupa lugar. Cuando se llena hay que vender o guardar en el baul.",
+      "en": "Each item takes space. When it fills up you have to sell or use the vault.",
+      "pt": "Cada item ocupa espaco. Quando enche, tem que vender ou guardar no bau.",
+      "vi": "Mỗi món chiếm chỗ. Khi đầy thì phải bán bớt hoặc dùng kho.",
+      "th": "ของแต่ละชิ้นกินพื้นที่ พอเต็มก็ต้องขายหรือใช้คลัง",
+      "zh": "每件东西都占位置。装满了就得卖掉或者用仓库。",
+      "ja": "アイテムは場所を取ります。いっぱいになったら売るか倉庫を使いましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "tramo": 1,
+   "title": {
+    "es": "Equiparse",
+    "en": "Gearing up",
+    "pt": "Equipar-se",
+    "vi": "Trang bị",
+    "th": "การสวมใส่",
+    "zh": "装备起来",
+    "ja": "装備を整える"
+   },
+   "steps": [
+    {
+     "id": "c5_s1",
+     "anchor": "",
+     "text": {
+      "es": "Manten apretado un objeto de la bolsa para ver que podes hacer con el.",
+      "en": "Hold an item in the bag to see what you can do with it.",
+      "pt": "Segure um item da bolsa para ver o que da para fazer com ele.",
+      "vi": "Giữ vào một món trong túi để xem có thể làm gì với nó.",
+      "th": "กดค้างที่ของในกระเป๋าเพื่อดูว่าทำอะไรกับมันได้บ้าง",
+      "zh": "在背包里长按一件东西，看看能拿它做什么。",
+      "ja": "バッグでアイテムを長押しすると、何ができるか分かります。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "item_menu_opened"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c5_s2",
+     "anchor": "",
+     "text": {
+      "es": "Equipar lo pone en tu personaje y te sube las estadisticas.",
+      "en": "Equipping puts it on your character and raises your stats.",
+      "pt": "Equipar coloca no personagem e sobe seus atributos.",
+      "vi": "Mặc vào là gắn nó lên nhân vật và tăng chỉ số cho bạn.",
+      "th": "สวมใส่คือเอามันขึ้นตัวละครและเพิ่มค่าสถานะให้คุณ",
+      "zh": "装备就是把它穿到角色身上，提升你的属性。",
+      "ja": "装備すると、キャラクターに身につけてステータスが上がります。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "item_equipped"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c5_s3",
+     "anchor": "",
+     "text": {
+      "es": "En el muneco de la izquierda ves todo lo que llevas puesto.",
+      "en": "The doll on the left shows everything you are wearing.",
+      "pt": "No boneco da esquerda voce ve tudo o que esta usando.",
+      "vi": "Hình nhân bên trái cho thấy mọi thứ bạn đang mặc.",
+      "th": "รูปหุ่นด้านซ้ายแสดงทุกอย่างที่คุณสวมอยู่",
+      "zh": "左边那个人形显示你身上穿的一切。",
+      "ja": "左の人形が、いま身につけているものすべてを表します。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c5_s4",
+     "anchor": "",
+     "text": {
+      "es": "Si un objeto pide mas nivel o mas fuerza del que tenes, el requisito sale en rojo.",
+      "en": "If an item needs more level or strength than you have, the requirement shows in red.",
+      "pt": "Se um item pede mais nivel ou forca do que voce tem, o requisito aparece em vermelho.",
+      "vi": "Nếu một món cần cấp độ hoặc sức mạnh cao hơn bạn đang có, điều kiện đó hiện màu đỏ.",
+      "th": "ถ้าของชิ้นไหนต้องการเลเวลหรือพลังมากกว่าที่คุณมี เงื่อนไขนั้นจะขึ้นสีแดง",
+      "zh": "如果某件东西要求的等级或力量比你高，那条要求会标红。",
+      "ja": "必要なレベルや力が足りないアイテムは、その条件が赤く表示されます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c5_s5",
+     "anchor": "",
+     "text": {
+      "es": "El equipo se gasta al pelear. Cuando este en rojo, reparalo en el pueblo.",
+      "en": "Gear wears down as you fight. When it turns red, repair it in town.",
+      "pt": "O equipamento gasta ao lutar. Quando ficar vermelho, conserte na cidade.",
+      "vi": "Trang bị hao mòn khi bạn chiến đấu. Khi nó chuyển đỏ, hãy sửa ở thị trấn.",
+      "th": "ของจะสึกไปตอนสู้ พอมันเป็นสีแดงก็ไปซ่อมในเมือง",
+      "zh": "装备打着打着会磨损。变红了就回城修。",
+      "ja": "装備は戦うほど傷みます。赤くなったら町で修理しましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "tramo": 1,
+   "title": {
+    "es": "Subir de nivel",
+    "en": "Levelling up",
+    "pt": "Subir de nivel",
+    "vi": "Lên cấp",
+    "th": "การขึ้นเลเวล",
+    "zh": "升级",
+    "ja": "レベルアップ"
+   },
+   "steps": [
+    {
+     "id": "c6_s1",
+     "anchor": "bar:menu",
+     "text": {
+      "es": "Abri tu ficha de personaje desde el Menu.",
+      "en": "Open your character sheet from the Menu.",
+      "pt": "Abra sua ficha de personagem pelo Menu.",
+      "vi": "Mở bảng nhân vật từ Menu.",
+      "th": "เปิดหน้าตัวละครจากเมนู",
+      "zh": "从菜单打开角色面板。",
+      "ja": "メニューからキャラクターシートを開きます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:CHARACTER"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c6_s2",
+     "anchor": "",
+     "text": {
+      "es": "Cada nivel te da puntos para repartir. No se reparten solos.",
+      "en": "Every level gives you points to spend. They do not spend themselves.",
+      "pt": "Cada nivel te da pontos para distribuir. Eles nao se distribuem sozinhos.",
+      "vi": "Mỗi cấp cho bạn điểm để phân bổ. Chúng không tự cộng đâu.",
+      "th": "ทุกเลเวลจะได้แต้มไว้ลง มันไม่ลงเองนะ",
+      "zh": "每升一级都会给点数。它们不会自己加。",
+      "ja": "レベルごとに振れるポイントがもらえます。自動では振られません。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c6_s3",
+     "anchor": "",
+     "text": {
+      "es": "Fuerza y Agilidad pegan, Vitalidad aguanta, Energia alimenta las habilidades.",
+      "en": "Strength and Agility hit, Vitality takes hits, Energy feeds your skills.",
+      "pt": "Forca e Agilidade batem, Vitalidade aguenta, Energia alimenta as habilidades.",
+      "vi": "Sức mạnh và Nhanh nhẹn để đánh, Thể lực để chịu đòn, Năng lượng nuôi kỹ năng.",
+      "th": "พลังกับความคล่องแคล่วไว้ตี ความอดทนไว้รับ พลังงานไว้เลี้ยงสกิล",
+      "zh": "力量和敏捷负责输出，体力负责挨打，能量供养技能。",
+      "ja": "力と敏捷は攻撃、体力は耐久、エネルギーはスキルを支えます。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 6000
+    },
+    {
+     "id": "c6_s4",
+     "anchor": "",
+     "text": {
+      "es": "Poné un punto donde quieras, con el boton +.",
+      "en": "Put a point wherever you like, with the + button.",
+      "pt": "Coloque um ponto onde quiser, com o botao +.",
+      "vi": "Cộng điểm vào đâu tùy bạn, bằng nút +.",
+      "th": "จะลงแต้มตรงไหนก็ได้ ใช้ปุ่ม +",
+      "zh": "想加哪就加哪，用 + 按钮。",
+      "ja": "好きなところに + ボタンでポイントを振れます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "point_spent"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c6_s5",
+     "anchor": "",
+     "text": {
+      "es": "Consejo: subi lo que tu clase usa para pegar, y algo de Vitalidad para aguantar.",
+      "en": "Tip: raise what your class hits with, plus some Vitality to survive.",
+      "pt": "Dica: suba o que sua classe usa para bater, e um pouco de Vitalidade para aguentar.",
+      "vi": "Mẹo: tăng chỉ số mà lớp của bạn dùng để đánh, cộng thêm chút Thể lực để sống sót.",
+      "th": "เคล็ดลับ: เพิ่มค่าที่คลาสของคุณใช้ตี แล้วเติมความอดทนอีกหน่อยเพื่อให้รอด",
+      "zh": "小提示：优先加你这个职业用来输出的属性，再补一点体力保命。",
+      "ja": "コツ: 自分のクラスが火力に使う値を伸ばし、生き残るために体力も少し足しましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "tramo": 2,
+   "title": {
+    "es": "Habilidades",
+    "en": "Skills",
+    "pt": "Habilidades",
+    "vi": "Kỹ năng",
+    "th": "สกิล",
+    "zh": "技能",
+    "ja": "スキル"
+   },
+   "steps": [
+    {
+     "id": "c7_s1",
+     "anchor": "ID_SKILLS",
+     "text": {
+      "es": "Este anillo son tus habilidades. Toca una para usarla.",
+      "en": "This ring holds your skills. Tap one to cast it.",
+      "pt": "Este anel sao suas habilidades. Toque uma para usar.",
+      "vi": "Vòng này chứa các kỹ năng của bạn. Chạm một cái để dùng.",
+      "th": "วงแหวนนี้เก็บสกิลของคุณ แตะอันไหนก็ร่ายอันนั้น",
+      "zh": "这个环里放着你的技能。点一个就放。",
+      "ja": "このリングにスキルが並びます。タップすると発動します。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "skill_used"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c7_s2",
+     "anchor": "ID_SKILLS",
+     "text": {
+      "es": "Manten apretada y arrastra para elegir donde cae. Importante para las de area.",
+      "en": "Hold and drag to choose where it lands. Important for area skills.",
+      "pt": "Segure e arraste para escolher onde ela cai. Importante nas de area.",
+      "vi": "Giữ rồi kéo để chọn chỗ nó rơi. Quan trọng với kỹ năng diện rộng.",
+      "th": "กดค้างแล้วลากเพื่อเลือกจุดที่จะลง สำคัญมากกับสกิลแบบวงกว้าง",
+      "zh": "按住再拖，选它落在哪。范围技能尤其要这么用。",
+      "ja": "長押ししてドラッグすると着弾点を選べます。範囲スキルでは特に重要です。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c7_s3",
+     "anchor": "ID_SKILLS",
+     "text": {
+      "es": "Con el boton EDITAR del anillo cambias que habilidad va en cada orbe.",
+      "en": "The EDIT button on the ring changes which skill sits in each orb.",
+      "pt": "Com o botao EDITAR do anel voce troca qual habilidade fica em cada orbe.",
+      "vi": "Nút EDIT trên vòng đổi xem kỹ năng nào nằm ở quả cầu nào.",
+      "th": "ปุ่ม EDIT บนวงแหวนใช้เปลี่ยนว่าสกิลไหนอยู่ลูกแก้วไหน",
+      "zh": "环上的 EDIT 按钮用来换每个球位放哪个技能。",
+      "ja": "リングのEDITボタンで、どのオーブにどのスキルを置くか変えられます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c7_s4",
+     "anchor": "",
+     "text": {
+      "es": "Las habilidades gastan mana. Sin mana, solo pegas normal.",
+      "en": "Skills cost mana. Without mana you only hit normally.",
+      "pt": "As habilidades gastam mana. Sem mana, so o ataque normal.",
+      "vi": "Kỹ năng tốn mana. Không có mana thì bạn chỉ đánh thường.",
+      "th": "สกิลกินมานา ไม่มีมานาก็ตีธรรมดาได้อย่างเดียว",
+      "zh": "技能要耗魔力。没魔力你就只能普攻。",
+      "ja": "スキルはマナを消費します。マナがなければ通常攻撃だけです。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c8",
+   "tramo": 2,
+   "title": {
+    "es": "El pueblo",
+    "en": "Town",
+    "pt": "A cidade",
+    "vi": "Thị trấn",
+    "th": "ในเมือง",
+    "zh": "城镇",
+    "ja": "町"
+   },
+   "steps": [
+    {
+     "id": "c8_s1",
+     "anchor": "world:npc",
+     "text": {
+      "es": "Toca a este personaje: te vende pociones y equipo.",
+      "en": "Tap this character: he sells potions and gear.",
+      "pt": "Toque neste personagem: ele vende pocoes e equipamento.",
+      "vi": "Chạm vào nhân vật này: ông ta bán thuốc và trang bị.",
+      "th": "แตะที่คนนี้: เขาขายยากับของสวมใส่",
+      "zh": "点这个人：他卖药水和装备。",
+      "ja": "この人物をタップしてください。ポーションと装備を売っています。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "shop_opened"
+     },
+     "timeout_ms": 30000
+    },
+    {
+     "id": "c8_s2",
+     "anchor": "",
+     "text": {
+      "es": "Manten apretado para comprar. Para vender, arrastra desde tu bolsa.",
+      "en": "Hold to buy. To sell, drag from your bag.",
+      "pt": "Segure para comprar. Para vender, arraste da sua bolsa.",
+      "vi": "Giữ để mua. Để bán, hãy kéo từ túi của bạn ra.",
+      "th": "กดค้างเพื่อซื้อ ถ้าจะขาย ลากออกมาจากกระเป๋า",
+      "zh": "长按买东西。要卖的话，从背包里拖出来。",
+      "ja": "長押しで購入します。売るときはバッグからドラッグしてください。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c8_s3",
+     "anchor": "",
+     "text": {
+      "es": "El herrero repara tu equipo gastado. Sale mucho mas barato que morir con el roto.",
+      "en": "The blacksmith repairs worn gear. Far cheaper than dying with it broken.",
+      "pt": "O ferreiro conserta equipamento gasto. Sai muito mais barato que morrer com ele quebrado.",
+      "vi": "Thợ rèn sửa đồ đã mòn. Rẻ hơn nhiều so với chết vì đồ hỏng.",
+      "th": "ช่างตีเหล็กซ่อมของที่สึก ถูกกว่าตายเพราะของพังเยอะ",
+      "zh": "铁匠修磨损的装备。比穿着坏装备去死便宜太多。",
+      "ja": "鍛冶屋は傷んだ装備を直します。壊れた装備で死ぬよりずっと安上がりです。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c8_s4",
+     "anchor": "",
+     "text": {
+      "es": "El baul guarda objetos y zen, y lo comparten todos tus personajes.",
+      "en": "The vault stores items and zen, shared by all your characters.",
+      "pt": "O bau guarda itens e zen, e todos os seus personagens compartilham.",
+      "vi": "Kho chứa vật phẩm và zen, mọi nhân vật của bạn dùng chung.",
+      "th": "คลังเก็บทั้งไอเทมและเซน ตัวละครทุกตัวของคุณใช้ร่วมกัน",
+      "zh": "仓库存物品和金币，你所有角色共用。",
+      "ja": "倉庫にはアイテムとゼンを預けられ、全キャラクターで共有します。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c8_s5",
+     "anchor": "",
+     "text": {
+      "es": "En la Maquina del Caos se combinan objetos y joyas. Volve cuando tengas joyas.",
+      "en": "The Chaos Machine combines items and jewels. Come back when you have jewels.",
+      "pt": "Na Maquina do Caos se combinam itens e joias. Volte quando tiver joias.",
+      "vi": "Chaos Machine ghép vật phẩm và ngọc. Quay lại khi bạn có ngọc.",
+      "th": "เครื่องเคออสผสมไอเทมกับอัญมณี กลับมาตอนมีอัญมณีแล้วกัน",
+      "zh": "混沌机器合成物品和宝石。等你有宝石了再来。",
+      "ja": "カオスマシンはアイテムと宝石を合成します。宝石が手に入ったら戻ってきてください。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c8_s6",
+     "anchor": "",
+     "text": {
+      "es": "En Ayuda tenes la lista completa de que hace cada personaje del pueblo.",
+      "en": "Help has the full list of what each town character does.",
+      "pt": "Na Ajuda tem a lista completa do que cada personagem da cidade faz.",
+      "vi": "Mục Trợ giúp có danh sách đầy đủ từng nhân vật trong thị trấn làm gì.",
+      "th": "หน้าช่วยเหลือมีรายการครบว่าคนในเมืองแต่ละคนทำอะไร",
+      "zh": "帮助里有完整清单，写着城里每个人各管什么。",
+      "ja": "ヘルプには、町の人物が何をしてくれるかの一覧があります。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c9",
+   "tramo": 2,
+   "title": {
+    "es": "Misiones",
+    "en": "Quests",
+    "pt": "Missoes",
+    "vi": "Nhiệm vụ",
+    "th": "ภารกิจ",
+    "zh": "任务",
+    "ja": "クエスト"
+   },
+   "steps": [
+    {
+     "id": "c9_s1",
+     "anchor": "bar:menu",
+     "text": {
+      "es": "Abri Misiones desde el Menu. Dan experiencia y objetos.",
+      "en": "Open Quests from the Menu. They give experience and items.",
+      "pt": "Abra Missoes pelo Menu. Elas dao experiencia e itens.",
+      "vi": "Mở Nhiệm vụ từ Menu. Chúng cho kinh nghiệm và vật phẩm.",
+      "th": "เปิดภารกิจจากเมนู มันให้ทั้งค่าประสบการณ์และไอเทม",
+      "zh": "从菜单打开任务。它们给经验也给物品。",
+      "ja": "メニューからクエストを開きます。経験値もアイテムももらえます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:MYQUEST"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c9_s2",
+     "anchor": "",
+     "text": {
+      "es": "Toca una mision disponible para aceptarla.",
+      "en": "Tap an available quest to accept it.",
+      "pt": "Toque numa missao disponivel para aceitar.",
+      "vi": "Chạm vào một nhiệm vụ đang mở để nhận.",
+      "th": "แตะภารกิจที่รับได้เพื่อรับมัน",
+      "zh": "点一个可接的任务就接下来。",
+      "ja": "受注可能なクエストをタップすると受けられます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "quest_accepted"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c9_s3",
+     "anchor": "",
+     "text": {
+      "es": "Tu mision activa queda a la vista con lo que te falta.",
+      "en": "Your active quest stays on screen with what is left to do.",
+      "pt": "Sua missao ativa fica na tela com o que falta.",
+      "vi": "Nhiệm vụ đang làm sẽ hiện trên màn hình cùng với phần còn phải làm.",
+      "th": "ภารกิจที่กำลังทำจะค้างอยู่บนจอ พร้อมบอกว่าเหลืออะไรอีก",
+      "zh": "进行中的任务会留在屏幕上，写着还剩什么没做。",
+      "ja": "進行中のクエストは、残りの目標とともに画面に表示され続けます。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c9_s4",
+     "anchor": "",
+     "text": {
+      "es": "Cuando la completes, volve al hub a cobrar la recompensa.",
+      "en": "When you finish it, go back to the hub to claim the reward.",
+      "pt": "Quando completar, volte ao hub para receber a recompensa.",
+      "vi": "Làm xong thì quay lại trung tâm nhiệm vụ để lĩnh thưởng.",
+      "th": "ทำเสร็จแล้วกลับไปที่ศูนย์ภารกิจเพื่อรับรางวัล",
+      "zh": "做完了就回任务中心领奖励。",
+      "ja": "終わったらクエストハブに戻って報酬を受け取りましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "tramo": 2,
+   "title": {
+    "es": "Viajar",
+    "en": "Travel",
+    "pt": "Viajar",
+    "vi": "Di chuyển xa",
+    "th": "การเดินทาง",
+    "zh": "旅行",
+    "ja": "移動"
+   },
+   "steps": [
+    {
+     "id": "c10_s1",
+     "anchor": "bar:menu",
+     "text": {
+      "es": "Abri Viajar. Desde ahi vas a cualquier mapa que tengas desbloqueado.",
+      "en": "Open Travel. From here you reach any map you have unlocked.",
+      "pt": "Abra Viajar. Dali voce vai a qualquer mapa que tenha liberado.",
+      "vi": "Mở mục Di chuyển. Từ đây bạn tới được mọi bản đồ đã mở khóa.",
+      "th": "เปิดหน้าเดินทาง จากตรงนี้ไปได้ทุกแผนที่ที่ปลดล็อกแล้ว",
+      "zh": "打开“旅行”。从这里可以去任何已解锁的地图。",
+      "ja": "移動画面を開きます。ここから解放済みのマップへ行けます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:MOVEMAP"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c10_s2",
+     "anchor": "",
+     "text": {
+      "es": "Arriba estan los mapas a los que ya podes ir.",
+      "en": "The ones at the top are where you can already go.",
+      "pt": "Em cima estao os mapas aos quais voce ja pode ir.",
+      "vi": "Những cái ở trên là nơi bạn đã đi được rồi.",
+      "th": "พวกที่อยู่ข้างบนคือที่ที่ไปได้แล้ว",
+      "zh": "上面那些是你已经能去的。",
+      "ja": "上に並んでいるのは、すでに行ける場所です。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 4000
+    },
+    {
+     "id": "c10_s3",
+     "anchor": "",
+     "text": {
+      "es": "Los de abajo piden mas nivel o mas zen. Toca uno y te dice cuanto te falta.",
+      "en": "The ones below need more level or more zen. Tap one and it tells you what is missing.",
+      "pt": "Os de baixo pedem mais nivel ou mais zen. Toque num e ele diz o que falta.",
+      "vi": "Những cái bên dưới cần thêm cấp độ hoặc thêm zen. Chạm vào là nó nói cho bạn còn thiếu gì.",
+      "th": "พวกข้างล่างต้องการเลเวลหรือเซนเพิ่ม แตะดูแล้วมันจะบอกว่าขาดอะไร",
+      "zh": "下面那些还差等级或金币。点一下它会告诉你缺什么。",
+      "ja": "下のものはレベルかゼンが足りません。タップすると何が足りないか教えてくれます。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 6000
+    },
+    {
+     "id": "c10_s4",
+     "anchor": "",
+     "text": {
+      "es": "Marca con la estrella los que uses siempre: quedan primeros en la lista.",
+      "en": "Star the ones you always use: they stay at the top of the list.",
+      "pt": "Marque com a estrela os que voce sempre usa: ficam no topo da lista.",
+      "vi": "Đánh dấu sao cho những nơi bạn hay đi: chúng sẽ nằm trên đầu danh sách.",
+      "th": "ติดดาวให้ที่ที่ไปบ่อย มันจะอยู่บนสุดของรายการ",
+      "zh": "常去的加个星：它们会排在列表最上面。",
+      "ja": "よく使う場所に星をつけると、リストの先頭に並びます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c10_s5",
+     "anchor": "",
+     "text": {
+      "es": "Regla simple: busca monstruos de tu nivel o un poco arriba. Si te matan seguido, baja de mapa.",
+      "en": "Simple rule: find monsters near your level or slightly above. Dying a lot means drop a map.",
+      "pt": "Regra simples: procure monstros do seu nivel ou pouco acima. Se morre muito, baixe de mapa.",
+      "vi": "Quy tắc đơn giản: tìm quái ngang cấp hoặc cao hơn chút. Chết nhiều thì hạ một bản đồ.",
+      "th": "กฎง่ายๆ: หามอนสเตอร์เลเวลใกล้ๆ หรือสูงกว่านิดหน่อย ถ้าตายบ่อยก็ถอยลงมาแผนที่หนึ่งขั้น",
+      "zh": "简单规则：找和你等级相当或略高的怪。老是死就换低一档的地图。",
+      "ja": "簡単な目安: 同じか少し上のレベルの魔物を探すこと。よく死ぬならマップを1段下げましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c11",
+   "tramo": 3,
+   "title": {
+    "es": "MU Helper",
+    "en": "MU Helper",
+    "pt": "MU Helper",
+    "vi": "MU Helper",
+    "th": "MU Helper",
+    "zh": "MU 助手",
+    "ja": "MUヘルパー"
+   },
+   "steps": [
+    {
+     "id": "c11_s1",
+     "anchor": "",
+     "text": {
+      "es": "El MU Helper pelea, levanta cosas y toma pociones por vos. Te dejo los botones en la pantalla.",
+      "en": "MU Helper fights, picks things up and drinks potions for you. I'll put the buttons on screen.",
+      "pt": "O MU Helper luta, pega coisas e toma pocoes por voce. Vou deixar os botoes na tela.",
+      "vi": "MU Helper đánh, nhặt đồ và uống thuốc thay bạn. Tôi sẽ đặt các nút lên màn hình.",
+      "th": "MU Helper สู้ เก็บของ และกินยาแทนคุณ เดี๋ยวจะเอาปุ่มขึ้นจอให้",
+      "zh": "MU 助手会替你打怪、捡东西、喝药。我把按钮放到屏幕上。",
+      "ja": "MUヘルパーが戦い、拾い、ポーションを飲んでくれます。ボタンを画面に出しておきます。"
+     },
+     "gate": {
+      "type": "manual"
+     },
+     "action": "add_helper_launchers"
+    },
+    {
+     "id": "c11_s2",
+     "anchor": "launcher:MuHelper",
+     "text": {
+      "es": "Listo. Este abre su configuracion; el otro lo prende y lo apaga.",
+      "en": "There. This one opens its settings; the other starts and stops it.",
+      "pt": "Pronto. Este abre a configuracao; o outro liga e desliga.",
+      "vi": "Đó. Cái này mở cài đặt của nó; cái kia bật và tắt.",
+      "th": "นั่นไง อันนี้เปิดการตั้งค่าของมัน อีกอันเปิดกับปิด",
+      "zh": "好了。这个开它的设置；另一个是启动和停止。",
+      "ja": "これです。こちらが設定を開き、もう一方が開始と停止です。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 5000
+    },
+    {
+     "id": "c11_s3",
+     "anchor": "launcher:MuHelper",
+     "text": {
+      "es": "Abrilo. Vamos a dejarlo listo antes de encenderlo.",
+      "en": "Open it. Let's set it up before switching it on.",
+      "pt": "Abra. Vamos deixar tudo pronto antes de ligar.",
+      "vi": "Mở ra đi. Cấu hình xong rồi hãy bật.",
+      "th": "เปิดดูสิ ตั้งค่าให้เรียบร้อยก่อนค่อยเปิดใช้",
+      "zh": "打开它。先设置好再开。",
+      "ja": "開いてみましょう。オンにする前に設定しておきます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:MuHelper"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c11_s4",
+     "anchor": "",
+     "text": {
+      "es": "En Ataque: Distancia es que tan lejos persigue, y elegis con que habilidad pega.",
+      "en": "Under Attack: Distance is how far it chases, and you pick the skill it hits with.",
+      "pt": "Em Ataque: Distancia e o quanto ele persegue, e voce escolhe com que habilidade bate.",
+      "vi": "Mục Tấn công: Khoảng cách là nó đuổi xa tới đâu, và bạn chọn kỹ năng nó dùng để đánh.",
+      "th": "หมวดโจมตี: ระยะทางคือมันไล่ไกลแค่ไหน และคุณเลือกสกิลที่มันจะใช้ตี",
+      "zh": "“攻击”里：距离决定它追多远，技能则由你指定。",
+      "ja": "攻撃の項目: 距離はどこまで追うか、そして殴るのに使うスキルを選びます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c11_s5",
+     "anchor": "",
+     "text": {
+      "es": "En Recoleccion elegis QUE levanta: solo joyas, solo excellent, solo zen, o tu lista.",
+      "en": "Under Pick-up you choose WHAT it collects: only jewels, only excellent, only zen, or your list.",
+      "pt": "Em Coleta voce escolhe O QUE ele pega: so joias, so excellent, so zen, ou sua lista.",
+      "vi": "Mục Nhặt đồ bạn chọn NHẶT GÌ: chỉ ngọc, chỉ excellent, chỉ zen, hoặc danh sách của bạn.",
+      "th": "หมวดเก็บของ คุณเลือกว่าจะเก็บอะไร: เฉพาะอัญมณี เฉพาะเอ็กเซลเลนต์ เฉพาะเซน หรือรายการของคุณ",
+      "zh": "“拾取”里你决定捡什么：只捡宝石、只捡卓越、只捡金币，或者你的清单。",
+      "ja": "取得の項目で何を拾うかを選びます: 宝石だけ、エクセレントだけ、ゼンだけ、または自分のリスト。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c11_s6",
+     "anchor": "",
+     "text": {
+      "es": "En Pociones pone a que porcentaje de vida se cura solo. 50% esta bien para empezar.",
+      "en": "Under Potions set the health percentage that makes it heal. 50% is a fine start.",
+      "pt": "Em Pocoes defina em que porcentagem de vida ele se cura. 50% ja serve para comecar.",
+      "vi": "Mục Bình thuốc đặt mức máu để nó hồi. 50% là mức khởi đầu tốt.",
+      "th": "หมวดยา ตั้งเปอร์เซ็นต์เลือดที่จะให้มันฟื้นฟู เริ่มที่ 50% ก็กำลังดี",
+      "zh": "“药水”里设定血量到多少就回血。从 50% 开始就不错。",
+      "ja": "ポーションの項目で、体力が何%で回復するかを決めます。まずは50%が無難です。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c11_s7",
+     "anchor": "",
+     "text": {
+      "es": "Encendelo y mira un minuto antes de dejarlo solo: es la forma de ver si quedo bien puesto.",
+      "en": "Switch it on and watch for a minute before leaving it alone.",
+      "pt": "Ligue e olhe um minuto antes de deixar sozinho.",
+      "vi": "Bật lên và nhìn nó chạy một phút trước khi để nó một mình.",
+      "th": "เปิดแล้วดูมันสักนาทีก่อนจะปล่อยไว้คนเดียว",
+      "zh": "打开后先看它跑一分钟，再放着不管。",
+      "ja": "オンにしたら、任せきりにする前に1分ほど様子を見ましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c12",
+   "tramo": 3,
+   "title": {
+    "es": "Filtro del piso",
+    "en": "Ground filter",
+    "pt": "Filtro do chao",
+    "vi": "Bộ lọc mặt đất",
+    "th": "ตัวกรองพื้น",
+    "zh": "地面筛选",
+    "ja": "地面フィルター"
+   },
+   "steps": [
+    {
+     "id": "c12_s1",
+     "anchor": "",
+     "text": {
+      "es": "El piso lleno de cosas que no te sirven? Se pueden esconder.",
+      "en": "Ground full of stuff you don't need? It can be hidden.",
+      "pt": "Chao cheio de coisa que nao serve? Da para esconder.",
+      "vi": "Mặt đất đầy thứ bạn không cần? Có thể giấu chúng đi.",
+      "th": "พื้นเต็มไปด้วยของที่ไม่ต้องการ? ซ่อนมันได้",
+      "zh": "地上全是你用不到的？可以藏起来。",
+      "ja": "地面がいらない物だらけ？隠せます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c12_s2",
+     "anchor": "bar:cog",
+     "text": {
+      "es": "Abri Opciones y anda a la pestana Items. Todo esto vive ahi.",
+      "en": "Open Settings and go to the Items tab. All of this lives there.",
+      "pt": "Abra Opcoes e va na aba Itens. Tudo isso mora ali.",
+      "vi": "Mở Cài đặt rồi vào thẻ Vật phẩm. Mọi thứ này nằm ở đó.",
+      "th": "เปิดตั้งค่าแล้วไปแท็บไอเทม ทั้งหมดนี้อยู่ตรงนั้น",
+      "zh": "打开设置，进“物品”页。这些都在那儿。",
+      "ja": "設定を開き、アイテムのタブへ。すべてそこにあります。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "panel_opened:OPTION"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c12_s3",
+     "anchor": "",
+     "text": {
+      "es": "Un conjunto es una lista de cosas que no queres ver. Crea uno.",
+      "en": "A set is a list of things you don't want to see. Create one.",
+      "pt": "Um conjunto e uma lista do que voce nao quer ver. Crie um.",
+      "vi": "Một bộ là danh sách những thứ bạn không muốn thấy. Tạo một bộ đi.",
+      "th": "ชุดหนึ่งคือรายการของที่คุณไม่อยากเห็น สร้างสักชุดสิ",
+      "zh": "一组就是你不想看到的东西的清单。建一组吧。",
+      "ja": "セットとは、見たくない物のリストです。1つ作ってみましょう。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "filter_set_added"
+     },
+     "timeout_ms": 30000
+    },
+    {
+     "id": "c12_s4",
+     "anchor": "",
+     "text": {
+      "es": "Escribi 'Zen' y agregalo. Ya no vas a ver los carteles de zen en el piso.",
+      "en": "Type 'Zen' and add it. You won't see zen labels on the ground any more.",
+      "pt": "Escreva 'Zen' e adicione. Voce nao vai mais ver as etiquetas de zen no chao.",
+      "vi": "Gõ 'Zen' rồi thêm vào. Bạn sẽ không thấy nhãn zen dưới đất nữa.",
+      "th": "พิมพ์ 'Zen' แล้วเพิ่มเข้าไป จะไม่เห็นป้ายเซนบนพื้นอีก",
+      "zh": "输入“Zen”并加进去。地上就不会再显示金币标签了。",
+      "ja": "「Zen」と入力して追加します。地面にゼンのラベルが出なくなります。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "filter_entry_added"
+     },
+     "timeout_ms": 40000
+    },
+    {
+     "id": "c12_s5",
+     "anchor": "",
+     "text": {
+      "es": "Podes atar el conjunto a un mapa: se prende solo al entrar y se apaga al salir.",
+      "en": "You can tie the set to a map: it turns itself on as you enter and off as you leave.",
+      "pt": "Da para ligar o conjunto a um mapa: liga sozinho ao entrar e desliga ao sair.",
+      "vi": "Bạn có thể gắn bộ này với một bản đồ: nó tự bật khi bạn vào và tự tắt khi bạn ra.",
+      "th": "ผูกชุดนี้กับแผนที่ได้: เข้ามาก็เปิดเอง ออกไปก็ปิดเอง",
+      "zh": "你可以把这组绑到某张地图：进去自动开，出来自动关。",
+      "ja": "このセットはマップに紐づけられます: 入ると自動でオン、出ると自動でオフ。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c12_s6",
+     "anchor": "ID_ITEMFILTER",
+     "text": {
+      "es": "Este chip te dice cuantas cosas te tapa el filtro. Tocalo para apagarlo.\nEl objeto sigue ahi: solo dejas de verlo.",
+      "en": "This chip counts what the filter is hiding. Tap it to switch it off.\nThe item is still there: you just stop seeing it.",
+      "pt": "Este chip conta o que o filtro esta escondendo. Toque para desligar.\nO item continua la: voce so deixa de ver.",
+      "vi": "Nhãn này đếm số thứ bộ lọc đang giấu. Chạm vào để tắt.\\nVật phẩm vẫn ở đó: chỉ là bạn thôi không thấy nó nữa.",
+      "th": "ป้ายนี้นับของที่ตัวกรองซ่อนอยู่ แตะเพื่อปิด\\nของยังอยู่ตรงนั้น แค่คุณไม่เห็นมันแล้วเท่านั้น",
+      "zh": "这个标记数的是筛选藏起来的东西。点它就关掉。\\n东西还在那儿：只是你看不到而已。",
+      "ja": "このチップはフィルターが隠している数です。タップでオフにできます。\\nアイテムはそこにあります。見えなくなるだけです。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "tramo": 3,
+   "title": {
+    "es": "Acomoda tu pantalla",
+    "en": "Arrange your screen",
+    "pt": "Arrume sua tela",
+    "vi": "Sắp xếp màn hình",
+    "th": "จัดหน้าจอ",
+    "zh": "布置你的屏幕",
+    "ja": "画面を整える"
+   },
+   "steps": [
+    {
+     "id": "c13_s1",
+     "anchor": "lock",
+     "text": {
+      "es": "Con el candado moves todo el HUD a tu gusto.",
+      "en": "With the lock you move the whole HUD to your taste.",
+      "pt": "Com o cadeado voce move o HUD inteiro do seu jeito.",
+      "vi": "Với ổ khóa bạn di chuyển toàn bộ HUD theo ý mình.",
+      "th": "ด้วยแม่กุญแจ คุณย้าย HUD ทั้งหมดได้ตามใจ",
+      "zh": "用那把锁，你可以随心所欲地挪整个 HUD。",
+      "ja": "錠前を使えば、HUD全体を好きなように動かせます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "hudedit_on"
+     },
+     "timeout_ms": 25000,
+     "action": "mark_used_hudedit"
+    },
+    {
+     "id": "c13_s2",
+     "anchor": "",
+     "text": {
+      "es": "Arrastra lo que quieras a donde te quede comodo.",
+      "en": "Drag whatever you like wherever it feels right.",
+      "pt": "Arraste o que quiser para onde ficar comodo.",
+      "vi": "Kéo bất cứ thứ gì bạn muốn tới chỗ bạn thấy thuận tay.",
+      "th": "ลากอะไรก็ได้ไปไว้ตรงที่รู้สึกถนัด",
+      "zh": "想拖什么就拖到你觉得顺手的地方。",
+      "ja": "好きな要素を、しっくりくる場所へドラッグしてください。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c13_s3",
+     "anchor": "",
+     "text": {
+      "es": "Con los botones - y + le cambias el tamano.",
+      "en": "The - and + buttons change its size.",
+      "pt": "Com os botoes - e + voce muda o tamanho.",
+      "vi": "Hai nút - và + đổi kích thước của nó.",
+      "th": "ปุ่ม - กับ + ใช้เปลี่ยนขนาดของมัน",
+      "zh": "- 和 + 两个按钮改它的大小。",
+      "ja": "- と + のボタンで大きさを変えられます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c13_s4",
+     "anchor": "",
+     "text": {
+      "es": "Con Agregar sumas botones nuevos: paneles, el Helper, o un viaje directo a tu mapa favorito.",
+      "en": "With Add you get new buttons: panels, the Helper, or a direct warp to your favourite map.",
+      "pt": "Com Adicionar voce ganha botoes novos: paineis, o Helper, ou viagem direta ao mapa favorito.",
+      "vi": "Với nút Thêm bạn có nút mới: bảng chức năng, Helper, hoặc lệnh dịch chuyển thẳng tới bản đồ ưa thích.",
+      "th": "ด้วยปุ่มเพิ่ม จะได้ปุ่มใหม่: หน้าต่างต่างๆ, Helper หรือวาร์ปตรงไปแผนที่โปรด",
+      "zh": "用“添加”能加新按钮：各种面板、助手，或者直达你收藏的地图。",
+      "ja": "「追加」で新しいボタンを作れます: 各種パネル、ヘルパー、お気に入りマップへの直行ワープ。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c13_s5",
+     "anchor": "lock",
+     "text": {
+      "es": "Cuando termines, toca el candado de nuevo para guardar.",
+      "en": "When you're done, tap the lock again to save.",
+      "pt": "Quando terminar, toque no cadeado de novo para salvar.",
+      "vi": "Xong rồi thì chạm lại vào ổ khóa để lưu.",
+      "th": "เสร็จแล้วแตะแม่กุญแจอีกทีเพื่อบันทึก",
+      "zh": "弄好了再点一次锁就保存。",
+      "ja": "終わったらもう一度錠前をタップすると保存されます。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "hudedit_off"
+     },
+     "timeout_ms": 30000
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "tramo": 3,
+   "title": {
+    "es": "Gente",
+    "en": "People",
+    "pt": "Pessoas",
+    "vi": "Người khác",
+    "th": "ผู้คน",
+    "zh": "和别人打交道",
+    "ja": "人とのかかわり"
+   },
+   "steps": [
+    {
+     "id": "c14_s1",
+     "anchor": "",
+     "text": {
+      "es": "Manten apretado a otro jugador para ver que podes hacer con el.",
+      "en": "Hold another player to see what you can do with them.",
+      "pt": "Segure outro jogador para ver o que da para fazer com ele.",
+      "vi": "Giữ vào người chơi khác để xem bạn làm được gì với họ.",
+      "th": "กดค้างที่ผู้เล่นคนอื่นเพื่อดูว่าทำอะไรกับเขาได้บ้าง",
+      "zh": "长按其他玩家，看看能对他做什么。",
+      "ja": "他のプレイヤーを長押しすると、何ができるか分かります。"
+     },
+     "gate": {
+      "type": "event",
+      "ev": "player_menu_opened"
+     },
+     "timeout_ms": 25000
+    },
+    {
+     "id": "c14_s2",
+     "anchor": "",
+     "text": {
+      "es": "Invitar al grupo, comerciar, susurrar, o bloquear si molesta.",
+      "en": "Invite to party, trade, whisper, or block if they bother you.",
+      "pt": "Convidar para o grupo, negociar, sussurrar, ou bloquear se incomodar.",
+      "vi": "Mời vào tổ đội, giao dịch, nhắn riêng, hoặc chặn nếu họ làm phiền.",
+      "th": "ชวนเข้าปาร์ตี้ แลกเปลี่ยน กระซิบ หรือบล็อกถ้าเขากวน",
+      "zh": "邀请组队、交易、私聊，烦人就屏蔽。",
+      "ja": "パーティに誘う、取引する、ささやく、迷惑ならブロックする。"
+     },
+     "gate": {
+      "type": "time"
+     },
+     "timeout_ms": 5000
+    },
+    {
+     "id": "c14_s3",
+     "anchor": "ID_CHATBTN",
+     "text": {
+      "es": "Este es el chat. Toca el nombre de alguien para responderle en privado.",
+      "en": "This is the chat. Tap someone's name to answer privately.",
+      "pt": "Este e o chat. Toque no nome de alguem para responder em particular.",
+      "vi": "Đây là khung chat. Chạm vào tên ai đó để trả lời riêng.",
+      "th": "นี่คือแชท แตะที่ชื่อคนไหนเพื่อตอบแบบส่วนตัว",
+      "zh": "这是聊天框。点某人的名字就能私下回他。",
+      "ja": "これがチャットです。名前をタップすると個別に返信できます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c14_s4",
+     "anchor": "",
+     "text": {
+      "es": "En grupo la experiencia se reparte, pero se mata mucho mas rapido.",
+      "en": "In a party experience is shared, but things die much faster.",
+      "pt": "Em grupo a experiencia e dividida, mas se mata muito mais rapido.",
+      "vi": "Trong tổ đội kinh nghiệm được chia, nhưng mọi thứ chết nhanh hơn hẳn.",
+      "th": "ในปาร์ตี้ค่าประสบการณ์ถูกแบ่ง แต่ทุกอย่างตายเร็วขึ้นมาก",
+      "zh": "组队时经验要分，但东西死得快多了。",
+      "ja": "パーティでは経験値を分け合いますが、敵の倒れる速さが段違いです。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c14_s5",
+     "anchor": "",
+     "text": {
+      "es": "Un gremio te da gente para los eventos grandes. Busca uno cuando te sientas comodo.",
+      "en": "A guild gives you people for the big events. Find one when you feel ready.",
+      "pt": "Uma guilda te da gente para os eventos grandes. Procure uma quando se sentir a vontade.",
+      "vi": "Bang hội cho bạn người để đi các sự kiện lớn. Thấy sẵn sàng thì tìm một bang.",
+      "th": "กิลด์ให้คนไปลุยอีเวนต์ใหญ่ๆ ด้วยกัน พร้อมเมื่อไหร่ก็ไปหากิลด์สักที่",
+      "zh": "公会能给你一起打大型活动的人。等你觉得准备好了就去找一个。",
+      "ja": "ギルドに入れば大型イベントを一緒に回る仲間ができます。準備ができたら探してみましょう。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c15",
+   "tramo": 3,
+   "title": {
+    "es": "Que viene despues",
+    "en": "What comes next",
+    "pt": "O que vem depois",
+    "vi": "Tiếp theo là gì",
+    "th": "ต่อไปคืออะไร",
+    "zh": "接下来是什么",
+    "ja": "この先にあるもの"
+   },
+   "steps": [
+    {
+     "id": "c15_s1",
+     "anchor": "",
+     "text": {
+      "es": "Las joyas mejoran tu equipo en la Maquina del Caos, y ahi tambien se hacen las alas.",
+      "en": "Jewels upgrade your gear at the Chaos Machine, and that is where wings are made.",
+      "pt": "As joias melhoram seu equipamento na Maquina do Caos, e e la que se fazem as asas.",
+      "vi": "Ngọc nâng cấp trang bị ở Chaos Machine, và đó cũng là nơi làm ra cánh.",
+      "th": "อัญมณีใช้อัปเกรดของที่เครื่องเคออส และที่นั่นแหละที่สร้างปีก",
+      "zh": "宝石在混沌机器上强化装备，翅膀也是在那儿做的。",
+      "ja": "宝石はカオスマシンで装備を強化します。翼もそこで作ります。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c15_s2",
+     "anchor": "",
+     "text": {
+      "es": "Blood Castle, Devil Square y Chaos Castle tienen horario fijo y son lo mas rapido para subir.",
+      "en": "Blood Castle, Devil Square and Chaos Castle run on a schedule and are the fastest way to level.",
+      "pt": "Blood Castle, Devil Square e Chaos Castle tem horario fixo e sao o jeito mais rapido de subir.",
+      "vi": "Blood Castle, Devil Square và Chaos Castle chạy theo lịch và là cách lên cấp nhanh nhất.",
+      "th": "บลัดคาสเซิล เดวิลสแควร์ และเคออสคาสเซิล มีตารางเวลา และเป็นทางขึ้นเลเวลที่เร็วที่สุด",
+      "zh": "血色城堡、恶魔广场和混沌城堡按时间表开，是升级最快的路子。",
+      "ja": "ブラッドキャッスル、デビルスクエア、カオスキャッスルは時間制で、レベル上げの最短ルートです。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c15_s3",
+     "anchor": "",
+     "text": {
+      "es": "Al llegar al nivel maximo podes resetear: volves al 1 pero quedas mas fuerte.",
+      "en": "At max level you can reset: back to 1, but stronger.",
+      "pt": "No nivel maximo voce pode resetar: volta ao 1, mas fica mais forte.",
+      "vi": "Ở cấp tối đa bạn có thể reset: về lại cấp 1, nhưng mạnh hơn.",
+      "th": "พอถึงเลเวลสูงสุด รีเซ็ตได้: กลับไปเลเวล 1 แต่แข็งแกร่งกว่าเดิม",
+      "zh": "满级后可以重置：回到 1 级，但更强。",
+      "ja": "最大レベルに達するとリセットできます: レベル1に戻りますが、より強くなります。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c15_s4",
+     "anchor": "",
+     "text": {
+      "es": "Mas adelante se abre el Master Level, con un arbol de habilidades nuevo.",
+      "en": "Later on Master Level opens, with a whole new skill tree.",
+      "pt": "Mais adiante abre o Master Level, com uma arvore de habilidades nova.",
+      "vi": "Sau này Master Level mở ra, với cả một cây kỹ năng mới.",
+      "th": "ทีหลังมาสเตอร์เลเวลจะเปิด พร้อมผังสกิลใหม่ทั้งผัง",
+      "zh": "再往后大师等级会开放，还带一整棵新的技能树。",
+      "ja": "さらに進むとマスターレベルが開き、まったく新しいスキルツリーが使えます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c16",
+   "tramo": 3,
+   "title": {
+    "es": "Listo",
+    "en": "Done",
+    "pt": "Pronto",
+    "vi": "Xong rồi",
+    "th": "จบแล้ว",
+    "zh": "完成",
+    "ja": "これで終わり"
+   },
+   "steps": [
+    {
+     "id": "c16_s1",
+     "anchor": "bar:menu",
+     "text": {
+      "es": "Cualquier cosa que no te acuerdes esta en Ayuda. Tiene buscador: escribi una palabra y te la explica.",
+      "en": "Anything you forget is in Help. It has a search box: type a word and it explains it.",
+      "pt": "Qualquer coisa que esquecer esta na Ajuda. Tem busca: escreva uma palavra e ela explica.",
+      "vi": "Quên gì thì có ở mục Trợ giúp. Nó có ô tìm kiếm: gõ một từ là nó giải thích cho bạn.",
+      "th": "ลืมอะไรก็มีอยู่ในหน้าช่วยเหลือ มันมีช่องค้นหา พิมพ์คำเดียวแล้วมันอธิบายให้",
+      "zh": "忘了什么去帮助里找。它有搜索框：输入一个词它就给你讲。",
+      "ja": "忘れたことはヘルプにあります。検索欄に単語を打てば説明してくれます。"
+     },
+     "gate": {
+      "type": "manual"
+     }
+    },
+    {
+     "id": "c16_s2",
+     "anchor": "",
+     "text": {
+      "es": "Eso es todo. Suerte alla afuera.",
+      "en": "That's everything. Good luck out there.",
+      "pt": "E isso. Boa sorte por ai.",
+      "vi": "Vậy là hết. Chúc bạn may mắn.",
+      "th": "เท่านี้แหละ ขอให้โชคดี",
+      "zh": "就这些了。祝你好运。",
+      "ja": "以上です。よい冒険を。"
+     },
+     "gate": {
+      "type": "manual"
+     },
+     "skippable": false
+    }
+   ]
+  }
+ ]
 }
