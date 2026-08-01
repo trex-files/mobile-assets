@@ -3,6 +3,35 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.18",
+      "date": "2026-08-01",
+      "title": "Release 1.0.18",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "El juego se puede jugar en tailandes, chino simplificado y japones. Se suman a los cuatro que ya estaban (ingles, español, portugues y vietnamita): son siete idiomas completos, con su bandera en el selector."
+        },
+        {
+          "category": "contenido",
+          "text": "Se terminaron los diccionarios que estaban a medias. El tailandes, el chino y el japones pasaron del 15% al 98%, y el vietnamita del 83% al 100%: ya no vas a encontrarte pantallas sueltas en ingles en el medio del juego."
+        },
+        {
+          "category": "contenido",
+          "text": "Los consejos, el tutorial de arranque y los 66 articulos de la Ayuda quedaron traducidos a los siete idiomas. Antes existian solo en tres, asi que la mayoria de los jugadores los leia en ingles."
+        },
+        {
+          "category": "contenido",
+          "text": "Se corrigieron 11 textos vietnamitas que estaban mal de origen: uno se cortaba a la mitad y se comia el contador de segundos, y otro decia \"aumenta 50%\" donde en realidad reduce 5%."
+        },
+        {
+          "category": "correccion",
+          "text": "El tailandes ya no se ve como cuadraditos: faltaba la tipografia que lo dibuja."
+        }
+      ],
+      "download_bytes": 1087286,
+      "files_changed": 25
+    },
+    {
       "version": "1.0.17",
       "date": "2026-07-30",
       "title": "Release 1.0.17",
