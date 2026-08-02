@@ -3,6 +3,195 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.19",
+      "date": "2026-08-02",
+      "title": "Release 1.0.19",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Ahora se puede ESCRIBIR en los siete idiomas. El teclado del juego suma tailandes, chino y japones, con teclado propio para tailandes y Telex para vietnamita. Los idiomas que no separan las palabras con espacios ya cortan el renglon donde corresponde, en vez de irse de la pantalla."
+        },
+        {
+          "category": "nuevo",
+          "text": "Al tocar una habilidad apagada, el juego te dice POR QUE: si te falta energia te muestra cuanta necesitas y cuanta tenes, y si es del Asedio al Castillo te lo aclara. Antes parecian normales, las tocabas y no pasaba nada."
+        },
+        {
+          "category": "nuevo",
+          "text": "Se puede mostrar un item en el chat desde el celular, como en la PC."
+        },
+        {
+          "category": "nuevo",
+          "text": "Se puede hablar mientras estas comerciando."
+        },
+        {
+          "category": "nuevo",
+          "text": "La lista de objetos del suelo ahora CAMINA hasta el item antes de pedirlo. Antes tocabas uno lejano y no pasaba nada."
+        },
+        {
+          "category": "nuevo",
+          "text": "Moverte a mano apaga el MU Helper, para que no pelee contra vos. Se puede desactivar en las opciones."
+        },
+        {
+          "category": "nuevo",
+          "text": "El MU Helper avisa cuando queda en pausa al minimizar el juego, en vez de dejarte creer que seguis farmeando."
+        },
+        {
+          "category": "correccion",
+          "text": "La mision de la 3ra evolucion vuelve a contar los monstruos. El contador se quedaba clavado en 0 por mas que mataras. El progreso se ve al volver a hablar con el NPC."
+        },
+        {
+          "category": "correccion",
+          "text": "La barra de experiencia se mueve. Antes se quedaba clavada en 98%."
+        },
+        {
+          "category": "correccion",
+          "text": "El mercado mostraba precio, categoria y vencimiento equivocados en el listado, y no habia forma de darse cuenta de que estaban mal."
+        },
+        {
+          "category": "correccion",
+          "text": "Grupo: la vida de los companeros no se actualizaba, y el aviso de \"fulano agarro X\" nombraba cualquier item y cualquier nivel, o directamente no decia quien."
+        },
+        {
+          "category": "correccion",
+          "text": "Gremio: los escudos salian con el nombre del clan anterior, y el panel aparecia sin nombres y con todos en \"desconectado\"."
+        },
+        {
+          "category": "correccion",
+          "text": "El arbol de maestria mostraba los puntos con numeros absurdos y podia cerrar el juego al entrar al mundo."
+        },
+        {
+          "category": "correccion",
+          "text": "Comercio: el boton de aceptar se tragaba el toque, y ahora se ve verde cuando el otro ya acepto."
+        },
+        {
+          "category": "correccion",
+          "text": "Death Stab volvio a tener animacion, y el casteo ya no se queda pegado a un monstruo."
+        },
+        {
+          "category": "correccion",
+          "text": "La velocidad de ataque quedo exactamente igual que en la PC."
+        },
+        {
+          "category": "correccion",
+          "text": "PvP: el objetivo dejaba de seguirte a los 4 tiles de distancia, y se le podia seguir pegando a un enemigo ya muerto."
+        },
+        {
+          "category": "correccion",
+          "text": "Los avisos del servidor llegaban vacios."
+        },
+        {
+          "category": "correccion",
+          "text": "Precios y cantidades de los NPC (reparar, mejorar, comprar) se mostraban en basura."
+        },
+        {
+          "category": "correccion",
+          "text": "Al unir joyas, el cuadro de confirmacion mostraba mal y podia cerrar el juego."
+        },
+        {
+          "category": "correccion",
+          "text": "Tienda personal: la grilla del vendedor no respondia al toque, y quedaba trabada despues de reloguear."
+        },
+        {
+          "category": "correccion",
+          "text": "Pantalla de seleccion de personaje: se arreglo la camara al volver y las barras de vida."
+        },
+        {
+          "category": "correccion",
+          "text": "Los bordes de la pantalla ya no responden al toque para caminar. Deslizar desde arriba o desde abajo para las notificaciones o para minimizar ya no hace que el personaje salga caminando."
+        },
+        {
+          "category": "correccion",
+          "text": "El martillo del herrero de Lorencia suena entero, sin zumbido."
+        },
+        {
+          "category": "correccion",
+          "text": "El sonido ambiente de Lost Tower y Devias ya no se corta ni se reinicia en medio de una pelea con varios monstruos."
+        },
+        {
+          "category": "correccion",
+          "text": "Las puertas de Devias dejaron de chirriar en bucle al pasar cerca."
+        },
+        {
+          "category": "correccion",
+          "text": "Noria: los haces de luz del campo se veian como aspas negras opacas sobre el terreno."
+        },
+        {
+          "category": "correccion",
+          "text": "Tarkan y Aida dejaron de parpadear."
+        },
+        {
+          "category": "correccion",
+          "text": "El juego se cerraba al arrancar, contando los espacios de personaje."
+        },
+        {
+          "category": "correccion",
+          "text": "El juego se cerraba al ser expulsado de un gremio."
+        },
+        {
+          "category": "correccion",
+          "text": "Algunos textos salian con pixeles sueltos del texto anterior encima."
+        },
+        {
+          "category": "correccion",
+          "text": "\"Agregar cuenta\" abria el login con un cuadro de dialogo que no correspondia; ahora va directo al login vacio."
+        },
+        {
+          "category": "interfaz",
+          "text": "El arbol de maestria se rehizo para el dedo: una rama por vez con pestañas, nodos mas de tres veces mas grandes, y el detalle en un panel al costado en vez de un cuadro que tapaba todo. Los requisitos ahora estan ESCRITOS (\"te falta tal habilidad 7/10\") en lugar de las flechas, que en la mayoria de los nodos no decian la verdad."
+        },
+        {
+          "category": "interfaz",
+          "text": "El arbol de maestria ahora muestra cuanta experiencia te falta para el proximo nivel de maestro. En el celular ese dato no se veia en ninguna parte: en la PC habia que dejar el mouse quieto sobre la barra, y en tactil no hay forma de hacer eso."
+        },
+        {
+          "category": "interfaz",
+          "text": "El inventario se rediseño: riel vertical de acciones, el dinero en columna y un panel mas grande. Goblin Points y WCoin quedaron debajo del zen. El inventario extendido se abre en el lugar del equipo, y las casillas ocupadas se distinguen de las vacias de un vistazo."
+        },
+        {
+          "category": "interfaz",
+          "text": "El chat suma selector de canal, barra de historial y destinatario, para no tener que reescribir a quien le hablas."
+        },
+        {
+          "category": "interfaz",
+          "text": "El MU Helper respeta los items y los filtros que elegiste."
+        },
+        {
+          "category": "interfaz",
+          "text": "La tienda VIP se abre desde el menu, y la seccion de sesion pasa a pestañas."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los avisos globales del servidor van pegados al borde superior."
+        },
+        {
+          "category": "interfaz",
+          "text": "El campo de escritura sigue al cursor, en vez de escribir a ciegas."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El juego arranca unos 7 segundos mas rapido."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Se liberaron 144 MB de memoria de video del mapa, y cada textura dejo de quedarse con una copia duplicada. En telefonos con poca memoria eso es la diferencia entre que el sistema cierre el juego de golpe o no."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Los tirones al cambiar de mapa: el juego dejo de quedarse sin responder mientras carga."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Se arreglo el cierre al minimizar en Xiaomi y Honor."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Cuando el juego se cierra solo, ahora deja un registro de por que. No arregla los cierres, pero es lo que nos permite encontrarlos."
+        }
+      ],
+      "download_bytes": 7099039,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.18",
       "date": "2026-08-01",
       "title": "Release 1.0.18",
