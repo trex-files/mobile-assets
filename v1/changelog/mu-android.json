@@ -3,6 +3,95 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.20",
+      "date": "2026-08-04",
+      "title": "Release 1.0.20",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Lista de jugadores cercanos para PvP. Con el PvP activo aparece un panel plegable con los jugadores que tenes alrededor, con el retrato de su clase. Tocas a uno y queda marcado como tu objetivo: el ataque le pega a ESE y no cambia solo de blanco."
+        },
+        {
+          "category": "nuevo",
+          "text": "El juego se reconecta solo cuando se cae la red. Antes se quedaba congelado y habia que cerrar y volver a entrar."
+        },
+        {
+          "category": "nuevo",
+          "text": "El selector de idioma ahora se puede abrir desde el celular. Estaba en las opciones pero por un camino que en tactil no se alcanzaba."
+        },
+        {
+          "category": "contenido",
+          "text": "La tienda del juego quedo sincronizada con el servidor. Aparecen las categorias y los productos nuevos —BATTLE, Pergaminos, Elixires, Mascotas, Tickets y Sellos, tanto en WCoin como en Goblin Points— y lo que muestra el cliente es lo que cobra el servidor. El catalogo que venia en el cliente era de otra generacion."
+        },
+        {
+          "category": "correccion",
+          "text": "Los avisos del servidor salian como una barra negra sin letras encima, tapando el mensaje. Pasaba en cualquier mapa, con cualquier texto largo."
+        },
+        {
+          "category": "correccion",
+          "text": "La invitacion de grupo dejaba el juego trabado: no se podia aceptar ni cancelar, y a partir de ahi ningun boton respondia al toque."
+        },
+        {
+          "category": "correccion",
+          "text": "Varias ventanas nacian fuera de la pantalla, abajo a la izquierda y cortadas. Afectaba al pedido de amistad y a otras cinco ventanas."
+        },
+        {
+          "category": "correccion",
+          "text": "Al usar dos dedos, arrastrar una ventana la mandaba al otro dedo. Ahora la ventana sigue al dedo que la agarro."
+        },
+        {
+          "category": "correccion",
+          "text": "El arbol de maestria: al deslizar hacia arriba saltaba de golpe al final de la lista."
+        },
+        {
+          "category": "correccion",
+          "text": "Despues de reconectar, la camara de la pantalla de personajes apuntaba a cualquier lado, y seguia mal aunque entraras con otra cuenta."
+        },
+        {
+          "category": "correccion",
+          "text": "Algunos items aparecian SIN NOMBRE en el inventario y en el suelo."
+        },
+        {
+          "category": "correccion",
+          "text": "El mercado no mostraba las opciones del arma: en lugar de la ficha con todo lo que trae el item salia una tira de siglas tipo \"exc opt16\". Ahora se ve la ficha completa, tanto al comprar como al publicar."
+        },
+        {
+          "category": "correccion",
+          "text": "En el chat, tocar un objeto publicado no abria su ficha cuando el mensaje ocupaba dos renglones — que es justo donde suele caer el nombre del item. Por eso a veces andaba y a veces no."
+        },
+        {
+          "category": "interfaz",
+          "text": "El aviso de AFK DESCONECTADO ahora es un cartel que se entiende y se cierra con Aceptar. Antes aparecia abajo, molestando, y no habia forma de sacarlo."
+        },
+        {
+          "category": "interfaz",
+          "text": "MU Helper: los selectores de skills de buff vuelven arriba de todo en su columna y ya no hay que scrollear para encontrarlos. AFK DESCONECTADO pasa a cerrar la columna de caza, debajo de volver a la posicion original."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los formularios de personaje y de reset se rehicieron para el dedo. Repartir puntos ya no depende de acertarle a una zona diminuta."
+        },
+        {
+          "category": "interfaz",
+          "text": "El cartel de reconexion sigue el diseño del resto del juego, con el titulo centrado y diciendo en que intento va."
+        },
+        {
+          "category": "interfaz",
+          "text": "Logo nuevo del juego, en el icono y en las pantallas de arranque."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El juego se quedaba clavado en 30 FPS y no habia forma de recuperarlo salvo reiniciar, ni siquiera poniendo los FPS en ilimitado. Pasaba despues de apagar y prender la pantalla, rotar el telefono o salir de pantalla dividida."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El mercado mandaba un pedido al servidor por cada cuadro dibujado mientras mirabas un item."
+        }
+      ],
+      "download_bytes": 6051711,
+      "files_changed": 4
+    },
+    {
       "version": "1.0.19",
       "date": "2026-08-02",
       "title": "Release 1.0.19",
