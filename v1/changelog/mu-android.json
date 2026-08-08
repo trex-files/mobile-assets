@@ -3,6 +3,87 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.21",
+      "date": "2026-08-08",
+      "title": "Release 1.0.21",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Las pociones y demas objetos apilables ya actualizan la cantidad al instante: antes habia que volver a entrar para ver el numero correcto."
+        },
+        {
+          "category": "correccion",
+          "text": "La montura personalizada de otros jugadores se ve como corresponde. Antes podia quedar el jugador flotando sin su montura."
+        },
+        {
+          "category": "correccion",
+          "text": "Se corrigieron cuatro causas distintas de los personajes \"fantasma\": la silueta transparente que quedaba al caminar, el clon de uno mismo al entrar al mundo, el fantasma que no se iba si salia de la pantalla, y los restos que quedaban al cambiar de mapa."
+        },
+        {
+          "category": "correccion",
+          "text": "La esfera de vida ya no queda clavada al subir de nivel o al poner puntos en Vitalidad con clases evolucionadas por debajo del nivel 400."
+        },
+        {
+          "category": "correccion",
+          "text": "La barra de experiencia ya no se queda en 100 por ciento a partir del nivel 223."
+        },
+        {
+          "category": "correccion",
+          "text": "La personalizacion del HUD deja de perderse en cada arranque. Los botones tampoco se corren de lugar cuando se agregan funciones nuevas."
+        },
+        {
+          "category": "correccion",
+          "text": "Dark Side y Upper Beast del Rage Fighter ya no pierden golpes cuando se mantiene presionado el boton."
+        },
+        {
+          "category": "correccion",
+          "text": "Varios formularios dejaban pasar el toque al mundo y el personaje caminaba o se teletransportaba solo. Corregido en el form de Eventos, bloqueo de objetos, ficha de otro jugador, auto-reset y panel de Resonancia."
+        },
+        {
+          "category": "correccion",
+          "text": "Los nombres de varios objetos aparecian en vietnamita, entre ellos el arco del chaos de elfa."
+        },
+        {
+          "category": "correccion",
+          "text": "El precio no se veia mientras se escribia al publicar un objeto en el mercado."
+        },
+        {
+          "category": "correccion",
+          "text": "El modelo 3D de la ficha de un objeto ya se ve tambien cuando la ficha es larga."
+        },
+        {
+          "category": "interfaz",
+          "text": "El mercado muestra la miniatura del objeto en cada fila y \"Mis publicaciones\" pasa a un boton visible en el pie de la pestana de vender."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los mejores puntos de experiencia del minimapa se distinguen del resto y se ven mas grandes."
+        },
+        {
+          "category": "interfaz",
+          "text": "El formulario de auto-reset pasa a dos columnas y admite cantidades mas altas."
+        },
+        {
+          "category": "interfaz",
+          "text": "El primer servidor pasa a llamarse REX - SA/LATAM."
+        },
+        {
+          "category": "balance",
+          "text": "En PvP el deslizamiento del dedo le gana al apuntado automatico: si redirigis el ataque, manda tu dedo."
+        },
+        {
+          "category": "balance",
+          "text": "La lista de jugadores cercanos deja de reordenarse debajo del dedo."
+        },
+        {
+          "category": "balance",
+          "text": "Un personaje nuevo arranca con Pocion automatica y Buff de grupo ya activados en el ayudante."
+        }
+      ],
+      "download_bytes": 8394318,
+      "files_changed": 52
+    },
+    {
       "version": "1.0.20",
       "date": "2026-08-04",
       "title": "Release 1.0.20",
