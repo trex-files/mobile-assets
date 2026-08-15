@@ -3,6 +3,31 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.23",
+      "date": "2026-08-15",
+      "title": "Release 1.0.23",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Los monstruos muestran su vida exacta sobre la barra, y los más fuertes traen una barra distinta según su categoría."
+        },
+        {
+          "category": "correccion",
+          "text": "Las barras de vida y de escudo de los otros jugadores se salían del marco: ahora marcan el valor real."
+        },
+        {
+          "category": "correccion",
+          "text": "Los avisos globales se ven en naranja, con el mismo tamaño que el resto del chat, en vez de aparecer como un mensaje común y más chico."
+        },
+        {
+          "category": "correccion",
+          "text": "Un aviso global ya no deja un globo de texto sobre la cabeza de quien lo escribió."
+        }
+      ],
+      "download_bytes": 5316290,
+      "files_changed": 2
+    },
+    {
       "version": "1.0.22",
       "date": "2026-08-14",
       "title": "Release 1.0.22",
