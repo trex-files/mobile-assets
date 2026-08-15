@@ -3,6 +3,103 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.22",
+      "date": "2026-08-14",
+      "title": "Release 1.0.22",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Modo ahorro: pantalla en negro con tu inventario, los objetos del piso y la barra de experiencia, para dejar el juego abierto gastando mucha menos batería. Se activa desde Otros ajustes del MU Helper."
+        },
+        {
+          "category": "nuevo",
+          "text": "La lista de objetos del piso tiene un filtro \"Solo importantes\" para que no se te llene la pantalla."
+        },
+        {
+          "category": "correccion",
+          "text": "El teclado del sistema volvió a funcionar: se podía abrir pero no escribía nada."
+        },
+        {
+          "category": "correccion",
+          "text": "La barra de experiencia ya no queda clavada en 0%."
+        },
+        {
+          "category": "correccion",
+          "text": "Tu personalización del HUD ahora se guarda en un archivo propio y las actualizaciones ya no la pisan."
+        },
+        {
+          "category": "correccion",
+          "text": "En el baúl podés arrastrar objetos para reacomodarlos adentro, sin sacarlos y volver a depositarlos."
+        },
+        {
+          "category": "correccion",
+          "text": "Al llevar el joystick de habilidades hasta el fondo, la habilidad sale igual, al máximo alcance."
+        },
+        {
+          "category": "correccion",
+          "text": "El auto-apuntado apunta a donde estás mirando y ya no engancha enemigos fuera de la dirección del dedo."
+        },
+        {
+          "category": "correccion",
+          "text": "En PvP se prioriza a los jugadores por sobre los monstruos, y al jugador que elegiste primero."
+        },
+        {
+          "category": "correccion",
+          "text": "La ficha de un objeto vuelve a mostrar el modelo en 3D: quedaba dibujado fuera de la pantalla."
+        },
+        {
+          "category": "correccion",
+          "text": "El asistente vuelve al punto de partida cuando se aleja demasiado, en vez de quedarse dando vueltas."
+        },
+        {
+          "category": "correccion",
+          "text": "El chat te avisa cuando escribís demasiado rápido, en vez de tragarse el mensaje en silencio."
+        },
+        {
+          "category": "correccion",
+          "text": "El chat ya no manda mensajes en blanco, conserva lo escrito si cerrás el teclado sin enviar, y se cierra al tocar fuera de la caja."
+        },
+        {
+          "category": "correccion",
+          "text": "Al susurrar ya se ve a quién le estás escribiendo."
+        },
+        {
+          "category": "correccion",
+          "text": "La Chaos Machine actualiza el inventario cuando la combinación falla o cerrás la ventana."
+        },
+        {
+          "category": "correccion",
+          "text": "Los dragones de invasión ya no se dibujan sobre la pantalla de selección de personaje."
+        },
+        {
+          "category": "correccion",
+          "text": "Las pociones de vida se usan de la más grande a la más chica, sin desperdiciar las curaciones."
+        },
+        {
+          "category": "interfaz",
+          "text": "El aviso de bonificación de experiencia en grupo muestra el porcentaje correcto."
+        },
+        {
+          "category": "interfaz",
+          "text": "El aviso de que alguien publicó un objeto en el mercado ahora llega al chat, en vez de taparte la pantalla."
+        },
+        {
+          "category": "interfaz",
+          "text": "El selector de canal del chat ya no queda tapado por el menú del juego."
+        },
+        {
+          "category": "interfaz",
+          "text": "El indicador PvE/PvP ya no se superpone con el macro de pociones."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los botones de Discord, web y región del inicio ya no salen apretados ni con el texto cortado."
+        }
+      ],
+      "download_bytes": 6087300,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.21",
       "date": "2026-08-08",
       "title": "Release 1.0.21",
