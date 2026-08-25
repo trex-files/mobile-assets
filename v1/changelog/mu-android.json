@@ -3,6 +3,79 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.24",
+      "date": "2026-08-25",
+      "title": "Release 1.0.24",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Sabio: un asistente en el juego que responde preguntas sobre MU. Se abre desde el boton AYUDA del menu."
+        },
+        {
+          "category": "nuevo",
+          "text": "El Sabio responde en tu idioma y trae 90 terminos de glosario y las 12 preguntas mas frecuentes."
+        },
+        {
+          "category": "nuevo",
+          "text": "Boton \"Ir a la wiki\" dentro del Sabio, que abre la wiki en el idioma de tu cliente."
+        },
+        {
+          "category": "nuevo",
+          "text": "Los items con tier ahora muestran su nivel en el tooltip como una linea \"Tier N\"."
+        },
+        {
+          "category": "contenido",
+          "text": "Se incorpora todo el contenido de la temporada 21: items custom, alas, capas, pets y efectos nuevos."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregido un cierre inesperado del juego al mirar el item \"Lucky Coin 3\"."
+        },
+        {
+          "category": "correccion",
+          "text": "El bonus de Jewel of Harmony ya se ve en la linea de daño del item (antes quedaba tapado por el daño base)."
+        },
+        {
+          "category": "correccion",
+          "text": "Los sets Ancient completos vuelven a brillar en AZUL. Legendary Zeus y Dark Phoenix Anubis brillaban en ambar."
+        },
+        {
+          "category": "correccion",
+          "text": "El nombre de un item tirado en el suelo ya no queda tapado por las ventanas abiertas."
+        },
+        {
+          "category": "correccion",
+          "text": "Los items ya no muestran el prefijo \"T1\"/\"T2\" pegado al nombre en el suelo ni en la ventana de explicacion."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregidos 4 errores en los textos de explicacion de items: daño duplicado en armaduras Ancient, un tipo de item sin descripcion, y 16 entradas en vietnamita sin texto."
+        },
+        {
+          "category": "correccion",
+          "text": "La tarjeta de servidor del inicio mostraba 8 rotulos vacios (nombre del servidor, estado, carga). Ahora tienen texto en los 7 idiomas."
+        },
+        {
+          "category": "correccion",
+          "text": "Los servidores que no estan en linea ya no aparecen en el listado, y el listado vuelve a poder scrollearse."
+        },
+        {
+          "category": "interfaz",
+          "text": "El control de baules \"< Storage (X/Y) >\" vuelve a verse siempre, con las flechas atenuadas cuando llegas al primero o al ultimo."
+        },
+        {
+          "category": "interfaz",
+          "text": "El chat del Sabio scrollea de verdad y ya no se desborda de su panel."
+        },
+        {
+          "category": "interfaz",
+          "text": "El campo de texto del Sabio se puede tocar en toda su altura (antes solo respondia en una franja de 12 px)."
+        }
+      ],
+      "download_bytes": 30443758,
+      "files_changed": 796
+    },
+    {
       "version": "1.0.23",
       "date": "2026-08-15",
       "title": "Release 1.0.23",
