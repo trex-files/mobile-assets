@@ -3,6 +3,23 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.25",
+      "date": "2026-08-25",
+      "title": "Release 1.0.25",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "El Sabio ya responde en el idioma de tu cliente. Antes contestaba siempre en español, sin importar el idioma elegido."
+        },
+        {
+          "category": "contenido",
+          "text": "Los 236 artículos de la guía del Sabio están disponibles en inglés."
+        }
+      ],
+      "download_bytes": 109105,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.24",
       "date": "2026-08-25",
       "title": "Release 1.0.24",
