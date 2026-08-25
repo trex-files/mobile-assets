@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.26",
+      "date": "2026-08-25",
+      "title": "Release 1.0.26",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "El Sabio ya responde en el idioma de tu cliente también cuando le preguntás por un término suelto (\"qué es zen\", \"qué es reset\"). Antes esas respuestas salían siempre en español."
+        },
+        {
+          "category": "correccion",
+          "text": "Dragon Slasher: se corrigió la demora entre golpes. El cliente estaba frenando la habilidad mucho más de lo que corresponde."
+        },
+        {
+          "category": "balance",
+          "text": "Fire Scream del Dark Lord ya no tiene un tope de velocidad de ataque. Antes la habilidad se recortaba a menos de la mitad de la velocidad real de tu personaje."
+        }
+      ],
+      "download_bytes": 5525567,
+      "files_changed": 6
+    },
+    {
       "version": "1.0.25",
       "date": "2026-08-25",
       "title": "Release 1.0.25",
