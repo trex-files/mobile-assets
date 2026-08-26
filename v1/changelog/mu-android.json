@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.29",
+      "date": "2026-08-26",
+      "title": "Release 1.0.29",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Las flechas y los virotes ahora ocupan un solo casillero del inventario."
+        }
+      ],
+      "download_bytes": 43850,
+      "files_changed": 4
+    },
+    {
       "version": "1.0.28",
       "date": "2026-08-26",
       "title": "Release 1.0.28",
