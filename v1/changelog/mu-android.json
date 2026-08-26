@@ -3,6 +3,39 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.33",
+      "date": "2026-08-26",
+      "title": "Release 1.0.33",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Las habilidades no hacían daño si tenías los efectos desactivados. Ya funcionan con cualquier nivel de gráficos."
+        },
+        {
+          "category": "correccion",
+          "text": "A veces se lanzaba una habilidad distinta a la seleccionada. Corregido."
+        },
+        {
+          "category": "correccion",
+          "text": "Al mover una mascota entre los dos espacios se veían dos mascotas. Corregido."
+        },
+        {
+          "category": "correccion",
+          "text": "El segundo espacio de mascota ahora se ve bien y en su lugar."
+        },
+        {
+          "category": "correccion",
+          "text": "El juego ya no se cierra si los datos no coinciden con la versión instalada."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Menor consumo de memoria al ver el equipo de otros jugadores."
+        }
+      ],
+      "download_bytes": 5369523,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.32",
       "date": "2026-08-26",
       "title": "Release 1.0.32",
