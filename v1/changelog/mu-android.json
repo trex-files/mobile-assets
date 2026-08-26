@@ -3,6 +3,47 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.31",
+      "date": "2026-08-26",
+      "title": "Release 1.0.31",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Con el inventario y los inventarios extendidos llenos, los objetos no llegaban y el inventario se veía completamente vacío. Ya se reciben todos."
+        },
+        {
+          "category": "correccion",
+          "text": "El juego podía quedarse congelado y había que cerrarlo a mano. Ahora se recupera solo."
+        },
+        {
+          "category": "correccion",
+          "text": "Se corrigió una pérdida de memoria que hacía que el juego se pusiera cada vez más lento y terminara cerrándose."
+        },
+        {
+          "category": "correccion",
+          "text": "En el inventario con el diseño EX700 solo se podía equipar una mascota; ya se pueden equipar las dos."
+        },
+        {
+          "category": "correccion",
+          "text": "Al no poder lanzar una habilidad, el mensaje decía siempre \"energía\" aunque faltara otra cosa. Ahora dice qué característica falta."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los nombres y las descripciones de los objetos se actualizaron en todos los idiomas."
+        },
+        {
+          "category": "interfaz",
+          "text": "El prefijo de tier de los objetos ahora se muestra con su color."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Se redujo el consumo de memoria de video en partidas largas."
+        }
+      ],
+      "download_bytes": 6149569,
+      "files_changed": 19
+    },
+    {
       "version": "1.0.29",
       "date": "2026-08-26",
       "title": "Release 1.0.29",
