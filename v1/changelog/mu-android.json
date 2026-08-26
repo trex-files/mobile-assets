@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.28",
+      "date": "2026-08-26",
+      "title": "Release 1.0.28",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Se agrega el arte de la medalla de Plata, que faltaba."
+        }
+      ],
+      "download_bytes": 14670,
+      "files_changed": 3
+    },
+    {
       "version": "1.0.27",
       "date": "2026-08-26",
       "title": "Release 1.0.27",
