@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.32",
+      "date": "2026-08-26",
+      "title": "Release 1.0.32",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Se corrigió un problema que impedía abrir el juego a quienes todavía no habían instalado la última versión."
+        }
+      ],
+      "download_bytes": 158505,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.31",
       "date": "2026-08-26",
       "title": "Release 1.0.31",
