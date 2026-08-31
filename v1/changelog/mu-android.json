@@ -3,6 +3,39 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.34",
+      "date": "2026-08-31",
+      "title": "Release 1.0.34",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "# 1.0.34"
+        },
+        {
+          "category": "nuevo",
+          "text": "Catálogos de texto en los 7 idiomas con las cadenas nuevas de esta versión:"
+        },
+        {
+          "category": "nuevo",
+          "text": "Registro de caza (panel de estadísticas de farmeo)."
+        },
+        {
+          "category": "nuevo",
+          "text": "Los cuatro modos de ataque y sus descripciones."
+        },
+        {
+          "category": "nuevo",
+          "text": "Aviso de \"sin objetivo\" en el modo Foco."
+        },
+        {
+          "category": "nuevo",
+          "text": "Sin cambios de datos de juego. `rex.main` es idéntico al publicado en 1.0.33."
+        }
+      ],
+      "download_bytes": 5953791,
+      "files_changed": 10
+    },
+    {
       "version": "1.0.33",
       "date": "2026-08-26",
       "title": "Release 1.0.33",
