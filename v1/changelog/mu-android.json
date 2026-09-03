@@ -3,6 +3,107 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.35",
+      "date": "2026-09-03",
+      "title": "Release 1.0.35",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Pantalla de Noticias dentro del juego (además de Discord/Web): lista de novedades del sitio y el detalle de cada artículo, sin salir de la app."
+        },
+        {
+          "category": "nuevo",
+          "text": "Contador de jugadores conectados en el HUD (\"ONLINES: X\")."
+        },
+        {
+          "category": "nuevo",
+          "text": "Diálogo de confirmación antes de ejecutar un Grand/Master Reset: antes se ejecutaba con un solo toque y sin poder cancelar."
+        },
+        {
+          "category": "nuevo",
+          "text": "Los servidores en fase BETA aparecen identificados en la lista de servidores."
+        },
+        {
+          "category": "nuevo",
+          "text": "Entrada a Castillo de Sangre, Plaza del Diablo y Castillo del Caos por cantidad de resets, además de por nivel."
+        },
+        {
+          "category": "interfaz",
+          "text": "Las esferas de HP/MP y los arcos de SD/AG del HUD ahora están animados; antes quedaban fijos."
+        },
+        {
+          "category": "interfaz",
+          "text": "El botón de Reset (nivel 400+) se movió junto al panel del mapa, del otro lado de la pantalla."
+        },
+        {
+          "category": "interfaz",
+          "text": "El aviso de reinicio de personaje pasa a llamarse \"Grand Reset\" en todo el cliente."
+        },
+        {
+          "category": "interfaz",
+          "text": "Las monedas de la tienda cambian de nombre: \"W Coin\" ahora es Rex Coin (RC), \"W Coin P\" es Grand Coin (GC), y \"Goblin Points\" es Adventure Coins (AC). Se ven así en la tienda, el inventario, la barra VIP y el cuadro de compra."
+        },
+        {
+          "category": "interfaz",
+          "text": "Se renombraron 4 objetos: \"GM Gift\" ahora es Accessory Box, \"Green Chaos Box\" es Mystic Box, \"Red Chaos Box\" es Royal Box, y \"Purple Chaos Box\" es Eternal Box."
+        },
+        {
+          "category": "interfaz",
+          "text": "Se quitó la opción de \"Estilo de HUD\" (PC/Clásico) de las opciones: el HUD estilo PC (con esferas) queda fijo."
+        },
+        {
+          "category": "interfaz",
+          "text": "La pantalla de carga al cambiar de personaje ya no se queda en negro mientras espera al servidor."
+        },
+        {
+          "category": "interfaz",
+          "text": "Con un solo servidor disponible, su tarjeta deja de estirarse a lo ancho de toda la pantalla."
+        },
+        {
+          "category": "correccion",
+          "text": "Un servidor en mantenimiento podía figurar como disponible en la lista o en la tarjeta del selector."
+        },
+        {
+          "category": "correccion",
+          "text": "El cliente podía intentar cambiar de servidor automáticamente hacia uno en mantenimiento."
+        },
+        {
+          "category": "correccion",
+          "text": "El aviso de \"se perdió la conexión\" podía repetirse en bucle y tapar el cartel de mantenimiento."
+        },
+        {
+          "category": "correccion",
+          "text": "Objetos de dos casillas de ancho podían dejar casillas del inventario ocupadas sin mostrar nada en ellas."
+        },
+        {
+          "category": "correccion",
+          "text": "Algunos avisos del juego (notificación en segundo plano, requisitos de mejora, panel de Plaza del Diablo) mostraban texto fijo sin traducir al idioma del jugador."
+        },
+        {
+          "category": "correccion",
+          "text": "La habilidad Dark Side podía quedar trabada unos 14 segundos si el juego no detectaba que se había soltado el dedo."
+        },
+        {
+          "category": "correccion",
+          "text": "Los objetos de nivel 9 y 10 con socket no se pintaban de color violeta en el suelo."
+        },
+        {
+          "category": "correccion",
+          "text": "El diálogo de confirmación de Grand Reset podía volver a abrirse una segunda vez al tocar \"Cancelar\" justo cuando aparecía."
+        },
+        {
+          "category": "correccion",
+          "text": "Volver de una pantalla bloqueada o en suspensión podía dejar letras chicas, recortadas o superpuestas hasta reiniciar la app."
+        },
+        {
+          "category": "correccion",
+          "text": "Un gesto sobre la pantalla de Noticias, o sobre los desplegables de cuenta y región, podía filtrarse hacia los campos de usuario y contraseña de abajo y abrir el teclado."
+        }
+      ],
+      "download_bytes": 5490946,
+      "files_changed": 7
+    },
+    {
       "version": "1.0.34",
       "date": "2026-08-31",
       "title": "Release 1.0.34",
