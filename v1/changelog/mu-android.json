@@ -3,6 +3,23 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.36",
+      "date": "2026-09-03",
+      "title": "Release 1.0.36",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Se completaron textos de interfaz que faltaban en los 7 idiomas y aparecían en blanco: la etiqueta de \"Novedades\" en la pantalla de inicio, el estado \"En mantenimiento\" de un servidor, la etiqueta \"BETA\", la notificación en segundo plano y el panel de Plaza del Diablo."
+        },
+        {
+          "category": "correccion",
+          "text": "Se corrigieron etiquetas de nivel vacías en la entrada por resets a Castillo de Sangre y Plaza del Diablo, en japonés, tailandés y chino."
+        }
+      ],
+      "download_bytes": 525334,
+      "files_changed": 7
+    },
+    {
       "version": "1.0.35",
       "date": "2026-09-03",
       "title": "Release 1.0.35",
