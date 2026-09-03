@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.37",
+      "date": "2026-09-03",
+      "title": "Release 1.0.37",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Se agregaron los 128 frames de animación de las esferas de HP/MP y los arcos de SD/AG del HUD estilo PC (`InGame_OrbHPAnim`, `OrbMPAnim`, `ArcHPAnim`, `ArcMPAnim`). El código se había shippeado el 1-sep pero los assets nunca llegaron al árbol de publicación; sin ellos el HUD funcionaba bien pero las esferas y arcos se veían siempre estáticos en vez de animados."
+        }
+      ],
+      "download_bytes": 6668414,
+      "files_changed": 128
+    },
+    {
       "version": "1.0.36",
       "date": "2026-09-03",
       "title": "Release 1.0.36",
