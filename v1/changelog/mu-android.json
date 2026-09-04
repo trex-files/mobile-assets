@@ -3,6 +3,67 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.38",
+      "date": "2026-09-04",
+      "title": "Release 1.0.38",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Macro de pociones editable: de 2 a 4 casillas, cada una configurable como HP, MP, SD o pociones complejas, y se recuerda en el dispositivo."
+        },
+        {
+          "category": "nuevo",
+          "text": "Segundo servidor disponible en la lista de servidores."
+        },
+        {
+          "category": "nuevo",
+          "text": "Grand Coins (GC) en el inventario, junto a Adventure Coins y Rex Coins."
+        },
+        {
+          "category": "interfaz",
+          "text": "El Quest Hub separa las misiones en pestañas Diarias y Semanales, y cada misión repetible indica cada cuánto se puede volver a hacer."
+        },
+        {
+          "category": "interfaz",
+          "text": "La tienda X-Shop muestra un botón de zona por cada zona del catálogo y una sola moneda por zona."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los íconos de la tienda ya se dibujan en las filas que quedan parcialmente visibles al desplazar la lista."
+        },
+        {
+          "category": "interfaz",
+          "text": "Box of Kundun se muestra con su propio modelo en la tienda; antes se veía como Box of Luck."
+        },
+        {
+          "category": "interfaz",
+          "text": "El reinicio de personaje pasa a llamarse \"Grand Reset\" y \"Servidor Battle\" pasa a llamarse \"Battle Server\" en los 7 idiomas."
+        },
+        {
+          "category": "correccion",
+          "text": "Las alas pequeñas del propio personaje podían quedar invisibles al entrar al mundo."
+        },
+        {
+          "category": "correccion",
+          "text": "En los modos de PvP \"Todos\" y \"Jugadores\" el ataque quedaba pegado al objetivo rojo en vez de seguir al dedo."
+        },
+        {
+          "category": "correccion",
+          "text": "El botón de chat no respondía al toque para los jugadores que venían del HUD clásico."
+        },
+        {
+          "category": "correccion",
+          "text": "Las alas 2.5 de la tienda no mostraban su ícono porque su índice de objeto estaba vacío."
+        },
+        {
+          "category": "correccion",
+          "text": "Las misiones semanales podían quedar bloqueadas para siempre después de completarlas una vez."
+        }
+      ],
+      "download_bytes": 7335051,
+      "files_changed": 23
+    },
+    {
       "version": "1.0.37",
       "date": "2026-09-03",
       "title": "Release 1.0.37",
