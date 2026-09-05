@@ -3,6 +3,55 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.39",
+      "date": "2026-09-05",
+      "title": "Release 1.0.39",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Registro de cuenta desde el launcher: formulario nativo con cuenta, email, contraseña y código de referido opcional, sin salir de la app."
+        },
+        {
+          "category": "nuevo",
+          "text": "El Servidor Oficial aparece primero en la lista de servidores y es el seleccionado por defecto."
+        },
+        {
+          "category": "nuevo",
+          "text": "En la misión del NPC cada objeto requerido indica de qué monstruos y en qué mapa cae."
+        },
+        {
+          "category": "nuevo",
+          "text": "Modelos de armas, armaduras y alas renovados (rehorneado visual), iguales a los del cliente de escritorio."
+        },
+        {
+          "category": "interfaz",
+          "text": "El filtro de palabras del chat queda desactivado, igual que en el cliente de escritorio."
+        },
+        {
+          "category": "interfaz",
+          "text": "Al intentar equipar una montura en el segundo espacio de mascota se muestra un mensaje claro en vez de fallar en silencio."
+        },
+        {
+          "category": "interfaz",
+          "text": "Nombres y estadísticas de objetos de tier 9 y 10 actualizados a los valores del servidor; cajas y pergaminos renombrados."
+        },
+        {
+          "category": "correccion",
+          "text": "La descarga inicial ya no se queda trabada ni pasa a modo lento tras un corte de red: reintenta con reanudación, da una segunda oportunidad a cada paquete y mantiene la pantalla encendida durante la instalación."
+        },
+        {
+          "category": "correccion",
+          "text": "Si no hay espacio suficiente en el dispositivo, la descarga inicial lo avisa en pantalla en vez de fallar."
+        },
+        {
+          "category": "correccion",
+          "text": "El teclado del formulario de registro se ancla abajo y el contenido se desplaza para que el campo activo siempre quede visible."
+        }
+      ],
+      "download_bytes": 9442887,
+      "files_changed": 288
+    },
+    {
       "version": "1.0.38",
       "date": "2026-09-04",
       "title": "Release 1.0.38",
