@@ -3,6 +3,59 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.40",
+      "date": "2026-09-06",
+      "title": "Release 1.0.40",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Precios: los objetos de tier 9 y 10 vuelven a valer lo mismo que en el cliente de escritorio (la tabla del celular tenía el nivel base cambiado en 121 objetos)."
+        },
+        {
+          "category": "correccion",
+          "text": "Tailandés, chino y japonés: ver un objeto con opciones de set ya no cierra el juego."
+        },
+        {
+          "category": "correccion",
+          "text": "Muchos menos cierres inesperados en Infinix, Huawei, OPPO y realme, y ya no se cierra al minimizar ni al volver del segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "Se fueron los polígonos negros del mapa y el inventario con cosas superpuestas."
+        },
+        {
+          "category": "correccion",
+          "text": "El chat ya no corta los mensajes en español con acentos; escribir en tailandés y vietnamita ya no destruye el texto tecla a tecla."
+        },
+        {
+          "category": "correccion",
+          "text": "El helper de la elfa vuelve a curar al party, y las flechas guardadas en el inventario extendido se recargan solas."
+        },
+        {
+          "category": "interfaz",
+          "text": "El mercado muestra el precio exacto con separadores en vez de abreviarlo."
+        },
+        {
+          "category": "interfaz",
+          "text": "La ficha del comercio muestra el precio de venta que dicta el servidor."
+        },
+        {
+          "category": "interfaz",
+          "text": "El registro aclara que el código de referido es opcional."
+        },
+        {
+          "category": "interfaz",
+          "text": "En tailandés y vietnamita el juego usa el teclado de Android por defecto."
+        },
+        {
+          "category": "nuevo",
+          "text": "Ya se puede crear gremio desde el celular."
+        }
+      ],
+      "download_bytes": 6885334,
+      "files_changed": 12
+    },
+    {
       "version": "1.0.39",
       "date": "2026-09-05",
       "title": "Release 1.0.39",
