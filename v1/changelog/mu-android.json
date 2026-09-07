@@ -3,6 +3,95 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.42",
+      "date": "2026-09-07",
+      "title": "Release 1.0.42",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Los items del inventario quedaban como siluetas al volver de segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "Cierre al liberar un modelo que habia quedado a medio cargar."
+        },
+        {
+          "category": "correccion",
+          "text": "Samsung (A17, A03s y otros): la app ya no se cierra sola al minimizarla, bloquear la pantalla o jugar en mapas llenos."
+        },
+        {
+          "category": "correccion",
+          "text": "Ya no te saca del servidor en mapas con mucha gente ni al volver de segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "El aviso de \"servidor perdido\" ya no salta solo al volver de segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "La app ya no se cerraba en bucle al ofrecer una actualización."
+        },
+        {
+          "category": "correccion",
+          "text": "El servicio de segundo plano ya no quedaba bloqueado el resto del día cuando el sistema mataba el proceso."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: el MU Helper vuelve a recargar flechas solo, también desde las bolsas extendidas, y avisa cuando no quedan carcajes."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: el golpe con arco del MU Helper recupera su alcance real y ya no dispara sin flechas."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: Infinity Arrow se mantiene activa en la elfa que la tiene aprendida."
+        },
+        {
+          "category": "correccion",
+          "text": "Ice Arrow volvía a fallar con más de 65.535 de agilidad."
+        },
+        {
+          "category": "correccion",
+          "text": "Las ranuras de skill 2 y 3 del MU Helper nunca se usaban, en todas las clases."
+        },
+        {
+          "category": "correccion",
+          "text": "SM: Hellfire e Inferno ya se lanzan desde el MU Helper."
+        },
+        {
+          "category": "correccion",
+          "text": "Tras usar AFK desconectado, la reconexión automática quedaba muerta hasta cerrar la app."
+        },
+        {
+          "category": "correccion",
+          "text": "Un mensaje de chat largo podía mostrar basura al final."
+        },
+        {
+          "category": "correccion",
+          "text": "Texturas en blanco al volver de segundo plano."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Menos consumo de memoria en teléfonos de 3 GB."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El desalojo de texturas por poca memoria ya no corre en pleno juego, sólo en segundo plano."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Un pipeline de GPU que fallaba una vez quedaba inutilizado y dibujaba con el programa anterior."
+        },
+        {
+          "category": "interfaz",
+          "text": "Pantalla de personajes: la primera vez se veían lejos y chiquitos."
+        }
+      ],
+      "download_bytes": 5288883,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.41",
       "date": "2026-09-07",
       "title": "Release 1.0.41",
