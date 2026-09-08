@@ -3,6 +3,111 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.43",
+      "date": "2026-09-08",
+      "title": "Release 1.0.43",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Rage Fighter: Dark Side le pegaba a cada enemigo muchas mas veces de las que debia cuando habia varios juntos. Con un solo objetivo ya andaba bien; el problema aparecia en grupo."
+        },
+        {
+          "category": "correccion",
+          "text": "Grand Tree: el panel y su boton salian sin ningun texto. Ahora muestran el nombre de cada mejora y cuanto suma por punto."
+        },
+        {
+          "category": "correccion",
+          "text": "Power Slash e Ice Blade perdian el efecto y no hacian daño cuando bajaban los FPS."
+        },
+        {
+          "category": "correccion",
+          "text": "La pantalla \"Comprobando recursos\" se quedaba clavada y avisaba \"conexion inestable\" aunque la conexion estuviera perfecta: la barra no se movia porque estaba revisando archivos, no descargando. Ahora muestra el avance real."
+        },
+        {
+          "category": "correccion",
+          "text": "Si cerrabas el juego durante esa comprobacion, la proxima vez volvia a revisar los 2,7 GB desde cero. Ahora retoma donde iba."
+        },
+        {
+          "category": "correccion",
+          "text": "Descargas grandes: el juego ya no corta una descarga lenta pero sana. Solo corta si de verdad se queda sin recibir datos."
+        },
+        {
+          "category": "correccion",
+          "text": "El formulario de Grand Reset no se cerraba al resetear: quedaba abierto como si el boton no hubiera hecho nada."
+        },
+        {
+          "category": "correccion",
+          "text": "Lo mismo en el formulario de Reset comun."
+        },
+        {
+          "category": "correccion",
+          "text": "Los items puestos en la tienda personal no volvian al inventario al arrastrarlos a una bolsa extendida."
+        },
+        {
+          "category": "correccion",
+          "text": "Samsung: el modo de segundo plano no se activaba al minimizar si no habias dado permiso de bateria; ahora arranca como corresponde."
+        },
+        {
+          "category": "correccion",
+          "text": "La notificacion \"Rex Online\" podia quedar pegada para siempre despues de sacar el juego de recientes."
+        },
+        {
+          "category": "correccion",
+          "text": "Los items del inventario quedaban como siluetas al volver de segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "Cierre al liberar un modelo que habia quedado a medio cargar."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: el MU Helper recarga flechas solo, tambien desde las bolsas extendidas, y avisa cuando no quedan carcajes."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: Infinity Arrow se mantiene activa y el golpe con arco recupera su alcance real."
+        },
+        {
+          "category": "correccion",
+          "text": "SM: Hellfire e Inferno ya se lanzan desde el MU Helper."
+        },
+        {
+          "category": "correccion",
+          "text": "Las ranuras de skill 2 y 3 del MU Helper nunca se usaban, en todas las clases."
+        },
+        {
+          "category": "correccion",
+          "text": "Tras usar AFK desconectado, la reconexion automatica quedaba muerta hasta cerrar la app."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los items 3D se veian a la MITAD del tamano que les corresponde en su casilla. Ya se ven completos."
+        },
+        {
+          "category": "interfaz",
+          "text": "El tamano de los items en su casilla ahora se ajusta desde Ajustes -> HUD (antes estaba en Items y no se encontraba)."
+        },
+        {
+          "category": "interfaz",
+          "text": "Si ya habias cambiado ese tamano a mano, es normal que ahora los veas mas grandes: la medida anterior estaba mal calculada. Reajustalo a gusto desde Ajustes -> HUD."
+        },
+        {
+          "category": "interfaz",
+          "text": "Pantalla de personajes: la primera vez se veian lejos y chiquitos."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Menos consumo de memoria en telefonos de 3 GB."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El desalojo de texturas por poca memoria ya no corre en pleno juego, solo en segundo plano."
+        }
+      ],
+      "download_bytes": 6680914,
+      "files_changed": 20
+    },
+    {
       "version": "1.0.42",
       "date": "2026-09-07",
       "title": "Release 1.0.42",
