@@ -3,6 +3,31 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.44",
+      "date": "2026-09-08",
+      "title": "Release 1.0.44",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Rage Fighter y Fire Scream: el cliente creia que llegaba desde mas lejos de lo que acepta el servidor. Los golpes que caian en esa franja se descartaban sin ningun aviso, asi que parecia que fallabas sin motivo. Ahora el alcance del cliente coincide con el del servidor: Dark Side y Fire Scream y sus mejoras, mas Death Stab y Fire Slash."
+        },
+        {
+          "category": "correccion",
+          "text": "Summoner: Drain Life, Chain Lightning, Damage Reflection, Berserker, Sleep, Weakness, Innovation, Explosion, Requiem, Pollution y Lightning Shock podian quedar bloqueadas por falta de Energia en el celular aunque en la PC se pudieran lanzar igual."
+        },
+        {
+          "category": "correccion",
+          "text": "Chaos Machine: cuando el servidor rechazaba la mezcla antes de tirar (ingredientes que no son, nivel o cantidad mal), no aparecia ningun mensaje. Veias la animacion y despues nada, como si el juego se hubiera colgado. Ahora avisa y no se pierde nada."
+        },
+        {
+          "category": "correccion",
+          "text": "La opcion excelente que aumenta el Zen decia \"+70%\" en ingles, japones, tailandes y chino, y \"+30%\" en espanol, portugues y vietnamita. El valor real que aplica el servidor es +15%, y eso es lo que dice ahora en los siete idiomas."
+        }
+      ],
+      "download_bytes": 6063666,
+      "files_changed": 12
+    },
+    {
       "version": "1.0.43",
       "date": "2026-09-08",
       "title": "Release 1.0.43",
