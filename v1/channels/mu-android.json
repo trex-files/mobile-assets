@@ -2,7 +2,7 @@
   "product": "mu",
   "channel": "mu-android",
   "platform": "android-arm64",
-  "latest": "1.0.44",
+  "latest": "1.0.45",
   "min_supported": "",
-  "updated_at": "2026-09-08T21:03:19Z"
+  "updated_at": "2026-09-10T16:04:21Z"
 }

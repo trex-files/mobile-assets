@@ -3,6 +3,67 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.45",
+      "date": "2026-09-10",
+      "title": "Release 1.0.45",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Chat rediseñado: pestañas, filtros y ajustable desde Editar HUD."
+        },
+        {
+          "category": "nuevo",
+          "text": "Elegí el servidor desde el juego."
+        },
+        {
+          "category": "nuevo",
+          "text": "Dark Raven: modo del cuervo desde el HUD."
+        },
+        {
+          "category": "nuevo",
+          "text": "Panel de Grand Reset y pestaña MIS VENTAS en el mercado."
+        },
+        {
+          "category": "nuevo",
+          "text": "Insignias VIP hierro, plata y oro."
+        },
+        {
+          "category": "nuevo",
+          "text": "Si GitHub falla, las descargas pasan solas a los espejos del servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Máquina del Caos: la mezcla +380 y la máquina trabada al rechazar una mezcla."
+        },
+        {
+          "category": "correccion",
+          "text": "Ítems T7 a T10: nivel, daño y defensa iguales a los del servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Skills a la par de la PC: alcance, apuntado y buffs."
+        },
+        {
+          "category": "correccion",
+          "text": "La ficha avisa que el daño de habilidad sube con Energía."
+        },
+        {
+          "category": "correccion",
+          "text": "Objetos gigantes o negros en Devias y Dungeon."
+        },
+        {
+          "category": "correccion",
+          "text": "El Magic Gladiator de 3ra clase vuelve a tener capa."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper, tienda y AFK offline, ítems con período y Chaos Castle."
+        }
+      ],
+      "download_bytes": 7956966,
+      "files_changed": 24
+    },
+    {
       "version": "1.0.44",
       "date": "2026-09-08",
       "title": "Release 1.0.44",
