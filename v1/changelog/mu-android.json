@@ -3,6 +3,23 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.47",
+      "date": "2026-09-16",
+      "title": "Release 1.0.47",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Dark Side del Rage Fighter encadena mucho más rápido: el cooldown propio de la skill bajó de 275 ms a 10 ms."
+        },
+        {
+          "category": "correccion",
+          "text": "El mapa completo muestra el nivel real de cada monstruo. Estaban desactualizados desde el rework de niveles (por ejemplo Condra decía 294 y es 213)."
+        }
+      ],
+      "download_bytes": 24903,
+      "files_changed": 5
+    },
+    {
       "version": "1.0.46",
       "date": "2026-09-16",
       "title": "Release 1.0.46",
