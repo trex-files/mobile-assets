@@ -3,6 +3,159 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.46",
+      "date": "2026-09-16",
+      "title": "Release 1.0.46",
+      "entries": [
+        {
+          "category": "nuevo",
+          "text": "Cambio de clase disponible desde el menú, con el Ticket de Cambio de Clase (se ve su gráfico y explica qué conserva y qué reinicia)."
+        },
+        {
+          "category": "nuevo",
+          "text": "Ruleta de premios desde el menú."
+        },
+        {
+          "category": "nuevo",
+          "text": "MU Helper: pestaña Clase con combos reales y skills más rápidos."
+        },
+        {
+          "category": "nuevo",
+          "text": "Antídoto en el macro de pociones."
+        },
+        {
+          "category": "nuevo",
+          "text": "Mercado: páginas para ver más de 100 ítems, con \"Página X / Y\"."
+        },
+        {
+          "category": "nuevo",
+          "text": "Los miembros de tu party aparecen en el minimapa y en el mapa con su propia flecha turquesa, y con nombre en el mapa completo (opción, activada por defecto)."
+        },
+        {
+          "category": "nuevo",
+          "text": "Mercado: el precio muestra la moneda al lado (\"10 Bless\") y hay filtros Solo Ancient, Solo con socket y Solo joyas."
+        },
+        {
+          "category": "nuevo",
+          "text": "Panel de estadísticas: regeneración real de HP, MP y SD."
+        },
+        {
+          "category": "nuevo",
+          "text": "Editar HUD: mover y cambiar el tamaño de los textos."
+        },
+        {
+          "category": "nuevo",
+          "text": "Alianza de guild desde el menú del jugador."
+        },
+        {
+          "category": "nuevo",
+          "text": "Grand Tree: botón para reiniciar el árbol."
+        },
+        {
+          "category": "nuevo",
+          "text": "El menú muestra el personaje de la clase que elegís al cambiar de clase."
+        },
+        {
+          "category": "nuevo",
+          "text": "La Caja de Alas 3.5 explica en su descripción cómo se abre y qué alas da."
+        },
+        {
+          "category": "correccion",
+          "text": "Las alas muestran el daño y la absorción reales del servidor, en todos los niveles (incluidas las 3.5 y las capas de Lord y Fighter)."
+        },
+        {
+          "category": "correccion",
+          "text": "Las monedas se llaman igual que en la web y en la tienda: RC, GC y AC."
+        },
+        {
+          "category": "correccion",
+          "text": "Cientos de ítems mostraban un nombre viejo o directamente ninguno. Entre ellos, el Ticket de Cambio de Clase, que aparecía como \"Boss Battle Ticket\"."
+        },
+        {
+          "category": "correccion",
+          "text": "VIP: el bono de experiencia que se muestra ahora es el que da el servidor (Plata 15%, Oro 25%), y el VIP Bronce cuesta lo que corresponde."
+        },
+        {
+          "category": "correccion",
+          "text": "Joya de Nivel y Joya de Anillo llegan hasta +15."
+        },
+        {
+          "category": "correccion",
+          "text": "Editar HUD pasó al pie del menú, así los botones entran sin que haya que deslizar."
+        },
+        {
+          "category": "correccion",
+          "text": "La Caja de Alas 3.5 ya se puede tirar al suelo para abrirla, y dejó de llamarse \"Rare Item Ticket 7\"."
+        },
+        {
+          "category": "correccion",
+          "text": "Spam de movimiento y skill ya no acelera los ataques."
+        },
+        {
+          "category": "correccion",
+          "text": "Seguir a un jugador (FOLLOW) funciona en móvil."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper vuelve a curar a la party."
+        },
+        {
+          "category": "correccion",
+          "text": "Reset del Dark Lord muestra el Liderazgo (CMD)."
+        },
+        {
+          "category": "correccion",
+          "text": "Mostrar ítem en el chat vuelve a funcionar."
+        },
+        {
+          "category": "correccion",
+          "text": "Abandonar guild muestra el número de confirmación."
+        },
+        {
+          "category": "correccion",
+          "text": "Teleport y Dark Side con el mismo cooldown y alcance que el servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Panel del Doppelganger más chico; marcador de Battle Soccer ya no tapa los skills; cuenta regresiva de Kanturu en vivo."
+        },
+        {
+          "category": "correccion",
+          "text": "Aviso de subida de nivel sin números negativos."
+        },
+        {
+          "category": "correccion",
+          "text": "Porcentaje de la Máquina del Caos ya no parpadea."
+        },
+        {
+          "category": "correccion",
+          "text": "Pasar ítems con un toque a Chaos Card, Cherry Blossom, Seed Sphere y Detach Socket vuelve a funcionar."
+        },
+        {
+          "category": "correccion",
+          "text": "Las espadas se ven centradas en el mercado y la ruleta."
+        },
+        {
+          "category": "correccion",
+          "text": "iOS: la opción de caminar al tocar se puede apagar."
+        },
+        {
+          "category": "correccion",
+          "text": "Nivel requerido correcto en ítems de grado 380."
+        },
+        {
+          "category": "correccion",
+          "text": "Armaduras que se veían con el modelo equivocado."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper: el auto-poteo en iOS respeta la misma espera que en Android."
+        }
+      ],
+      "download_bytes": 9528646,
+      "files_changed": 146
+    },
+    {
       "version": "1.0.45",
       "date": "2026-09-10",
       "title": "Release 1.0.45",
