@@ -3,6 +3,121 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.50",
+      "date": "2026-09-17",
+      "title": "Release 1.0.50",
+      "entries": [
+        {
+          "category": "interfaz",
+          "text": "Textos del cliente actualizados en los siete idiomas (inglés, español, portugués, vietnamita, japonés, tailandés y chino simplificado): los mensajes del juego pasan a nombrar REX y el sitio oficial rexmu.online donde antes quedaban referencias de la versión original."
+        },
+        {
+          "category": "interfaz",
+          "text": "Reescritos los avisos de error de arranque y de archivos dañados para que digan qué hacer, en vez de sólo informar un número de error."
+        }
+      ],
+      "download_bytes": 562053,
+      "files_changed": 7
+    },
+    {
+      "version": "1.0.49",
+      "date": "2026-09-17",
+      "title": "Release 1.0.49",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Mercado, pestaña \"Mis ventas\": volvía vacía y no mostraba tus publicaciones. El texto que hubieras escrito en el buscador de \"Comprar\" seguía aplicándose a esa pestaña, que no tiene barra de búsqueda y por lo tanto no daba forma de borrarlo. Ahora \"Mis ventas\" nunca filtra: muestra todo lo que tenés publicado, incluso lo vencido."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: la pestaña \"Mis ventas\" podía quedar sin pedir la lista si el pedido salía con una ventana de confirmación abierta, y no se reintentaba hasta pasar por \"Comprar\"."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: al cerrar el formulario de venta después de publicar aparecía \"No hay suficiente espacio en el inventario\" con la bolsa vacía. El cliente pedía la devolución de un objeto que ya era una publicación."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: al devolver un objeto al inventario, si el servidor no podía aceptarlo (por ejemplo, sin espacio real), el objeto desaparecía de la pantalla y sólo volvía al reloguear. Ahora se queda a la vista para reintentar."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: tres filtros leían el dato equivocado y escondían objetos que sí correspondían — \"Opt\", el nivel de opción y \"sólo mi clase\", que además ocultaba objetos sin restricción de clase."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper: el Heal de la elfa desaparecía del Helper al evolucionarlo en el Árbol de Maestro. La habilidad cambia de número al masterizarse y quedaba fuera de las dos pestañas del Helper."
+        },
+        {
+          "category": "nuevo",
+          "text": "Mercado: buscador por nombre sobre todo el mercado, no sólo sobre la página que estás viendo. Requiere un mínimo de 3 letras."
+        },
+        {
+          "category": "nuevo",
+          "text": "Mercado: las publicaciones salen a 30 días por defecto, y las que vencieron se marcan en rojo con el aviso de que ya no son visibles para los compradores."
+        }
+      ],
+      "download_bytes": 5357994,
+      "files_changed": 1
+    },
+    {
+      "version": "1.0.48",
+      "date": "2026-09-16",
+      "title": "Release 1.0.48",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "La tienda personal por joya o coin (Bless, Soul, Chaos, RC, GC, AC) ya se puede cerrar. El botón \"Cerrar\" quedaba apagado y no respondía, y el jugador no tenía forma de bajar la tienda."
+        },
+        {
+          "category": "correccion",
+          "text": "La ventana de confirmación de precio muestra el nombre de la moneda real en lugar de decir \"Zen\" siempre."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: corregido un error que dejaba objetos sin poder comprarse. La lista mostraba resultados de varias páginas pero el servidor sólo autoriza la última, así que salía \"el objeto ya no existe\" sobre publicaciones que estaban vivas. Las compras y los retiros vuelven a funcionar."
+        },
+        {
+          "category": "correccion",
+          "text": "Mercado: pasar de la última página ya no deja en pantalla filas que no se pueden comprar."
+        },
+        {
+          "category": "correccion",
+          "text": "Imperial Guardian: agregado el botón de cerrar, que no se dibujaba en pantallas chicas. El jugador quedaba encerrado en la ventana del evento cuando no podía entrar."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregido un bloqueo que dejaba al jugador sin poder usar pociones cuando se perdía la confirmación del servidor."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los botones de moneda de la tienda personal ahora seleccionan la moneda de venta en vez de abrir la tienda al tocarlos. Zen viene seleccionado por defecto y el elegido queda marcado; \"Abrir\" publica en esa moneda."
+        },
+        {
+          "category": "interfaz",
+          "text": "La categoría \"Escudo\" del mercado ahora aparece traducida en todos los idiomas."
+        },
+        {
+          "category": "interfaz",
+          "text": "Barra de vida más visible sobre los personajes."
+        },
+        {
+          "category": "interfaz",
+          "text": "El nombre del clan vuelve a dibujarse debajo del nombre del jugador."
+        },
+        {
+          "category": "balance",
+          "text": "Dark Side del Rage Fighter: quitado el retardo que le quedaba en el cliente (10 ms a 0). El límite real lo sigue poniendo el servidor."
+        },
+        {
+          "category": "balance",
+          "text": "Auto-pociones más rápidas: 500 ms por poción en lugar de 700 ms."
+        }
+      ],
+      "download_bytes": 5921308,
+      "files_changed": 12
+    },
+    {
       "version": "1.0.47",
       "date": "2026-09-16",
       "title": "Release 1.0.47",
