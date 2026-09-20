@@ -3,6 +3,127 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.52",
+      "date": "2026-09-20",
+      "title": "Release 1.0.52",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Con la auto-curación encendida, el hada y la summoner nunca tomaban pociones: la curación cortaba el turno antes de llegar a ellas, justo cuando más falta hacían."
+        },
+        {
+          "category": "correccion",
+          "text": "Las mascotas recolectoras (Rudolph, Panda, Esqueleto y Unicornio) pedían el mismo montón de zen una y otra vez: el zen quedaba en el suelo y la mascota orbitaba encima sin levantarlo."
+        },
+        {
+          "category": "correccion",
+          "text": "El Panda se movía demasiado rápido, como si se teletransportara."
+        },
+        {
+          "category": "correccion",
+          "text": "El ayudante elegía qué recoger según la distancia de la mascota y no la del personaje, así que a veces ignoraba lo que tenía al lado."
+        },
+        {
+          "category": "correccion",
+          "text": "En móvil no se podía montar ni quitar una Seed Sphere en un arma con ranuras. Ahora se elige la ranura desde el panel de la Máquina del Caos."
+        },
+        {
+          "category": "correccion",
+          "text": "El Wizard's Ring +0 ya se puede tirar al piso arrastrándolo."
+        },
+        {
+          "category": "correccion",
+          "text": "Banco de joyas: \"Guardar todo\" mandaba un pedido por cada joya del catálogo aunque no la llevaras encima, y abría una ventana por cada uno."
+        },
+        {
+          "category": "correccion",
+          "text": "Las mezclas sin azar (caja sellada con su llave) mostraban \"0%\" de éxito; ahora muestran que no hay tirada."
+        },
+        {
+          "category": "correccion",
+          "text": "El poder Birds del Dark Lord, una vez maestrizado, quedaba apagado por el control de energía."
+        },
+        {
+          "category": "correccion",
+          "text": "Tasa de ataque y de defensa en PvP: se sumaba dos veces el bono de la opción 380 y de la Joya de la Armonía, que el servidor ya trae aplicados."
+        },
+        {
+          "category": "correccion",
+          "text": "Dinorant y Fenrir: las descripciones mostraban porcentajes que el servidor no aplica."
+        },
+        {
+          "category": "correccion",
+          "text": "Pergamino de Batalla y de Fuerza: ahora dicen 30% y 10%, como el servidor, en los siete idiomas."
+        },
+        {
+          "category": "correccion",
+          "text": "Bono de conjunto ancient: la fórmula del cliente inflaba el total."
+        },
+        {
+          "category": "correccion",
+          "text": "Los buffs sin ficha en el catálogo (pergaminos de maestro, talismanes, sellos) mostraban el ícono sin ningún texto; ahora usan el nombre que manda el servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "45 conjuntos de armadura se veían con el modelo equivocado."
+        },
+        {
+          "category": "correccion",
+          "text": "El conjunto Tigris del Rage Fighter usaba modelos del conjunto Blue Eye del hada; lo mismo con Crimson Skull, Blue Eye Lord/Fighter y Silver Heart."
+        },
+        {
+          "category": "correccion",
+          "text": "Las texturas de 24 bits fallaban en silencio y algunas piezas no se dibujaban."
+        },
+        {
+          "category": "correccion",
+          "text": "La capa del Magic Gladiator mostraba las dos caras a la vez y titilaba al caminar; el torso se veía transparente."
+        },
+        {
+          "category": "correccion",
+          "text": "Un NPC ya se puede tocar aunque haya un jugador parado al lado, y el personaje no queda parado encima tapándolo."
+        },
+        {
+          "category": "correccion",
+          "text": "El Sub-Maestro del clan no recibía solicitudes de ingreso desde el móvil."
+        },
+        {
+          "category": "correccion",
+          "text": "Publicar un objeto en el chat no llegaba: el cliente mandaba el formato viejo y el servidor lo descartaba sin avisar."
+        },
+        {
+          "category": "interfaz",
+          "text": "El panel del Doppelganger quedaba tapado por el minimapa."
+        },
+        {
+          "category": "interfaz",
+          "text": "El preset de gráficos MEDIO vuelve a encender el brillo de objetos (+7 en adelante)."
+        },
+        {
+          "category": "interfaz",
+          "text": "Árbol de la Gloria: crítico, excelente y reducción de daño aparecen en las estadísticas avanzadas sin tener que abrir el árbol."
+        },
+        {
+          "category": "interfaz",
+          "text": "Botón \"Quitar objetivo\", visible sólo mientras haya alguien marcado."
+        },
+        {
+          "category": "rendimiento",
+          "text": "El mundo se aceleraba después de unas 37 horas de sesión."
+        },
+        {
+          "category": "rendimiento",
+          "text": "Se cachean los índices de búsqueda del mercado por término."
+        },
+        {
+          "category": "nuevo",
+          "text": "Opción \"Usar el teclado del teléfono\" en el engranaje del teclado propio."
+        }
+      ],
+      "download_bytes": 16613278,
+      "files_changed": 223
+    },
+    {
       "version": "1.0.50",
       "date": "2026-09-17",
       "title": "Release 1.0.50",
