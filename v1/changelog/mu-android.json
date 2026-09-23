@@ -3,6 +3,27 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.53",
+      "date": "2026-09-23",
+      "title": "Release 1.0.53",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Party Heal maestrizada (Party Healing): el tiempo de reutilización baja de 10 a 5 segundos, en línea con el servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Corrección de estadísticas en varias armas y bastones de nivel alto para que coincidan con el servidor: Flameberge, Sword Breaker, Rune Bastard Sword, Sonic Blade, Asura, Blast Break, Lilium Stick, Summon Spirit Stick, Absolute Scepter, Striker Scepter, Frost Mace y Horn of Steal."
+        },
+        {
+          "category": "servidor",
+          "text": "El servidor Oficial cambia de dirección. El juego se conecta solo, no hay que hacer nada."
+        }
+      ],
+      "download_bytes": 6716756,
+      "files_changed": 15
+    },
+    {
       "version": "1.0.52",
       "date": "2026-09-20",
       "title": "Release 1.0.52",
