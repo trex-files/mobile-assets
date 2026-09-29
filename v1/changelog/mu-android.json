@@ -3,6 +3,67 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.54",
+      "date": "2026-09-29",
+      "title": "Release 1.0.54",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Modos de ataque Foco y Jugadores: si no hay ningún jugador al alcance, tus habilidades y el golpe básico vuelven a atacar a los monstruos."
+        },
+        {
+          "category": "correccion",
+          "text": "La lista de servidores ya no queda trabada en \"Cargando\"."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper: tu habilidad de ataque configurada tiene prioridad siempre; el golpe básico queda solo como respaldo cuando ninguna habilidad está disponible."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper: el Rage Fighter ya no relanza sus buffs sobre la party una y otra vez (ya no corta ni atrasa el golpe)."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregimos cierres inesperados y cortes de conexión que podían afectar a los jugadores cercanos cuando un Rage Fighter usaba Dragon Roar y otras habilidades."
+        },
+        {
+          "category": "correccion",
+          "text": "Corregimos cierres inesperados al volver al juego desde segundo plano."
+        },
+        {
+          "category": "correccion",
+          "text": "Estadísticas y descripciones de objetos de nivel alto alineadas con los valores reales del servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Scroll of Quick ahora otorga Agilidad, como en el servidor."
+        },
+        {
+          "category": "correccion",
+          "text": "Mana Shield (árbol de maestría): la descripción ahora muestra el bono relativo que da cada nivel, igual que en PC."
+        },
+        {
+          "category": "interfaz",
+          "text": "Nuevo selector de servidores: Oficial y Battle lado a lado, con todos los sub-servidores visibles."
+        },
+        {
+          "category": "interfaz",
+          "text": "Los sets custom brillan en toda la armadura a partir de +7, no solo en una parte."
+        },
+        {
+          "category": "interfaz",
+          "text": "Tiendas personales: vuelve el selector de moneda."
+        },
+        {
+          "category": "interfaz",
+          "text": "Textos corregidos y completados en los 7 idiomas."
+        }
+      ],
+      "download_bytes": 7378762,
+      "files_changed": 26
+    },
+    {
       "version": "1.0.53",
       "date": "2026-09-23",
       "title": "Release 1.0.53",
