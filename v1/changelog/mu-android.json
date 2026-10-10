@@ -3,6 +3,59 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.55",
+      "date": "2026-10-10",
+      "title": "Release 1.0.55",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Teleport Ally: ahora tiene 4 segundos de espera y ya no se lanza sobre uno mismo."
+        },
+        {
+          "category": "correccion",
+          "text": "Rage Fighter: el salto contra una pared ya no te manda a Lorencia."
+        },
+        {
+          "category": "correccion",
+          "text": "La mascota del segundo slot ahora muestra su vencimiento."
+        },
+        {
+          "category": "correccion",
+          "text": "MU Helper: ya no usa el Town Portal en lugar de tus pociones."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfo y joystick: el movimiento ya no se ve como un teletransporte."
+        },
+        {
+          "category": "correccion",
+          "text": "Las cartas ahora se pueden borrar desde la ventana de Amigos."
+        },
+        {
+          "category": "correccion",
+          "text": "Fenrir, Dark Horse, Dinorant e Imp: el tooltip muestra el % real."
+        },
+        {
+          "category": "contenido",
+          "text": "Servidor Battle: Ruleta, Tintado y Pase de batalla, y nuevos mapas de jefe."
+        },
+        {
+          "category": "contenido",
+          "text": "Illusion Temple: la entrada ahora se decide por la cantidad de resets."
+        },
+        {
+          "category": "contenido",
+          "text": "Swamp of Peace: los requisitos de nivel de los portales coinciden con los del servidor."
+        },
+        {
+          "category": "contenido",
+          "text": "Armas de tier 8 a 10 y árbol de habilidades master alineados con el servidor."
+        }
+      ],
+      "download_bytes": 22922736,
+      "files_changed": 976
+    },
+    {
       "version": "1.0.54",
       "date": "2026-09-29",
       "title": "Release 1.0.54",
