@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.56",
+      "date": "2026-10-11",
+      "title": "Release 1.0.56",
+      "entries": [
+        {
+          "category": "servidor",
+          "text": "BATTLE SERVER vuelve a su dirección anterior. El juego se conecta solo, no hay que hacer nada."
+        }
+      ],
+      "download_bytes": 160510,
+      "files_changed": 2
+    },
+    {
       "version": "1.0.55",
       "date": "2026-10-10",
       "title": "Release 1.0.55",
