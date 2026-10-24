@@ -3,6 +3,83 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.57",
+      "date": "2026-10-24",
+      "title": "Release 1.0.57",
+      "entries": [
+        {
+          "category": "contenido",
+          "text": "Tres mapas de jefe nuevos: Dungeon Depths, Lost Tower Summit y Kanturu Core."
+        },
+        {
+          "category": "contenido",
+          "text": "Mapas de clan nuevos: La Bóveda, El Foso, El Feudo y La Purga."
+        },
+        {
+          "category": "contenido",
+          "text": "Alas nivel 4: talismanes de alas, Pluma de Garuda y el ala nivel 4 de tu clase en la Máquina del Caos."
+        },
+        {
+          "category": "contenido",
+          "text": "Box of Random Wing 3.5: una de las 4 alas 3.5 al azar."
+        },
+        {
+          "category": "nuevo",
+          "text": "Botón Entrar en Eventos > Jefes, panel del dungeon en pantalla y hora del servidor."
+        },
+        {
+          "category": "nuevo",
+          "text": "Gestos y bailes."
+        },
+        {
+          "category": "nuevo",
+          "text": "Ticket de Cambio de Nick."
+        },
+        {
+          "category": "nuevo",
+          "text": "Ruletas de Joyas y de Zen, Pase de Batalla normal y VIP, insignia VIP sobre el nombre."
+        },
+        {
+          "category": "interfaz",
+          "text": "Apuntado del anillo de skills más preciso, con alcance y botón para cancelar."
+        },
+        {
+          "category": "interfaz",
+          "text": "Cada pieza visual nueva se puede apagar en Ajustes."
+        },
+        {
+          "category": "correccion",
+          "text": "Summoner: Weakness e Innovation mejoradas en el árbol maestro se ven sobre el objetivo."
+        },
+        {
+          "category": "correccion",
+          "text": "Elfa: Penetration e Ice Arrow ya no fallan a veces."
+        },
+        {
+          "category": "correccion",
+          "text": "El juego ya no se cierra al entrar a los mapas nuevos."
+        },
+        {
+          "category": "correccion",
+          "text": "Talismanes de alas 3.ª y 2.5 con la rotación y la escala correctas."
+        },
+        {
+          "category": "correccion",
+          "text": "Título de las recetas custom de la Máquina del Caos."
+        },
+        {
+          "category": "correccion",
+          "text": "Paquetes de joyas con el nivel exacto en las recetas custom (+0 = 10, +2 = 30)."
+        },
+        {
+          "category": "servidor",
+          "text": "Servidores OFICIAL y BATTLE en la lista."
+        }
+      ],
+      "download_bytes": 133617878,
+      "files_changed": 1472
+    },
+    {
       "version": "1.0.56",
       "date": "2026-10-11",
       "title": "Release 1.0.56",
