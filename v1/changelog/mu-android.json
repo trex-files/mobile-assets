@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.58",
+      "date": "2026-11-06",
+      "title": "Release 1.0.58",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "Las alas nivel 4 de Rage Fighter y Dark Lord y el ala 2.5 DL/RF ya muestran su capa roja puestas, como en el inventario."
+        }
+      ],
+      "download_bytes": 160001,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.57",
       "date": "2026-10-24",
       "title": "Release 1.0.57",
