@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.59",
+      "date": "2026-11-10",
+      "title": "Release 1.0.59",
+      "entries": [
+        {
+          "category": "contenido",
+          "text": "Mapas nuevos: Debenter (Newbie Zone), Arkania y PK Arena."
+        }
+      ],
+      "download_bytes": 7790139,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.58",
       "date": "2026-11-06",
       "title": "Release 1.0.58",
