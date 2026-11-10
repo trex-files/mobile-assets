@@ -3,6 +3,23 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.60",
+      "date": "2026-11-10",
+      "title": "Release 1.0.60",
+      "entries": [
+        {
+          "category": "contenido",
+          "text": "Minimapas nuevos (TAB) para Debenter (Newbie Zone), Arkania (Hard Zone) y PK Arena, con sus spots."
+        },
+        {
+          "category": "correccion",
+          "text": "Debenter: el suelo ya no se ve en blanco (faltaban texturas)."
+        }
+      ],
+      "download_bytes": 7602985,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.59",
       "date": "2026-11-10",
       "title": "Release 1.0.59",
