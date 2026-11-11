@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.61",
+      "date": "2026-11-11",
+      "title": "Release 1.0.61",
+      "entries": [
+        {
+          "category": "correccion",
+          "text": "X-Shop: aparecen el Name Change Ticket (Rex Shop y Adventure Shop, en Special) y la Box of Random Wing 3.5 a 1.800 GC (Grand Shop, en Special), igual que en PC."
+        }
+      ],
+      "download_bytes": 5784,
+      "files_changed": 2
+    },
+    {
       "version": "1.0.60",
       "date": "2026-11-10",
       "title": "Release 1.0.60",
