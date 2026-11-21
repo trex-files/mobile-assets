@@ -3,6 +3,19 @@
   "channel": "mu-android",
   "releases": [
     {
+      "version": "1.0.63",
+      "date": "2026-11-21",
+      "title": "Release 1.0.63",
+      "entries": [
+        {
+          "category": "correcciones",
+          "text": "Maquina del Caos: ahora se pueden crear las alas nivel 4 desde el celular (la receta pide 14 items y el celular solo contaba 8)."
+        }
+      ],
+      "download_bytes": 6754446,
+      "files_changed": 1
+    },
+    {
       "version": "1.0.62",
       "date": "2026-11-15",
       "title": "Release 1.0.62",
